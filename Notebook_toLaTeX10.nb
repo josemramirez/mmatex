@@ -1,0 +1,1204 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     51047,       1196]
+NotebookOptionsPosition[     42981,       1025]
+NotebookOutlinePosition[     44640,       1074]
+CellTagsIndexPosition[     44513,       1067]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+https://github.com/josemramirez/mmatex
+Corremos 13 celdas seguidas:\
+\>", "Text",
+ CellChangeTimes->{{3.705666893580974*^9, 3.705666941340706*^9}, {
+  3.923252866175659*^9, 3.923252879125358*^9}, {3.923254824837254*^9, 
+  3.923254824880352*^9}, {3.923254952492565*^9, 3.923254952883649*^9}, {
+  3.923261068261819*^9, 3.923261068746792*^9}, {3.923310432189562*^9, 
+  3.92331045010393*^9}, {3.9236000921289186`*^9, 3.923600095830738*^9}, {
+  3.923604966569563*^9, 3.923604966739667*^9}, {3.923699573244714*^9, 
+  3.923699573534637*^9}},
+ CellID->399689850,ExpressionUUID->"70b07db8-ae50-4026-9f89-fa1146c87508"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], ";"}],
+  FontSize->18], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"nbook2", "=", 
+    RowBox[{"EvaluationNotebook", "[", "]"}]}], ";"}],
+  FontFamily->"Source Code Pro",
+  FontSize->18,
+  FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"SelectionMove", "[", 
+      RowBox[{"nbook2", ",", "Next", ",", "Cell", ",", "1"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SelectionEvaluate", "[", "nbook2", "]"}], ";"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "13"}], "}"}]}], "]"}],
+  FontFamily->"Source Code Pro",
+  FontSize->18,
+  FontWeight->"SemiBold"]}], "Input",
+ CellChangeTimes->{{3.917474792900231*^9, 3.9174748241600237`*^9}, {
+   3.917474861730978*^9, 3.917474893194491*^9}, {3.917714230885532*^9, 
+   3.9177142313986998`*^9}, {3.91788337870155*^9, 3.917883379334441*^9}, {
+   3.917893444824192*^9, 3.917893458449432*^9}, {3.9178990853086433`*^9, 
+   3.917899085828673*^9}, {3.91789993320607*^9, 3.917899933768956*^9}, 
+   3.923063259816647*^9, {3.923063435968421*^9, 3.923063436591187*^9}, {
+   3.923063489816031*^9, 3.923063490431079*^9}, {3.92325478867109*^9, 
+   3.923254790713509*^9}, {3.923254954967518*^9, 3.923254955335932*^9}, {
+   3.923258389249452*^9, 3.923258416962199*^9}, {3.9232610649538097`*^9, 
+   3.923261065477211*^9}, {3.92326802886567*^9, 3.923268029482574*^9}, {
+   3.923683387550984*^9, 3.9236833883001213`*^9}, {3.9236838371731586`*^9, 
+   3.923683837751553*^9}, {3.9236990026061983`*^9, 3.923699003223982*^9}, {
+   3.923699639583087*^9, 3.92369964150841*^9}, 3.9238365180870333`*^9},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellTags->"initCell",
+ CellID->2107135677,ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3"],
+
+Cell[BoxData[
+ TemplateBox[<|
+  "obj" -> NotebookObject[
+    "e1a6367a-7155-43ab-882a-a6adf36bef69", 
+     "651faeaa-9ee0-4fbd-8fb3-87aa8df34060"], "label" -> 
+   "\"Notebook_toLaTeX9.nb\"", "tooltip" -> 
+   "\"/Users/josem/Dropbox/Yachay2024/paper_Latex_MMA/Notebook_toLaTeX9.nb\""|>,
+  "NotebookObjectUUIDs"]], "Output",
+ CellChangeTimes->{3.92383404012282*^9},
+ CellTags->"initCell",
+ CellLabel->"Out[88]=",
+ CellID->1523046028,ExpressionUUID->"088efef9-3912-4bf3-a6a9-2ed813e2b425"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "6abbb2cd-8bda-4789-b92b-f3a956d9e25f"],
+ " pdf"
+}], "Section",
+ CellChangeTimes->{{3.7056633913006554`*^9, 3.705663401948264*^9}, {
+  3.705664410620957*^9, 3.705664419620472*^9}, {3.705664822085491*^9, 
+  3.7056648272687883`*^9}, {3.7056657220369654`*^9, 3.705665729333383*^9}, {
+  3.705666868925564*^9, 3.7056668705886593`*^9}, {3.923254898092269*^9, 
+  3.9232548989048147`*^9}},
+ CellID->93175719,ExpressionUUID->"707ab508-daeb-4b2d-a58c-894bc6eba491"],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"$WorkDir", "=", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}],
+  FontSize->18], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    StyleBox["plainTeX",
+     FontSize->18], 
+    StyleBox["=",
+     FontSize->18], 
+    StyleBox[
+     "\"\<https://raw.githubusercontent.com/josemramirez/mmatex/main/\
+plainText_v1.nb\>\"",
+     FontSize->14]}], 
+   StyleBox[";",
+    FontSize->24]}], "\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{"(*", 
+    RowBox[{"\[Equal]", " ", 
+     RowBox[{"Funciones", " ", "adicionales", " ", "de", " ", "PlainText"}], 
+     "=="}], "*)"}],
+   FontSize->18], "\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{"(*", 
+    RowBox[{"\[Equal]", " ", 
+     RowBox[{"NotebookEvaluate", "[", 
+      RowBox[{"$WorkDir", "<>", "\"\<plainText_v1.nb\>\""}], "]"}], "=="}], 
+    "*)"}],
+   FontSize->18], "\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"\[Equal]", " ", 
+      RowBox[{"Requiere", " ", "conexion", " ", "a", " ", "Internet"}]}], ",",
+      " ", 
+     RowBox[{
+      RowBox[{
+      "si", " ", "no", " ", "pide", " ", "el", " ", "notebook", " ", 
+       "offline"}], " ", "=="}]}], "*)"}],
+   FontSize->18]}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"NotebookEvaluate", "[", "plainTeX", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"\[Equal]", " ", 
+     RowBox[{
+     "Para", " ", "retomar", " ", "los", " ", "datos", " ", "de", " ", "los", 
+      " ", "calculos"}], " ", "=="}], "*)"}]}],
+  FontSize->18], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Get", "[", 
+   RowBox[{"$WorkDir", "<>", "\"\</Paper4.mx\>\""}], "]"}],
+  FontSize->18], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Get", "[", 
+   RowBox[{"$WorkDir", "<>", "\"\</AIClaude1.mx\>\""}], "]"}],
+  FontSize->18]}], "Input",
+ CellChangeTimes->{
+  3.923253693963296*^9, {3.923260708617082*^9, 3.92326071002147*^9}, {
+   3.923260761074665*^9, 3.923260822312161*^9}, {3.923311162712523*^9, 
+   3.923311173982266*^9}, {3.9235991656375027`*^9, 3.923599220221863*^9}, {
+   3.923599272367866*^9, 3.92359933262675*^9}, 3.923599612171257*^9, {
+   3.923599799697383*^9, 3.923599803930043*^9}, {3.923599847798368*^9, 
+   3.9235998731747923`*^9}, {3.923599909923625*^9, 3.923599975750333*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellLabel->"In[90]:=",
+ CellID->1681731838,ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"(*", 
+    RowBox[{"\[Equal]", " ", 
+     RowBox[{"Donde", " ", "se", " ", "encuentra", " ", "el", " ", 
+      RowBox[{"pdfLatex", "?"}]}], " ", "=="}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"$PdfLAdd", "=", "\"\</opt/local/bin/pdflatex\>\""}], ";"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"exportBook", ":=", 
+     RowBox[{"(", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"SetDirectory", "[", "$WorkDir", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Export", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.tex\>\""}], ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", "\"\<Text\>\""}], "]"}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"RunProcess", "[", 
+            RowBox[{"{", 
+             RowBox[{"$PdfLAdd", ",", 
+              RowBox[{
+               RowBox[{"#", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.tex\>\""}]}], 
+             "}"}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"RunProcess", "[", 
+            RowBox[{"{", 
+             RowBox[{"$PdfLAdd", ",", 
+              RowBox[{
+               RowBox[{"#", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.tex\>\""}]}], 
+             "}"}], "]"}], ";"}], "\[IndentingNewLine]", ")"}], "&"}], "/@", 
+        RowBox[{"Transpose", "[", 
+         RowBox[{"{", 
+          RowBox[{"titles", ",", "plainTexts"}], "}"}], "]"}]}], ";"}], 
+      ")"}]}]}]}],
+  FontSize->18]], "Input",
+ CellChangeTimes->{{3.7056648328051043`*^9, 3.7056648874932327`*^9}, {
+   3.7056649361340146`*^9, 3.705664942125357*^9}, {3.7056650379258366`*^9, 
+   3.705665055309831*^9}, {3.7056651630379925`*^9, 3.705665179037908*^9}, {
+   3.705665226581627*^9, 3.705665234165061*^9}, 3.7056656961984878`*^9, {
+   3.705665873541631*^9, 3.7056658849662848`*^9}, {3.7056659996618447`*^9, 
+   3.7056660013499413`*^9}, {3.705666880083202*^9, 3.705666883122376*^9}, {
+   3.74268361855518*^9, 3.742683626966996*^9}, {3.923260773809022*^9, 
+   3.923260774663965*^9}, {3.9232608715386887`*^9, 3.9232608890193367`*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[95]:=",
+ CellID->1834723099,ExpressionUUID->"07a48579-be64-4da3-9845-4b90f40c85f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "8ab43e0e-4dac-4558-8a5d-905d5900a233"],
+ " generation functions"
+}], "Section",
+ CellChangeTimes->{{3.7056633913006554`*^9, 3.705663401948264*^9}, {
+  3.705664410620957*^9, 3.705664419620472*^9}, {3.705664822085491*^9, 
+  3.7056648272687883`*^9}, {3.7056657220369654`*^9, 3.705665729333383*^9}, {
+  3.70566608786889*^9, 3.705666090365033*^9}},
+ CellID->261372301,ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"(*", " ", 
+    RowBox[{"La", " ", "clase", " ", "y", " ", "donde", " ", 
+     RowBox[{"esta", "?"}]}], " ", "*)"}],
+   FontSize->18], 
+  StyleBox["\[IndentingNewLine]",
+   FontSize->18], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+    "docClassArticle", ":=", 
+     "\"\<\\\\documentclass[a4paper,fleqn,\nusenatbib]{LatexLib/mnras}\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"graphicx", ":=", "\"\<\\\\usepackage{graphicx}\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"latex", ":=", "\"\<\\\\LaTeX{}\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"titleAuthorDate", "[", 
+      RowBox[{"title_", ",", "author_"}], "]"}], ":=", 
+     RowBox[{
+     "\"\<\n\\\\title{\>\"", "<>", "title", "<>", "\"\<}\n\\\\author{\>\"", "<>",
+       "author", "<>", "\"\<}\n\\\\date{\\\\today}\>\""}]}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"openDoc", ":=", "\"\<\\\\begin{document}\\n\\\\maketitle\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"closeDoc", ":=", "\"\<\\\\end{document}\>\""}],
+    FontSize->18]}]}]], "Input",
+ CellChangeTimes->{{3.9232615280839233`*^9, 3.9232615471883163`*^9}, {
+  3.9232616512835407`*^9, 3.9232616526426983`*^9}, {3.923261868095974*^9, 
+  3.9232619154062157`*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[97]:=",
+ CellID->504000207,ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204"],
+
+Cell[TextData[StyleBox["La definici\[OAcute]n de como incluir las figuras",
+ FontSize->18]], "Text",
+ CellChangeTimes->{{3.7425925076711807`*^9, 3.742592521573316*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1740103933,ExpressionUUID->"916b3911-edea-49a3-8f18-22b642408446"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"figure", "[", 
+   RowBox[{"generation_", ",", "name_", ",", "cap_", ",", "ref_"}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Export", "[", 
+     RowBox[{
+      RowBox[{"$WorkDir", "<>", "name", "<>", "\"\<.png\>\""}], ",", 
+      "generation"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{
+    "\"\<\n\\\\begin{figure}\n\\\\includegraphics[width=8.0cm]{./\>\"", "<>", 
+     "name", "<>", "\"\<.png\>\"", "<>", "\"\<}\n\\\\caption{\>\"", "<>", 
+     "cap", "<>", "\"\<}\n\\\\label{\>\"", "<>", "ref", "<>", 
+     "\"\<}\n\\\\end{figure}\>\""}]}], "\[IndentingNewLine]", 
+   ")"}]}]], "Input",
+ CellChangeTimes->{{3.7056666065015545`*^9, 3.705666661341691*^9}, 
+   3.705666774142143*^9, 3.74259245152188*^9, 3.7425951728218327`*^9, 
+   3.7425981168399467`*^9, {3.742598349061303*^9, 3.7425983513231907`*^9}, {
+   3.742598626621867*^9, 3.742598629235529*^9}, {3.7425986839632053`*^9, 
+   3.742598686128961*^9}, {3.74265193595739*^9, 3.742651962409066*^9}, {
+   3.742664652134376*^9, 3.742664669619864*^9}, 3.9230756409214153`*^9, 
+   3.9230902330773697`*^9, 3.9232492130558577`*^9, 3.923252461147087*^9, {
+   3.9232532601327457`*^9, 3.923253261024729*^9}, {3.923254297260604*^9, 
+   3.923254297590735*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellLabel->"In[103]:=",
+ CellID->180244738,ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9"],
+
+Cell[TextData[StyleBox["La definici\[OAcute]n de como incluir ecuaciones",
+ FontSize->18]], "Text",
+ CellChangeTimes->{{3.7425925076711807`*^9, 3.742592521573316*^9}, {
+  3.923254940358943*^9, 3.923254941907734*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->940394139,ExpressionUUID->"6d4e52d9-ec76-438a-a9ad-bbdcd5e0a545"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"myEq", "[", 
+    RowBox[{"generation_", ",", "name_"}], "]"}], ":=", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{"\"\<\n\\\\begin{equation}\\n\>\"", "\n", "<>", 
+     RowBox[{"StringReplace", "[", 
+      RowBox[{
+       RowBox[{"ToString", "[", 
+        RowBox[{
+         RowBox[{"TeXForm", "[", "generation", "]"}], ",", "InputForm"}], 
+        "]"}], ",", 
+       RowBox[{"\"\<\\\\text\>\"", "->", "\"\<\>\""}]}], "]"}], "<>", 
+     "\"\<\n\\\\label{\>\"", "<>", "name", "<>", 
+     "\"\<}\n\\\\end{equation}\>\""}], "\[IndentingNewLine]", ")"}]}],
+  FontSize->18]], "Input",
+ CellChangeTimes->{{3.7056666065015545`*^9, 3.705666661341691*^9}, 
+   3.705666774142143*^9, 3.74259245152188*^9, 3.7425951728218327`*^9, 
+   3.7425981168399467`*^9, {3.742598349061303*^9, 3.7425983513231907`*^9}, {
+   3.742598626621867*^9, 3.742598629235529*^9}, {3.7425986839632053`*^9, 
+   3.742598686128961*^9}, {3.7426497447388153`*^9, 3.7426499406852303`*^9}, {
+   3.742650555846038*^9, 3.74265061424718*^9}, {3.742650713511744*^9, 
+   3.7426507277227173`*^9}, {3.742650758127644*^9, 3.7426507750878*^9}, {
+   3.742650816362791*^9, 3.74265090078368*^9}, {3.7426509672674522`*^9, 
+   3.742650977736177*^9}, {3.742651031424192*^9, 3.7426510360540457`*^9}, {
+   3.7426510668204403`*^9, 3.742651126713436*^9}, {3.7426512525003767`*^9, 
+   3.742651258227488*^9}, {3.742651304176313*^9, 3.742651368702207*^9}, {
+   3.742651791567416*^9, 3.7426517916778507`*^9}, {3.92313102265694*^9, 
+   3.923131050310108*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[104]:=",
+ CellID->964531238,ExpressionUUID->"776248bc-62b0-466b-87c6-1db6116c20f3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"myStringToCell", "=", 
+   RowBox[{"StringReplace", "[", 
+    RowBox[{"myStringToCell", ",", 
+     RowBox[{"\"\<\\\\n\>\"", "->", "\"\<\>\""}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.92326741316571*^9, 3.9232674398805227`*^9}, {
+   3.923267567299314*^9, 3.92326756967178*^9}, {3.923268008675254*^9, 
+   3.923268017678771*^9}, {3.923268114591486*^9, 3.923268160291358*^9}, {
+   3.9232692135714684`*^9, 3.9232692159026003`*^9}, {3.92331078869069*^9, 
+   3.923310804000408*^9}, {3.923311598327018*^9, 3.923311604808415*^9}, {
+   3.9233118022018843`*^9, 3.923311802820263*^9}, 3.9233120771602507`*^9},
+ CellLabel->"In[105]:=",
+ CellID->687404487,ExpressionUUID->"bd5b2378-256f-4162-83d8-03673ea73e6c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Corremos la funci\[OAcute]n para obtener el texto plano:", "Section",
+ CellChangeTimes->{{3.7056633913006554`*^9, 3.705663401948264*^9}, {
+  3.705664410620957*^9, 3.705664419620472*^9}, {3.923253647589651*^9, 
+  3.923253663379437*^9}},
+ CellID->142455613,ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"ValueQ", "[", "titles", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", "\"\<Reseting...\>\"", "]"}], ";", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"NotebookFind", "[", 
+         RowBox[{"nbook2", ",", "#", ",", "All", ",", "CellTags"}], "]"}], 
+        ";", 
+        RowBox[{"SelectionEvaluate", "[", "nbook2", "]"}]}], ")"}], "&"}], "/@", 
+     RowBox[{"{", "\"\<initCell\>\"", "}"}]}]}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", "\"\<Voy a seguir...\>\"", "]"}], ";"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.923683724836979*^9, 3.923683765045414*^9}, {
+   3.923683809700933*^9, 3.9236838113080797`*^9}, {3.923683940505582*^9, 
+   3.923683944120414*^9}, {3.9236840278353577`*^9, 3.923684037726584*^9}, {
+   3.923684163320127*^9, 3.923684220386119*^9}, {3.923698941731244*^9, 
+   3.9236989929458923`*^9}, 3.923699226805519*^9, {3.923699546981183*^9, 
+   3.9236995475139103`*^9}, 3.9236996279178743`*^9},
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellTags->"runNote2",
+ CellLabel->"In[106]:=",
+ CellID->433914365,ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78"],
+
+Cell[BoxData["\<\"Voy a seguir...\"\>"], "Print",
+ CellChangeTimes->{3.923834041584956*^9},
+ CellTags->"runNote2",
+ CellLabel->"During evaluation of In[106]:=",
+ CellID->1826818515,ExpressionUUID->"c36be089-39b9-483a-bbf2-0a1db83249a4"]
+}, Open  ]],
+
+Cell[BoxData["updateBook"], "Input",
+ CellTags->"runNote",
+ CellLabel->"In[107]:=",
+ CellID->1093691010,ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["myPaperv1", "Title",
+ CellChangeTimes->{
+  3.704868925098693*^9, {3.7048692576087112`*^9, 3.704869258400757*^9}, {
+   3.7056621681566954`*^9, 3.7056621691327515`*^9}, {3.7056656576452827`*^9, 
+   3.7056656653257217`*^9}, {3.70566698057295*^9, 3.705666981429999*^9}, {
+   3.7425754212727213`*^9, 3.742575422708769*^9}, {3.742575707449387*^9, 
+   3.74257571532519*^9}, 3.742576029405806*^9, {3.923068992482041*^9, 
+   3.923068998649063*^9}},
+ CellID->41265470,ExpressionUUID->"ee4f86ff-7e19-432a-bee4-637e55977a38"],
+
+Cell[BoxData["docClassArticle"], "Input",
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[108]:=",
+ CellID->54920704,ExpressionUUID->"ef7b9941-2d14-45d2-a99e-d2a3d08861a2"],
+
+Cell[BoxData["graphicx"], "Input",
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[109]:=",
+ CellID->298391555,ExpressionUUID->"13cd2235-7a4c-4281-95ce-0a14ddf4d021"],
+
+Cell[BoxData[
+ RowBox[{"titleAuthorDate", "[", 
+  RowBox[{
+  "\"\<Consistent 3D rotational accretion of matter onto a Galactic black \
+hole\>\"", ",", "\[IndentingNewLine]", 
+   "\"\<\nJ. M. Ram{\\\\'i}rez,$^{1}$\nCo-Author1,$^{4}$\nCo-Author2,$^{5}$\n\
+Co-Author3,$^{4}$\nCo-Author4$^{2,6}$\n\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.7056661992292595`*^9, 3.7056662182693486`*^9}, {
+   3.742575559412335*^9, 3.742575568610773*^9}, {3.742575608241955*^9, 
+   3.742575669171578*^9}, 3.742599022194371*^9, {3.742672783565585*^9, 
+   3.742672841168146*^9}, {3.742672901737384*^9, 3.742672902285095*^9}, {
+   3.742673097536044*^9, 3.742673103555789*^9}, {3.923069005952487*^9, 
+   3.923069028753701*^9}, {3.923132740670326*^9, 3.923132743228055*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellLabel->"In[110]:=",
+ CellID->420563094,ExpressionUUID->"c86e88c9-3b7e-406d-8540-36312a94cfd3"],
+
+Cell[BoxData["openDoc"], "Input",
+ FontSize->45,
+ Background->RGBColor[0.88, 1, 0.88],
+ CellLabel->"In[111]:=",
+ CellID->15813313,ExpressionUUID->"76611541-540b-4d54-9442-570a7711dd81"],
+
+Cell["\<\
+\\begin{abstract}
+We present three-dimensional calculations of small-scale, spherically symmetric
+including rotation and numerical comparison with gamma different from 1.
+
+Entonces planeamos hacer lo siguiente:
+
+1RO, sin Rotacion:
+4 Lineas (Repetidas tanto para Newton como PW)
+1) Isothermal: $\\gamma=1$. (comparacion con analitico).
+2) $\\gamma=5/3$. (Comparacion con Semi-analitico? podemos llamarle asi?, \
+Numericamente?)
+3) $1< \\gamma < 5/3$; Sin los signos de igualdad. (Comparacion \
+Semi-analitica).
+4) Con electron scattering.
+
+Y Luego hacer eso con ROTACION.
+
+Eso seria un trabajo completo.
+
+Hay que construir las condiciones iniciales de todos estos sistemas.
+
+He decidido que es demasiado agregarle un potencial galactico como lo hacen \
+Ciotti y Silvia 2017. Eso que da para un futuro trabajo.
+y yo sigo editando sin pribelmaa....
+
+
+\\end{abstract}\
+\>", "Text",
+ CellChangeTimes->{
+  3.742677518892861*^9, {3.7429083586486397`*^9, 3.742908688795916*^9}, 
+   3.9232556605509033`*^9, {3.923321526086102*^9, 3.9233215329599743`*^9}, {
+   3.923322977211767*^9, 3.923322987973463*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1530876818,ExpressionUUID->"17eb7a75-66d7-4734-9e6e-1c9ec33358f4"],
+
+Cell["\<\
+\\section{Introduction}
+Unfortunately, in general, these studies lack the resolution to follow gas \
+transport down to the parsec scale, and the Bondi model is used as the \
+starting point for estimates of the accretion radius (i.e., the sonic radius) \
+and of the mass accretion rate. In particular, the Bondi accretion rate gives \
+the mass supply to the MBH by taking the density and temperature at some \
+finite distance from the center, implicitly assuming that these values \
+represent the true boundary conditions (i.e., at infinity) for the Bondi \
+problem.\
+\>", "Text",
+ CellChangeTimes->{{3.705664738012683*^9, 3.7056647389167347`*^9}, 
+   3.7056651977009754`*^9, {3.705665666760804*^9, 3.7056656699519863`*^9}, {
+   3.705665914149954*^9, 3.7056660692928276`*^9}, {3.7056662256127687`*^9, 
+   3.705666226941845*^9}, {3.7056662749045877`*^9, 3.7056664204129105`*^9}, {
+   3.7056668406529465`*^9, 3.7056668417650104`*^9}, {3.74257525567192*^9, 
+   3.7425752623447313`*^9}, {3.7425757999178057`*^9, 3.74257580397534*^9}, 
+   3.742575960502812*^9, 3.742576109595359*^9, 3.74259160277275*^9, 
+   3.7425923234587917`*^9, {3.923311239578607*^9, 3.923311274137713*^9}, {
+   3.923311694218801*^9, 3.9233116966154346`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->181563867,ExpressionUUID->"106dbf27-be69-41ff-bb72-7e207b109807"],
+
+Cell[BoxData["myStringToCell"], "Input",
+ CellChangeTimes->{
+  3.923311705766815*^9, {3.923311811993128*^9, 3.923311823828267*^9}, {
+   3.923312049057362*^9, 3.923312052046411*^9}},
+ CellLabel->"In[112]:=",
+ CellID->1549051686,ExpressionUUID->"b08f7469-9fe8-438d-ac25-f774254b381b"],
+
+Cell["\<\
+\\section{Introduction}
+Unfortunately, in general, these studies lack the resolution to follow gas \
+transport down to the parsec scale, and the Bondi model is used as the \
+starting point for estimates of the accretion radius (i.e., the sonic radius) \
+and of the mass accretion rate. In particular, the Bondi accretion rate gives \
+the mass supply to the MBH by taking the density and temperature at some \
+finite distance from the center, implicitly assuming that these values \
+represent the true boundary conditions (i.e., at infinity) for the Bondi \
+problem.\
+\>", "Text",
+ CellChangeTimes->{{3.705664738012683*^9, 3.7056647389167347`*^9}, 
+   3.7056651977009754`*^9, {3.705665666760804*^9, 3.7056656699519863`*^9}, {
+   3.705665914149954*^9, 3.7056660692928276`*^9}, {3.7056662256127687`*^9, 
+   3.705666226941845*^9}, {3.7056662749045877`*^9, 3.7056664204129105`*^9}, {
+   3.7056668406529465`*^9, 3.7056668417650104`*^9}, {3.74257525567192*^9, 
+   3.7425752623447313`*^9}, {3.7425757999178057`*^9, 3.74257580397534*^9}, 
+   3.742575960502812*^9, 3.742576109595359*^9, 3.74259160277275*^9, 
+   3.7425923234587917`*^9},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1398165866,ExpressionUUID->"58a5783c-4efc-49aa-9a4f-45bf17bac442"],
+
+Cell["\<\
+\\section{Mathematical Method}
+So, we follow the notation of Ciotti \\& Silvia 2016. We start by writing the \
+continuity equation:\
+\>", "Text",
+ CellChangeTimes->{{3.705664738012683*^9, 3.7056647389167347`*^9}, 
+   3.7056651977009754`*^9, {3.705665666760804*^9, 3.7056656699519863`*^9}, {
+   3.705665914149954*^9, 3.7056660692928276`*^9}, {3.7056662256127687`*^9, 
+   3.705666226941845*^9}, {3.7056662749045877`*^9, 3.7056664204129105`*^9}, {
+   3.7056668406529465`*^9, 3.7056668417650104`*^9}, {3.74257525567192*^9, 
+   3.7425752623447313`*^9}, {3.7425757999178057`*^9, 3.74257580397534*^9}, 
+   3.742575960502812*^9, 3.742576109595359*^9, 3.74259160277275*^9, 
+   3.7425923234587917`*^9, {3.742592354329693*^9, 3.742592357832758*^9}, {
+   3.7425995473735657`*^9, 3.742599592046143*^9}, {3.742655184209425*^9, 
+   3.7426552547693567`*^9}, {3.7426553668622417`*^9, 3.7426553807798634`*^9}, 
+   3.7426555551374893`*^9},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1348369011,ExpressionUUID->"60b5cd16-8f1d-4c3e-b5c7-46102d1e32f2"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{"Eq8", ",", "\"\<conti1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742655283879572*^9, 3.7426552922303143`*^9}, {
+   3.7426557575418463`*^9, 3.742655768962206*^9}, 3.7426559853724413`*^9, {
+   3.742660805976522*^9, 3.742660817910076*^9}, 3.742662185080929*^9, {
+   3.923255691578911*^9, 3.923255693598507*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[113]:=",
+ CellID->185768833,ExpressionUUID->"f8b8083e-4513-426a-98bc-7229d761ac79"],
+
+Cell["\<\
+where $\\lambda$, is called the accretion parameter, $x = r/r_B$, \
+$\\mathcal{M}=v/c_s$ and $\\tilde{\\rho}=\\rho/\\rho_{\\infty}$. The index \
+$\\gamma$ is the polytropic index of the flow. If $\\gamma=1$, then we \
+recover the continuity equation of an isothermal flow. For the accretion \
+produced by a Newtonian potential the equation ($\\ref{conti1}$) has to be \
+solved altogether with the equation of Bernoulli:\
+\>", "Text",
+ CellChangeTimes->{{3.742655316696505*^9, 3.7426553495750723`*^9}, {
+  3.742655406399095*^9, 3.742655419381707*^9}, {3.7426555421959543`*^9, 
+  3.742655549329859*^9}, {3.7426558405218697`*^9, 3.742655933404381*^9}, {
+  3.742656005964674*^9, 3.742656049569467*^9}, {3.74266313713756*^9, 
+  3.7426631396370993`*^9}, {3.742663471919325*^9, 3.742663543921617*^9}, {
+  3.742664260939329*^9, 3.742664294082737*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->721140938,ExpressionUUID->"44fa18ac-5b3e-43a5-b885-d7584a42f00b"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{"Eq9a", ",", "\"\<bernou1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742655283879572*^9, 3.7426552922303143`*^9}, {
+   3.7426557575418463`*^9, 3.742655768962206*^9}, 3.7426559853724413`*^9, {
+   3.7426560603793707`*^9, 3.742656066169519*^9}, {3.742656098774439*^9, 
+   3.742656103482403*^9}, {3.923255704735812*^9, 3.923255706890335*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[114]:=",
+ CellID->806372149,ExpressionUUID->"9e44a646-f8af-4aa3-b9ba-629db8de47cf"],
+
+Cell["\<\
+The coupled equations can be arranged, and for this case can be written in \
+terms of:\
+\>", "Text",
+ CellChangeTimes->{{3.7426635802164288`*^9, 3.742663625287277*^9}, {
+  3.742663824522582*^9, 3.7426638578724937`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1718558254,ExpressionUUID->"6d7ffc59-d3c8-4c80-9c12-eff98881a411"],
+
+Cell["\<\
+The coupled equations can be arranged, and for this case can be written in \
+terms of:\
+\>", "Text",
+ CellChangeTimes->{{3.7426635802164288`*^9, 3.742663625287277*^9}, {
+  3.742663824522582*^9, 3.7426638578724937`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->953636075,ExpressionUUID->"50d2822a-36f7-41cf-a232-6a00037b025d"],
+
+Cell["\<\
+The coupled equations can be arranged, and for this case can be written in \
+terms of:\
+\>", "Text",
+ CellChangeTimes->{{3.7426635802164288`*^9, 3.742663625287277*^9}, {
+  3.742663824522582*^9, 3.7426638578724937`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->580443256,ExpressionUUID->"b71d1bfd-4f96-453c-aaba-49a07ea95314"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"gGeneral", "[", "\[ScriptCapitalM]", "]"}], "\[Equal]", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", "\[Lambda]", ")"}], 
+       FractionBox[
+        RowBox[{"2", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "\[Gamma]"}], ")"}]}], 
+        RowBox[{"\[Gamma]", "+", "1"}]]], " ", 
+      RowBox[{"fGeneral", "[", "x", "]"}]}]}], ")"}], ",", 
+   "\"\<bernou2\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742655283879572*^9, 3.7426552922303143`*^9}, {
+   3.7426557575418463`*^9, 3.742655768962206*^9}, 3.7426559853724413`*^9, {
+   3.7426560603793707`*^9, 3.742656066169519*^9}, {3.742656098774439*^9, 
+   3.742656103482403*^9}, {3.742663633321315*^9, 3.742663644496751*^9}, {
+   3.742663787079422*^9, 3.742663794283887*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[115]:=",
+ CellID->888413691,ExpressionUUID->"9a5e50ca-fe5e-4dc7-95b2-efcba6720c49"],
+
+Cell["\<\
+For the Isothermal case, $\\gamma=1$, Ciotti and Silvia have solved the \
+equation\
+\>", "Text",
+ CellChangeTimes->{{3.742664467820817*^9, 3.742664526847539*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->339310535,ExpressionUUID->"9fa5b5aa-c25a-4a28-8d1e-98d3d5470f8e"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"g", "[", "\[ScriptCapitalM]", "]"}], "\[Equal]", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", "\[Lambda]", ")"}], 
+       FractionBox[
+        RowBox[{"2", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "\[Gamma]"}], ")"}]}], 
+        RowBox[{"\[Gamma]", "+", "1"}]]], " ", 
+      RowBox[{"f", "[", "x", "]"}]}]}], ")"}], ",", "\"\<bernou3\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.742655283879572*^9, 3.7426552922303143`*^9}, {
+   3.7426557575418463`*^9, 3.742655768962206*^9}, 3.7426559853724413`*^9, {
+   3.7426560603793707`*^9, 3.742656066169519*^9}, {3.742656098774439*^9, 
+   3.742656103482403*^9}, {3.742663633321315*^9, 3.742663644496751*^9}, {
+   3.742663787079422*^9, 3.742663794283887*^9}, {3.742664540535828*^9, 
+   3.7426645485749187`*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[116]:=",
+ CellID->538863701,ExpressionUUID->"bbe10d1b-ac3c-49af-b773-672a985eec59"],
+
+Cell["\<\
+Figure (\\ref{iso1}) shows the isothermal analytical solution given by Ciotti \
+and Silvia\
+\>", "Text",
+ CellChangeTimes->{{3.742664561923067*^9, 3.742664588325029*^9}, {
+   3.742664742348575*^9, 3.7426647769539557`*^9}, 3.742665434094934*^9},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1083199935,ExpressionUUID->"76065355-34d4-469d-8330-2e673d4dd413"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test1", ",", "\"\<test1_v1\>\"", ",", "\"\<This is my caption1\>\"", ",", 
+   "\"\<iso1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.742652018528675*^9, 3.742652025325102*^9}, {3.742664715145152*^9, 
+  3.742664724235951*^9}, {3.923063165640944*^9, 3.923063171511383*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[117]:=",
+ CellID->931290243,ExpressionUUID->"b94c7eaa-88d9-497b-b3ad-2a16c3cfd856"],
+
+Cell["Which can be written in terms of the Lambert-W functions as", "Text",
+ CellChangeTimes->{{3.742665093891199*^9, 3.742665113870598*^9}, {
+  3.742665463058175*^9, 3.742665464210019*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->328357698,ExpressionUUID->"b3c433c6-ac93-40ea-891d-55e4437e0e2e"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalM]", "2"], "\[Equal]", 
+     RowBox[{"-", 
+      RowBox[{
+       SubscriptBox["W", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", "1"}]}], "}"}]], "[", "myArg1", "]"}]}]}], ")"}], ",", 
+   "\"\<lambert1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742652338823558*^9, 3.742652349292609*^9}, {
+   3.742664427357133*^9, 3.7426644629434023`*^9}, {3.7426652235857153`*^9, 
+   3.7426653002210407`*^9}, 3.74266635133746*^9, {3.742666382002638*^9, 
+   3.742666407275177*^9}, {3.7426664800761538`*^9, 3.742666492581575*^9}, {
+   3.742666539183901*^9, 3.742666579852537*^9}, {3.742666632392171*^9, 
+   3.742666668995842*^9}, {3.742666742534026*^9, 3.7426667519054317`*^9}, {
+   3.742667070463121*^9, 3.7426670721963987`*^9}, {3.742667483105846*^9, 
+   3.742667507543029*^9}, {3.742667540770413*^9, 3.7426675485450706`*^9}, {
+   3.742667609585703*^9, 3.7426676156157827`*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[118]:=",
+ CellID->1907181474,ExpressionUUID->"f67d9668-cdfa-42f1-9ca5-2541a707a224"],
+
+Cell["\<\
+Where the subscript $\\{0,-1\\}$ means the main branch and the -1 branch for \
+$x>x_{s}$ and $0<x<x_{s}$ respectively, and $x_s$ is the sonic point. 
+We plot also non-transonic solutions with $\\lambda=0.4\\lambda_{cr}$ and \
+$\\lambda=0.8\\lambda_{cr}$, where the flows stays either subsonic \
+($v<c_s(x_s)$) or supersonic ($v>c_s(x_s)$).\
+\>", "Text",
+ CellChangeTimes->{{3.742664561923067*^9, 3.742664588325029*^9}, {
+  3.742664742348575*^9, 3.7426647769539557`*^9}, {3.742665434094934*^9, 
+  3.742665615915332*^9}, {3.7426676278981943`*^9, 3.742667705528343*^9}, {
+  3.7426677389450893`*^9, 3.742667780628664*^9}, {3.7426682010150127`*^9, 
+  3.742668231409766*^9}, {3.7426707117437487`*^9, 3.742670721947749*^9}, {
+  3.742670912614973*^9, 3.742670916555531*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->881299102,ExpressionUUID->"437b0980-0177-4db6-b3d6-41191a820424"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test2", ",", "\"\<test2_v1\>\"", ",", "\"\<This is my caption2\>\"", ",", 
+   "\"\<iso2\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.7425951359577103`*^9, 3.742595148731037*^9}, {3.742652047508802*^9, 
+  3.742652049777842*^9}, {3.742664817146381*^9, 3.742664820623485*^9}, {
+  3.923063526743137*^9, 3.923063534406281*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[119]:=",
+ CellID->1161726595,ExpressionUUID->"42947bef-5527-41ff-a7a3-e27d81697b0c"],
+
+Cell["\<\
+Also we can see in Figure (\\ref{iso2}), the density of the Newtonian \
+analytical isothermal transonic solution.
+
+One interesting solution to see is the solution of (\\ref{bernou2}) for \
+$\\gamma=5/3$. In the Newtonian case, the sonic point disappears (i.e., \
+$x_s^{\\gamma=5/3}$ is strictly cero). With numerical techniques we solve\
+\>", "Text",
+ CellChangeTimes->{{3.742664561923067*^9, 3.742664588325029*^9}, {
+  3.742664742348575*^9, 3.7426647769539557`*^9}, {3.742665434094934*^9, 
+  3.742665615915332*^9}, {3.7426676278981943`*^9, 3.742667705528343*^9}, {
+  3.7426677389450893`*^9, 3.742667780628664*^9}, {3.7426682010150127`*^9, 
+  3.742668231409766*^9}, {3.742668285569376*^9, 3.742668369535668*^9}, {
+  3.742668403662107*^9, 3.742668477131584*^9}, {3.7426686367574587`*^9, 
+  3.742668641668213*^9}, {3.742668706868643*^9, 3.742668711736783*^9}, {
+  3.742668759005369*^9, 3.7426687727070827`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->874687661,ExpressionUUID->"5c9704a0-1557-4319-aaa5-690801d0cfdd"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{"Eq18", ",", "\"\<newG53a\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742652338823558*^9, 3.742652349292609*^9}, {
+   3.742664427357133*^9, 3.7426644629434023`*^9}, 3.7426652235857153`*^9, {
+   3.742666286579265*^9, 3.742666287591865*^9}, {3.923064015490624*^9, 
+   3.923064021466487*^9}, {3.923074792814639*^9, 3.923074796744766*^9}, {
+   3.9231301918209333`*^9, 3.923130193742549*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[120]:=",
+ CellID->1067136390,ExpressionUUID->"103e42ff-faa5-4208-b8ee-5a80e879a25c"],
+
+Cell["\<\
+Figures (\\ref{adi1}, \\ref{adi2}) shows the full numerical $\\gamma=5/3$ \
+(dotted line) supersonic ($\\mathcal{M}>1$) and subsonic ($\\mathcal{M}<1$) \
+solutions of Eq. (\\ref{bernou2}). Once we have the two separated \
+mathematical solutions we match the curves for producing Figure \
+(\\ref{adi3}). Of course, for $\\gamma=5/3$, there is no point where the \
+transition occurs. However, as $\\gamma -> 1$ from 5/3, $x_s \\neq 0$. In \
+order to see this, we also plot the solutions of Eq. (\\ref{bernou2}) with \
+$\\gamma=1.6,1.5,1.4,1.3,1.2,1.1$. As we can see the sonic point goes from 0 \
+to 1/2 which is the sonic point of the Newtonian isothermal solution \
+(analytical), drawn also as reference (dashed line).\
+\>", "Text",
+ CellChangeTimes->{{3.742671213952839*^9, 3.742671264138056*^9}, {
+  3.742671309597075*^9, 3.7426716016232967`*^9}, {3.742671654119363*^9, 
+  3.742671777596466*^9}, {3.742671834317246*^9, 3.742671871655829*^9}, {
+  3.742671903109316*^9, 3.74267190561469*^9}, {3.7426720469550343`*^9, 
+  3.742672056464982*^9}, {3.742672235713602*^9, 3.7426722397578917`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->845221964,ExpressionUUID->"fbd78a8c-51ac-4ee1-bbf0-5ca58c3a41b8"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test3", ",", "\"\<test3_v1\>\"", ",", "\"\<This is my caption3\>\"", ",", 
+   "\"\<adi1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.7425951359577103`*^9, 3.742595148731037*^9}, {3.7425991069173813`*^9, 
+  3.7425991671557903`*^9}, {3.742652051762457*^9, 3.742652053513494*^9}, {
+  3.742664824487549*^9, 3.742664828990964*^9}, {3.923063544070093*^9, 
+  3.923063549230247*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[121]:=",
+ CellID->1121487375,ExpressionUUID->"48b17bbb-d449-4646-9fbf-3ebd12f82a24"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test3", ",", "\"\<test3_v1\>\"", ",", "\"\<This is my caption4\>\"", ",", 
+   "\"\<adi2\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.7425951359577103`*^9, 3.742595148731037*^9}, {3.742599133472416*^9, 
+  3.742599168700375*^9}, {3.742652055586493*^9, 3.742652057369429*^9}, {
+  3.742664836358864*^9, 3.74266483816675*^9}, {3.923063553942692*^9, 
+  3.923063559454265*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[122]:=",
+ CellID->374341906,ExpressionUUID->"01e4e3c0-897b-49db-b763-a3620ae20532"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test2", ",", "\"\<ADIMach3Newton_v1\>\"", ",", 
+   "\"\<This is my caption5\>\"", ",", "\"\<adi3\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.7425951359577103`*^9, 3.742595148731037*^9}, {3.742599133472416*^9, 
+  3.7425991795480137`*^9}, {3.7426520599304237`*^9, 3.742652061457384*^9}, {
+  3.742664840870474*^9, 3.742664842750766*^9}, {3.923063564214761*^9, 
+  3.923063565006174*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[123]:=",
+ CellID->742927339,ExpressionUUID->"8d992cd0-5472-4065-8edd-dde1441a9bc6"],
+
+Cell["\<\
+\\subsection{Non-Newtonian $\\gamma=5/3$ flow}
+Also important to realize is the appearance of a sonic point in the case of $\
+\\gamma=5/3$ in the flow under the influence of a Paczyski-Wiita (PW) \
+potential. In the case the Bernoulli equation is: \
+\>", "Text",
+ CellChangeTimes->{{3.742671213952839*^9, 3.742671264138056*^9}, {
+  3.742671309597075*^9, 3.7426716016232967`*^9}, {3.742671654119363*^9, 
+  3.742671777596466*^9}, {3.742671834317246*^9, 3.742671871655829*^9}, {
+  3.742671903109316*^9, 3.74267190561469*^9}, {3.7426720469550343`*^9, 
+  3.742672056464982*^9}, {3.742672235713602*^9, 3.7426722397578917`*^9}, {
+  3.742672292681117*^9, 3.742672348256678*^9}, {3.742672389646184*^9, 
+  3.742672411070866*^9}, {3.74267257403336*^9, 3.7426726026313353`*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->131049171,ExpressionUUID->"f2378972-a900-4a87-8654-54cb3acb4685"],
+
+Cell[BoxData[
+ RowBox[{"myEq", "[", 
+  RowBox[{
+   RowBox[{"(", "Eq18", ")"}], ",", "\"\<pw1\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742652338823558*^9, 3.742652349292609*^9}, {
+  3.742664427357133*^9, 3.742664442640984*^9}, {3.742672415055243*^9, 
+  3.7426724178307123`*^9}, {3.923063989945418*^9, 3.923063994026432*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[124]:=",
+ CellID->1086101261,ExpressionUUID->"fbc325ef-4e4c-42f6-ad12-466668c534f1"],
+
+Cell["\<\
+In Figure (\\ref{adi1pw}) we see the two solutions of the Bernoulli equation \
+with $\\gamma=5/3$, but different in describing a flow under Newtonian or PW \
+potential.\
+\>", "Text",
+ CellChangeTimes->{{3.742672448148966*^9, 3.74267252596093*^9}},
+ FontSize->40,
+ Background->GrayLevel[0.85],
+ CellID->1488968896,ExpressionUUID->"6ea5aa4c-7fc9-4377-9151-22a5d0ad3d75"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test5", ",", "\"\<ADIMach1PW_v1\>\"", ",", "\"\<This is my caption6\>\"", 
+   ",", "\"\<adi1pw\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.7425951359577103`*^9, 3.742595148731037*^9}, {3.742599133472416*^9, 
+  3.7425991795480137`*^9}, {3.742641748703659*^9, 3.742641766014286*^9}, {
+  3.742648369085821*^9, 3.742648383655142*^9}, {3.742652063226398*^9, 
+  3.7426520650491247`*^9}, {3.7426648463505173`*^9, 3.742664853134362*^9}, {
+  3.923063586630824*^9, 3.923063587181973*^9}, {3.923064003905135*^9, 
+  3.9230640042330637`*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[125]:=",
+ CellID->1695360792,ExpressionUUID->"222eac78-32db-45d4-8deb-e26bad9314f6"],
+
+Cell[BoxData[
+ RowBox[{"figure", "[", 
+  RowBox[{
+  "test6", ",", "\"\<ADIMach2PW_v1\>\"", ",", "\"\<This is my caption7\>\"", 
+   ",", "\"\<adi2pw\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.742591965372863*^9, 3.742592014340744*^9}, {
+  3.7425951359577103`*^9, 3.742595148731037*^9}, {3.742599133472416*^9, 
+  3.7425991795480137`*^9}, {3.742641748703659*^9, 3.742641766014286*^9}, {
+  3.742648369085821*^9, 3.742648408021751*^9}, {3.742652067473515*^9, 
+  3.7426520691450567`*^9}, {3.742664856238473*^9, 3.7426648601183233`*^9}, {
+  3.923063591270385*^9, 3.92306359188599*^9}, {3.923064000665267*^9, 
+  3.923064001233151*^9}},
+ FontSize->25,
+ Background->GrayLevel[0.92],
+ CellLabel->"In[126]:=",
+ CellID->896412065,ExpressionUUID->"af62213c-79cd-41f2-a388-e7232c8777fc"],
+
+Cell[BoxData["closeDoc"], "Input",
+ CellChangeTimes->{3.74259909443143*^9},
+ FontSize->45,
+ Background->RGBColor[0.88, 1, 0.88],
+ CellLabel->"In[127]:=",
+ CellID->704496735,ExpressionUUID->"359cadfb-3b38-4551-924e-02cbb067b21c"]
+}, Open  ]]
+},
+WindowSize->{1678, 997},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+DockedCells->Cell[
+  BoxData[
+   TemplateBox[{
+     ButtonBox["\"runNote\"", ButtonFunction :> (Map[(NotebookFind[
+           EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
+           EvaluationNotebook[]])& , {"runNote2"}]; Null), Appearance -> 
+      Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, 
+    "RowDefault"]], "DockedCell"],
+CreateCellID->True,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"909d3874-625e-464f-a7db-8ddab2fc0d22"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "initCell"->{
+  Cell[1202, 35, 1906, 41, 233, "Input",ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3",
+   CellTags->"initCell",
+   CellID->2107135677],
+  Cell[3111, 78, 486, 11, 63, "Output",ExpressionUUID->"088efef9-3912-4bf3-a6a9-2ed813e2b425",
+   CellTags->"initCell",
+   CellID->1523046028]},
+ "runNote"->{
+  Cell[18098, 458, 159, 3, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
+   CellTags->"runNote",
+   CellID->1093691010]},
+ "runNote2"->{
+  Cell[16667, 422, 1177, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+   CellTags->"runNote2",
+   CellID->433914365],
+  Cell[17847, 451, 236, 4, 36, "Print",ExpressionUUID->"c36be089-39b9-483a-bbf2-0a1db83249a4",
+   CellTags->"runNote2",
+   CellID->1826818515]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"initCell", 43736, 1046},
+ {"runNote", 44040, 1053},
+ {"runNote2", 44199, 1057}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 619, 11, 88, "Text",ExpressionUUID->"70b07db8-ae50-4026-9f89-fa1146c87508",
+ CellID->399689850],
+Cell[CellGroupData[{
+Cell[1202, 35, 1906, 41, 233, "Input",ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3",
+ CellTags->"initCell",
+ CellID->2107135677],
+Cell[3111, 78, 486, 11, 63, "Output",ExpressionUUID->"088efef9-3912-4bf3-a6a9-2ed813e2b425",
+ CellTags->"initCell",
+ CellID->1523046028]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3634, 94, 845, 22, 102, "Section",ExpressionUUID->"707ab508-daeb-4b2d-a58c-894bc6eba491",
+ CellID->93175719],
+Cell[4482, 118, 2438, 69, 331, "Input",ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb",
+ CellID->1681731838],
+Cell[6923, 189, 2501, 58, 423, "Input",ExpressionUUID->"07a48579-be64-4da3-9845-4b90f40c85f8",
+ CellID->1834723099]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9461, 252, 809, 21, 102, "Section",ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a",
+ CellID->261372301],
+Cell[10273, 275, 1526, 40, 391, "Input",ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204",
+ CellID->504000207],
+Cell[11802, 317, 289, 5, 82, "Text",ExpressionUUID->"916b3911-edea-49a3-8f18-22b642408446",
+ CellID->1740103933],
+Cell[12094, 324, 1417, 27, 319, "Input",ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9",
+ CellID->180244738],
+Cell[13514, 353, 336, 6, 82, "Text",ExpressionUUID->"6d4e52d9-ec76-438a-a9ad-bbdcd5e0a545",
+ CellID->940394139],
+Cell[13853, 361, 1691, 33, 337, "Input",ExpressionUUID->"776248bc-62b0-466b-87c6-1db6116c20f3",
+ CellID->964531238],
+Cell[15547, 396, 742, 13, 46, "Input",ExpressionUUID->"bd5b2378-256f-4162-83d8-03673ea73e6c",
+ CellID->687404487]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16326, 414, 316, 4, 101, "Section",ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f",
+ CellID->142455613],
+Cell[CellGroupData[{
+Cell[16667, 422, 1177, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+ CellTags->"runNote2",
+ CellID->433914365],
+Cell[17847, 451, 236, 4, 36, "Print",ExpressionUUID->"c36be089-39b9-483a-bbf2-0a1db83249a4",
+ CellTags->"runNote2",
+ CellID->1826818515]
+}, Open  ]],
+Cell[18098, 458, 159, 3, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
+ CellTags->"runNote",
+ CellID->1093691010]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18294, 466, 519, 8, 146, "Title",ExpressionUUID->"ee4f86ff-7e19-432a-bee4-637e55977a38",
+ CellID->41265470],
+Cell[18816, 476, 185, 4, 92, "Input",ExpressionUUID->"ef7b9941-2d14-45d2-a99e-d2a3d08861a2",
+ CellID->54920704],
+Cell[19004, 482, 179, 4, 92, "Input",ExpressionUUID->"13cd2235-7a4c-4281-95ce-0a14ddf4d021",
+ CellID->298391555],
+Cell[19186, 488, 897, 16, 1072, "Input",ExpressionUUID->"c86e88c9-3b7e-406d-8540-36312a94cfd3",
+ CellID->420563094],
+Cell[20086, 506, 185, 4, 130, "Input",ExpressionUUID->"76611541-540b-4d54-9442-570a7711dd81",
+ CellID->15813313],
+Cell[20274, 512, 1227, 35, 2569, "Text",ExpressionUUID->"17eb7a75-66d7-4734-9e6e-1c9ec33358f4",
+ CellID->1530876818],
+Cell[21504, 549, 1354, 22, 858, "Text",ExpressionUUID->"106dbf27-be69-41ff-bb72-7e207b109807",
+ CellID->181563867],
+Cell[22861, 573, 282, 5, 46, "Input",ExpressionUUID->"b08f7469-9fe8-438d-ac25-f774254b381b",
+ CellID->1549051686],
+Cell[23146, 580, 1257, 21, 858, "Text",ExpressionUUID->"58a5783c-4efc-49aa-9a4f-45bf17bac442",
+ CellID->1398165866],
+Cell[24406, 603, 1051, 18, 287, "Text",ExpressionUUID->"60b5cd16-8f1d-4c3e-b5c7-46102d1e32f2",
+ CellID->1348369011],
+Cell[25460, 623, 506, 10, 92, "Input",ExpressionUUID->"f8b8083e-4513-426a-98bc-7229d761ac79",
+ CellID->185768833],
+Cell[25969, 635, 973, 16, 695, "Text",ExpressionUUID->"44fa18ac-5b3e-43a5-b885-d7584a42f00b",
+ CellID->721140938],
+Cell[26945, 653, 534, 10, 92, "Input",ExpressionUUID->"9e44a646-f8af-4aa3-b9ba-629db8de47cf",
+ CellID->806372149],
+Cell[27482, 665, 350, 8, 206, "Text",ExpressionUUID->"6d7ffc59-d3c8-4c80-9c12-eff98881a411",
+ CellID->1718558254],
+Cell[27835, 675, 349, 8, 206, "Text",ExpressionUUID->"50d2822a-36f7-41cf-a232-6a00037b025d",
+ CellID->953636075],
+Cell[28187, 685, 349, 8, 206, "Text",ExpressionUUID->"b71d1bfd-4f96-453c-aaba-49a07ea95314",
+ CellID->580443256],
+Cell[28539, 695, 978, 24, 114, "Input",ExpressionUUID->"9a5e50ca-fe5e-4dc7-95b2-efcba6720c49",
+ CellID->888413691],
+Cell[29520, 721, 292, 7, 206, "Text",ExpressionUUID->"9fa5b5aa-c25a-4a28-8d1e-98d3d5470f8e",
+ CellID->339310535],
+Cell[29815, 730, 1015, 25, 114, "Input",ExpressionUUID->"bbe10d1b-ac3c-49af-b773-672a985eec59",
+ CellID->538863701],
+Cell[30833, 757, 375, 8, 206, "Text",ExpressionUUID->"76065355-34d4-469d-8330-2e673d4dd413",
+ CellID->1083199935],
+Cell[31211, 767, 520, 11, 92, "Input",ExpressionUUID->"b94c7eaa-88d9-497b-b3ad-2a16c3cfd856",
+ CellID->931290243],
+Cell[31734, 780, 310, 5, 124, "Text",ExpressionUUID->"b3c433c6-ac93-40ea-891d-55e4437e0e2e",
+ CellID->328357698],
+Cell[32047, 787, 1155, 25, 98, "Input",ExpressionUUID->"f67d9668-cdfa-42f1-9ca5-2541a707a224",
+ CellID->1907181474],
+Cell[33205, 814, 896, 15, 613, "Text",ExpressionUUID->"437b0980-0177-4db6-b3d6-41191a820424",
+ CellID->881299102],
+Cell[34104, 831, 572, 12, 92, "Input",ExpressionUUID->"42947bef-5527-41ff-a7a3-e27d81697b0c",
+ CellID->1161726595],
+Cell[34679, 845, 1039, 18, 613, "Text",ExpressionUUID->"5c9704a0-1557-4319-aaa5-690801d0cfdd",
+ CellID->874687661],
+Cell[35721, 865, 583, 11, 92, "Input",ExpressionUUID->"103e42ff-faa5-4208-b8ee-5a80e879a25c",
+ CellID->1067136390],
+Cell[36307, 878, 1221, 19, 1102, "Text",ExpressionUUID->"fbd78a8c-51ac-4ee1-bbf0-5ca58c3a41b8",
+ CellID->845221964],
+Cell[37531, 899, 625, 13, 92, "Input",ExpressionUUID->"48b17bbb-d449-4646-9fbf-3ebd12f82a24",
+ CellID->1121487375],
+Cell[38159, 914, 619, 13, 92, "Input",ExpressionUUID->"01e4e3c0-897b-49db-b763-a3620ae20532",
+ CellID->374341906],
+Cell[38781, 929, 633, 13, 92, "Input",ExpressionUUID->"8d992cd0-5472-4065-8edd-dde1441a9bc6",
+ CellID->742927339],
+Cell[39417, 944, 896, 15, 450, "Text",ExpressionUUID->"f2378972-a900-4a87-8654-54cb3acb4685",
+ CellID->131049171],
+Cell[40316, 961, 475, 10, 92, "Input",ExpressionUUID->"fbc325ef-4e4c-42f6-ad12-466668c534f1",
+ CellID->1086101261],
+Cell[40794, 973, 378, 8, 287, "Text",ExpressionUUID->"6ea5aa4c-7fc9-4377-9151-22a5d0ad3d75",
+ CellID->1488968896],
+Cell[41175, 983, 780, 15, 92, "Input",ExpressionUUID->"222eac78-32db-45d4-8deb-e26bad9314f6",
+ CellID->1695360792],
+Cell[41958, 1000, 776, 15, 92, "Input",ExpressionUUID->"af62213c-79cd-41f2-a388-e7232c8777fc",
+ CellID->896412065],
+Cell[42737, 1017, 228, 5, 130, "Input",ExpressionUUID->"359cadfb-3b38-4551-924e-02cbb067b21c",
+ CellID->704496735]
+}, Open  ]]
+}
+]
+*)
+
