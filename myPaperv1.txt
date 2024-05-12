@@ -1,0 +1,121 @@
+\documentclass[a4paper,fleqn,
+usenatbib]{mnras}\usepackage{graphicx}
+\title{Consistent 3D rotational accretion of matter onto a Galactic black hole}
+\author{
+J. M. Ram{\'i}rez,$^{1}$
+Co-Author1,$^{4}$
+Co-Author2,$^{5}$
+Co-Author3,$^{4}$
+Co-Author4$^{2,6}$
+}
+\date{\today}\begin{document}
+\maketitle\begin{abstract}
+We present three-dimensional calculations of small-scale, spherically symmetric
+including rotation and numerical comparison with gamma different from 1.
+
+Entonces planeamos hacer lo siguiente:
+
+1RO, sin Rotacion:
+4 Lineas (Repetidas tanto para Newton como PW)
+1) Isothermal: $\gamma=1$. (comparacion con analitico).
+2) $\gamma=5/3$. (Comparacion con Semi-analitico? podemos llamarle asi?, Numericamente?)
+3) $1< \gamma < 5/3$; Sin los signos de igualdad. (Comparacion Semi-analitica).
+4) Con electron scattering.
+
+Y Luego hacer eso con ROTACION.
+
+Eso seria un trabajo completo.
+
+Hay que construir las condiciones iniciales de todos estos sistemas.
+
+He decidido que es demasiado agregarle un potencial galactico como lo hacen Ciotti y Silvia 2017. Eso que da para un futuro trabajo.
+y yo sigo editando sin pribelmaa....
+
+
+\end{abstract}\section{Introduction}
+Unfortunately, in general, these studies lack the resolution to follow gas transport down to the parsec scale, and the Bondi model is used as the starting point for estimates of the accretion radius (i.e., the sonic radius) and of the mass accretion rate. In particular, the Bondi accretion rate gives the mass supply to the MBH by taking the density and temperature at some finite distance from the center, implicitly assuming that these values represent the true boundary conditions (i.e., at infinity) for the Bondi problem.As an expert in astrophysics, I can provide you with an introduction to black holes, one of the most fascinating and mysterious objects in the universe.
+
+A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape from it once it crosses the event horizon, which is the boundary of the black hole. This extreme gravitational pull is caused by a very high concentration of mass within a small space.
+
+Black holes are formed when massive stars (typically more than 20-30 times the mass of our Sun) exhaust their nuclear fuel and collapse under their own gravity. The core of the star collapses inward, creating a tremendous amount of density and a strong gravitational field. If the core's mass is sufficient, it will continue to collapse into a single point called a singularity, surrounded by an event horizon.
+
+There are two main types of black holes:
+
+1. Stellar-mass black holes: These are formed from the collapse of individual stars and typically have masses ranging from about 5 to several tens of solar masses.
+
+2. Supermassive black holes: These are found at the centers of most galaxies, including our own Milky Way. They have masses ranging from millions to billions of solar masses and are thought to have formed through the accretion of matter and mergers with other black holes.
+
+Black holes are characterized by three main properties: mass, charge, and angular momentum (spin). However, due to their strong gravitational fields, they exhibit unique phenomena such as gravitational time dilation (time passes more slowly near a black hole) and the bending of spacetime.
+
+Despite their name, black holes are not entirely black. They can emit radiation through a process called Hawking radiation, proposed by Stephen Hawking. This radiation is caused by quantum effects near the event horizon and is expected to cause black holes to slowly evaporate over extremely long timescales.
+
+The study of black holes has led to significant advancements in our understanding of gravity, spacetime, and the fundamental laws of the universe. They continue to be a subject of intense research and fascination for scientists and the public alike.\section{Introduction}
+Unfortunately, in general, these studies lack the resolution to follow gas transport down to the parsec scale, and the Bondi model is used as the starting point for estimates of the accretion radius (i.e., the sonic radius) and of the mass accretion rate. In particular, the Bondi accretion rate gives the mass supply to the MBH by taking the density and temperature at some finite distance from the center, implicitly assuming that these values represent the true boundary conditions (i.e., at infinity) for the Bondi problem.\section{Mathematical Method}
+So, we follow the notation of Ciotti \& Silvia 2016. We start by writing the continuity equation:
+\begin{equation}
+x^2 \mathcal{M} \tilde{\rho }^{\frac{\gamma +1}{2}}=\lambda
+\label{conti1}
+\end{equation}where $\lambda$, is called the accretion parameter, $x = r/r_B$, $\mathcal{M}=v/c_s$ and $\tilde{\rho}=\rho/\rho_{\infty}$. The index $\gamma$ is the polytropic index of the flow. If $\gamma=1$, then we recover the continuity equation of an isothermal flow. For the accretion produced by a Newtonian potential the equation ($\ref{conti1}$) has to be solved altogether with the equation of Bernoulli:
+\begin{equation}
+\frac{\tilde{\rho }^{\gamma -1}}{\gamma -1}+\frac{1}{2} \mathcal{M}^2 \tilde{c_s}{}^2=\frac{1}{\gamma -1}+\frac{1}{x}
+\label{bernou1}
+\end{equation}The coupled equations can be arranged, and for this case can be written in terms of:The coupled equations can be arranged, and for this case can be written in terms of:The coupled equations can be arranged, and for this case can be written in terms of:
+\begin{equation}
+\mathcal{M}^{\frac{2 (1-\gamma )}{\gamma +1}} \left(\frac{1}{\gamma -1}+\frac{\mathcal{M}^2}{2}\right)=\lambda ^{\frac{2 (1-\gamma )}{\gamma +1}} x^{\frac{4 (1-\gamma )}{\gamma +1}} \left(\frac{1}{\gamma -1}+\frac{1}{x}\right)
+\label{bernou2}
+\end{equation}For the Isothermal case, $\gamma=1$, Ciotti and Silvia have solved the equation
+\begin{equation}
+\frac{\mathcal{M}^2}{2}-\log (\mathcal{M})=\lambda ^{\frac{2 (1-\gamma )}{\gamma +1}} \left(\frac{1}{x}+2 \log (x)\right)
+\label{bernou3}
+\end{equation}Figure (\ref{iso1}) shows the isothermal analytical solution given by Ciotti and Silvia
+\begin{figure}
+\includegraphics[width=8.0cm]{./test1_v1.png}
+\caption{This is my caption1}
+\label{iso1}
+\end{figure}Which can be written in terms of the Lambert-W functions as
+\begin{equation}
+\mathcal{M}^2=-W_{\{0,-1\}}\left(-\frac{e^{3-\frac{2}{x}}}{16 x^4}\right)
+\label{lambert1}
+\end{equation}Where the subscript $\{0,-1\}$ means the main branch and the -1 branch for $x>x_{s}$ and $0<x<x_{s}$ respectively, and $x_s$ is the sonic point. 
+We plot also non-transonic solutions with $\lambda=0.4\lambda_{cr}$ and $\lambda=0.8\lambda_{cr}$, where the flows stays either subsonic ($v<c_s(x_s)$) or supersonic ($v>c_s(x_s)$).
+\begin{figure}
+\includegraphics[width=8.0cm]{./test2_v1.png}
+\caption{This is my caption2}
+\label{iso2}
+\end{figure}Also we can see in Figure (\ref{iso2}), the density of the Newtonian analytical isothermal transonic solution.
+
+One interesting solution to see is the solution of (\ref{bernou2}) for $\gamma=5/3$. In the Newtonian case, the sonic point disappears (i.e., $x_s^{\gamma=5/3}$ is strictly cero). With numerical techniques we solve
+\begin{equation}
+4 \pi  r^2 \rho (r) v(r)=4 \pi  \lambda  r_B^2 c_{\infty } \rho _{\infty }
+\label{newG53a}
+\end{equation}Figures (\ref{adi1}, \ref{adi2}) shows the full numerical $\gamma=5/3$ (dotted line) supersonic ($\mathcal{M}>1$) and subsonic ($\mathcal{M}<1$) solutions of Eq. (\ref{bernou2}). Once we have the two separated mathematical solutions we match the curves for producing Figure (\ref{adi3}). Of course, for $\gamma=5/3$, there is no point where the transition occurs. However, as $\gamma -> 1$ from 5/3, $x_s \neq 0$. In order to see this, we also plot the solutions of Eq. (\ref{bernou2}) with $\gamma=1.6,1.5,1.4,1.3,1.2,1.1$. As we can see the sonic point goes from 0 to 1/2 which is the sonic point of the Newtonian isothermal solution (analytical), drawn also as reference (dashed line).
+\begin{figure}
+\includegraphics[width=8.0cm]{./test3_v1.png}
+\caption{This is my caption3}
+\label{adi1}
+\end{figure}
+\begin{figure}
+\includegraphics[width=8.0cm]{./test3_v1.png}
+\caption{This is my caption4}
+\label{adi2}
+\end{figure}
+\begin{figure}
+\includegraphics[width=8.0cm]{./ADIMach3Newton_v1.png}
+\caption{This is my caption5}
+\label{adi3}
+\end{figure}\subsection{Non-Newtonian $\gamma=5/3$ flow}
+Also important to realize is the appearance of a sonic point in the case of $\gamma=5/3$ in the flow under the influence of a Paczyski-Wiita (PW) potential. In the case the Bernoulli equation is: 
+\begin{equation}
+4 \pi  r^2 \rho (r) v(r)=4 \pi  \lambda  r_B^2 c_{\infty } \rho _{\infty }
+\label{pw1}
+\end{equation}In Figure (\ref{adi1pw}) we see the two solutions of the Bernoulli equation with $\gamma=5/3$, but different in describing a flow under Newtonian or PW potential.
+\begin{figure}
+\includegraphics[width=8.0cm]{./ADIMach1PW_v1.png}
+\caption{This is my caption6}
+\label{adi1pw}
+\end{figure}
+\begin{figure}
+\includegraphics[width=8.0cm]{./ADIMach2PW_v1.png}
+\caption{This is my caption7}
+\label{adi2pw}
+\end{figure}\end{document}
