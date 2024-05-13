@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20841,        579]
-NotebookOptionsPosition[     19151,        541]
-NotebookOutlinePosition[     19544,        557]
-CellTagsIndexPosition[     19501,        554]
+NotebookDataLength[     20432,        571]
+NotebookOptionsPosition[     18833,        534]
+NotebookOutlinePosition[     19226,        550]
+CellTagsIndexPosition[     19183,        547]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,13 +25,6 @@ Cell["Funciones para volver el NoteBook => texto plano", "Section",ExpressionUUI
 Cell[CellGroupData[{
 
 Cell["Functions to enforce cell ID generation", "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
-
-Cell["\<\
-If this is not done before cells are added to the notebook some of the cell \
-reference methods can fail.
-This could be strictly enforced, checking all cells for ID at runtime, and \
-replacing those without. I have not implemented this.\
-\>", "Text",ExpressionUUID->"7f64bff9-d0ea-476b-a345-4e84e55ba293"],
 
 Cell[BoxData[{
  RowBox[{"checkCellIDSetting", ":=", 
@@ -560,25 +553,24 @@ Cell[CellGroupData[{
 Cell[580, 22, 122, 0, 67, "Section",ExpressionUUID->"e2a8139a-6252-4d5a-b12c-4df9360e45e6"],
 Cell[CellGroupData[{
 Cell[727, 26, 116, 0, 54, "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
-Cell[846, 28, 315, 5, 81, "Text",ExpressionUUID->"7f64bff9-d0ea-476b-a345-4e84e55ba293"],
-Cell[1164, 35, 300, 6, 52, "Input",ExpressionUUID->"00a52a6d-2ea9-44cf-b3b5-ed2f1a39038f"]
+Cell[846, 28, 300, 6, 52, "Input",ExpressionUUID->"00a52a6d-2ea9-44cf-b3b5-ed2f1a39038f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1501, 46, 138, 1, 54, "Subsection",ExpressionUUID->"5aabebe9-2b7c-4be7-b3cc-dbdd101e4dc4"],
-Cell[1642, 49, 181, 3, 30, "Input",ExpressionUUID->"66db2ab5-fc0e-407d-ac48-01b349fba1c6"]
+Cell[1183, 39, 138, 1, 54, "Subsection",ExpressionUUID->"5aabebe9-2b7c-4be7-b3cc-dbdd101e4dc4"],
+Cell[1324, 42, 181, 3, 30, "Input",ExpressionUUID->"66db2ab5-fc0e-407d-ac48-01b349fba1c6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1860, 57, 163, 2, 54, "Subsection",ExpressionUUID->"e2f1ec12-0846-461f-9880-c9d7d1df472c"],
-Cell[2026, 61, 1641, 49, 94, "Input",ExpressionUUID->"a5b41fcc-db34-410f-87f8-e2c2bfc008f8"]
+Cell[1542, 50, 163, 2, 54, "Subsection",ExpressionUUID->"e2f1ec12-0846-461f-9880-c9d7d1df472c"],
+Cell[1708, 54, 1641, 49, 94, "Input",ExpressionUUID->"a5b41fcc-db34-410f-87f8-e2c2bfc008f8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3704, 115, 105, 0, 54, "Subsection",ExpressionUUID->"174ad9d0-35f1-4eec-9203-0b7b659c4c2e"],
-Cell[3812, 117, 1037, 29, 111, "Input",ExpressionUUID->"dec3a9d5-a743-421f-94b9-a0bfb00d1127"],
-Cell[4852, 148, 5643, 155, 698, "Input",ExpressionUUID->"87eebf48-61ad-4375-a10c-f614df495ba7"]
+Cell[3386, 108, 105, 0, 54, "Subsection",ExpressionUUID->"174ad9d0-35f1-4eec-9203-0b7b659c4c2e"],
+Cell[3494, 110, 1037, 29, 111, "Input",ExpressionUUID->"dec3a9d5-a743-421f-94b9-a0bfb00d1127"],
+Cell[4534, 141, 5643, 155, 698, "Input",ExpressionUUID->"87eebf48-61ad-4375-a10c-f614df495ba7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10532, 308, 107, 0, 54, "Subsection",ExpressionUUID->"e1bf1328-e41b-419a-8723-a76e30539619"],
-Cell[10642, 310, 8481, 227, 1013, "Input",ExpressionUUID->"bbcc2265-c949-414c-aaa4-d2241194dece"]
+Cell[10214, 301, 107, 0, 54, "Subsection",ExpressionUUID->"e1bf1328-e41b-419a-8723-a76e30539619"],
+Cell[10324, 303, 8481, 227, 1013, "Input",ExpressionUUID->"bbcc2265-c949-414c-aaa4-d2241194dece"]
 }, Open  ]]
 }, Open  ]]
 }
