@@ -1,0 +1,842 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30161,        834]
+NotebookOptionsPosition[     27727,        781]
+NotebookOutlinePosition[     28120,        797]
+CellTagsIndexPosition[     28077,        794]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Funciones para volver el NoteBook => texto plano", "Section",ExpressionUUID->"e2a8139a-6252-4d5a-b12c-4df9360e45e6"],
+
+Cell[CellGroupData[{
+
+Cell["Functions to enforce cell ID generation", "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
+
+Cell[BoxData[{
+ RowBox[{"checkCellIDSetting", ":=", 
+  RowBox[{"TrueQ", "[", 
+   RowBox[{"CurrentValue", "[", 
+    RowBox[{"targetNotebook", ",", "CreateCellID"}], "]"}], 
+   "]"}]}], "\n", "checkCellIDSetting"}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"00a52a6d-2ea9-44cf-b3b5-ed2f1a39038f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Specify notebook function, here the current evaluation book", \
+"Subsection",ExpressionUUID->"5aabebe9-2b7c-4be7-b3cc-dbdd101e4dc4"],
+
+Cell[BoxData[
+ RowBox[{"targetNotebook", ":=", 
+  RowBox[{"EvaluationNotebook", "[", "]"}]}]], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"66db2ab5-fc0e-407d-ac48-01b349fba1c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Specify the cells targeted, here the contents of each 'title' style super cell\
+\>", "Subsection",ExpressionUUID->"e2f1ec12-0846-461f-9880-c9d7d1df472c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BodyCellFilter", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"p", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "+", "1"}], ";;", 
+            RowBox[{
+             RowBox[{"p", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "-", "1"}]}]}], "]"}], "]"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "]"}], "&"}], "@", 
+     RowBox[{"{", 
+      RowBox[{"#", ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Transpose", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Drop", "[", 
+             RowBox[{"#", ",", 
+              RowBox[{"-", "1"}]}], "]"}], ",", 
+            RowBox[{"Drop", "[", 
+             RowBox[{"#", ",", "1"}], "]"}]}], "}"}], "]"}], "&"}], "@", 
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Position", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"NotebookRead", "/@", "#"}], ")"}], "[", 
+              RowBox[{"[", 
+               RowBox[{";;", ",", "2"}], "]"}], "]"}], ",", "\"\<Title\>\"", 
+             ",", "1"}], "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{";;", ",", "1"}], "]"}], "]"}], ",", "0"}], "]"}]}]}], 
+      "}"}]}], "&"}]}], ";"}]], "Input",
+ CellLabel->"In[4]:=",ExpressionUUID->"a5b41fcc-db34-410f-87f8-e2c2bfc008f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cell selection functionality", "Subsection",ExpressionUUID->"174ad9d0-35f1-4eec-9203-0b7b659c4c2e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"getBodyInputCells", ":=", 
+   RowBox[{"Join", "@@", 
+    RowBox[{"BodyCellFilter", "@", 
+     RowBox[{"Cells", "[", 
+      RowBox[{"CellStyle", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Input\>\"", "|", "\"\<Title\>\""}], "}"}]}], "]"}]}]}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"getBodyOutputCells", ":=", 
+   RowBox[{"Join", "@@", 
+    RowBox[{"BodyCellFilter", "@", 
+     RowBox[{"Cells", "[", 
+      RowBox[{"CellStyle", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Output\>\"", "|", "\"\<Title\>\""}], "}"}]}], 
+      "]"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"getBodyContentCells", ":=", 
+   RowBox[{"Join", "@@", 
+    RowBox[{"BodyCellFilter", "@", 
+     RowBox[{"Cells", "[", 
+      RowBox[{"CellStyle", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Text\>\"", "|", "\"\<Output\>\"", "|", "\"\<Title\>\""}],
+         "}"}]}], "]"}]}]}]}], ";"}]}], "Input",
+ Background->RGBColor[0.88, 1, 0.88],
+ CellLabel->"In[5]:=",ExpressionUUID->"dec3a9d5-a743-421f-94b9-a0bfb00d1127"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"cellContentLog", "[", "val_", "]"}], ":=", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cellResultLog", "[", "val_", "]"}], ":=", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"getOutOfDateCells", ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pick", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Not", "[", 
+             RowBox[{"TrueQ", "[", 
+              RowBox[{
+               RowBox[{"cellContentLog", "[", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}], "==", 
+               RowBox[{"#", "[", 
+                RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], "&"}], "@", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"CurrentValue", "[", 
+              RowBox[{"#", ",", "CellID"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"NotebookRead", "[", "#", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}]}], "}"}]}], "&"}], "/@", "#"}]}],
+        "]"}], "&"}], "@", "getBodyInputCells"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"addTagToCells", "[", 
+   RowBox[{"cells_", ",", "tag_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"CellTags", "->", 
+       RowBox[{"Union", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Depth", "[", "#", "]"}], "==", "1"}], ",", 
+             RowBox[{"{", "#", "}"}], ",", "#"}], "]"}], "&"}], "@", 
+          RowBox[{"CurrentValue", "[", 
+           RowBox[{"#", ",", "CellTags"}], "]"}]}], ",", 
+         RowBox[{"{", "tag", "}"}]}], "]"}]}]}], "]"}], "&"}], "/@", 
+   "cells"}]}], "\n", 
+ RowBox[{
+  RowBox[{"removeTagFromCells", "[", 
+   RowBox[{"cells_", ",", "tag_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetOptions", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"CellTags", "->", 
+       RowBox[{"Complement", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Depth", "[", "#", "]"}], "==", "1"}], ",", 
+             RowBox[{"{", "#", "}"}], ",", "#"}], "]"}], "&"}], "@", 
+          RowBox[{"CurrentValue", "[", 
+           RowBox[{"#", ",", "CellTags"}], "]"}]}], ",", 
+         RowBox[{"{", "tag", "}"}]}], "]"}]}]}], "]"}], "&"}], "/@", 
+   "cells"}]}], "\n", 
+ RowBox[{
+  RowBox[{"applyFunctionToCellList", "[", 
+   RowBox[{"cellList_", ",", "uniqueTag_", ",", "function_"}], "]"}], ":=", 
+  RowBox[{"(", " ", "\n", 
+   RowBox[{
+    RowBox[{"addTagToCells", "[", 
+     RowBox[{"cellList", ",", "uniqueTag"}], "]"}], ";", "\n", 
+    RowBox[{"NotebookLocate", "[", "uniqueTag", "]"}], ";", "\n", 
+    RowBox[{"removeTagFromCells", "[", 
+     RowBox[{"cellList", ",", "uniqueTag"}], "]"}], ";", "\n", 
+    RowBox[{"function", "[", "targetNotebook", "]"}], ";"}], ")"}]}], "\n", 
+ RowBox[{
+  RowBox[{"goToSpecificInput", "[", "targetString_", "]"}], ":=", 
+  RowBox[{"(", " ", "\n", 
+   RowBox[{
+    RowBox[{"addTagToCells", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Select", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"NotebookRead", "[", "#", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "==", 
+             RowBox[{"BoxData", "[", "targetString", "]"}]}], "&"}]}], "]"}], 
+         "[", 
+         RowBox[{"[", 
+          RowBox[{";;", "1"}], "]"}], "]"}], "&"}], "@", 
+       RowBox[{"Cells", "[", 
+        RowBox[{"CellStyle", "->", 
+         RowBox[{"{", "\"\<Input\>\"", "}"}]}], "]"}]}], ",", 
+      "targetString"}], "]"}], ";", 
+    RowBox[{"NotebookLocate", "[", "targetString", "]"}], ";", "\n", 
+    RowBox[{"removeTagFromCells", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Select", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"NotebookRead", "[", "#", "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "==", 
+             RowBox[{"BoxData", "[", "targetString", "]"}]}], "&"}]}], "]"}], 
+         "[", 
+         RowBox[{"[", 
+          RowBox[{";;", "1"}], "]"}], "]"}], "&"}], "@", 
+       RowBox[{"Cells", "[", 
+        RowBox[{"CellStyle", "->", 
+         RowBox[{"{", "\"\<Input\>\"", "}"}]}], "]"}]}], ",", 
+      "targetString"}], "]"}], ";"}], "\n", ")"}]}], "\n", 
+ RowBox[{
+  RowBox[{"deploySubsequentCell", "[", 
+   RowBox[{"targetString_", ",", "functionString_"}], "]"}], ":=", 
+  RowBox[{"(", " ", "\n", 
+   RowBox[{
+    RowBox[{"goToSpecificInput", "[", "targetString", "]"}], ";", "\n", 
+    RowBox[{"SelectionMove", "[", 
+     RowBox[{
+      RowBox[{"EvaluationNotebook", "[", "]"}], ",", "After", ",", "Cell"}], 
+     "]"}], ";", "\n", 
+    RowBox[{"NotebookWrite", "[", 
+     RowBox[{
+      RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+      RowBox[{"BoxData", "[", "functionString", "]"}], ",", "After"}], "]"}], 
+    ";", "\n", 
+    RowBox[{"goToSpecificInput", "[", "functionString", "]"}], ";", "\n", 
+    RowBox[{"SelectionEvaluateCreateCell", "[", "targetNotebook", "]"}], 
+    ";"}], ")"}]}]}], "Input",
+ CellChangeTimes->{{3.92326131631707*^9, 3.923261317598568*^9}},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellLabel->"In[8]:=",ExpressionUUID->"87eebf48-61ad-4375-a10c-f614df495ba7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plaintext conversion functions", "Subsection",ExpressionUUID->"e1bf1328-e41b-419a-8723-a76e30539619"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"updateBook", ":=", 
+   RowBox[{"(", " ", "\n", 
+    RowBox[{
+     RowBox[{"cellsToUpdate", "=", "getOutOfDateCells"}], ";", "\n", 
+     RowBox[{"applyFunctionToCellList", "[", 
+      RowBox[{
+      "cellsToUpdate", ",", "\"\<tagged input\>\"", ",", 
+       "SelectionEvaluateCreateCell"}], "]"}], ";", "\n", 
+     RowBox[{"deploySubsequentCell", "[", 
+      RowBox[{"\"\<updateBook\>\"", ",", "\"\<loadBook\>\""}], "]"}], ";", 
+     "\n", 
+     RowBox[{"deploySubsequentCell", "[", 
+      RowBox[{"\"\<loadBook\>\"", ",", "\"\<compileBook\>\""}], "]"}], ";", 
+     "\n", 
+     RowBox[{"deploySubsequentCell", "[", 
+      RowBox[{"\"\<compileBook\>\"", ",", "\"\<exportBook\>\""}], "]"}], ";", 
+     "\n", 
+     RowBox[{"deploySubsequentCell", "[", 
+      RowBox[{"\"\<exportBook\>\"", ",", "\"\<cleanBook\>\""}], "]"}], ";"}], 
+    "\n", ")"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"blankFunction", "=", 
+   RowBox[{"#", "&"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"loadBook", ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "updateResultPairs", "}"}], ",", "\n", 
+     RowBox[{
+      RowBox[{"updateResultPairs", "=", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"cellsToUpdate", ",", "getBodyOutputCells"}], "}"}], "]"}]}],
+       ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"cellContentLog", "[", 
+           RowBox[{"CurrentValue", "[", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "CellID"}], "]"}], "]"}], 
+          "=", 
+          RowBox[{
+           RowBox[{"NotebookRead", "[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "&"}], "/@", 
+       "updateResultPairs"}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"cellResultLog", "[", 
+           RowBox[{"CurrentValue", "[", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "CellID"}], "]"}], "]"}], 
+          "=", 
+          RowBox[{"NotebookRead", "[", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ")"}], "&"}], "/@", 
+       "updateResultPairs"}], ";", "\n", 
+      RowBox[{"applyFunctionToCellList", "[", 
+       RowBox[{
+        RowBox[{"updateResultPairs", "[", 
+         RowBox[{"[", 
+          RowBox[{";;", ",", "2"}], "]"}], "]"}], ",", 
+        "\"\<tagged output\>\"", ",", "NotebookDelete"}], "]"}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"applyFunctionToCellList", "[", 
+           RowBox[{
+            RowBox[{"{", "#", "}"}], ",", "\"\<tagged input\>\"", ",", 
+            "blankFunction"}], "]"}], ";", "\n", 
+          RowBox[{"SelectionMove", "[", 
+           RowBox[{"targetNotebook", ",", "After", ",", "Cell"}], "]"}], ";", 
+          "\n", 
+          RowBox[{"NotebookWrite", "[", 
+           RowBox[{"targetNotebook", ",", 
+            RowBox[{"cellResultLog", "[", 
+             RowBox[{"CurrentValue", "[", 
+              RowBox[{"#", ",", "CellID"}], "]"}], "]"}], ",", "All"}], "]"}],
+           ";"}], "\n", ")"}], "&"}], "/@", "getBodyInputCells"}], ";"}]}], 
+    "]"}]}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"--", 
+      RowBox[{"-", " ", "Despejo"}]}], " ", "el", " ", 
+     RowBox[{"titulo", " ", "--"}]}], "-"}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"titleSplit", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "/.", 
+          RowBox[{
+           RowBox[{"Cell", "[", 
+            RowBox[{"t_", ",", "\"\<Title\>\"", ",", "___"}], "]"}], ":>", 
+           "t"}]}], ",", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ";;"}], "]"}], "]"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Cell", "[", 
+              RowBox[{"t_", ",", "\"\<Text\>\"", ",", "___"}], "]"}], ":>", 
+             "t"}], ",", 
+            RowBox[{
+             RowBox[{"Cell", "[", 
+              RowBox[{
+               RowBox[{"BoxData", "[", "t_", "]"}], ",", "\"\<Output\>\"", 
+               ",", "___"}], "]"}], ":>", 
+             RowBox[{"ToExpression", "[", "t", "]"}]}]}], "}"}]}]}], "}"}], 
+       "&"}], "/@", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", 
+              RowBox[{
+               RowBox[{"p", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ";;", 
+               RowBox[{"p", "[", 
+                RowBox[{"[", "2", "]"}], "]"}]}]}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"p", ",", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "]"}], "&"}], "@", 
+        RowBox[{"{", 
+         RowBox[{"#", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Drop", "[", 
+                RowBox[{"#", ",", 
+                 RowBox[{"-", "1"}]}], "]"}], ",", 
+               RowBox[{
+                RowBox[{"Drop", "[", 
+                 RowBox[{"#", ",", "1"}], "]"}], "-", "1"}]}], "}"}], "]"}], 
+            "&"}], "@", 
+           RowBox[{"Append", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Position", "[", 
+               RowBox[{"#", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{"_", ",", "\"\<Title\>\"", ",", "___"}], "]"}], ",", 
+                "1"}], "]"}], "[", 
+              RowBox[{"[", 
+               RowBox[{";;", ",", "1"}], "]"}], "]"}], ",", "0"}], "]"}]}]}], 
+         "}"}]}], ")"}]}], "&"}], "@", 
+    RowBox[{"Cases", "[", 
+     RowBox[{
+      RowBox[{"NotebookGet", "[", 
+       RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{"Cell", "[", 
+        RowBox[{"_", ",", "\"\<Text\>\"", ",", "___"}], "]"}], "|", 
+       RowBox[{"Cell", "[", 
+        RowBox[{"_", ",", "\"\<Output\>\"", ",", "___"}], "]"}], "|", 
+       RowBox[{"Cell", "[", 
+        RowBox[{"_", ",", "\"\<Title\>\"", ",", "___"}], "]"}]}], ",", 
+      "\[Infinity]"}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"compileBook", ":=", 
+  RowBox[{"(", " ", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"titles", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "&"}], "/@", "#"}]}], ";", 
+        RowBox[{"plainTexts", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "]"}], "&"}], "/@", "#"}]}], 
+        ";"}], ")"}], "&"}], "@", "titleSplit"}], ";", "\n", 
+    RowBox[{"applyFunctionToCellList", "[", 
+     RowBox[{
+     "getBodyOutputCells", ",", "\"\<tagged output\>\"", ",", 
+      "NotebookDelete"}], "]"}], ";"}], "\n", ")"}]}], "\n", 
+ RowBox[{"cleanBook", ":=", 
+  RowBox[{"(", " ", "\n", 
+   RowBox[{
+    RowBox[{"applyFunctionToCellList", "[", 
+     RowBox[{
+     "getBodyOutputCells", ",", "\"\<tagged output\>\"", ",", 
+      "NotebookDelete"}], "]"}], ";", "\n", 
+    RowBox[{"goToSpecificInput", "[", "\"\<loadBook\>\"", "]"}], ";", 
+    RowBox[{"NotebookDelete", "[", 
+     RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], ";", "\n", 
+    RowBox[{"goToSpecificInput", "[", "\"\<compileBook\>\"", "]"}], ";", 
+    RowBox[{"NotebookDelete", "[", 
+     RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], ";", "\n", 
+    RowBox[{"goToSpecificInput", "[", "\"\<exportBook\>\"", "]"}], ";", 
+    RowBox[{"NotebookDelete", "[", 
+     RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], ";", "\n", 
+    RowBox[{"goToSpecificInput", "[", "\"\<cleanBook\>\"", "]"}], ";", 
+    RowBox[{"NotebookDelete", "[", 
+     RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], ";", "\n", 
+    RowBox[{"goToSpecificInput", "[", "\"\<updateBook\>\"", "]"}], ";"}], 
+   "\n", ")"}]}]}], "Input",
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[16]:=",ExpressionUUID->"bbcc2265-c949-414c-aaa4-d2241194dece"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Importar definicion de variables. En el futuro se pueden incluir todas las \
+ecuaciones posibles: Math, Fis, Chem, Bio... etc\
+\>", "Section",
+ CellChangeTimes->{{3.924552870454474*^9, 
+  3.924552928297584*^9}},ExpressionUUID->"3359194d-f57c-494d-9ea3-\
+9fe517a04957"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   StyleBox["AIvars1",
+    FontSize->18], 
+   StyleBox["=",
+    FontSize->18], 
+   StyleBox[
+    "\"\<https://raw.githubusercontent.com/josemramirez/mmatex/main/AIvars1.\
+mx\>\"",
+    FontSize->14]}], 
+  StyleBox[";",
+   FontSize->18]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   StyleBox["Paper5vars",
+    FontSize->18], 
+   StyleBox["=",
+    FontSize->18], 
+   StyleBox[
+    "\"\<https://raw.githubusercontent.com/josemramirez/mmatex/main/Paper5.mx\
+\>\"",
+    FontSize->14]}], 
+  StyleBox[";",
+   FontSize->18]}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"Import", "[", "AIvars1", "]"}], ";"}],
+  FontSize->18], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Import", "[", "Paper5vars", "]"}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"--", " ", "El"}], " ", "String", " ", "de", " ", 
+     RowBox[{"AI", " ", "--"}]}], "*)"}]}],
+  FontSize->18], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"myStringToCell", "=", 
+    RowBox[{"StringReplace", "[", 
+     RowBox[{"myStringToCell", ",", 
+      RowBox[{"\"\<\\\\n\>\"", "->", "\"\<\>\""}]}], "]"}]}], ";"}],
+  FontSize->18]}], "Input",
+ CellChangeTimes->{{3.924552435919917*^9, 3.92455245082073*^9}},
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"f37a9c95-8e8d-4359-a521-86e49da45877"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Funciones para incluir Figuras, Tablas, Ecuaciones: v0.1 = MNRAS\
+\>", "Section",
+ CellChangeTimes->{{3.924552950704996*^9, 
+  3.9245529881264753`*^9}},ExpressionUUID->"b68c1074-61e8-4298-904a-\
+ffa1e68bb4a3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"==", " ", 
+    RowBox[{
+    "La", " ", "definicion", " ", "de", " ", "funcion", " ", "para", " ", 
+     "la", " ", "inclusi\[OAcute]n", " ", "de", " ", "las", " ", "figuras"}], 
+    "  ", "=="}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"figure", "[", 
+     RowBox[{"generation_", ",", "name_", ",", "cap_", ",", "ref_"}], "]"}], ":=", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Export", "[", 
+       RowBox[{
+        RowBox[{"$WorkDir", "<>", "name", "<>", "\"\<.png\>\""}], ",", 
+        "generation"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<\n\\\\begin{figure}\n\\\\includegraphics[width=8.0cm]{./\>\"", "<>",
+        "name", "<>", "\"\<.png\>\"", "<>", "\"\<}\n\\\\caption{\>\"", "<>", 
+       "cap", "<>", "\"\<}\n\\\\label{\>\"", "<>", "ref", "<>", 
+       "\"\<}\n\\\\end{figure}\>\""}]}], "\[IndentingNewLine]", ")"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"==", " ", 
+     RowBox[{
+     "La", " ", "definicion", " ", "de", " ", "funcion", " ", "para", " ", 
+      "la", " ", "inclusi\[OAcute]n", " ", "de", " ", "las", " ", 
+      "Ecuaciones"}], " ", "=="}], "*)"}], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myEq", "[", 
+      RowBox[{"generation_", ",", "name_"}], "]"}], ":=", 
+     RowBox[{"(", "\[IndentingNewLine]", 
+      RowBox[{"\"\<\n\\\\begin{equation}\\n\>\"", "\n", "<>", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{
+         RowBox[{"ToString", "[", 
+          RowBox[{
+           RowBox[{"TeXForm", "[", "generation", "]"}], ",", "InputForm"}], 
+          "]"}], ",", 
+         RowBox[{"\"\<\\\\text\>\"", "->", "\"\<\>\""}]}], "]"}], "<>", 
+       "\"\<\n\\\\label{\>\"", "<>", "name", "<>", 
+       "\"\<}\n\\\\end{equation}\>\""}], "\[IndentingNewLine]", ")"}]}],
+    FontSize->18]}]}]], "Input",
+ CellChangeTimes->{{3.7056666065015545`*^9, 3.705666661341691*^9}, 
+   3.705666774142143*^9, 3.74259245152188*^9, 3.7425951728218327`*^9, 
+   3.7425981168399467`*^9, {3.742598349061303*^9, 3.7425983513231907`*^9}, {
+   3.742598626621867*^9, 3.742598629235529*^9}, {3.7425986839632053`*^9, 
+   3.742598686128961*^9}, {3.74265193595739*^9, 3.742651962409066*^9}, {
+   3.742664652134376*^9, 3.742664669619864*^9}, 3.9230756409214153`*^9, 
+   3.9230902330773697`*^9, 3.9232492130558577`*^9, 3.923252461147087*^9, {
+   3.9232532601327457`*^9, 3.923253261024729*^9}, {3.923254297260604*^9, 
+   3.923254297590735*^9}, {3.9245527230310707`*^9, 3.924552750140511*^9}, {
+   3.92455278725066*^9, 3.9245528110871773`*^9}, 3.9245530232822723`*^9},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellID->180244738,ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "07ec5e3a-f1fc-4649-b9e7-71a875463507"],
+ " generation functions"
+}], "Section",
+ CellChangeTimes->{{3.7056633913006554`*^9, 3.705663401948264*^9}, {
+  3.705664410620957*^9, 3.705664419620472*^9}, {3.705664822085491*^9, 
+  3.7056648272687883`*^9}, {3.7056657220369654`*^9, 3.705665729333383*^9}, {
+  3.70566608786889*^9, 3.705666090365033*^9}},
+ CellID->261372301,ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"(*", " ", 
+    RowBox[{"La", " ", "clase", " ", "y", " ", "donde", " ", 
+     RowBox[{"esta", "?"}]}], " ", "*)"}],
+   FontSize->18], 
+  StyleBox["\[IndentingNewLine]",
+   FontSize->18], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+    "docClassArticle", ":=", 
+     "\"\<\\\\documentclass[a4paper,fleqn,\nusenatbib]{LatexLib/mnras}\>\""}],
+    
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"graphicx", ":=", "\"\<\\\\usepackage{graphicx}\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"latex", ":=", "\"\<\\\\LaTeX{}\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"titleAuthorDate", "[", 
+      RowBox[{"title_", ",", "author_"}], "]"}], ":=", 
+     RowBox[{
+     "\"\<\n\\\\title{\>\"", "<>", "title", "<>", "\"\<}\n\\\\author{\>\"", "<>",
+       "author", "<>", "\"\<}\n\\\\date{\\\\today}\>\""}]}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"openDoc", ":=", "\"\<\\\\begin{document}\\n\\\\maketitle\>\""}],
+    FontSize->18], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"closeDoc", ":=", "\"\<\\\\end{document}\>\""}],
+    FontSize->18]}]}]], "Input",
+ CellChangeTimes->{{3.9232615280839233`*^9, 3.9232615471883163`*^9}, {
+  3.9232616512835407`*^9, 3.9232616526426983`*^9}, {3.923261868095974*^9, 
+  3.9232619154062157`*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[114]:=",
+ CellID->504000207,ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"(*", 
+    RowBox[{"\[Equal]", " ", 
+     RowBox[{"Donde", " ", "se", " ", "encuentra", " ", "el", " ", 
+      RowBox[{"pdfLatex", "?", " ", "y"}], " ", "el", " ", "Export"}], " ", 
+     "=="}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"exportBook", ":=", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"SetDirectory", "[", "$WorkDir", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Export", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.tex\>\""}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", "\"\<Text\>\""}], "]"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"RunProcess", "[", 
+           RowBox[{"{", 
+            RowBox[{"$PdfLAdd", ",", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.tex\>\""}]}], 
+            "}"}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"RunProcess", "[", 
+           RowBox[{"{", 
+            RowBox[{"$PdfLAdd", ",", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "<>", "\"\<.tex\>\""}]}], 
+            "}"}], "]"}], ";"}], "\[IndentingNewLine]", ")"}], "&"}], "/@", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"titles", ",", "plainTexts"}], "}"}], "]"}]}], ";"}], 
+     ")"}]}]}],
+  FontSize->18]], "Input",
+ CellChangeTimes->{{3.924553313694002*^9, 3.924553319731928*^9}},
+ Background->GrayLevel[
+  0.85],ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+}, Open  ]]
+},
+WindowSize->{1255, 971},
+WindowMargins->{{12, Automatic}, {2, Automatic}},
+FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"08cd00e7-b917-4537-b861-0d30feb105b6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 122, 0, 67, "Section",ExpressionUUID->"e2a8139a-6252-4d5a-b12c-4df9360e45e6"],
+Cell[CellGroupData[{
+Cell[727, 26, 116, 0, 54, "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
+Cell[846, 28, 300, 6, 52, "Input",ExpressionUUID->"00a52a6d-2ea9-44cf-b3b5-ed2f1a39038f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1183, 39, 138, 1, 54, "Subsection",ExpressionUUID->"5aabebe9-2b7c-4be7-b3cc-dbdd101e4dc4"],
+Cell[1324, 42, 181, 3, 30, "Input",ExpressionUUID->"66db2ab5-fc0e-407d-ac48-01b349fba1c6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1542, 50, 163, 2, 54, "Subsection",ExpressionUUID->"e2f1ec12-0846-461f-9880-c9d7d1df472c"],
+Cell[1708, 54, 1641, 49, 73, "Input",ExpressionUUID->"a5b41fcc-db34-410f-87f8-e2c2bfc008f8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3386, 108, 105, 0, 54, "Subsection",ExpressionUUID->"174ad9d0-35f1-4eec-9203-0b7b659c4c2e"],
+Cell[3494, 110, 1037, 29, 90, "Input",ExpressionUUID->"dec3a9d5-a743-421f-94b9-a0bfb00d1127"],
+Cell[4534, 141, 5643, 155, 509, "Input",ExpressionUUID->"87eebf48-61ad-4375-a10c-f614df495ba7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10214, 301, 107, 0, 54, "Subsection",ExpressionUUID->"e1bf1328-e41b-419a-8723-a76e30539619"],
+Cell[10324, 303, 8481, 227, 803, "Input",ExpressionUUID->"bbcc2265-c949-414c-aaa4-d2241194dece"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18854, 536, 278, 6, 105, "Section",ExpressionUUID->"3359194d-f57c-494d-9ea3-9fe517a04957"],
+Cell[19135, 544, 1385, 48, 154, "Input",ExpressionUUID->"f37a9c95-8e8d-4359-a521-86e49da45877"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20557, 597, 219, 5, 67, "Section",ExpressionUUID->"b68c1074-61e8-4298-904a-ffa1e68bb4a3"],
+Cell[20779, 604, 2758, 57, 406, "Input",ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9",
+ CellID->180244738]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23574, 666, 809, 21, 68, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410",
+ CellID->261372301],
+Cell[24386, 689, 1532, 41, 262, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
+ CellID->504000207],
+Cell[25921, 732, 1790, 46, 257, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+}, Open  ]]
+}
+]
+*)
+
