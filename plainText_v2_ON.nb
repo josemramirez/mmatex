@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     42029,       1107]
-NotebookOptionsPosition[     39591,       1054]
-NotebookOutlinePosition[     39984,       1070]
-CellTagsIndexPosition[     39941,       1067]
+NotebookDataLength[     41705,       1094]
+NotebookOptionsPosition[     39267,       1041]
+NotebookOutlinePosition[     39660,       1057]
+CellTagsIndexPosition[     39617,       1054]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -948,29 +948,15 @@ value=\\\"Open in Overleaf\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}],
         RowBox[{"Transpose", "[", 
          RowBox[{"{", 
           RowBox[{"titles", ",", "plainTexts"}], "}"}], "]"}]}], ";"}], 
-      ")"}]}], "\[IndentingNewLine]", 
-    StyleBox[
-     RowBox[{
-      RowBox[{
-      "Print", "[", "\"\<Exportando con  <latexonline> ...\>\"", "]"}], ";"}],
-     
-     FontFamily->"Source Code Pro",
-     FontWeight->"SemiBold"], 
+      ")"}]}], 
     StyleBox["\[IndentingNewLine]",
-     FontWeight->"SemiBold"], 
-    StyleBox["\[IndentingNewLine]",
-     FontFamily->"Source Code Pro",
-     FontWeight->"SemiBold"], 
+     FontWeight->"SemiBold"], "\[IndentingNewLine]", 
     StyleBox[
-     RowBox[{
-      StyleBox[
-       RowBox[{"(", "*"}]], 
+     RowBox[{"(*", 
       RowBox[{"==", " ", 
        RowBox[{"Documentos", " ", "sencillos", " ", "sin", " ", 
         RowBox[{"OVERLEAF", " ", "[", "NOL", "]"}], " ", "No", " ", 
-        "OverLeaf"}], " ", "=="}], 
-      StyleBox[
-       RowBox[{"*", ")"}]]}],
+        "OverLeaf"}], " ", "=="}], "*)"}],
      FontWeight->"SemiBold"], 
     StyleBox["\[IndentingNewLine]",
      FontFamily->"Source Code Pro",
@@ -1047,7 +1033,8 @@ value=\\\"Open in Overleaf\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}],
   FontSize->18]], "Input",
  CellChangeTimes->{{3.924553313694002*^9, 3.924553319731928*^9}, 
    3.924554097223084*^9, {3.92455520478749*^9, 3.924555236807521*^9}, {
-   3.924555314133094*^9, 3.924555331639896*^9}},
+   3.924555314133094*^9, 3.924555331639896*^9}, {3.924556101758931*^9, 
+   3.9245561023693047`*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]]
@@ -1107,7 +1094,7 @@ Cell[28283, 778, 809, 21, 68, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c
  CellID->261372301],
 Cell[29095, 801, 1723, 45, 283, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
  CellID->504000207],
-Cell[30821, 848, 8754, 203, 1243, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+Cell[30821, 848, 8430, 190, 1214, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]]
 }
 ]
