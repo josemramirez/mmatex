@@ -10,21 +10,22 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     94696,       2233]
-NotebookOptionsPosition[     92912,       2194]
-NotebookOutlinePosition[     93664,       2219]
-CellTagsIndexPosition[     93621,       2216]
+NotebookDataLength[    111327,       2570]
+NotebookOptionsPosition[    108562,       2516]
+NotebookOutlinePosition[    109314,       2541]
+CellTagsIndexPosition[    109271,       2538]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["AI for LatexPdf v0.1", "Title",
+Cell["AI for MMaiTeX v0.1", "Title",
  CellChangeTimes->{{3.91720856991497*^9, 3.9172085784934883`*^9}, {
   3.917262944066132*^9, 3.917262944185978*^9}, {3.9182274549657583`*^9, 
-  3.918227455195348*^9}, {3.923310876289667*^9, 
-  3.923310887391446*^9}},ExpressionUUID->"f3d4e1ba-6395-4a84-afec-\
+  3.918227455195348*^9}, {3.923310876289667*^9, 3.923310887391446*^9}, {
+  3.924800521954158*^9, 
+  3.924800524447562*^9}},ExpressionUUID->"f3d4e1ba-6395-4a84-afec-\
 abd624208c45"],
 
 Cell[BoxData[
@@ -33,6 +34,14 @@ Cell[BoxData[
    RowBox[{"--", " ", 
     RowBox[{"\"\<claude-3-opus-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<claude-3-sonnet-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<claude-3-haiku-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"myAPIKeyC", "=", 
@@ -60,8 +69,9 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"{", 
            RowBox[{
-            RowBox[{"\"\<model\>\"", "->", "\"\<claude-3-opus-20240229\>\""}],
-             ",", 
+            RowBox[{
+            "\"\<model\>\"", "->", "\"\<claude-3-sonnet-20240229\>\""}], ",", 
+            
             RowBox[{"\"\<max_tokens\>\"", "->", "4096"}], ",", 
             RowBox[{"\"\<messages\>\"", "->", 
              RowBox[{"{", 
@@ -156,9 +166,10 @@ Cell[BoxData[
    3.923050400294203*^9, 3.923050410530322*^9}, {3.9230507437965603`*^9, 
    3.9230507818879223`*^9}, 3.923051212722418*^9, {3.923051317101368*^9, 
    3.923051317466337*^9}, {3.92305140860951*^9, 3.923051473858494*^9}, {
-   3.923466709731523*^9, 3.923466778111931*^9}},
- Background->RGBColor[1, 0.9, 0.8],
- CellLabel->"In[1]:=",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
+   3.923466709731523*^9, 3.923466778111931*^9}, {3.924876353812866*^9, 
+   3.924876354132833*^9}, {3.924876500057911*^9, 3.9248765265796022`*^9}},
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
 
 Cell[BoxData[
  RowBox[{
@@ -302,6 +313,7 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{
     "encodeImageObjectToBase64directclean", "[", "imageObject_", "]"}], ":=", 
+    
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", "encoded", "}"}], ",", 
@@ -1489,8 +1501,8 @@ Mathematica Journal Volume 7 Issue 4 (2000)\>\""}], "}"}]}], "}"}]}], ";"}],
    3.923655163357808*^9, 3.923655176426153*^9}, {3.9236554584382153`*^9, 
    3.923655467780855*^9}, {3.9236592468304863`*^9, 3.92365935798114*^9}, {
    3.923739687974771*^9, 3.923739719963573*^9}},
- Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[8]:=",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
 
 Cell[CellGroupData[{
 
@@ -1514,88 +1526,85 @@ Cell[BoxData[
     RowBox[{"\"\<llama3\>\"", " ", "--"}]}], " ", "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"myLocalmodel", "=", "\"\<llama3\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"callLlama3", "[", "myPrompt_", "]"}], ":=", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
-        "jsonResponse2", ",", " ", "jsonResponse2A", ",", " ", "nLen", ",", 
-        " ", "nLen1"}], "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-       "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the",
-         " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"callLlama3", "[", "myPrompt_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
       RowBox[{
+      "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+       "\[IndentingNewLine]", "jsonResponse2", ",", " ", "jsonResponse2A", 
+       ",", " ", "nLen", ",", " ", "nLen1", ",", " ", 
        RowBox[{
-        RowBox[{"jsonBody", "=", 
-         RowBox[{"ExportString", "[", 
-          RowBox[{
-           RowBox[{"{", 
+        RowBox[{"myLocalmodel", "=", "\"\<llama3\>\""}], ";"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+       " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"jsonBody", "=", 
+        RowBox[{"ExportString", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
+            RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+          "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+       RowBox[{"myRequest", "=", 
+        RowBox[{"HTTPRequest", "[", 
+         RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+            RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
             RowBox[{
-             RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
-             RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
-           "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
-        RowBox[{"myRequest", "=", 
-         RowBox[{"HTTPRequest", "[", 
-          RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
-           RowBox[{"<|", 
+            "\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+         "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "=", 
+        RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "==="}], "=", " ", 
+         RowBox[{
+          RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
+           "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2A", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+          RowBox[{"nLen", "=", 
+           RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"DeleteCases", "[", 
             RowBox[{
-             RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
-             RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
-             RowBox[{
-             "\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
-            "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-         "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
-          "the", " ", "JSON", " ", "response"}], "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"jsonResponse", "=", 
-         RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{
-          "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-            "===", "==="}], "=", " ", 
-          RowBox[{
-           RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
-            "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-            "===", "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"jsonResponse2A", "=", 
-         RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
-          RowBox[{
-           RowBox[{"nLen1", "=", 
-            RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
-           RowBox[{"nLen", "=", 
-            RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"nLen1", "=", 
-            RowBox[{"DeleteCases", "[", 
-             RowBox[{
-              RowBox[{"Table", "[", 
-               RowBox[{
-                RowBox[{"If", "[", 
-                 RowBox[{
-                  RowBox[{"StringContainsQ", "[", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"StringContainsQ", "[", 
+                  RowBox[{
                    RowBox[{
-                    RowBox[{
                     RowBox[{"jsonResponse", "[", 
                     RowBox[{"[", "1", "]"}], "]"}], "[", 
                     RowBox[{"[", "i", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
+                   RowBox[{"{", 
                     RowBox[{
                     RowBox[{
                     "\"\<{\\\"model\\\":\\\"llama3\>\"", "->", "\"\<\>\""}], 
@@ -1603,86 +1612,86 @@ Cell[BoxData[
                     RowBox[{
                     "\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
                     "}"}]}], "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"jsonResponse", "[", 
-                    RowBox[{"[", "1", "]"}], "]"}], "[", 
-                   RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", 
-                  RowBox[{"Length", "[", 
-                   RowBox[{"jsonResponse", "[", 
-                    RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
-              ",", " ", "Null"}], "]"}]}], ";", 
-           RowBox[{"nLen", "=", 
-            RowBox[{
-             RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"Do", "[", "\[IndentingNewLine]", 
-         RowBox[{"(*", 
-          RowBox[{
-           RowBox[{"Print", "[", 
-            RowBox[{"jsonResponse1", "[", 
-             RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
-         "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "1", ",", 
+                 RowBox[{"Length", "[", 
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+             ",", " ", "Null"}], "]"}]}], ";", 
+          RowBox[{"nLen", "=", 
+           RowBox[{
+            RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
          RowBox[{
-          RowBox[{
-           RowBox[{"If", "[", 
+          RowBox[{"Print", "[", 
+           RowBox[{"jsonResponse1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+            "\[IndentingNewLine]", 
             RowBox[{
-             RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+             RowBox[{"nLen", "=", 
+              RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", 
              "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"nLen", "=", 
-               RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", 
-              "\[IndentingNewLine]", 
-              RowBox[{"jsonResponse2", "=", 
-               RowBox[{"ToString", "[", 
-                RowBox[{"StringReplace", "[", 
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"ToString", "[", 
+               RowBox[{"StringReplace", "[", 
+                RowBox[{
                  RowBox[{
                   RowBox[{
-                   RowBox[{
-                    RowBox[{"StringSplit", "[", 
+                   RowBox[{"StringSplit", "[", 
                     RowBox[{
                     RowBox[{"jsonResponse", "[", 
                     RowBox[{"[", "k", "]"}], "]"}], ",", "\"\<,\>\""}], "]"}],
-                     "[", 
-                    RowBox[{"[", "1", "]"}], "]"}], "[", 
-                   RowBox[{"[", "3", "]"}], "]"}], ",", 
-                  RowBox[{"{", 
-                   RowBox[{
-                    RowBox[{"\"\<\\\"response\\\":\>\"", "->", "\"\<\>\""}], 
-                    ",", 
-                    RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
-                 "]"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"jsonResponse2", "=", 
-               RowBox[{"StringReplace", "[", 
-                RowBox[{
-                 RowBox[{"nLen1", "[", 
-                  RowBox[{"[", "k", "]"}], "]"}], ",", 
+                    "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "3", "]"}], "]"}], ",", 
                  RowBox[{"{", 
                   RowBox[{
-                   RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+                   RowBox[{"\"\<\\\"response\\\":\>\"", "->", "\"\<\>\""}], 
+                   ",", 
                    RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
-                "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"{", 
-           RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{"==", " ", 
-         RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
-        "*)"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}], 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-        "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", 
+                "]"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"StringReplace", "[", 
+               RowBox[{
+                RowBox[{"nLen1", "[", 
+                 RowBox[{"[", "k", "]"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+                  RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+         "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"==", " ", 
+        RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+       "*)"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
        "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-        "===", "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]}]}]], "Input",
+       "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
  CellChangeTimes->{
   3.913557561226906*^9, {3.9135576186913157`*^9, 3.913557619149557*^9}, {
    3.913557668507381*^9, 3.9135576688674717`*^9}, {3.9172116758313303`*^9, 
@@ -1723,9 +1732,147 @@ Cell[BoxData[
    3.924382862333898*^9}, {3.924384268139688*^9, 3.9243843699885798`*^9}, {
    3.924384447419752*^9, 3.924384458423978*^9}, {3.924384557022406*^9, 
    3.9243845599055758`*^9}, {3.9243846977594*^9, 3.924384791157251*^9}, {
-   3.924425030568302*^9, 3.9244250388315363`*^9}},
- Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"]
+   3.924425030568302*^9, 3.9244250388315363`*^9}, {3.924800556097877*^9, 
+   3.924800565854558*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[23]:=",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"callSimpleLlama3", "[", "myPrompt_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+      "\[IndentingNewLine]", "jsonResponse2", ",", " ", "jsonResponse2A", ",",
+       " ", "nLen", ",", " ", "nLen1", ",", 
+      RowBox[{"myLocalmodel1", "=", "\"\<llama3\>\""}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+      " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"jsonBody", "=", 
+      RowBox[{"ExportString", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<model\>\"", "->", "myLocalmodel1"}], ",", 
+          RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+        "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+     RowBox[{"myRequest", "=", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+          RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+          RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}],
+          "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+       "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse", "=", 
+      RowBox[{"URLExecute", "[", "myRequest", "]"}]}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "==="}], "=", " ", 
+     RowBox[{
+      RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===", 
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse2A", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+        RowBox[{"nLen", "=", 
+         RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"StringContainsQ", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<response\>\""}], 
+                "]"}], ",", 
+               RowBox[{
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "[", 
+                RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", 
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",",
+            " ", "Null"}], "]"}]}], ";", 
+        RowBox[{"nLen", "=", 
+         RowBox[{
+          RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"jsonResponse2", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{
+           RowBox[{"nLen1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"\"\<{model:llama3\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<model:llama3\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<model:llama3\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false}\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"==", " ", 
+       RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924791198817696*^9, 3.9247912619695263`*^9}, {
+  3.924795162784837*^9, 3.924795210321412*^9}, {3.924801770072153*^9, 
+  3.924801843552862*^9}, {3.924801885041771*^9, 3.924801926759531*^9}, {
+  3.924809610102633*^9, 3.9248096233423653`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"9deb3cc6-3ef7-4041-9488-e88200290a2e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1746,88 +1893,85 @@ Cell[BoxData[
     RowBox[{"\"\<llama3\>\"", " ", "--"}]}], " ", "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"myLocalmodel", "=", "\"\<mistral\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"callmistral", "[", "myPrompt_", "]"}], ":=", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-       "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
-        "jsonResponse2", ",", " ", "jsonResponse2A", ",", " ", "nLen", ",", 
-        " ", "nLen1"}], "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-       "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the",
-         " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"callmistral", "[", "myPrompt_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
       RowBox[{
+      "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+       "jsonResponse2", ",", "\[IndentingNewLine]", " ", "jsonResponse2A", 
+       ",", " ", "nLen", ",", " ", "nLen1", ",", " ", 
        RowBox[{
-        RowBox[{"jsonBody", "=", 
-         RowBox[{"ExportString", "[", 
-          RowBox[{
-           RowBox[{"{", 
+        RowBox[{"myLocalmodel", "=", "\"\<mistral\>\""}], ";"}]}], "}"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+       " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"jsonBody", "=", 
+        RowBox[{"ExportString", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
+            RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+          "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+       RowBox[{"myRequest", "=", 
+        RowBox[{"HTTPRequest", "[", 
+         RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+            RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
             RowBox[{
-             RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
-             RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
-           "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
-        RowBox[{"myRequest", "=", 
-         RowBox[{"HTTPRequest", "[", 
-          RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
-           RowBox[{"<|", 
+            "\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+         "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "=", 
+        RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "==="}], "=", " ", 
+         RowBox[{
+          RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
+           "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2A", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+          RowBox[{"nLen", "=", 
+           RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"DeleteCases", "[", 
             RowBox[{
-             RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
-             RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
-             RowBox[{
-             "\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
-            "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-         "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
-          "the", " ", "JSON", " ", "response"}], "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"jsonResponse", "=", 
-         RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{
-          "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-            "===", "==="}], "=", " ", 
-          RowBox[{
-           RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
-            "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-            "===", "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
-        RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"jsonResponse2A", "=", 
-         RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
-          RowBox[{
-           RowBox[{"nLen1", "=", 
-            RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
-           RowBox[{"nLen", "=", 
-            RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"nLen1", "=", 
-            RowBox[{"DeleteCases", "[", 
-             RowBox[{
-              RowBox[{"Table", "[", 
-               RowBox[{
-                RowBox[{"If", "[", 
-                 RowBox[{
-                  RowBox[{"StringContainsQ", "[", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"StringContainsQ", "[", 
+                  RowBox[{
                    RowBox[{
-                    RowBox[{
                     RowBox[{"jsonResponse", "[", 
                     RowBox[{"[", "1", "]"}], "]"}], "[", 
                     RowBox[{"[", "i", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
+                   RowBox[{"{", 
                     RowBox[{
                     RowBox[{
                     "\"\<{\\\"model\\\":\\\"mistral\>\"", "->", "\"\<\>\""}], 
@@ -1835,86 +1979,86 @@ Cell[BoxData[
                     RowBox[{
                     "\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
                     "}"}]}], "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"jsonResponse", "[", 
-                    RowBox[{"[", "1", "]"}], "]"}], "[", 
-                   RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", 
-                  RowBox[{"Length", "[", 
-                   RowBox[{"jsonResponse", "[", 
-                    RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
-              ",", " ", "Null"}], "]"}]}], ";", 
-           RowBox[{"nLen", "=", 
-            RowBox[{
-             RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"Do", "[", "\[IndentingNewLine]", 
-         RowBox[{"(*", 
-          RowBox[{
-           RowBox[{"Print", "[", 
-            RowBox[{"jsonResponse1", "[", 
-             RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
-         "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "1", ",", 
+                 RowBox[{"Length", "[", 
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+             ",", " ", "Null"}], "]"}]}], ";", 
+          RowBox[{"nLen", "=", 
+           RowBox[{
+            RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
          RowBox[{
-          RowBox[{
-           RowBox[{"If", "[", 
+          RowBox[{"Print", "[", 
+           RowBox[{"jsonResponse1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+            "\[IndentingNewLine]", 
             RowBox[{
-             RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+             RowBox[{"nLen", "=", 
+              RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", 
              "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"nLen", "=", 
-               RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", 
-              "\[IndentingNewLine]", 
-              RowBox[{"jsonResponse2", "=", 
-               RowBox[{"ToString", "[", 
-                RowBox[{"StringReplace", "[", 
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"ToString", "[", 
+               RowBox[{"StringReplace", "[", 
+                RowBox[{
                  RowBox[{
                   RowBox[{
-                   RowBox[{
-                    RowBox[{"StringSplit", "[", 
+                   RowBox[{"StringSplit", "[", 
                     RowBox[{
                     RowBox[{"jsonResponse", "[", 
                     RowBox[{"[", "k", "]"}], "]"}], ",", "\"\<,\>\""}], "]"}],
-                     "[", 
-                    RowBox[{"[", "1", "]"}], "]"}], "[", 
-                   RowBox[{"[", "3", "]"}], "]"}], ",", 
-                  RowBox[{"{", 
-                   RowBox[{
-                    RowBox[{"\"\<\\\"response\\\":\>\"", "->", "\"\<\>\""}], 
-                    ",", 
-                    RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
-                 "]"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"jsonResponse2", "=", 
-               RowBox[{"StringReplace", "[", 
-                RowBox[{
-                 RowBox[{"nLen1", "[", 
-                  RowBox[{"[", "k", "]"}], "]"}], ",", 
+                    "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "3", "]"}], "]"}], ",", 
                  RowBox[{"{", 
                   RowBox[{
-                   RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+                   RowBox[{"\"\<\\\"response\\\":\>\"", "->", "\"\<\>\""}], 
+                   ",", 
                    RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
-                "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
-          "\[IndentingNewLine]", ",", 
-          RowBox[{"{", 
-           RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"(*", " ", 
-        RowBox[{"==", " ", 
-         RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
-        "*)"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}], 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-        "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", 
+                "]"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"StringReplace", "[", 
+               RowBox[{
+                RowBox[{"nLen1", "[", 
+                 RowBox[{"[", "k", "]"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+                  RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+         "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"==", " ", 
+        RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+       "*)"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
        "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-        "===", "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]}]}]], "Input",
+       "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
  CellChangeTimes->{
   3.913557561226906*^9, {3.9135576186913157`*^9, 3.913557619149557*^9}, {
    3.913557668507381*^9, 3.9135576688674717`*^9}, {3.9172116758313303`*^9, 
@@ -1955,196 +2099,106 @@ Cell[BoxData[
    3.924382862333898*^9}, {3.924384268139688*^9, 3.9243843699885798`*^9}, {
    3.924384447419752*^9, 3.924384458423978*^9}, {3.924384557022406*^9, 
    3.9243845599055758`*^9}, {3.9243846977594*^9, 3.924384791157251*^9}, {
-   3.924391118544448*^9, 3.924391125114265*^9}, 3.924425014429448*^9},
- Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
+   3.924391118544448*^9, 3.924391125114265*^9}, 3.924425014429448*^9, {
+   3.9248005390768423`*^9, 3.924800546918941*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[25]:=",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
 
 Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
+ RowBox[{
+  RowBox[{"callSimplemistral", "[", "myPrompt_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
    RowBox[{
-    RowBox[{"PageSlide", "=", "1"}], ";", "\[IndentingNewLine]", 
-    RowBox[{
-    "myExpert", " ", "=", " ", 
-     "\"\<You are an expert in Latex and Mathematica.\>\""}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"myTopic", " ", "=", " ", "\"\<Mathematica + Latex\>\""}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"nroSlides", " ", "=", " ", "2"}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{"myPrompt1", "=", 
+    RowBox[{"{", 
      RowBox[{
-      RowBox[{
-       RowBox[{"myExpert", "<>", "\"\<I always want \>\"", "<>", 
-        RowBox[{"ToString", "[", "nroSlides", "]"}], "<>", 
-        "\"\< Slides for scientific presentations. I want the answer in this \
-format, which is Wolfram Mathematica dictionary. You end up writing a \
-dictionary formatted in Wolfram Mathematica like this example:\n\n\\\"\>"}], 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"-", " ", "Slide"}], " ", "\"\< <>\>\""}], " ", "-", " ", 
-         "\"\<<>ToString[PageSlide]<>\>\"", " ", "-", " ", 
-         "\"\<<>myTopic<>\>\"", "-"}], "*)"}], "\n", "title"}], " ", "->", 
-      " ", 
-      RowBox[{"the", " ", "section", " ", "you", " ", "find"}]}]}]}], ",", 
-   " ", "\n", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"\"\<\[IndentingNewLine]\>", 
-      RowBox[{"(*", 
-       RowBox[{
-       "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the",
-         " ", "request"}], "*)"}], "\n", "jsonBody1"}], "=", 
-     RowBox[{"ExportString", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
-         RowBox[{"\"\<prompt\>\"", "->", "myPrompt1"}]}], "}"}], ",", 
-       "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
-    RowBox[{"(*", 
-     RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
-    RowBox[{"myRequest1", "=", 
-     RowBox[{"HTTPRequest", "[", 
-      RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
-       RowBox[{"<|", 
-        RowBox[{
-         RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
-         RowBox[{"\"\<Body\>\"", "->", "jsonBody1"}], ",", 
-         RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
-        "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+      "\[IndentingNewLine]", "jsonResponse2", ",", " ", "jsonResponse2A", ",",
+       " ", "nLen", ",", " ", "nLen1", ",", 
+      RowBox[{"myLocalmodel1", "=", "\"\<mistral\>\""}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
     RowBox[{"(*", 
      RowBox[{
-     "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
-      "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
-    RowBox[{"jsonResponse1", "=", 
-     RowBox[{"URLExecute", "[", "myRequest1", "]"}]}], ";", "\n", 
+     "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+      " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"jsonBody", "=", 
+      RowBox[{"ExportString", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<model\>\"", "->", "myLocalmodel1"}], ",", 
+          RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+        "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+     RowBox[{"myRequest", "=", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+          RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+          RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}],
+          "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+       "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse", "=", 
+      RowBox[{"URLExecute", "[", "myRequest", "]"}]}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
     RowBox[{
      RowBox[{
-      RowBox[{"StringReplace", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"jsonResponse1", "[", 
-          RowBox[{"[", "1", "]"}], "]"}], "[", 
-         RowBox[{"[", "54", "]"}], "]"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"\"\<{\\\"model\\\":\\\"mistral\>\"", "->", "\"\<\>\""}], 
-          ",", " ", 
-          RowBox[{"\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
-         "}"}]}], "]"}], "\n", 
-      RowBox[{"Length", "[", 
-       RowBox[{"jsonResponse1", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[IndentingNewLine]", 
-      RowBox[{"DeleteCases", "[", 
-       RowBox[{
-        RowBox[{"Table", "[", 
-         RowBox[{
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{"StringContainsQ", "[", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"jsonResponse1", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "[", 
-               RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<response\>\""}], 
-             "]"}], ",", 
-            RowBox[{"StringReplace", "[", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"jsonResponse1", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "[", 
-               RowBox[{"[", "i", "]"}], "]"}], ",", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{
-                "\"\<{\\\"model\\\":\\\"mistral\>\"", "->", "\"\<\>\""}], ",",
-                 " ", 
-                RowBox[{"\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
-               "}"}]}], "]"}]}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"i", ",", "5", ",", 
-            RowBox[{"Length", "[", 
-             RowBox[{"jsonResponse1", "[", 
-              RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
-        " ", "Null"}], "]"}], "\n", 
-      RowBox[{"StringReplace", "[", 
-       RowBox[{
-        RowBox[{"nLen1", "[", 
-         RowBox[{"[", "4", "]"}], "]"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
-          RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], "]"}], 
-      "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-        RowBox[{
-        "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", 
-         "===", "==="}], "=", " ", 
-        RowBox[{
-         RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
-          "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
-          "===", "===", "=="}]}], "*)"}], "\n", "jsonResponse2"}], "=", 
-     "\"\<\>\""}], ";", "\[IndentingNewLine]", 
-    RowBox[{"jsonResponse2A", "=", 
-     RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-    RowBox[{"If", "[", 
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "==="}], "=", " ", 
      RowBox[{
-      RowBox[{"myPrompt1", "==", "\"\<Hola\>\""}], ",", 
+      RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===", 
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse2A", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
       RowBox[{
-       RowBox[{"nLen1", "=", 
-        RowBox[{"Length", "[", "jsonResponse1", "]"}]}], ";", " ", 
-       RowBox[{"nLen", "=", 
-        RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"nLen1", "=", 
-        RowBox[{"DeleteCases", "[", 
-         RowBox[{
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"StringContainsQ", "[", 
-               RowBox[{
+       RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+        RowBox[{"nLen", "=", 
+         RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"StringContainsQ", "[", 
                 RowBox[{
-                 RowBox[{"jsonResponse1", "[", 
-                  RowBox[{"[", "1", "]"}], "]"}], "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<response\>\""}], 
-               "]"}], ",", 
-              RowBox[{"StringReplace", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"jsonResponse1", "[", 
-                  RowBox[{"[", "1", "]"}], "]"}], "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], ",", 
-                RowBox[{"{", 
                  RowBox[{
-                  RowBox[{
-                  "\"\<{\\\"model\\\":\\\"mistral\>\"", "->", "\"\<\>\""}], 
-                  ",", " ", 
-                  RowBox[{
-                  "\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
-                 "}"}]}], "]"}]}], "]"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "1", ",", 
-              RowBox[{"Length", "[", 
-               RowBox[{"jsonResponse1", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
-          " ", "Null"}], "]"}]}], ";", 
-       RowBox[{"nLen", "=", 
-        RowBox[{
-         RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], ";", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"Do", "[", "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-        RowBox[{"Print", "[", 
-         RowBox[{"jsonResponse1", "[", 
-          RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<response\>\""}], 
+                "]"}], ",", 
+               RowBox[{
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "[", 
+                RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", 
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",",
+            " ", "Null"}], "]"}]}], ";", 
+        RowBox[{"nLen", "=", 
+         RowBox[{
+          RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], ";",
       "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{
         RowBox[{"jsonResponse2", "=", 
@@ -2155,40 +2209,308 @@ dictionary formatted in Wolfram Mathematica like this example:\n\n\\\"\>"}],
            RowBox[{"{", 
             RowBox[{
              RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
-             RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], "]"}]}], 
-        ";", "\[IndentingNewLine]", 
+             RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"\"\<{model\\\":mistral\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<model\\\":mistral\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false}\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
         RowBox[{"AppendTo", "[", 
          RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
        "\[IndentingNewLine]", ",", 
        RowBox[{"{", 
-        RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], 
+        RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";", 
      "\[IndentingNewLine]", 
      RowBox[{"(*", " ", 
       RowBox[{"==", " ", 
        RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
       "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}]}], 
-  "*)"}]], "Input",
- CellChangeTimes->{{3.924342985462576*^9, 3.92434302511053*^9}, {
-   3.924343091890191*^9, 3.924343093661395*^9}, {3.924343125221239*^9, 
-   3.924343229162456*^9}, {3.924343321005103*^9, 3.924343334396755*^9}, {
-   3.924343413444416*^9, 3.924343601652215*^9}, 3.924343633178124*^9, {
-   3.924343686773377*^9, 3.9243438819731417`*^9}, {3.9243440615844*^9, 
-   3.924344151105948*^9}, {3.924344391764368*^9, 3.924344392594713*^9}, {
-   3.924344424631476*^9, 3.924344425742693*^9}, {3.9243444912445707`*^9, 
-   3.924344615000141*^9}, {3.924344698656043*^9, 3.924344741530211*^9}, 
-   3.924344831541888*^9, {3.9243448793817663`*^9, 3.924344921100554*^9}, 
-   3.9243450613135967`*^9, {3.924345115773007*^9, 3.924345151709331*^9}, {
-   3.924346470202568*^9, 3.924346701307065*^9}, {3.924346792938356*^9, 
-   3.9243467964044*^9}, {3.924346868632576*^9, 3.9243468796784678`*^9}, {
-   3.924347885087757*^9, 3.9243479227103*^9}, {3.924386483976386*^9, 
-   3.9243865205157337`*^9}, {3.9243921624673033`*^9, 3.924392181619156*^9}, 
-   3.924419685958503*^9, {3.924419742624403*^9, 3.924419786703803*^9}, {
-   3.924420012788308*^9, 3.924420022558592*^9}, {3.92442506975886*^9, 
-   3.9244250800966883`*^9}},
- Background->RGBColor[1, 0.9, 0.8],
- CellLabel->
-  "In[163]:=",ExpressionUUID->"420d350c-b353-4eb3-8118-f7b45aaf4a5b"]
+     RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924791198817696*^9, 3.9247912619695263`*^9}, {
+  3.924795162784837*^9, 3.924795210321412*^9}, {3.924801258492787*^9, 
+  3.9248012675747147`*^9}, {3.9248019607764387`*^9, 3.9248019843721657`*^9}, {
+  3.924802094476634*^9, 3.92480211477796*^9}, {3.924802588258322*^9, 
+  3.924802591569573*^9}, {3.924814126423853*^9, 3.924814132892582*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"da656e44-a103-4880-b40c-ca3daccc7317"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cell PDF", "Section",
+ CellChangeTimes->{{3.924803767893077*^9, 
+  3.9248037698018*^9}},ExpressionUUID->"31449be0-cfd4-4892-8530-dc855751ce80"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{"SelfDestruct", ",", "HoldAllComplete"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SelfDestruct", "[", "e_", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"$FrontEnd", "=!=", "$Failed"}], ",", 
+      RowBox[{
+       RowBox[{"SelectionMove", "[", 
+        RowBox[{
+         RowBox[{"EvaluationNotebook", "[", "]"}], ",", "All", ",", 
+         "EvaluationCell"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"NotebookDelete", "[", "]"}]}]}], "]"}], ";", "e"}], 
+   ")"}]}]}], "Input",
+ CellChangeTimes->{{3.92487519691999*^9, 3.924875196924327*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"ffc92a30-ed0b-4a45-a87d-eb46386e466b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RunCellsBellow", "[", 
+   RowBox[{"nbBellow_", ",", "nroCells_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "nbmmaitex", "}"}], ",", "\[IndentingNewLine]", 
+    StyleBox[
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", " ", "Corre"}], " ", "las", " ", "celdas", " ", "hacia", 
+        " ", "abajo"}], " ", "-"}], "*)"}],
+     FontSize->16], "\[IndentingNewLine]", 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       RowBox[{
+        RowBox[{"nbmmaitex", "=", "nbBellow"}], ";"}],
+       FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+      StyleBox[
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"SelectionMove", "[", 
+           RowBox[{"nbmmaitex", ",", "Next", ",", "Cell", ",", "1"}], "]"}], 
+          ";", 
+          RowBox[{"SelectionEvaluate", "[", "nbmmaitex", "]"}], ";"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "nroCells"}], "}"}]}], "]"}],
+       FontWeight->"SemiBold"]}],
+     FontSize->14]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924872172279262*^9, 3.924872256198571*^9}, {
+  3.924872663146133*^9, 3.924872722887165*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"d7bb3201-83f7-490e-b3f8-b96d44f2503f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cellPDF", "[", 
+   RowBox[{"nb2PDF_", ",", " ", "slidePDF_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{
+    "nb2PDF", "<>", 
+     "\"\<=EvaluationNotebook[]; \
+SetOptions[EvaluationNotebook[],StyleDefinitions->Notebook[{Cell[StyleData[\
+StyleDefinitions->\\\"Default.nb\\\"]],Cell[StyleData[All,\\\"Printout\\\"],\
+ShowCellLabel->False],Cell[StyleData[\\\"Text\\\",\\\"Printout\\\",\
+StyleDefinitions->None],CellMargins->{{0,0},{0,0}},Background->GrayLevel[1]], \
+Cell[StyleData[\\\"Input\\\",\\\"Printout\\\",StyleDefinitions->None],\
+CellMargins->{{0,0},{0,0}},LinebreakAdjustments->{0.85,2,10,1,1}],Cell[\
+StyleData[\\\"Code\\\",\\\"Printout\\\",StyleDefinitions->None],CellMargins->{\
+{0,0},{0,0}},Background->GrayLevel[1]],Cell[StyleData[\\\"Input\\\",\\\"\
+Printout\\\",StyleDefinitions->None],CellMargins->{{0,0},{0,0}},\
+LinebreakAdjustments->{0.85,2,10,1,1}],Cell[StyleData[\\\"Output\\\",\\\"\
+Printout\\\",StyleDefinitions->None],CellMargins->{{0,0},{0,0}}]},\
+StyleDefinitions->\\\"PrivateStylesheetFormatting.nb\\\"]];\[IndentingNewLine]\
+SetOptions[\>\"", "<>", "nb2PDF", "<>", 
+     "\"\<,PrintingOptions->{\\\"FirstPageHeader\\\"->True}];\n\
+SetOptions[\>\"", "<>", "nb2PDF", "<>", 
+     "\"\<,PrintingOptions->{\\\"PrintingMargins\\\"->{{5,5},{2,5}},\
+\[IndentingNewLine]\\\"PaperOrientation\\\"->\\\"Landscape\\\", \
+\\\"PrintCellBrackets\\\"->False, \
+\\\"PrintMultipleHorizontalPages\\\"->False,\[IndentingNewLine]\\\"PageSize\\\
+\"->{820, 660},\[IndentingNewLine]\\\"Magnification\\\"->{0.8, 0.8}},\
+\[IndentingNewLine]PrintingStartingPageNumber->1,\[IndentingNewLine]\
+PageHeaders->{{Cell[TextData[{CounterBox[\\\"Page\\\"]}],\\\"PageNumber\\\"],\
+None,None},{Cell[TextData[{CounterBox[\\\"Page\\\"]}],\\\"PageNumber\\\"],\
+None,None}},PageFooters->{{None,None,None},{None,None,None}}];\
+\[IndentingNewLine]sideBySide[x_,y_,size_]:=Replace[ToBoxes@Grid[{{Pane[Grid[{\
+{1}},Spacings->0,Alignment->{Left,Top}],ImageSize->size],Pane[Grid[{{2}},\
+Spacings->0,Alignment->{Left,Top}],ImageSize->size]}},Spacings->0,Alignment->{\
+Left,Top}],{{{\\\"1\\\"}}->Map[({#})&,x],{{\\\"2\\\"}}->Map[({#})&,y]},\
+Infinity];\nPrintingStyleEnvironment/. \
+Options[EvaluationNotebook[],PrintingStyleEnvironment];\[IndentingNewLine]\
+NotebookPrint[\>\"", "<>", "nb2PDF", "<>", 
+     "\"\<,NotebookDirectory[]<>\\\"\>\"", "<>", "slidePDF", "<>", 
+     "\"\<\\\"]\>\""}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924803574409164*^9, 3.924803687655254*^9}, 
+   3.924895269458261*^9, {3.92490571688824*^9, 
+   3.9249057931807137`*^9}},ExpressionUUID->"80d2d44a-d60f-43c0-b9a1-\
+abe8e3b3332f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parametros y arreglos", "Section",
+ CellChangeTimes->{{3.924861252428123*^9, 
+  3.924861258684898*^9}},ExpressionUUID->"dd4e372a-3cdd-4930-bf8c-\
+0ecc277fbd7a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"actividadesMMaTeXinput", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<You are an expert in Advanced Physics\>\"", ",", 
+      "\"\<You are an expert in Quantum Mechanics\>\"", ",", 
+      "\"\<You are a skilled programmer in Mathematica\>\"", ",", 
+      "\"\<You are a master of Differential Equations\>\"", ",", 
+      "\"\<You are an authority on Relativity Theory\>\"", ",", 
+      "\"\<You are knowledgeable in Particle Physics\>\"", ",", 
+      "\"\<You are proficient in Numerical Analysis\>\"", ",", 
+      "\"\<You are an expert in Astrophysics\>\"", ",", 
+      "\"\<You are skilled in Computational Fluid Dynamics\>\"", ",", 
+      "\"\<You are a pro at Thermodynamics and Statistical Mechanics\>\"", 
+      ",", "\"\<You are an expert in Advanced Physics\>\"", ",", 
+      "\"\<You are an expert in Quantum Mechanics\>\"", ",", 
+      "\"\<You are a skilled programmer in Mathematica\>\"", ",", 
+      "\"\<You are a master of Differential Equations\>\"", ",", 
+      "\"\<You are an authority on Relativity Theory\>\"", ",", 
+      "\"\<You are knowledgeable in Particle Physics\>\"", ",", 
+      "\"\<You are proficient in Numerical Analysis\>\"", ",", 
+      "\"\<You are an expert in Astrophysics\>\"", ",", 
+      "\"\<You are skilled in Computational Fluid Dynamics\>\"", ",", 
+      "\"\<You are a pro at Thermodynamics and Statistical Mechanics\>\"", 
+      ",", "\"\<You are well-versed in Quantum Field Theory\>\"", ",", 
+      "\"\<You are an authority on General Relativity\>\"", ",", 
+      "\"\<You are skilled in Parallel Computing\>\"", ",", 
+      "\"\<You are a master of Partial Differential Equations\>\"", ",", 
+      "\"\<You are knowledgeable in Cosmology and the Big Bang\>\"", ",", 
+      "\"\<You are an expert in Particle Accelerators and Detectors\>\"", 
+      ",", "\"\<You are proficient in the Finite Element Method\>\"", ",", 
+      "\"\<You are skilled in Stellar Evolution and Black Holes\>\"", ",", 
+      "\"\<You are a pro at Computational Fluid Dynamics Simulations\>\"", 
+      ",", "\"\<You are an expert in Non-Equilibrium Statistical \
+Mechanics\>\""}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temasMMaTeXinput", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Quantum Field Theory\>\"", ",", "\"\<General Relativity\>\"", ",", 
+     "\"\<Parallel Computing\>\"", ",", 
+     "\"\<Partial Differential Equations\>\"", ",", 
+     "\"\<Cosmology and the Big Bang\>\"", ",", 
+     "\"\<Particle Accelerators and Detectors\>\"", ",", 
+     "\"\<Finite Element Method\>\"", ",", 
+     "\"\<Stellar Evolution and Black Holes\>\"", ",", 
+     "\"\<Computational Fluid Dynamics Simulations\>\"", ",", 
+     "\"\<Non-Equilibrium Statistical Mechanics\>\"", ",", " ", 
+     "\"\<Quantum Field Theory\>\"", ",", "\"\<General Relativity\>\"", ",", 
+     "\"\<Parallel Computing\>\"", ",", 
+     "\"\<Partial Differential Equations\>\"", ",", 
+     "\"\<Cosmology and the Big Bang\>\"", ",", 
+     "\"\<Particle Accelerators and Detectors\>\"", ",", 
+     "\"\<Finite Element Method\>\"", ",", 
+     "\"\<Stellar Evolution and Black Holes\>\"", ",", 
+     "\"\<Computational Fluid Dynamics Simulations\>\"", ",", 
+     "\"\<Non-Equilibrium Statistical Mechanics\>\"", ",", 
+     "\"\<Quantum Chromodynamics\>\"", ",", "\"\<Gravitational Waves\>\"", 
+     ",", "\"\<High-Performance Computing\>\"", ",", 
+     "\"\<Fourier Analysis\>\"", ",", "\"\<Dark Matter and Dark Energy\>\"", 
+     ",", "\"\<Neutrino Physics\>\"", ",", "\"\<Boundary Element Method\>\"", 
+     ",", "\"\<Exoplanets and Astrobiology\>\"", ",", 
+     "\"\<Multiphase Flow Simulations\>\"", ",", 
+     "\"\<Renormalization Group Theory\>\""}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9248612641923923`*^9, 3.924861290340394*^9}, {
+  3.924861407059802*^9, 3.924861438316992*^9}, {3.9248908433087177`*^9, 
+  3.924890853020595*^9}, {3.9248908968583927`*^9, 
+  3.924890897652061*^9}},ExpressionUUID->"1666583d-2f24-4e60-9fbb-\
+457e3fbe787b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["AI in MMaiTeX", "Section",
+ CellChangeTimes->{{3.924903930213545*^9, 
+  3.924903939949027*^9}},ExpressionUUID->"ae665ec3-c060-496e-8209-\
+9cce6e587c04"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"botMMaiTeX", "[", 
+   RowBox[{
+    RowBox[{"thebotx_", "?", "StringQ"}], ",", 
+    RowBox[{"myTopicx_", "?", "StringQ"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"myExpertx_", "?", "StringQ"}], ",", " ", 
+    RowBox[{"nroSlidesx_", "?", "NumberQ"}], ",", " ", "\[IndentingNewLine]", 
+    
+    RowBox[{"PageSlidex_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "ClaudecellString1ax", "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Switch", "[", 
+      RowBox[{"thebotx", ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", " ", "Claude"}], " ", 
+          RowBox[{"3", " ", "[", 
+           RowBox[{"NO", " ", "vision"}], "]"}]}], " ", "-"}], "*)"}], 
+       "\[IndentingNewLine]", "\"\<claude3\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ClaudecellString1ax", "=", 
+         RowBox[{"callClaude", "[", 
+          RowBox[{
+           RowBox[{
+           "myExpertx", "<>", 
+            "\"\< Do not give intro nor conlcusions on what you were sent to \
+answer. Just plain and straight answers.\nI always want \>\"", "<>", 
+            RowBox[{"ToString", "[", "nroSlidesx", "]"}], "<>", 
+            "\"\< Slides for scientific presentations. I want the answer in \
+this format, which is Wolfram Mathematica dictionary. You end up writing a \
+dictionary formatted in Wolfram Mathematica like this example:\n\n(*- Slide \
+\>\"", " ", "<>", "\"\< - \>\"", "<>", 
+            RowBox[{"ToString", "[", "PageSlidex", "]"}], "<>", "\"\< - \>\"",
+             "<>", "myTopicx", "<>", 
+            "\"\<-*)\n\\n<|\\\"title\\\"-> \\\"the section you find\\\", \n\\\
+\"link\\\"->\\\"the link you find\\\", \n\\\"text\\\"->\\\"the text you \
+find\\\", \n\\\"text\\\"->\\\"the text you find\\\", \n\\\"fig\\\"->\\\"the \
+figure or image you find\\\", \n\\\"fig\\\"->\\\"the figure or image you find\
+\\\", \n\\\"code\\\"->\\\"the code you find\\\", \n\\\"input\\\"->\\\"the \
+input you invent related to the subject\\\",\n\\\"code\\\"->\\\"the code you \
+find\\\", \\\"style\\\"->\\\"Create a name for this style of Slide.\\\"|>\\n \
+\n\nDo not forget the \\\"style\\\" key. And please do not forget open and \
+close every quote in the construction of the association. Please comment \
+nothing like \\\"Here is the requested... blah blah \\\" or anything like or \
+regarding anything, just give me the plain dictionary. If you are inside the \
+value of a key and you need to write a quote, escape it like \\\", otherwise \
+not.\n\n1. title only in slide 1 with the Title of the Topic or Subject.\n2. \
+Distribute at your discretion Sections and subsections. The Keys are \
+\\\"section\\\" and \\\"subsection\\\".\n3. Distribute at your discretion the \
+number of \\\"text\\\", \\\"code\\\", \\\"fig\\\". \n4. But, remember that \
+these slides should not contain more than 4-5 elements. Please optimize this \
+number for better understanding.\n\nOk. Give me \>\"", "<>", 
+            RowBox[{"ToString", "[", "nroSlidesx", "]"}], "<>", 
+            "\"\< slides of a presentation about: \>\"", "<>", "myTopicx", 
+            "<>", "\"\<. Give me everything in Spanish.\>\""}], ",", " ", 
+           "myAPIKeyC"}], "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";",
+      "\[IndentingNewLine]", "ClaudecellString1ax"}]}], "\[IndentingNewLine]",
+    "]"}]}]], "Input",
+ CellChangeTimes->{{3.9249029715281878`*^9, 3.9249029933711863`*^9}, {
+  3.924903030923353*^9, 3.924903082261106*^9}, {3.924903156556409*^9, 
+  3.924903267488963*^9}, {3.924903320451552*^9, 3.924903342705686*^9}, {
+  3.924903390593595*^9, 3.924903456992715*^9}, {3.9249039580502357`*^9, 
+  3.9249039794059277`*^9}},ExpressionUUID->"5fe0580e-a98a-48ba-b084-\
+256c7a8d44a0"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -2219,20 +2541,35 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 310, 5, 121, "Title",ExpressionUUID->"f3d4e1ba-6395-4a84-afec-abd624208c45"],
-Cell[893, 29, 5910, 131, 546, "Input",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
-Cell[6806, 162, 5626, 134, 468, "Input",ExpressionUUID->"018d5997-70a7-409a-a4fc-eb3de7f12d91"],
-Cell[12435, 298, 5389, 135, 546, "Input",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
-Cell[17827, 435, 1746, 41, 182, "Input",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
-Cell[19576, 478, 41441, 1014, 4296, "Input",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
+Cell[580, 22, 358, 6, 121, "Title",ExpressionUUID->"f3d4e1ba-6395-4a84-afec-abd624208c45"],
+Cell[941, 30, 6321, 141, 624, "Input",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
+Cell[7265, 173, 5626, 134, 468, "Input",ExpressionUUID->"018d5997-70a7-409a-a4fc-eb3de7f12d91"],
+Cell[12894, 309, 5394, 136, 546, "Input",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
+Cell[18291, 447, 1746, 41, 182, "Input",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
+Cell[20040, 490, 41461, 1014, 4296, "Input",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
 Cell[CellGroupData[{
-Cell[61042, 1496, 298, 7, 87, "Section",ExpressionUUID->"87a00f3c-3139-4c6b-add0-debdafbaa8a0"],
-Cell[61343, 1505, 10774, 222, 858, "Input",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"]
+Cell[61526, 1508, 298, 7, 87, "Section",ExpressionUUID->"87a00f3c-3139-4c6b-add0-debdafbaa8a0"],
+Cell[61827, 1517, 10660, 220, 832, "Input",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"],
+Cell[72490, 1739, 5945, 135, 624, "Input",ExpressionUUID->"9deb3cc6-3ef7-4041-9488-e88200290a2e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[72154, 1732, 154, 3, 87, "Section",ExpressionUUID->"693d99ae-2832-423b-bbcb-49fa360d903a"],
-Cell[72311, 1737, 10797, 222, 858, "Input",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
-Cell[83111, 1961, 9773, 229, 1144, "Input",ExpressionUUID->"420d350c-b353-4eb3-8118-f7b45aaf4a5b"]
+Cell[78472, 1879, 154, 3, 87, "Section",ExpressionUUID->"693d99ae-2832-423b-bbcb-49fa360d903a"],
+Cell[78629, 1884, 10685, 220, 832, "Input",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
+Cell[89317, 2106, 5984, 135, 624, "Input",ExpressionUUID->"da656e44-a103-4880-b40c-ca3daccc7317"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[95338, 2246, 149, 2, 87, "Section",ExpressionUUID->"31449be0-cfd4-4892-8530-dc855751ce80"],
+Cell[95490, 2250, 751, 19, 130, "Input",ExpressionUUID->"ffc92a30-ed0b-4a45-a87d-eb46386e466b"],
+Cell[96244, 2271, 1295, 34, 161, "Input",ExpressionUUID->"d7bb3201-83f7-490e-b3f8-b96d44f2503f"],
+Cell[97542, 2307, 2703, 46, 624, "Input",ExpressionUUID->"80d2d44a-d60f-43c0-b9a1-abe8e3b3332f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100282, 2358, 166, 3, 87, "Section",ExpressionUUID->"dd4e372a-3cdd-4930-bf8c-0ecc277fbd7a"],
+Cell[100451, 2363, 4052, 71, 546, "Input",ExpressionUUID->"1666583d-2f24-4e60-9fbb-457e3fbe787b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104540, 2439, 158, 3, 87, "Section",ExpressionUUID->"ae665ec3-c060-496e-8209-9cce6e587c04"],
+Cell[104701, 2444, 3833, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"]
 }, Open  ]]
 }, Open  ]]
 }
