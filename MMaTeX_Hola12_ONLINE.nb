@@ -10,14 +10,65 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23010,        572]
-NotebookOptionsPosition[     18963,        472]
-NotebookOutlinePosition[     20789,        523]
-CellTagsIndexPosition[     20665,        516]
+NotebookDataLength[     30722,        761]
+NotebookOptionsPosition[     22495,        581]
+NotebookOutlinePosition[     28365,        710]
+CellTagsIndexPosition[     28204,        702]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["M",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.7, 0, 0]],
+ StyleBox["M",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.8, 0.2, 0]],
+ StyleBox["a",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.8, 0.4, 0]],
+ StyleBox["T",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.9, 0.5, 0]],
+ StyleBox["e",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.6, 0]],
+ StyleBox["X [",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.6, 0.6, 0.]],
+ StyleBox["v",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.5, 0, 0.7]],
+ StyleBox["0",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.4, 0, 0.6]],
+ StyleBox[".",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.5, 0.1, 0.6]],
+ StyleBox["1]",
+  FontSize->72,
+  FontSlant->"Italic",
+  FontColor->RGBColor[0.6, 0.2, 0.6]]
+}], "Chapter",
+ CellChangeTimes->{
+  3.925069671537421*^9, {3.925069731749804*^9, 3.925069774318865*^9}, {
+   3.925069804402699*^9, 3.925069882138157*^9}, {3.9250784519286633`*^9, 
+   3.9250784571707497`*^9}},
+ TextAlignment->Center,
+ CellID->1595627904,ExpressionUUID->"87bb9b07-3a52-4924-bab4-735dd228c6e9"],
+
 Cell["\<\
 https://github.com/josemramirez/mmatex
 Corremos 8 celdas seguidas:\
@@ -133,7 +184,7 @@ Cell[BoxData[{
    3.924566784669921*^9}, {3.924606615875402*^9, 3.924606624634149*^9}},
  Background->RGBColor[1, 0.9, 0.8],
  CellTags->"initCell",
- CellLabel->"In[141]:=",
+ CellLabel->"In[51]:=",
  CellID->2107135677,ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3"]
 }, Closed]],
 
@@ -244,7 +295,7 @@ plainText_v2_ON.nb\>\"",
    3.924554198810841*^9, 3.924554217997847*^9}, {3.924554370200923*^9, 
    3.924554394316977*^9}, 3.924606633802783*^9},
  Background->RGBColor[1, 0.85, 0.85],
- CellLabel->"In[145]:=",
+ CellLabel->"In[55]:=",
  CellID->1681731838,ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb"],
 
 Cell[BoxData[
@@ -277,33 +328,31 @@ Cell[BoxData[
    3.924537369053863*^9}, {3.9245374518309603`*^9, 3.924537460549062*^9}, {
    3.9245540832553997`*^9, 3.9245540844580107`*^9}},
  Background->GrayLevel[0.85],
- CellLabel->"In[149]:=",
+ CellLabel->"In[59]:=",
  CellID->1878991879,ExpressionUUID->"da613e2f-7182-448a-b6cc-8dcef4587d8d"]
 }, Closed]],
 
 Cell[CellGroupData[{
 
 Cell[TextData[{
+ "Clases ",
  Cell[BoxData[
   FormBox[
    StyleBox[
-    RowBox[{"L", 
-     StyleBox[
-      AdjustmentBox["A",
-       BoxBaselineShift->-0.4,
-       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
-      FontSize->Smaller], "T", 
-     AdjustmentBox["E",
-      BoxBaselineShift->0.5,
-      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    StyleBox[
+     RowBox[{"MMaT", 
+      AdjustmentBox["E",
+       BoxBaselineShift->0.5,
+       BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}]],
     SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
   "8ab43e0e-4dac-4558-8a5d-905d5900a233"],
- " generation functions"
+ " "
 }], "Section",
  CellChangeTimes->{{3.7056633913006554`*^9, 3.705663401948264*^9}, {
   3.705664410620957*^9, 3.705664419620472*^9}, {3.705664822085491*^9, 
   3.7056648272687883`*^9}, {3.7056657220369654`*^9, 3.705665729333383*^9}, {
-  3.70566608786889*^9, 3.705666090365033*^9}},
+  3.70566608786889*^9, 3.705666090365033*^9}, {3.9250800851526537`*^9, 
+  3.925080107513123*^9}},
  CellID->261372301,ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a"],
 
 Cell[BoxData[
@@ -331,19 +380,17 @@ Cell[BoxData[
   3.9245364276791697`*^9, 3.924536428131391*^9}, {3.924554117085369*^9, 
   3.924554117665497*^9}, {3.924821599533784*^9, 3.924821609759172*^9}},
  Background->RGBColor[1, 0.9, 0.8],
- CellLabel->"In[150]:=",
+ CellLabel->"In[60]:=",
  CellID->504000207,ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204"]
 }, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["Corremos la funci\[OAcute]n para obtener el texto plano:", "Section",
+Cell["Texto plano:", "Section",
  CellChangeTimes->{{3.7056633913006554`*^9, 3.705663401948264*^9}, {
   3.705664410620957*^9, 3.705664419620472*^9}, {3.923253647589651*^9, 
-  3.923253663379437*^9}},
+  3.923253663379437*^9}, {3.9250801125109386`*^9, 3.92508011704813*^9}},
  CellID->142455613,ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"If", "[", 
@@ -371,22 +418,84 @@ Cell[BoxData[
    3.9236995475139103`*^9}, 3.9236996279178743`*^9},
  Background->RGBColor[0.94, 0.91, 0.88],
  CellTags->"runNote2",
- CellLabel->"In[1]:=",
+ CellLabel->"In[62]:=",
  CellID->433914365,ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78"],
-
-Cell[BoxData["\<\"Voy a seguir...\"\>"], "Print",
- CellChangeTimes->{3.924822009637377*^9},
- CellTags->"runNote2",
- CellLabel->"During evaluation of In[1]:=",
- CellID->890997756,ExpressionUUID->"c0e77304-d1a2-47d0-80e9-dd4a20b89d41"]
-}, {2}]],
 
 Cell[BoxData["updateBook"], "Input",
  CellChangeTimes->{3.924606647635316*^9},
  CellTags->"runNote",
- CellLabel->"In[153]:=",
- CellID->1093691010,ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4"]
-}, Open  ]],
+ CellLabel->"In[63]:=",
+ CellID->1093691010,ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4"],
+
+Cell[BoxData[{
+ InterpretationBox[
+  DynamicModuleBox[{Typeset`open = False}, 
+   TemplateBox[{"Expression", 
+     RowBox[{"CompoundExpression", "[", 
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]], "]"}], 
+     GridBox[{{
+        RowBox[{
+          TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+          TagBox["144", "IconizedItem"]}]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+     Dynamic[Typeset`open]},
+    "IconizedObject"]],
+  Clear["Global`*"]; Null,
+  SelectWithContents->True,
+  Selectable->False], "\[IndentingNewLine]", 
+ InterpretationBox[
+  DynamicModuleBox[{Typeset`open = False}, 
+   TemplateBox[{"Expression", 
+     RowBox[{"FrontEndExecute", "[", 
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]], "]"}], 
+     GridBox[{{
+        RowBox[{
+          TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+          TagBox["184", "IconizedItem"]}]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+     Dynamic[Typeset`open]},
+    "IconizedObject"]],
+  FrontEndExecute[
+   FrontEndToken[
+    EvaluationNotebook[], "SelectAll"]],
+  SelectWithContents->True,
+  Selectable->False], "\n", 
+ InterpretationBox[
+  DynamicModuleBox[{Typeset`open = False}, 
+   TemplateBox[{"Expression", 
+     RowBox[{"FrontEndTokenExecute", "[", 
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]], "]"}], 
+     GridBox[{{
+        RowBox[{
+          TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+          TagBox["96", "IconizedItem"]}]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+     Dynamic[Typeset`open]},
+    "IconizedObject"]],
+  FrontEndTokenExecute["SelectionCloseAllGroups"],
+  SelectWithContents->True,
+  Selectable->False]}], "Input",
+ CellChangeTimes->{{3.9250756941585207`*^9, 3.925075705384734*^9}, {
+  3.925078832564561*^9, 3.9250788681742477`*^9}, {3.925079078344035*^9, 
+  3.9250790840027733`*^9}, {3.925079677754228*^9, 3.925079719315914*^9}},
+ Background->RGBColor[0.88, 1, 0.88],
+ CellTags->"mmaitexRunCollapse",
+ CellLabel->"In[71]:=",
+ CellID->1465937309,ExpressionUUID->"2a76068e-c695-40a4-8f4a-5c4a9a81d235"]
+}, Closed]]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -417,7 +526,7 @@ Cell[BoxData[
    3.923259088169868*^9, 3.9232591021105633`*^9}},
  FontSize->40,
  Background->GrayLevel[0.85],
- CellLabel->"In[154]:=",
+ CellLabel->"In[64]:=",
  CellID->420563094,ExpressionUUID->"60e1437d-e664-4684-bddd-d7250d2e4638"],
 
 Cell[BoxData[
@@ -425,7 +534,7 @@ Cell[BoxData[
   FontSize->18]], "Input",
  FontSize->45,
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->"In[155]:=",
+ CellLabel->"In[65]:=",
  CellID->15813313,ExpressionUUID->"4c57d7e5-4159-4a06-9e95-af90f6a8c73f"],
 
 Cell["\<\
@@ -466,24 +575,100 @@ Cell[BoxData[
  CellChangeTimes->{3.74259909443143*^9},
  FontSize->45,
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->"In[156]:=",
+ CellLabel->"In[66]:=",
  CellID->704496735,ExpressionUUID->"3de56c5d-5b28-42b7-a471-57dbfd541a8b"]
-}, Open  ]]
+}, Closed]]
 },
-WindowToolbars->"EditBar",
+WindowToolbars->{},
 WindowSize->{1678, 997},
 WindowMargins->{{Automatic, 0}, {0, Automatic}},
 DockedCells->Cell[
   BoxData[
    TemplateBox[{
-     ButtonBox["\"Crear PDF\"", ButtonFunction :> (Map[(NotebookFind[
-           EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
-           EvaluationNotebook[]])& , {"initCell"}]; Null), Appearance -> 
-      Automatic, Evaluator -> Automatic, Method -> "Preemptive"], 
-     ButtonBox["\"Actualiza Doc\"", ButtonFunction :> (Map[(NotebookFind[
-           EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
-           EvaluationNotebook[]])& , {"runNote2"}]; Null), Appearance -> 
-      Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, 
+     TagBox[
+      GridBox[{{
+         ButtonBox[
+          DynamicBox[
+           ToBoxes[
+           "\!\(\*StyleBox[\"0\",FontFamily->\"dt-people-01\",FontSize->12,\
+FontWeight->\"Regular\",FontColor->RGBColor[0, 0, 1]]\)\!\(\*StyleBox[\" \
+\",FontFamily->\"dt-people-01\",FontSize->12,FontWeight->\"Regular\",\
+FontColor->RGBColor[1, 0, \
+0]]\)\!\(\*StyleBox[\"=\",FontFamily->\"dt-people-01\",FontSize->12,\
+FontWeight->\"Regular\",FontColor->RGBColor[1, 0, \
+0]]\)\!\(\*StyleBox[\">\",FontFamily->\"dt-people-01\",FontSize->12,\
+FontWeight->\"Regular\",FontColor->RGBColor[1, 0, 0]]\)\!\(\*StyleBox[\" \
+\",FontFamily->\"dt-people-01\",FontSize->12,FontWeight->\"Regular\",\
+FontColor->RGBColor[1, 0, 0]]\)" <> ToString[
+              $CellContext`check1["_name"]], StandardForm]], 
+          ButtonFunction :> (Map[(NotebookFind[
+               EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
+               EvaluationNotebook[]])& , {""}]; Null), Appearance -> 
+          Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
+         ButtonBox[
+          DynamicBox[
+           ToBoxes[
+           "\!\(\*StyleBox[\"r\",FontFamily->\"dt-business-01\",FontSize->12,\
+FontWeight->\"Regular\",FontColor->RGBColor[1, 0.5, 0]]\)\!\(\*StyleBox[\" \
+\",FontFamily->\"dt-business-01\",FontSize->12,FontWeight->\"Regular\",\
+FontColor->RGBColor[1, 0, \
+0]]\)\!\(\*StyleBox[\"=\",FontFamily->\"dt-business-01\",FontSize->12,\
+FontWeight->\"Regular\",FontColor->RGBColor[1, 0, \
+0]]\)\!\(\*StyleBox[\">\",FontFamily->\"dt-business-01\",FontSize->12,\
+FontWeight->\"Regular\",FontColor->RGBColor[1, 0, 0]]\)\!\(\*StyleBox[\" \
+\",FontFamily->\"dt-business-01\",FontSize->12,FontWeight->\"Regular\",\
+FontColor->RGBColor[1, 0, 0]]\)" <> ToString[
+              $CellContext`check1["_saldo_actual"]], StandardForm]], 
+          ButtonFunction :> (Map[(NotebookFind[
+               EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
+               EvaluationNotebook[]])& , {""}]; Null), Appearance -> 
+          Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+       "Column", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
+     TagBox[
+      GridBox[{{
+         ButtonBox[
+         "\"\\!\\(\\*StyleBox[\\\"9\\\",FontFamily->\\\"dt-music-02\\\",\
+FontSize->12,FontWeight->\\\"Regular\\\",FontColor->RGBColor[1, 0, \
+0]]\\)\\!\\(\\*StyleBox[\\\" \
+\\\",FontFamily->\\\"dt-music-02\\\",FontSize->12,FontWeight->\\\"Regular\\\",\
+FontColor->RGBColor[1, 0, 0]]\\)Crear PDF\"", 
+          ButtonFunction :> (Map[(NotebookFind[
+               EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
+               EvaluationNotebook[]])& , {"initCell"}]; Null), Appearance -> 
+          Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}, {
+         ButtonBox[
+         "\"\\!\\(\\*StyleBox[\\\"a\\\",FontFamily->\\\"dt-web-01\\\",\
+FontSize->12,FontWeight->\\\"Regular\\\",FontColor->RGBColor[1, 0, \
+0]]\\)\\!\\(\\*StyleBox[\\\" \
+\\\",FontFamily->\\\"dt-web-01\\\",FontSize->12,FontWeight->\\\"Regular\\\",\
+FontColor->RGBColor[1, 0, 0]]\\)Actualizar [doc]\"", 
+          ButtonFunction :> (Map[(NotebookFind[
+               EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
+               EvaluationNotebook[]])& , {"runNote2"}]; Null), Appearance -> 
+          Automatic, Evaluator -> Automatic, Method -> "Preemptive"]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+       "Column", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"], 
+     TagBox[
+      GridBox[{{
+         ButtonBox[
+         "\"\\!\\(\\*StyleBox[\\\"d\\\",FontFamily->\\\"dt-technology-10\\\",\
+FontSize->12,FontWeight->\\\"Regular\\\",FontColor->GrayLevel[0]]\\)\\!\\(\\*\
+StyleBox[\\\" \
+\\\",FontFamily->\\\"dt-music-02\\\",FontSize->12,FontWeight->\\\"Regular\\\",\
+FontColor->RGBColor[1, 0, 0]]\\)Resetear\"", 
+          ButtonFunction :> (Map[(NotebookFind[
+               EvaluationNotebook[], #, All, CellTags]; SelectionEvaluate[
+               EvaluationNotebook[]])& , {"mmaitexRunCollapse"}]; Null), 
+          Appearance -> Automatic, Evaluator -> Automatic, Method -> 
+          "Preemptive"]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+       DefaultBaseStyle -> "Column", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Column"]}, 
     "RowDefault"]], "DockedCell"],
 CreateCellID->True,
 Magnification:>1.5 Inherited,
@@ -497,83 +682,87 @@ ExpressionUUID->"255ca0af-c91c-44e3-b481-265e9a573b71"
 (*CellTagsOutline
 CellTagsIndex->{
  "initCell"->{
-  Cell[1497, 41, 4131, 95, 191, "Input",ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3",
+  Cell[2760, 92, 4130, 95, 191, "Input",ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3",
    CellTags->"initCell",
    CellID->2107135677]},
  "runNote2"->{
-  Cell[14066, 347, 1175, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+  Cell[15224, 394, 1176, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
    CellTags->"runNote2",
-   CellID->433914365],
-  Cell[15244, 376, 233, 4, 36, "Print",ExpressionUUID->"c0e77304-d1a2-47d0-80e9-dd4a20b89d41",
-   CellTags->"runNote2",
-   CellID->890997756]},
+   CellID->433914365]},
  "runNote"->{
-  Cell[15489, 383, 201, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
+  Cell[16403, 423, 200, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
    CellTags->"runNote",
-   CellID->1093691010]}
+   CellID->1093691010]},
+ "mmaitexRunCollapse"->{
+  Cell[16606, 429, 2607, 66, 158, "Input",ExpressionUUID->"2a76068e-c695-40a4-8f4a-5c4a9a81d235",
+   CellTags->"mmaitexRunCollapse",
+   CellID->1465937309]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"initCell", 20033, 498},
- {"runNote2", 20194, 502},
- {"runNote", 20498, 509}
+ {"initCell", 27532, 683},
+ {"runNote2", 27693, 687},
+ {"runNote", 27854, 691},
+ {"mmaitexRunCollapse", 28023, 695}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 738, 13, 112, "Text",ExpressionUUID->"70b07db8-ae50-4026-9f89-fa1146c87508",
+Cell[CellGroupData[{
+Cell[580, 22, 1238, 47, 175, "Chapter",ExpressionUUID->"87bb9b07-3a52-4924-bab4-735dd228c6e9",
+ CellID->1595627904],
+Cell[1821, 71, 738, 13, 112, "Text",ExpressionUUID->"70b07db8-ae50-4026-9f89-fa1146c87508",
  CellID->399689850],
 Cell[CellGroupData[{
-Cell[1321, 37, 173, 2, 101, "Section",ExpressionUUID->"9491a5ff-b570-4bfd-a625-e5b61b3cbb39",
+Cell[2584, 88, 173, 2, 101, "Section",ExpressionUUID->"9491a5ff-b570-4bfd-a625-e5b61b3cbb39",
  CellID->378485379],
-Cell[1497, 41, 4131, 95, 191, "Input",ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3",
+Cell[2760, 92, 4130, 95, 191, "Input",ExpressionUUID->"26851966-6e0d-4b30-af44-1dde2a9485b3",
  CellTags->"initCell",
  CellID->2107135677]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[5665, 141, 748, 16, 78, "Section",ExpressionUUID->"c1d06546-afc3-4e71-bd48-a12437ffe410",
+Cell[6927, 192, 748, 16, 78, "Section",ExpressionUUID->"c1d06546-afc3-4e71-bd48-a12437ffe410",
  CellID->93175719],
-Cell[6416, 159, 3539, 88, 274, "Input",ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb",
+Cell[7678, 210, 3538, 88, 274, "Input",ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb",
  CellID->1681731838],
-Cell[9958, 249, 1795, 31, 122, "Input",ExpressionUUID->"da613e2f-7182-448a-b6cc-8dcef4587d8d",
+Cell[11219, 300, 1794, 31, 122, "Input",ExpressionUUID->"da613e2f-7182-448a-b6cc-8dcef4587d8d",
  CellID->1878991879]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[11790, 285, 809, 21, 79, "Section",ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a",
+Cell[13050, 336, 727, 19, 79, "Section",ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a",
  CellID->261372301],
-Cell[12602, 308, 1086, 26, 136, "Input",ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204",
+Cell[13780, 357, 1085, 26, 136, "Input",ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204",
  CellID->504000207]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[13725, 339, 316, 4, 78, "Section",ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f",
+Cell[14902, 388, 319, 4, 78, "Section",ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f",
  CellID->142455613],
-Cell[CellGroupData[{
-Cell[14066, 347, 1175, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+Cell[15224, 394, 1176, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
  CellTags->"runNote2",
  CellID->433914365],
-Cell[15244, 376, 233, 4, 36, "Print",ExpressionUUID->"c0e77304-d1a2-47d0-80e9-dd4a20b89d41",
- CellTags->"runNote2",
- CellID->890997756]
-}, {2}]],
-Cell[15489, 383, 201, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
+Cell[16403, 423, 200, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
  CellTags->"runNote",
- CellID->1093691010]
-}, Open  ]],
+ CellID->1093691010],
+Cell[16606, 429, 2607, 66, 158, "Input",ExpressionUUID->"2a76068e-c695-40a4-8f4a-5c4a9a81d235",
+ CellTags->"mmaitexRunCollapse",
+ CellID->1465937309]
+}, Closed]]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[15727, 392, 568, 8, 146, "Title",ExpressionUUID->"ee4f86ff-7e19-432a-bee4-637e55977a38",
+Cell[19262, 501, 568, 8, 105, "Title",ExpressionUUID->"ee4f86ff-7e19-432a-bee4-637e55977a38",
  CellID->41265470],
-Cell[16298, 402, 876, 18, 294, "Input",ExpressionUUID->"60e1437d-e664-4684-bddd-d7250d2e4638",
+Cell[19833, 511, 875, 18, 294, "Input",ExpressionUUID->"60e1437d-e664-4684-bddd-d7250d2e4638",
  CellID->420563094],
-Cell[17177, 422, 213, 6, 78, "Input",ExpressionUUID->"4c57d7e5-4159-4a06-9e95-af90f6a8c73f",
+Cell[20711, 531, 212, 6, 78, "Input",ExpressionUUID->"4c57d7e5-4159-4a06-9e95-af90f6a8c73f",
  CellID->15813313],
-Cell[17393, 430, 420, 13, 450, "Text",ExpressionUUID->"e835ec92-be3f-42f2-9c0a-5aa0aab0f0cf",
+Cell[20926, 539, 420, 13, 450, "Text",ExpressionUUID->"e835ec92-be3f-42f2-9c0a-5aa0aab0f0cf",
  CellID->1530876818],
-Cell[17816, 445, 872, 15, 206, "Text",ExpressionUUID->"f96eaf98-ec28-4b7b-ba96-a2dbab09f599",
+Cell[21349, 554, 872, 15, 206, "Text",ExpressionUUID->"f96eaf98-ec28-4b7b-ba96-a2dbab09f599",
  CellID->181563867],
-Cell[18691, 462, 256, 7, 78, "Input",ExpressionUUID->"3de56c5d-5b28-42b7-a471-57dbfd541a8b",
+Cell[22224, 571, 255, 7, 78, "Input",ExpressionUUID->"3de56c5d-5b28-42b7-a471-57dbfd541a8b",
  CellID->704496735]
-}, Open  ]]
+}, Closed]]
 }
 ]
 *)
