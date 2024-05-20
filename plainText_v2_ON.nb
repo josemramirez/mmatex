@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     44811,       1172]
-NotebookOptionsPosition[     42125,       1114]
-NotebookOutlinePosition[     42518,       1130]
-CellTagsIndexPosition[     42475,       1127]
+NotebookDataLength[     45016,       1179]
+NotebookOptionsPosition[     42330,       1121]
+NotebookOutlinePosition[     42723,       1137]
+CellTagsIndexPosition[     42680,       1134]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -949,9 +949,10 @@ cuenta]\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}], ";",
         RowBox[{"Transpose", "[", 
          RowBox[{"{", 
           RowBox[{"titles", ",", "plainTexts"}], "}"}], "]"}]}], ";"}], 
-      ")"}]}], 
+      ")"}]}], "\[IndentingNewLine]", 
     StyleBox["\[IndentingNewLine]",
-     FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+     FontFamily->"Source Code Pro",
+     FontWeight->"SemiBold"], 
     StyleBox[
      RowBox[{"(*", 
       RowBox[{"==", " ", 
@@ -960,7 +961,6 @@ cuenta]\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}], ";",
         "OverLeaf"}], " ", "=="}], "*)"}],
      FontWeight->"SemiBold"], 
     StyleBox["\[IndentingNewLine]",
-     FontFamily->"Source Code Pro",
      FontWeight->"SemiBold"], 
     RowBox[{"exportBookNOL", ":=", 
      RowBox[{"(", "\[IndentingNewLine]", 
@@ -1017,11 +1017,17 @@ cuenta]\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}], ";",
             RowBox[{"\"\<Busca el PDF aqu\[IAcute]: \>\"", ",", 
              RowBox[{"$PdfLAdd", "<>", 
               RowBox[{"mytext", "[", 
-               RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"SystemOpen", "[", 
-            RowBox[{"myres", "[", 
-             RowBox[{"[", "1", "]"}], "]"}], "]"}], ";"}], " ", 
+               RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], ";"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           StyleBox[
+            RowBox[{"(", "*"}]], 
+           RowBox[{
+            RowBox[{"SystemOpen", "[", 
+             RowBox[{"myres", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "]"}], ";"}], " ", 
+           StyleBox[
+            RowBox[{"*", ")"}]]}], 
           RowBox[{"(*", " ", 
            RowBox[{
            "Abre", " ", "la", " ", "app", " ", "en", " ", "el", " ", 
@@ -1035,7 +1041,8 @@ cuenta]\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}], ";",
  CellChangeTimes->{{3.924553313694002*^9, 3.924553319731928*^9}, 
    3.924554097223084*^9, {3.92455520478749*^9, 3.924555236807521*^9}, {
    3.924555314133094*^9, 3.924555331639896*^9}, {3.924556101758931*^9, 
-   3.9245561023693047`*^9}, {3.9248218647839403`*^9, 3.924821913993688*^9}},
+   3.9245561023693047`*^9}, {3.9248218647839403`*^9, 3.924821913993688*^9}, {
+   3.925219117645529*^9, 3.925219121173581*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]],
@@ -1167,11 +1174,11 @@ Cell[28283, 778, 809, 21, 68, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c
  CellID->261372301],
 Cell[29095, 801, 1723, 45, 283, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
  CellID->504000207],
-Cell[30821, 848, 8498, 191, 1214, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+Cell[30821, 848, 8703, 198, 1214, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39356, 1044, 167, 3, 67, "Section",ExpressionUUID->"597cae6c-5ca9-46f7-b7d2-a9241653a41f"],
-Cell[39526, 1049, 2583, 62, 157, "Input",ExpressionUUID->"a9c1af37-47cd-44f0-ae5f-b1eba701ba33",
+Cell[39561, 1051, 167, 3, 67, "Section",ExpressionUUID->"597cae6c-5ca9-46f7-b7d2-a9241653a41f"],
+Cell[39731, 1056, 2583, 62, 157, "Input",ExpressionUUID->"a9c1af37-47cd-44f0-ae5f-b1eba701ba33",
  CellID->803764153]
 }, Open  ]]
 }
