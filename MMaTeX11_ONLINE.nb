@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     57769,       1377]
-NotebookOptionsPosition[     45943,       1135]
-NotebookOutlinePosition[     51818,       1264]
-CellTagsIndexPosition[     51653,       1256]
+NotebookDataLength[    100551,       2123]
+NotebookOptionsPosition[     86199,       1817]
+NotebookOutlinePosition[     92362,       1952]
+CellTagsIndexPosition[     92197,       1944]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -90,6 +90,8 @@ Cell["Creando PDF", "Section",
  CellChangeTimes->{{3.924652560592657*^9, 3.9246525629534283`*^9}},
  CellID->378485379,ExpressionUUID->"9491a5ff-b570-4bfd-a625-e5b61b3cbb39"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   StyleBox[
@@ -127,7 +129,7 @@ e5320654c70a\>\"", "]"}]}], ";"}],
     RowBox[{"URLExecute", "[", 
      RowBox[{"apiMMaTeX1", ",", 
       RowBox[{"{", 
-       RowBox[{"\"\<myKey\>\"", "->", "\"\<LIC-XDE1038\>\""}], "}"}]}], 
+       RowBox[{"\"\<myKey\>\"", "->", "\"\<UNITECH-XDE1038\>\""}], "}"}]}], 
      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"==", " ", 
@@ -255,10 +257,18 @@ AIPackage_v6.nb\>\"",
    3.925001971670684*^9}, {3.925002092445179*^9, 3.925002093731703*^9}, {
    3.9250026635839767`*^9, 3.9250026719944687`*^9}, {3.925002722363311*^9, 
    3.9250027274444923`*^9}, 3.9250782994668627`*^9, 3.92507839133784*^9, 
-   3.925114235913872*^9, 3.925183621943602*^9},
+   3.925114235913872*^9, 3.925183621943602*^9, 3.9252215355887203`*^9},
  Background->RGBColor[1, 0.9, 0.8],
  CellTags->"initCell",
- CellID->2107135677,ExpressionUUID->"f282f7c8-dbfa-4dc0-9070-e13104ad10f8"]
+ CellLabel->"In[48]:=",
+ CellID->2107135677,ExpressionUUID->"f282f7c8-dbfa-4dc0-9070-e13104ad10f8"],
+
+Cell[BoxData["\<\"Corriendo...\"\>"], "Print",
+ CellChangeTimes->{3.925221541182225*^9},
+ CellTags->"initCell",
+ CellLabel->"During evaluation of In[35]:=",
+ CellID->1337330571,ExpressionUUID->"ac44446c-8290-40a0-9c73-c38b23312ee7"]
+}, Closed]]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -280,6 +290,8 @@ Cell[TextData[Cell[BoxData[
   3.705666868925564*^9, 3.7056668705886593`*^9}, {3.923254898092269*^9, 
   3.9232548989048147`*^9}, {3.9245273841231956`*^9, 3.924527397057823*^9}},
  CellID->93175719,ExpressionUUID->"c1d06546-afc3-4e71-bd48-a12437ffe410"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -368,8 +380,14 @@ plainText_v2_ON.nb\>\"",
    3.924554198810841*^9, 3.924554217997847*^9}, {3.924554370200923*^9, 
    3.924554394316977*^9}, 3.924606633802783*^9},
  Background->RGBColor[1, 0.85, 0.85],
- CellLabel->"In[43]:=",
+ CellLabel->"In[52]:=",
  CellID->1681731838,ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb"],
+
+Cell[BoxData["\<\"Evaluando <plainTeX> ...\"\>"], "Print",
+ CellChangeTimes->{3.925221541742077*^9},
+ CellLabel->"During evaluation of In[41]:=",
+ CellID->1712967012,ExpressionUUID->"98c5edb3-dc5c-4b63-9c37-5b8241d70abb"]
+}, Closed]],
 
 Cell[BoxData[
  StyleBox[
@@ -401,7 +419,7 @@ Cell[BoxData[
    3.924537369053863*^9}, {3.9245374518309603`*^9, 3.924537460549062*^9}, {
    3.9245540832553997`*^9, 3.9245540844580107`*^9}},
  Background->GrayLevel[0.85],
- CellLabel->"In[47]:=",
+ CellLabel->"In[56]:=",
  CellID->1878991879,ExpressionUUID->"da613e2f-7182-448a-b6cc-8dcef4587d8d"]
 }, Closed]],
 
@@ -427,6 +445,8 @@ Cell[TextData[{
   3.70566608786889*^9, 3.705666090365033*^9}, {3.925080657698216*^9, 
   3.92508067272336*^9}},
  CellID->261372301,ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -455,8 +475,14 @@ Cell[BoxData[
   3.9245364276791697`*^9, 3.924536428131391*^9}, {3.924554117085369*^9, 
   3.924554117665497*^9}},
  Background->RGBColor[1, 0.9, 0.8],
- CellLabel->"In[48]:=",
- CellID->504000207,ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204"]
+ CellLabel->"In[57]:=",
+ CellID->504000207,ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204"],
+
+Cell[BoxData["\<\"Definiciones sencillas ...\"\>"], "Print",
+ CellChangeTimes->{3.925221541928555*^9},
+ CellLabel->"During evaluation of In[57]:=",
+ CellID->73694634,ExpressionUUID->"28e3fcb1-4be3-4b61-ad26-f50cb57ab3e3"]
+}, Closed]]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -466,6 +492,8 @@ Cell["Texto plano:", "Section",
   3.705664410620957*^9, 3.705664419620472*^9}, {3.923253647589651*^9, 
   3.923253663379437*^9}, {3.925080675144771*^9, 3.9250806800009604`*^9}},
  CellID->142455613,ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"If", "[", 
@@ -494,13 +522,505 @@ Cell[BoxData[
    3.925183694448846*^9}},
  Background->RGBColor[0.94, 0.91, 0.88],
  CellTags->"runNote2",
+ CellLabel->"In[59]:=",
  CellID->433914365,ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78"],
+
+Cell[BoxData["\<\"Voy a seguir...\"\>"], "Print",
+ CellChangeTimes->{3.92522154198845*^9},
+ CellTags->"runNote2",
+ CellLabel->"During evaluation of In[59]:=",
+ CellID->1635132966,ExpressionUUID->"1e45219c-af00-4ab3-9940-97e3e766750f"]
+}, Closed]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["updateBook"], "Input",
  CellChangeTimes->{3.924606647635316*^9},
  CellTags->"runNote",
- CellLabel->"In[51]:=",
+ CellLabel->"In[60]:=",
  CellID->1093691010,ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Estoy conectado?: \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm["Estoy conectado?: ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221548833292*^9},
+ CellLabel->"During evaluation of In[83]:=",
+ CellID->502979368,ExpressionUUID->"7f205df1-7f74-47d3-b4c9-69a89b2bc33a"],
+
+Cell[BoxData["\<\"El objeto no existe!\"\>"], "Print",
+ CellChangeTimes->{3.9252215488349037`*^9},
+ CellLabel->"During evaluation of In[83]:=",
+ CellID->1078603384,ExpressionUUID->"ad1b583d-2703-4de6-ad7e-2b721120e436"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El documento .tex esta aqui(1): \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/PaperONv1.txt\"", 
+       "https://www.wolframcloud.com/obj/jmramirez/mmatex/PaperONv1.txt"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/PaperONv1.txt"],
+    SelectWithContents->True]}],
+  SequenceForm["El documento .tex esta aqui(1): ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/PaperONv1.txt"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221549031966*^9},
+ CellLabel->"During evaluation of In[83]:=",
+ CellID->1177610561,ExpressionUUID->"67d2cf39-b020-4525-a84c-272605d1a557"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Para ver el PDF haz click aqu\[IAcute]: \"\>", 
+   "\[InvisibleSpace]", 
+   TemplateBox[{
+     InterpretationBox[Null, 
+      EmbeddedHTML[
+      "<form action=\"https://www.overleaf.com/docs\" method=\"post\" target=\
+\"_blank\">\[IndentingNewLine]<textarea rows=\"10\" cols=\"100\" \
+name=\"snip\">\[IndentingNewLine]\\documentclass[a4paper,fleqn,\n\
+usenatbib]{mnras}\\usepackage{graphicx}\n\\title{Consistent 3D rotational \
+accretion of matter onto a Galactic black hole}\n\\author{\nJ. M. \
+Ram{\\'i}rez,$^{1}$\nCo-Author1,$^{4}$\nCo-Author2,$^{5}$\nCo-Author3,$^{4}$\n\
+Co-Author4$^{2,6}$\n}\n\\date{\\today}\\begin{document}\n\
+\\maketitle\\begin{abstract}\nWe present three-dimensional calculations of \
+small-scale, spherically symmetric\nincluding rotation and numerical \
+comparison with gamma different from 1.\n\nEntonces planeamos hacer lo \
+siguiente:\n\n1RO, sin Rotacion:\n4 Lineas (Repetidas tanto para Newton como \
+PW)\n1) Isothermal: $\\gamma=1$. (comparacion con analitico).\n2) \
+$\\gamma=5/3$. (Comparacion con Semi-analitico? podemos llamarle asi?, \
+Numericamente?)\n3) $1< \\gamma < 5/3$; Sin los signos de igualdad. \
+(Comparacion Semi-analitica).\n4) Con electron scattering.\n\nY Luego hacer \
+eso con ROTACION.\n\nEso seria un trabajo completo.\n\nHay que construir las \
+condiciones iniciales de todos estos sistemas.\n\nHe decidido que es \
+demasiado agregarle un potencial galactico como lo hacen Ciotti y Silvia \
+2017. Eso que da para un futuro trabajo.\ny yo sigo editando sin \
+pribelmaa....\n\n\n\\end{abstract}\\section{Introduction}\nUnfortunately, in \
+general, these studies lack the resolution to follow gas transport down to \
+the parsec scale, and the Bondi model is used as the starting point for \
+estimates of the accretion radius (i.e., the sonic radius) and of the mass \
+accretion rate. In particular, the Bondi accretion rate gives the mass supply \
+to the MBH by taking the density and temperature at some finite distance from \
+the center, implicitly assuming that these values represent the true boundary \
+conditions (i.e., at infinity) for the Bondi problem.As an expert in \
+astrophysics, I can provide you with an introduction to black holes, one of \
+the most fascinating and mysterious objects in the universe.\n\nA black hole \
+is a region of spacetime where gravity is so strong that nothing, not even \
+light, can escape from it once it crosses the event horizon, which is the \
+boundary of the black hole. This extreme gravitational pull is caused by a \
+very high concentration of mass within a small space.\n\nBlack holes are \
+formed when massive stars (typically more than 20-30 times the mass of our \
+Sun) exhaust their nuclear fuel and collapse under their own gravity. The \
+core of the star collapses inward, creating a tremendous amount of density \
+and a strong gravitational field. If the core's mass is sufficient, it will \
+continue to collapse into a single point called a singularity, surrounded by \
+an event horizon.\n\nThere are two main types of black holes:\n\n1. \
+Stellar-mass black holes: These are formed from the collapse of individual \
+stars and typically have masses ranging from about 5 to several tens of solar \
+masses.\n\n2. Supermassive black holes: These are found at the centers of \
+most galaxies, including our own Milky Way. They have masses ranging from \
+millions to billions of solar masses and are thought to have formed through \
+the accretion of matter and mergers with other black holes.\n\nBlack holes \
+are characterized by three main properties: mass, charge, and angular \
+momentum (spin). However, due to their strong gravitational fields, they \
+exhibit unique phenomena such as gravitational time dilation (time passes \
+more slowly near a black hole) and the bending of spacetime.\n\nDespite their \
+name, black holes are not entirely black. They can emit radiation through a \
+process called Hawking radiation, proposed by Stephen Hawking. This radiation \
+is caused by quantum effects near the event horizon and is expected to cause \
+black holes to slowly evaporate over extremely long timescales.\n\nThe study \
+of black holes has led to significant advancements in our understanding of \
+gravity, spacetime, and the fundamental laws of the universe. They continue \
+to be a subject of intense research and fascination for scientists and the \
+public alike.\\section{Introduction}\nUnfortunately, in general, these \
+studies lack the resolution to follow gas transport down to the parsec scale, \
+and the Bondi model is used as the starting point for estimates of the \
+accretion radius (i.e., the sonic radius) and of the mass accretion rate. In \
+particular, the Bondi accretion rate gives the mass supply to the MBH by \
+taking the density and temperature at some finite distance from the center, \
+implicitly assuming that these values represent the true boundary conditions \
+(i.e., at infinity) for the Bondi problem.\\section{Mathematical Method}\nSo, \
+we follow the notation of Ciotti \\& Silvia 2016. We start by writing the \
+continuity equation:\n\\begin{equation}\nx^2 \\mathcal{M} \\tilde{\\rho \
+}^{\\frac{\\gamma +1}{2}}=\\lambda\n\\label{conti1}\n\\end{equation}where \
+$\\lambda$, is called the accretion parameter, $x = r/r_B$, \
+$\\mathcal{M}=v/c_s$ and $\\tilde{\\rho}=\\rho/\\rho_{\\infty}$. The index \
+$\\gamma$ is the polytropic index of the flow. If $\\gamma=1$, then we \
+recover the continuity equation of an isothermal flow. For the accretion \
+produced by a Newtonian potential the equation ($\\ref{conti1}$) has to be \
+solved altogether with the equation of Bernoulli:\n\\begin{equation}\n\\frac{\
+\\tilde{\\rho }^{\\gamma -1}}{\\gamma -1}+\\frac{1}{2} \\mathcal{M}^2 \
+\\tilde{c_s}{}^2=\\frac{1}{\\gamma -1}+\\frac{1}{x}\n\\label{bernou1}\n\
+\\end{equation}The coupled equations can be arranged, and for this case can \
+be written in terms of:The coupled equations can be arranged, and for this \
+case can be written in terms of:The coupled equations can be arranged, and \
+for this case can be written in terms of:\n\\begin{equation}\n\
+\\mathcal{M}^{\\frac{2 (1-\\gamma )}{\\gamma +1}} \\left(\\frac{1}{\\gamma \
+-1}+\\frac{\\mathcal{M}^2}{2}\\right)=\\lambda ^{\\frac{2 (1-\\gamma \
+)}{\\gamma +1}} x^{\\frac{4 (1-\\gamma )}{\\gamma +1}} \
+\\left(\\frac{1}{\\gamma -1}+\\frac{1}{x}\\right)\n\\label{bernou2}\n\
+\\end{equation}For the Isothermal case, $\\gamma=1$, Ciotti and Silvia have \
+solved the equation\n\\begin{equation}\n\\frac{\\mathcal{M}^2}{2}-\\log \
+(\\mathcal{M})=\\lambda ^{\\frac{2 (1-\\gamma )}{\\gamma +1}} \
+\\left(\\frac{1}{x}+2 \\log (x)\\right)\n\\label{bernou3}\n\
+\\end{equation}Figure (\\ref{iso1}) shows the isothermal analytical solution \
+given by Ciotti and Silvia\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test1_v1.png}\n\\caption{This is my caption1}\n\\label{iso1}\n\
+\\end{figure}Which can be written in terms of the Lambert-W functions as\n\
+\\begin{equation}\n\
+\\mathcal{M}^2=-W_{\\{0,-1\\}}\\left(-\\frac{e^{3-\\frac{2}{x}}}{16 \
+x^4}\\right)\n\\label{lambert1}\n\\end{equation}Where the subscript \
+$\\{0,-1\\}$ means the main branch and the -1 branch for $x>x_{s}$ and \
+$0<x<x_{s}$ respectively, and $x_s$ is the sonic point. \nWe plot also \
+non-transonic solutions with $\\lambda=0.4\\lambda_{cr}$ and \
+$\\lambda=0.8\\lambda_{cr}$, where the flows stays either subsonic \
+($v<c_s(x_s)$) or supersonic ($v>c_s(x_s)$).\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test2_v1.png}\n\\caption{This is my caption2}\n\\label{iso2}\n\
+\\end{figure}Also we can see in Figure (\\ref{iso2}), the density of the \
+Newtonian analytical isothermal transonic solution.\n\nOne interesting \
+solution to see is the solution of (\\ref{bernou2}) for $\\gamma=5/3$. In the \
+Newtonian case, the sonic point disappears (i.e., $x_s^{\\gamma=5/3}$ is \
+strictly cero). With numerical techniques we solve\n\\begin{equation}\n4 \\pi \
+ r^2 \\rho (r) v(r)=4 \\pi  \\lambda  r_B^2 c_{\\infty } \\rho _{\\infty }\n\
+\\label{newG53a}\n\\end{equation}Figures (\\ref{adi1}, \\ref{adi2}) shows the \
+full numerical $\\gamma=5/3$ (dotted line) supersonic ($\\mathcal{M}>1$) and \
+subsonic ($\\mathcal{M}<1$) solutions of Eq. (\\ref{bernou2}). Once we have \
+the two separated mathematical solutions we match the curves for producing \
+Figure (\\ref{adi3}). Of course, for $\\gamma=5/3$, there is no point where \
+the transition occurs. However, as $\\gamma -> 1$ from 5/3, $x_s \\neq 0$. In \
+order to see this, we also plot the solutions of Eq. (\\ref{bernou2}) with \
+$\\gamma=1.6,1.5,1.4,1.3,1.2,1.1$. As we can see the sonic point goes from 0 \
+to 1/2 which is the sonic point of the Newtonian isothermal solution \
+(analytical), drawn also as reference (dashed line).\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test3_v1.png}\n\\caption{This is my caption3}\n\\label{adi1}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test3_v1.png}\n\\caption{This is my caption4}\n\\label{adi2}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach3Newton_v1.png}\n\\caption{This is my caption5}\n\\label{adi3}\n\
+\\end{figure}\\subsection{Non-Newtonian $\\gamma=5/3$ flow}\nAlso important \
+to realize is the appearance of a sonic point in the case of $\\gamma=5/3$ in \
+the flow under the influence of a Paczyski-Wiita (PW) potential. In the case \
+the Bernoulli equation is: \n\\begin{equation}\n4 \\pi  r^2 \\rho (r) v(r)=4 \
+\\pi  \\lambda  r_B^2 c_{\\infty } \\rho _{\\infty }\n\\label{pw1}\n\
+\\end{equation}In Figure (\\ref{adi1pw}) we see the two solutions of the \
+Bernoulli equation with $\\gamma=5/3$, but different in describing a flow \
+under Newtonian or PW potential.\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach1PW_v1.png}\n\\caption{This is my caption6}\n\\label{adi1pw}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach2PW_v1.png}\n\\caption{This is my caption7}\n\\label{adi2pw}\n\
+\\end{figure}\\end{document}\n</textarea>\[IndentingNewLine]<input \
+type=\"submit\" value=\"Abrir en Overleaf [abrir \
+cuenta]\">\[IndentingNewLine]</form>"]], 
+     TagBox[
+      RowBox[{"\[LeftSkeleton]", "9989", "\[RightSkeleton]"}], Short], 
+     Defer[
+     "<form action=\"https://www.overleaf.com/docs\" method=\"post\" \
+target=\"_blank\">\[IndentingNewLine]<textarea rows=\"10\" cols=\"100\" name=\
+\"snip\">\[IndentingNewLine]\\documentclass[a4paper,fleqn,\nusenatbib]{mnras}\
+\\usepackage{graphicx}\n\\title{Consistent 3D rotational accretion of matter \
+onto a Galactic black hole}\n\\author{\nJ. M. Ram{\\'i}rez,$^{1}$\n\
+Co-Author1,$^{4}$\nCo-Author2,$^{5}$\nCo-Author3,$^{4}$\nCo-Author4$^{2,6}$\n\
+}\n\\date{\\today}\\begin{document}\n\\maketitle\\begin{abstract}\nWe present \
+three-dimensional calculations of small-scale, spherically symmetric\n\
+including rotation and numerical comparison with gamma different from 1.\n\n\
+Entonces planeamos hacer lo siguiente:\n\n1RO, sin Rotacion:\n4 Lineas \
+(Repetidas tanto para Newton como PW)\n1) Isothermal: $\\gamma=1$. \
+(comparacion con analitico).\n2) $\\gamma=5/3$. (Comparacion con \
+Semi-analitico? podemos llamarle asi?, Numericamente?)\n3) $1< \\gamma < \
+5/3$; Sin los signos de igualdad. (Comparacion Semi-analitica).\n4) Con \
+electron scattering.\n\nY Luego hacer eso con ROTACION.\n\nEso seria un \
+trabajo completo.\n\nHay que construir las condiciones iniciales de todos \
+estos sistemas.\n\nHe decidido que es demasiado agregarle un potencial \
+galactico como lo hacen Ciotti y Silvia 2017. Eso que da para un futuro \
+trabajo.\ny yo sigo editando sin pribelmaa....\n\n\n\
+\\end{abstract}\\section{Introduction}\nUnfortunately, in general, these \
+studies lack the resolution to follow gas transport down to the parsec scale, \
+and the Bondi model is used as the starting point for estimates of the \
+accretion radius (i.e., the sonic radius) and of the mass accretion rate. In \
+particular, the Bondi accretion rate gives the mass supply to the MBH by \
+taking the density and temperature at some finite distance from the center, \
+implicitly assuming that these values represent the true boundary conditions \
+(i.e., at infinity) for the Bondi problem.As an expert in astrophysics, I can \
+provide you with an introduction to black holes, one of the most fascinating \
+and mysterious objects in the universe.\n\nA black hole is a region of \
+spacetime where gravity is so strong that nothing, not even light, can escape \
+from it once it crosses the event horizon, which is the boundary of the black \
+hole. This extreme gravitational pull is caused by a very high concentration \
+of mass within a small space.\n\nBlack holes are formed when massive stars \
+(typically more than 20-30 times the mass of our Sun) exhaust their nuclear \
+fuel and collapse under their own gravity. The core of the star collapses \
+inward, creating a tremendous amount of density and a strong gravitational \
+field. If the core's mass is sufficient, it will continue to collapse into a \
+single point called a singularity, surrounded by an event horizon.\n\nThere \
+are two main types of black holes:\n\n1. Stellar-mass black holes: These are \
+formed from the collapse of individual stars and typically have masses \
+ranging from about 5 to several tens of solar masses.\n\n2. Supermassive \
+black holes: These are found at the centers of most galaxies, including our \
+own Milky Way. They have masses ranging from millions to billions of solar \
+masses and are thought to have formed through the accretion of matter and \
+mergers with other black holes.\n\nBlack holes are characterized by three \
+main properties: mass, charge, and angular momentum (spin). However, due to \
+their strong gravitational fields, they exhibit unique phenomena such as \
+gravitational time dilation (time passes more slowly near a black hole) and \
+the bending of spacetime.\n\nDespite their name, black holes are not entirely \
+black. They can emit radiation through a process called Hawking radiation, \
+proposed by Stephen Hawking. This radiation is caused by quantum effects near \
+the event horizon and is expected to cause black holes to slowly evaporate \
+over extremely long timescales.\n\nThe study of black holes has led to \
+significant advancements in our understanding of gravity, spacetime, and the \
+fundamental laws of the universe. They continue to be a subject of intense \
+research and fascination for scientists and the public \
+alike.\\section{Introduction}\nUnfortunately, in general, these studies lack \
+the resolution to follow gas transport down to the parsec scale, and the \
+Bondi model is used as the starting point for estimates of the accretion \
+radius (i.e., the sonic radius) and of the mass accretion rate. In \
+particular, the Bondi accretion rate gives the mass supply to the MBH by \
+taking the density and temperature at some finite distance from the center, \
+implicitly assuming that these values represent the true boundary conditions \
+(i.e., at infinity) for the Bondi problem.\\section{Mathematical Method}\nSo, \
+we follow the notation of Ciotti \\& Silvia 2016. We start by writing the \
+continuity equation:\n\\begin{equation}\nx^2 \\mathcal{M} \\tilde{\\rho \
+}^{\\frac{\\gamma +1}{2}}=\\lambda\n\\label{conti1}\n\\end{equation}where \
+$\\lambda$, is called the accretion parameter, $x = r/r_B$, \
+$\\mathcal{M}=v/c_s$ and $\\tilde{\\rho}=\\rho/\\rho_{\\infty}$. The index \
+$\\gamma$ is the polytropic index of the flow. If $\\gamma=1$, then we \
+recover the continuity equation of an isothermal flow. For the accretion \
+produced by a Newtonian potential the equation ($\\ref{conti1}$) has to be \
+solved altogether with the equation of Bernoulli:\n\\begin{equation}\n\\frac{\
+\\tilde{\\rho }^{\\gamma -1}}{\\gamma -1}+\\frac{1}{2} \\mathcal{M}^2 \
+\\tilde{c_s}{}^2=\\frac{1}{\\gamma -1}+\\frac{1}{x}\n\\label{bernou1}\n\
+\\end{equation}The coupled equations can be arranged, and for this case can \
+be written in terms of:The coupled equations can be arranged, and for this \
+case can be written in terms of:The coupled equations can be arranged, and \
+for this case can be written in terms of:\n\\begin{equation}\n\
+\\mathcal{M}^{\\frac{2 (1-\\gamma )}{\\gamma +1}} \\left(\\frac{1}{\\gamma \
+-1}+\\frac{\\mathcal{M}^2}{2}\\right)=\\lambda ^{\\frac{2 (1-\\gamma \
+)}{\\gamma +1}} x^{\\frac{4 (1-\\gamma )}{\\gamma +1}} \
+\\left(\\frac{1}{\\gamma -1}+\\frac{1}{x}\\right)\n\\label{bernou2}\n\
+\\end{equation}For the Isothermal case, $\\gamma=1$, Ciotti and Silvia have \
+solved the equation\n\\begin{equation}\n\\frac{\\mathcal{M}^2}{2}-\\log \
+(\\mathcal{M})=\\lambda ^{\\frac{2 (1-\\gamma )}{\\gamma +1}} \
+\\left(\\frac{1}{x}+2 \\log (x)\\right)\n\\label{bernou3}\n\
+\\end{equation}Figure (\\ref{iso1}) shows the isothermal analytical solution \
+given by Ciotti and Silvia\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test1_v1.png}\n\\caption{This is my caption1}\n\\label{iso1}\n\
+\\end{figure}Which can be written in terms of the Lambert-W functions as\n\
+\\begin{equation}\n\
+\\mathcal{M}^2=-W_{\\{0,-1\\}}\\left(-\\frac{e^{3-\\frac{2}{x}}}{16 \
+x^4}\\right)\n\\label{lambert1}\n\\end{equation}Where the subscript \
+$\\{0,-1\\}$ means the main branch and the -1 branch for $x>x_{s}$ and \
+$0<x<x_{s}$ respectively, and $x_s$ is the sonic point. \nWe plot also \
+non-transonic solutions with $\\lambda=0.4\\lambda_{cr}$ and \
+$\\lambda=0.8\\lambda_{cr}$, where the flows stays either subsonic \
+($v<c_s(x_s)$) or supersonic ($v>c_s(x_s)$).\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test2_v1.png}\n\\caption{This is my caption2}\n\\label{iso2}\n\
+\\end{figure}Also we can see in Figure (\\ref{iso2}), the density of the \
+Newtonian analytical isothermal transonic solution.\n\nOne interesting \
+solution to see is the solution of (\\ref{bernou2}) for $\\gamma=5/3$. In the \
+Newtonian case, the sonic point disappears (i.e., $x_s^{\\gamma=5/3}$ is \
+strictly cero). With numerical techniques we solve\n\\begin{equation}\n4 \\pi \
+ r^2 \\rho (r) v(r)=4 \\pi  \\lambda  r_B^2 c_{\\infty } \\rho _{\\infty }\n\
+\\label{newG53a}\n\\end{equation}Figures (\\ref{adi1}, \\ref{adi2}) shows the \
+full numerical $\\gamma=5/3$ (dotted line) supersonic ($\\mathcal{M}>1$) and \
+subsonic ($\\mathcal{M}<1$) solutions of Eq. (\\ref{bernou2}). Once we have \
+the two separated mathematical solutions we match the curves for producing \
+Figure (\\ref{adi3}). Of course, for $\\gamma=5/3$, there is no point where \
+the transition occurs. However, as $\\gamma -> 1$ from 5/3, $x_s \\neq 0$. In \
+order to see this, we also plot the solutions of Eq. (\\ref{bernou2}) with \
+$\\gamma=1.6,1.5,1.4,1.3,1.2,1.1$. As we can see the sonic point goes from 0 \
+to 1/2 which is the sonic point of the Newtonian isothermal solution \
+(analytical), drawn also as reference (dashed line).\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test3_v1.png}\n\\caption{This is my caption3}\n\\label{adi1}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test3_v1.png}\n\\caption{This is my caption4}\n\\label{adi2}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach3Newton_v1.png}\n\\caption{This is my caption5}\n\\label{adi3}\n\
+\\end{figure}\\subsection{Non-Newtonian $\\gamma=5/3$ flow}\nAlso important \
+to realize is the appearance of a sonic point in the case of $\\gamma=5/3$ in \
+the flow under the influence of a Paczyski-Wiita (PW) potential. In the case \
+the Bernoulli equation is: \n\\begin{equation}\n4 \\pi  r^2 \\rho (r) v(r)=4 \
+\\pi  \\lambda  r_B^2 c_{\\infty } \\rho _{\\infty }\n\\label{pw1}\n\
+\\end{equation}In Figure (\\ref{adi1pw}) we see the two solutions of the \
+Bernoulli equation with $\\gamma=5/3$, but different in describing a flow \
+under Newtonian or PW potential.\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach1PW_v1.png}\n\\caption{This is my caption6}\n\\label{adi1pw}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach2PW_v1.png}\n\\caption{This is my caption7}\n\\label{adi2pw}\n\
+\\end{figure}\\end{document}\n</textarea>\[IndentingNewLine]<input \
+type=\"submit\" value=\"Abrir en Overleaf [abrir \
+cuenta]\">\[IndentingNewLine]</form>"], {"DataForm" -> "HTML"}},
+    "EmbeddedHTML"]}],
+  SequenceForm["Para ver el PDF haz click aqu\[IAcute]: ", 
+   EmbeddedHTML[
+   "<form action=\"https://www.overleaf.com/docs\" method=\"post\" \
+target=\"_blank\">\[IndentingNewLine]<textarea rows=\"10\" cols=\"100\" name=\
+\"snip\">\[IndentingNewLine]\\documentclass[a4paper,fleqn,\nusenatbib]{mnras}\
+\\usepackage{graphicx}\n\\title{Consistent 3D rotational accretion of matter \
+onto a Galactic black hole}\n\\author{\nJ. M. Ram{\\'i}rez,$^{1}$\n\
+Co-Author1,$^{4}$\nCo-Author2,$^{5}$\nCo-Author3,$^{4}$\nCo-Author4$^{2,6}$\n\
+}\n\\date{\\today}\\begin{document}\n\\maketitle\\begin{abstract}\nWe present \
+three-dimensional calculations of small-scale, spherically symmetric\n\
+including rotation and numerical comparison with gamma different from 1.\n\n\
+Entonces planeamos hacer lo siguiente:\n\n1RO, sin Rotacion:\n4 Lineas \
+(Repetidas tanto para Newton como PW)\n1) Isothermal: $\\gamma=1$. \
+(comparacion con analitico).\n2) $\\gamma=5/3$. (Comparacion con \
+Semi-analitico? podemos llamarle asi?, Numericamente?)\n3) $1< \\gamma < \
+5/3$; Sin los signos de igualdad. (Comparacion Semi-analitica).\n4) Con \
+electron scattering.\n\nY Luego hacer eso con ROTACION.\n\nEso seria un \
+trabajo completo.\n\nHay que construir las condiciones iniciales de todos \
+estos sistemas.\n\nHe decidido que es demasiado agregarle un potencial \
+galactico como lo hacen Ciotti y Silvia 2017. Eso que da para un futuro \
+trabajo.\ny yo sigo editando sin pribelmaa....\n\n\n\
+\\end{abstract}\\section{Introduction}\nUnfortunately, in general, these \
+studies lack the resolution to follow gas transport down to the parsec scale, \
+and the Bondi model is used as the starting point for estimates of the \
+accretion radius (i.e., the sonic radius) and of the mass accretion rate. In \
+particular, the Bondi accretion rate gives the mass supply to the MBH by \
+taking the density and temperature at some finite distance from the center, \
+implicitly assuming that these values represent the true boundary conditions \
+(i.e., at infinity) for the Bondi problem.As an expert in astrophysics, I can \
+provide you with an introduction to black holes, one of the most fascinating \
+and mysterious objects in the universe.\n\nA black hole is a region of \
+spacetime where gravity is so strong that nothing, not even light, can escape \
+from it once it crosses the event horizon, which is the boundary of the black \
+hole. This extreme gravitational pull is caused by a very high concentration \
+of mass within a small space.\n\nBlack holes are formed when massive stars \
+(typically more than 20-30 times the mass of our Sun) exhaust their nuclear \
+fuel and collapse under their own gravity. The core of the star collapses \
+inward, creating a tremendous amount of density and a strong gravitational \
+field. If the core's mass is sufficient, it will continue to collapse into a \
+single point called a singularity, surrounded by an event horizon.\n\nThere \
+are two main types of black holes:\n\n1. Stellar-mass black holes: These are \
+formed from the collapse of individual stars and typically have masses \
+ranging from about 5 to several tens of solar masses.\n\n2. Supermassive \
+black holes: These are found at the centers of most galaxies, including our \
+own Milky Way. They have masses ranging from millions to billions of solar \
+masses and are thought to have formed through the accretion of matter and \
+mergers with other black holes.\n\nBlack holes are characterized by three \
+main properties: mass, charge, and angular momentum (spin). However, due to \
+their strong gravitational fields, they exhibit unique phenomena such as \
+gravitational time dilation (time passes more slowly near a black hole) and \
+the bending of spacetime.\n\nDespite their name, black holes are not entirely \
+black. They can emit radiation through a process called Hawking radiation, \
+proposed by Stephen Hawking. This radiation is caused by quantum effects near \
+the event horizon and is expected to cause black holes to slowly evaporate \
+over extremely long timescales.\n\nThe study of black holes has led to \
+significant advancements in our understanding of gravity, spacetime, and the \
+fundamental laws of the universe. They continue to be a subject of intense \
+research and fascination for scientists and the public \
+alike.\\section{Introduction}\nUnfortunately, in general, these studies lack \
+the resolution to follow gas transport down to the parsec scale, and the \
+Bondi model is used as the starting point for estimates of the accretion \
+radius (i.e., the sonic radius) and of the mass accretion rate. In \
+particular, the Bondi accretion rate gives the mass supply to the MBH by \
+taking the density and temperature at some finite distance from the center, \
+implicitly assuming that these values represent the true boundary conditions \
+(i.e., at infinity) for the Bondi problem.\\section{Mathematical Method}\nSo, \
+we follow the notation of Ciotti \\& Silvia 2016. We start by writing the \
+continuity equation:\n\\begin{equation}\nx^2 \\mathcal{M} \\tilde{\\rho \
+}^{\\frac{\\gamma +1}{2}}=\\lambda\n\\label{conti1}\n\\end{equation}where \
+$\\lambda$, is called the accretion parameter, $x = r/r_B$, \
+$\\mathcal{M}=v/c_s$ and $\\tilde{\\rho}=\\rho/\\rho_{\\infty}$. The index \
+$\\gamma$ is the polytropic index of the flow. If $\\gamma=1$, then we \
+recover the continuity equation of an isothermal flow. For the accretion \
+produced by a Newtonian potential the equation ($\\ref{conti1}$) has to be \
+solved altogether with the equation of Bernoulli:\n\\begin{equation}\n\\frac{\
+\\tilde{\\rho }^{\\gamma -1}}{\\gamma -1}+\\frac{1}{2} \\mathcal{M}^2 \
+\\tilde{c_s}{}^2=\\frac{1}{\\gamma -1}+\\frac{1}{x}\n\\label{bernou1}\n\
+\\end{equation}The coupled equations can be arranged, and for this case can \
+be written in terms of:The coupled equations can be arranged, and for this \
+case can be written in terms of:The coupled equations can be arranged, and \
+for this case can be written in terms of:\n\\begin{equation}\n\
+\\mathcal{M}^{\\frac{2 (1-\\gamma )}{\\gamma +1}} \\left(\\frac{1}{\\gamma \
+-1}+\\frac{\\mathcal{M}^2}{2}\\right)=\\lambda ^{\\frac{2 (1-\\gamma \
+)}{\\gamma +1}} x^{\\frac{4 (1-\\gamma )}{\\gamma +1}} \
+\\left(\\frac{1}{\\gamma -1}+\\frac{1}{x}\\right)\n\\label{bernou2}\n\
+\\end{equation}For the Isothermal case, $\\gamma=1$, Ciotti and Silvia have \
+solved the equation\n\\begin{equation}\n\\frac{\\mathcal{M}^2}{2}-\\log \
+(\\mathcal{M})=\\lambda ^{\\frac{2 (1-\\gamma )}{\\gamma +1}} \
+\\left(\\frac{1}{x}+2 \\log (x)\\right)\n\\label{bernou3}\n\
+\\end{equation}Figure (\\ref{iso1}) shows the isothermal analytical solution \
+given by Ciotti and Silvia\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test1_v1.png}\n\\caption{This is my caption1}\n\\label{iso1}\n\
+\\end{figure}Which can be written in terms of the Lambert-W functions as\n\
+\\begin{equation}\n\
+\\mathcal{M}^2=-W_{\\{0,-1\\}}\\left(-\\frac{e^{3-\\frac{2}{x}}}{16 \
+x^4}\\right)\n\\label{lambert1}\n\\end{equation}Where the subscript \
+$\\{0,-1\\}$ means the main branch and the -1 branch for $x>x_{s}$ and \
+$0<x<x_{s}$ respectively, and $x_s$ is the sonic point. \nWe plot also \
+non-transonic solutions with $\\lambda=0.4\\lambda_{cr}$ and \
+$\\lambda=0.8\\lambda_{cr}$, where the flows stays either subsonic \
+($v<c_s(x_s)$) or supersonic ($v>c_s(x_s)$).\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test2_v1.png}\n\\caption{This is my caption2}\n\\label{iso2}\n\
+\\end{figure}Also we can see in Figure (\\ref{iso2}), the density of the \
+Newtonian analytical isothermal transonic solution.\n\nOne interesting \
+solution to see is the solution of (\\ref{bernou2}) for $\\gamma=5/3$. In the \
+Newtonian case, the sonic point disappears (i.e., $x_s^{\\gamma=5/3}$ is \
+strictly cero). With numerical techniques we solve\n\\begin{equation}\n4 \\pi \
+ r^2 \\rho (r) v(r)=4 \\pi  \\lambda  r_B^2 c_{\\infty } \\rho _{\\infty }\n\
+\\label{newG53a}\n\\end{equation}Figures (\\ref{adi1}, \\ref{adi2}) shows the \
+full numerical $\\gamma=5/3$ (dotted line) supersonic ($\\mathcal{M}>1$) and \
+subsonic ($\\mathcal{M}<1$) solutions of Eq. (\\ref{bernou2}). Once we have \
+the two separated mathematical solutions we match the curves for producing \
+Figure (\\ref{adi3}). Of course, for $\\gamma=5/3$, there is no point where \
+the transition occurs. However, as $\\gamma -> 1$ from 5/3, $x_s \\neq 0$. In \
+order to see this, we also plot the solutions of Eq. (\\ref{bernou2}) with \
+$\\gamma=1.6,1.5,1.4,1.3,1.2,1.1$. As we can see the sonic point goes from 0 \
+to 1/2 which is the sonic point of the Newtonian isothermal solution \
+(analytical), drawn also as reference (dashed line).\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test3_v1.png}\n\\caption{This is my caption3}\n\\label{adi1}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/test3_v1.png}\n\\caption{This is my caption4}\n\\label{adi2}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach3Newton_v1.png}\n\\caption{This is my caption5}\n\\label{adi3}\n\
+\\end{figure}\\subsection{Non-Newtonian $\\gamma=5/3$ flow}\nAlso important \
+to realize is the appearance of a sonic point in the case of $\\gamma=5/3$ in \
+the flow under the influence of a Paczyski-Wiita (PW) potential. In the case \
+the Bernoulli equation is: \n\\begin{equation}\n4 \\pi  r^2 \\rho (r) v(r)=4 \
+\\pi  \\lambda  r_B^2 c_{\\infty } \\rho _{\\infty }\n\\label{pw1}\n\
+\\end{equation}In Figure (\\ref{adi1pw}) we see the two solutions of the \
+Bernoulli equation with $\\gamma=5/3$, but different in describing a flow \
+under Newtonian or PW potential.\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach1PW_v1.png}\n\\caption{This is my caption6}\n\\label{adi1pw}\n\
+\\end{figure}\n\\begin{figure}\n\
+\\includegraphics[width=8.0cm]{https://www.wolframcloud.com/obj/jmramirez/\
+mmatex/ADIMach2PW_v1.png}\n\\caption{This is my caption7}\n\\label{adi2pw}\n\
+\\end{figure}\\end{document}\n</textarea>\[IndentingNewLine]<input \
+type=\"submit\" value=\"Abrir en Overleaf [abrir \
+cuenta]\">\[IndentingNewLine]</form>"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221549036066*^9},
+ CellLabel->"During evaluation of In[83]:=",
+ CellID->891407975,ExpressionUUID->"1d3c7e96-5394-4769-be53-7816d8278ac1"]
+}, Closed]]
+}, Closed]],
 
 Cell[BoxData[{
  InterpretationBox[
@@ -567,7 +1087,7 @@ Cell[BoxData[{
   3.9250790840027733`*^9}, {3.925079677754228*^9, 3.925079719315914*^9}},
  Background->RGBColor[0.88, 1, 0.88],
  CellTags->"mmaitexRunCollapse",
- CellLabel->"In[10]:=",
+ CellLabel->"In[85]:=",
  CellID->1465937309,ExpressionUUID->"5c69392c-f4d9-4242-bd69-6f073ae8e706"]
 }, Closed]]
 }, Closed]],
@@ -587,13 +1107,13 @@ Cell["PaperONv1", "Title",
 Cell[BoxData["docClassArticle"], "Input",
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[52]:=",
+ CellLabel->"In[61]:=",
  CellID->54920704,ExpressionUUID->"ef7b9941-2d14-45d2-a99e-d2a3d08861a2"],
 
 Cell[BoxData["graphicx"], "Input",
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[53]:=",
+ CellLabel->"In[62]:=",
  CellID->298391555,ExpressionUUID->"13cd2235-7a4c-4281-95ce-0a14ddf4d021"],
 
 Cell[BoxData[
@@ -611,13 +1131,13 @@ Co-Author3,$^{4}$\nCo-Author4$^{2,6}$\n\>\""}], "]"}]], "Input",
    3.923069028753701*^9}, {3.923132740670326*^9, 3.923132743228055*^9}},
  FontSize->40,
  Background->GrayLevel[0.85],
- CellLabel->"In[54]:=",
+ CellLabel->"In[63]:=",
  CellID->420563094,ExpressionUUID->"c86e88c9-3b7e-406d-8540-36312a94cfd3"],
 
 Cell[BoxData["openDoc"], "Input",
  FontSize->45,
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->"In[55]:=",
+ CellLabel->"In[64]:=",
  CellID->15813313,ExpressionUUID->"76611541-540b-4d54-9442-570a7711dd81"],
 
 Cell["\<\
@@ -685,7 +1205,7 @@ Cell[BoxData["myStringToCell"], "Input",
  CellChangeTimes->{
   3.923311705766815*^9, {3.923311811993128*^9, 3.923311823828267*^9}, {
    3.923312049057362*^9, 3.923312052046411*^9}},
- CellLabel->"In[56]:=",
+ CellLabel->"In[65]:=",
  CellID->1549051686,ExpressionUUID->"b08f7469-9fe8-438d-ac25-f774254b381b"],
 
 Cell["\<\
@@ -740,7 +1260,7 @@ Cell[BoxData[
    3.923255691578911*^9, 3.923255693598507*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[57]:=",
+ CellLabel->"In[66]:=",
  CellID->185768833,ExpressionUUID->"f8b8083e-4513-426a-98bc-7229d761ac79"],
 
 Cell["\<\
@@ -770,7 +1290,7 @@ Cell[BoxData[
    3.742656103482403*^9}, {3.923255704735812*^9, 3.923255706890335*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[58]:=",
+ CellLabel->"In[67]:=",
  CellID->806372149,ExpressionUUID->"9e44a646-f8af-4aa3-b9ba-629db8de47cf"],
 
 Cell["\<\
@@ -826,7 +1346,7 @@ Cell[BoxData[
    3.742663787079422*^9, 3.742663794283887*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[59]:=",
+ CellLabel->"In[68]:=",
  CellID->888413691,ExpressionUUID->"9a5e50ca-fe5e-4dc7-95b2-efcba6720c49"],
 
 Cell["\<\
@@ -862,7 +1382,7 @@ Cell[BoxData[
    3.7426645485749187`*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[60]:=",
+ CellLabel->"In[69]:=",
  CellID->538863701,ExpressionUUID->"bbe10d1b-ac3c-49af-b773-672a985eec59"],
 
 Cell["\<\
@@ -875,6 +1395,8 @@ and Silvia\
  Background->GrayLevel[0.85],
  CellID->1083199935,ExpressionUUID->"76065355-34d4-469d-8330-2e673d4dd413"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"figure", "[", 
   RowBox[{
@@ -885,8 +1407,29 @@ Cell[BoxData[
   3.742664724235951*^9}, {3.923063165640944*^9, 3.923063171511383*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[61]:=",
+ CellLabel->"In[70]:=",
  CellID->931290243,ExpressionUUID->"b94c7eaa-88d9-497b-b3ad-2a16c3cfd856"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/test1_v1.png\"", 
+       "https://www.wolframcloud.com/obj/jmramirez/mmatex/test1_v1.png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/test1_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/test1_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221544249569*^9},
+ CellLabel->"During evaluation of In[70]:=",
+ CellID->676562982,ExpressionUUID->"f96052a6-3286-450f-80ec-f910240ba69a"]
+}, Closed]],
 
 Cell["Which can be written in terms of the Lambert-W functions as", "Text",
  CellChangeTimes->{{3.742665093891199*^9, 3.742665113870598*^9}, {
@@ -919,7 +1462,7 @@ Cell[BoxData[
    3.742667609585703*^9, 3.7426676156157827`*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[62]:=",
+ CellLabel->"In[71]:=",
  CellID->1907181474,ExpressionUUID->"f67d9668-cdfa-42f1-9ca5-2541a707a224"],
 
 Cell["\<\
@@ -939,6 +1482,8 @@ $\\lambda=0.8\\lambda_{cr}$, where the flows stays either subsonic \
  Background->GrayLevel[0.85],
  CellID->881299102,ExpressionUUID->"437b0980-0177-4db6-b3d6-41191a820424"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"figure", "[", 
   RowBox[{
@@ -950,8 +1495,29 @@ Cell[BoxData[
   3.923063526743137*^9, 3.923063534406281*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[63]:=",
+ CellLabel->"In[72]:=",
  CellID->1161726595,ExpressionUUID->"42947bef-5527-41ff-a7a3-e27d81697b0c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/test2_v1.png\"", 
+       "https://www.wolframcloud.com/obj/jmramirez/mmatex/test2_v1.png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/test2_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/test2_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221544772551*^9},
+ CellLabel->"During evaluation of In[72]:=",
+ CellID->2146071603,ExpressionUUID->"cbf4c3b4-cfb3-4746-8a20-943e1c1d9bf7"]
+}, Closed]],
 
 Cell["\<\
 Also we can see in Figure (\\ref{iso2}), the density of the Newtonian \
@@ -983,7 +1549,7 @@ Cell[BoxData[
    3.9231301918209333`*^9, 3.923130193742549*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[64]:=",
+ CellLabel->"In[73]:=",
  CellID->1067136390,ExpressionUUID->"103e42ff-faa5-4208-b8ee-5a80e879a25c"],
 
 Cell["\<\
@@ -1007,6 +1573,8 @@ to 1/2 which is the sonic point of the Newtonian isothermal solution \
  Background->GrayLevel[0.85],
  CellID->845221964,ExpressionUUID->"fbd78a8c-51ac-4ee1-bbf0-5ca58c3a41b8"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"figure", "[", 
   RowBox[{
@@ -1019,8 +1587,31 @@ Cell[BoxData[
   3.923063549230247*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[65]:=",
+ CellLabel->"In[74]:=",
  CellID->1121487375,ExpressionUUID->"48b17bbb-d449-4646-9fbf-3ebd12f82a24"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png\"", 
+       "https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221545155554*^9},
+ CellLabel->"During evaluation of In[74]:=",
+ CellID->82520144,ExpressionUUID->"8aff367a-e56b-4686-a718-0b5ea6acc893"]
+}, Closed]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"figure", "[", 
@@ -1034,8 +1625,31 @@ Cell[BoxData[
   3.923063559454265*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[66]:=",
+ CellLabel->"In[75]:=",
  CellID->374341906,ExpressionUUID->"01e4e3c0-897b-49db-b763-a3620ae20532"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png\"", 
+       "https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/test3_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221545499421*^9},
+ CellLabel->"During evaluation of In[75]:=",
+ CellID->470332357,ExpressionUUID->"445d98fe-787d-4458-88ad-535cbc2d2c38"]
+}, Closed]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"figure", "[", 
@@ -1049,8 +1663,30 @@ Cell[BoxData[
   3.923063565006174*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[67]:=",
+ CellLabel->"In[76]:=",
  CellID->742927339,ExpressionUUID->"8d992cd0-5472-4065-8edd-dde1441a9bc6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach3Newton_v1.\
+png\"", "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach3Newton_v1.\
+png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach3Newton_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach3Newton_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9252215458937807`*^9},
+ CellLabel->"During evaluation of In[76]:=",
+ CellID->2001330274,ExpressionUUID->"ba401d25-58d1-4cae-8938-fe807e1b20a2"]
+}, Closed]],
 
 Cell["\<\
 \\subsection{Non-Newtonian $\\gamma=5/3$ flow}
@@ -1078,7 +1714,7 @@ Cell[BoxData[
   3.7426724178307123`*^9}, {3.923063989945418*^9, 3.923063994026432*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[68]:=",
+ CellLabel->"In[77]:=",
  CellID->1086101261,ExpressionUUID->"fbc325ef-4e4c-42f6-ad12-466668c534f1"],
 
 Cell["\<\
@@ -1090,6 +1726,8 @@ potential.\
  FontSize->40,
  Background->GrayLevel[0.85],
  CellID->1488968896,ExpressionUUID->"6ea5aa4c-7fc9-4377-9151-22a5d0ad3d75"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"figure", "[", 
@@ -1105,8 +1743,31 @@ Cell[BoxData[
   3.9230640042330637`*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[69]:=",
+ CellLabel->"In[78]:=",
  CellID->1695360792,ExpressionUUID->"222eac78-32db-45d4-8deb-e26bad9314f6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach1PW_v1.png\"\
+", "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach1PW_v1.png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach1PW_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach1PW_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221546413015*^9},
+ CellLabel->"During evaluation of In[78]:=",
+ CellID->1083285520,ExpressionUUID->"de65db3d-b8dd-490b-96a5-9b5a2d513589"]
+}, Closed]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"figure", "[", 
@@ -1122,14 +1783,35 @@ Cell[BoxData[
   3.923064001233151*^9}},
  FontSize->25,
  Background->GrayLevel[0.92],
- CellLabel->"In[70]:=",
+ CellLabel->"In[79]:=",
  CellID->896412065,ExpressionUUID->"af62213c-79cd-41f2-a388-e7232c8777fc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se guard\[OAcute] en la nube: \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    RowBox[{"CloudObject", "[", 
+     TemplateBox[{
+      "\"https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach2PW_v1.png\"\
+", "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach2PW_v1.png"},
+      "HyperlinkURL"], "]"}],
+    CloudObject[
+    "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach2PW_v1.png"],
+    SelectWithContents->True]}],
+  SequenceForm["Se guard\[OAcute] en la nube: ", 
+   CloudObject[
+   "https://www.wolframcloud.com/obj/jmramirez/mmatex/ADIMach2PW_v1.png"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.925221546928876*^9},
+ CellLabel->"During evaluation of In[79]:=",
+ CellID->490312773,ExpressionUUID->"45635fe0-3f70-4e7c-836f-12ca143cf6ea"]
+}, Closed]],
 
 Cell[BoxData["closeDoc"], "Input",
  CellChangeTimes->{3.74259909443143*^9},
  FontSize->45,
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->"In[71]:=",
+ CellLabel->"In[80]:=",
  CellID->704496735,ExpressionUUID->"359cadfb-3b38-4551-924e-02cbb067b21c"]
 }, Closed]]
 },
@@ -1236,29 +1918,35 @@ ExpressionUUID->"255ca0af-c91c-44e3-b481-265e9a573b71"
 (*CellTagsOutline
 CellTagsIndex->{
  "initCell"->{
-  Cell[2760, 92, 6078, 168, 644, "Input",ExpressionUUID->"f282f7c8-dbfa-4dc0-9070-e13104ad10f8",
+  Cell[2782, 94, 6130, 169, 644, "Input",ExpressionUUID->"f282f7c8-dbfa-4dc0-9070-e13104ad10f8",
    CellTags->"initCell",
-   CellID->2107135677]},
+   CellID->2107135677],
+  Cell[8915, 265, 232, 4, 36, "Print",ExpressionUUID->"ac44446c-8290-40a0-9c73-c38b23312ee7",
+   CellTags->"initCell",
+   CellID->1337330571]},
  "runNote2"->{
-  Cell[17160, 469, 1208, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+  Cell[18019, 497, 1232, 28, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
    CellTags->"runNote2",
-   CellID->433914365]},
+   CellID->433914365],
+  Cell[19254, 527, 234, 4, 36, "Print",ExpressionUUID->"1e45219c-af00-4ab3-9940-97e3e766750f",
+   CellTags->"runNote2",
+   CellID->1635132966]},
  "runNote"->{
-  Cell[18371, 498, 200, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
+  Cell[19525, 536, 200, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
    CellTags->"runNote",
    CellID->1093691010]},
  "mmaitexRunCollapse"->{
-  Cell[18574, 504, 2607, 66, 158, "Input",ExpressionUUID->"5c69392c-f4d9-4242-bd69-6f073ae8e706",
+  Cell[52823, 1024, 2607, 66, 158, "Input",ExpressionUUID->"5c69392c-f4d9-4242-bd69-6f073ae8e706",
    CellTags->"mmaitexRunCollapse",
    CellID->1465937309]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"initCell", 50980, 1237},
- {"runNote2", 51142, 1241},
- {"runNote", 51303, 1245},
- {"mmaitexRunCollapse", 51472, 1249}
+ {"initCell", 91236, 1919},
+ {"runNote2", 91541, 1926},
+ {"runNote", 91846, 1933},
+ {"mmaitexRunCollapse", 92015, 1937}
  }
 *)
 (*NotebookFileOutline
@@ -1271,112 +1959,170 @@ Cell[1821, 71, 738, 13, 112, "Text",ExpressionUUID->"70b07db8-ae50-4026-9f89-fa1
 Cell[CellGroupData[{
 Cell[2584, 88, 173, 2, 101, "Section",ExpressionUUID->"9491a5ff-b570-4bfd-a625-e5b61b3cbb39",
  CellID->378485379],
-Cell[2760, 92, 6078, 168, 644, "Input",ExpressionUUID->"f282f7c8-dbfa-4dc0-9070-e13104ad10f8",
+Cell[CellGroupData[{
+Cell[2782, 94, 6130, 169, 644, "Input",ExpressionUUID->"f282f7c8-dbfa-4dc0-9070-e13104ad10f8",
  CellTags->"initCell",
- CellID->2107135677]
+ CellID->2107135677],
+Cell[8915, 265, 232, 4, 36, "Print",ExpressionUUID->"ac44446c-8290-40a0-9c73-c38b23312ee7",
+ CellTags->"initCell",
+ CellID->1337330571]
+}, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[8875, 265, 748, 16, 101, "Section",ExpressionUUID->"c1d06546-afc3-4e71-bd48-a12437ffe410",
+Cell[9196, 275, 748, 16, 101, "Section",ExpressionUUID->"c1d06546-afc3-4e71-bd48-a12437ffe410",
  CellID->93175719],
-Cell[9626, 283, 3538, 88, 274, "Input",ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb",
+Cell[CellGroupData[{
+Cell[9969, 295, 3538, 88, 274, "Input",ExpressionUUID->"4acb83b7-9a4d-4a3e-95d7-21bb8b00cbbb",
  CellID->1681731838],
-Cell[13167, 373, 1794, 31, 122, "Input",ExpressionUUID->"da613e2f-7182-448a-b6cc-8dcef4587d8d",
+Cell[13510, 385, 221, 3, 36, "Print",ExpressionUUID->"98c5edb3-dc5c-4b63-9c37-5b8241d70abb",
+ CellID->1712967012]
+}, Closed]],
+Cell[13746, 391, 1794, 31, 122, "Input",ExpressionUUID->"da613e2f-7182-448a-b6cc-8dcef4587d8d",
  CellID->1878991879]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[14998, 409, 724, 19, 102, "Section",ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a",
+Cell[15577, 427, 724, 19, 102, "Section",ExpressionUUID->"0425cee6-712d-4d52-ae26-7370e705597a",
  CellID->261372301],
-Cell[15725, 430, 1075, 28, 168, "Input",ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204",
- CellID->504000207]
+Cell[CellGroupData[{
+Cell[16326, 450, 1075, 28, 168, "Input",ExpressionUUID->"775bfcb1-0e0a-450f-9ddc-8577186e5204",
+ CellID->504000207],
+Cell[17404, 480, 221, 3, 36, "Print",ExpressionUUID->"28e3fcb1-4be3-4b61-ad26-f50cb57ab3e3",
+ CellID->73694634]
+}, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[16837, 463, 320, 4, 101, "Section",ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f",
+Cell[17674, 489, 320, 4, 101, "Section",ExpressionUUID->"06cbb823-e92d-4222-b742-7d360ecdf76f",
  CellID->142455613],
-Cell[17160, 469, 1208, 27, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+Cell[CellGroupData[{
+Cell[18019, 497, 1232, 28, 133, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
  CellTags->"runNote2",
  CellID->433914365],
-Cell[18371, 498, 200, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
+Cell[19254, 527, 234, 4, 36, "Print",ExpressionUUID->"1e45219c-af00-4ab3-9940-97e3e766750f",
+ CellTags->"runNote2",
+ CellID->1635132966]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[19525, 536, 200, 4, 46, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
  CellTags->"runNote",
  CellID->1093691010],
-Cell[18574, 504, 2607, 66, 158, "Input",ExpressionUUID->"5c69392c-f4d9-4242-bd69-6f073ae8e706",
+Cell[CellGroupData[{
+Cell[19750, 544, 340, 7, 36, "Print",ExpressionUUID->"7f205df1-7f74-47d3-b4c9-69a89b2bc33a",
+ CellID->502979368],
+Cell[20093, 553, 219, 3, 36, "Print",ExpressionUUID->"ad1b583d-2703-4de6-ad7e-2b721120e436",
+ CellID->1078603384],
+Cell[20315, 558, 821, 18, 39, "Print",ExpressionUUID->"67d2cf39-b020-4525-a84c-272605d1a557",
+ CellID->1177610561],
+Cell[21139, 578, 31657, 442, 51, "Print",ExpressionUUID->"1d3c7e96-5394-4769-be53-7816d8278ac1",
+ CellID->891407975]
+}, Closed]]
+}, Closed]],
+Cell[52823, 1024, 2607, 66, 158, "Input",ExpressionUUID->"5c69392c-f4d9-4242-bd69-6f073ae8e706",
  CellTags->"mmaitexRunCollapse",
  CellID->1465937309]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[21230, 576, 565, 8, 105, "Title",ExpressionUUID->"ee4f86ff-7e19-432a-bee4-637e55977a38",
+Cell[55479, 1096, 565, 8, 105, "Title",ExpressionUUID->"ee4f86ff-7e19-432a-bee4-637e55977a38",
  CellID->41265470],
-Cell[21798, 586, 184, 4, 92, "Input",ExpressionUUID->"ef7b9941-2d14-45d2-a99e-d2a3d08861a2",
+Cell[56047, 1106, 184, 4, 92, "Input",ExpressionUUID->"ef7b9941-2d14-45d2-a99e-d2a3d08861a2",
  CellID->54920704],
-Cell[21985, 592, 178, 4, 92, "Input",ExpressionUUID->"13cd2235-7a4c-4281-95ce-0a14ddf4d021",
+Cell[56234, 1112, 178, 4, 92, "Input",ExpressionUUID->"13cd2235-7a4c-4281-95ce-0a14ddf4d021",
  CellID->298391555],
-Cell[22166, 598, 896, 16, 1072, "Input",ExpressionUUID->"c86e88c9-3b7e-406d-8540-36312a94cfd3",
+Cell[56415, 1118, 896, 16, 1072, "Input",ExpressionUUID->"c86e88c9-3b7e-406d-8540-36312a94cfd3",
  CellID->420563094],
-Cell[23065, 616, 184, 4, 130, "Input",ExpressionUUID->"76611541-540b-4d54-9442-570a7711dd81",
+Cell[57314, 1136, 184, 4, 130, "Input",ExpressionUUID->"76611541-540b-4d54-9442-570a7711dd81",
  CellID->15813313],
-Cell[23252, 622, 1227, 35, 2569, "Text",ExpressionUUID->"17eb7a75-66d7-4734-9e6e-1c9ec33358f4",
+Cell[57501, 1142, 1227, 35, 2569, "Text",ExpressionUUID->"17eb7a75-66d7-4734-9e6e-1c9ec33358f4",
  CellID->1530876818],
-Cell[24482, 659, 1354, 22, 858, "Text",ExpressionUUID->"106dbf27-be69-41ff-bb72-7e207b109807",
+Cell[58731, 1179, 1354, 22, 858, "Text",ExpressionUUID->"106dbf27-be69-41ff-bb72-7e207b109807",
  CellID->181563867],
-Cell[25839, 683, 281, 5, 46, "Input",ExpressionUUID->"b08f7469-9fe8-438d-ac25-f774254b381b",
+Cell[60088, 1203, 281, 5, 46, "Input",ExpressionUUID->"b08f7469-9fe8-438d-ac25-f774254b381b",
  CellID->1549051686],
-Cell[26123, 690, 1257, 21, 858, "Text",ExpressionUUID->"58a5783c-4efc-49aa-9a4f-45bf17bac442",
+Cell[60372, 1210, 1257, 21, 858, "Text",ExpressionUUID->"58a5783c-4efc-49aa-9a4f-45bf17bac442",
  CellID->1398165866],
-Cell[27383, 713, 1051, 18, 287, "Text",ExpressionUUID->"60b5cd16-8f1d-4c3e-b5c7-46102d1e32f2",
+Cell[61632, 1233, 1051, 18, 287, "Text",ExpressionUUID->"60b5cd16-8f1d-4c3e-b5c7-46102d1e32f2",
  CellID->1348369011],
-Cell[28437, 733, 505, 10, 92, "Input",ExpressionUUID->"f8b8083e-4513-426a-98bc-7229d761ac79",
+Cell[62686, 1253, 505, 10, 92, "Input",ExpressionUUID->"f8b8083e-4513-426a-98bc-7229d761ac79",
  CellID->185768833],
-Cell[28945, 745, 973, 16, 695, "Text",ExpressionUUID->"44fa18ac-5b3e-43a5-b885-d7584a42f00b",
+Cell[63194, 1265, 973, 16, 695, "Text",ExpressionUUID->"44fa18ac-5b3e-43a5-b885-d7584a42f00b",
  CellID->721140938],
-Cell[29921, 763, 533, 10, 92, "Input",ExpressionUUID->"9e44a646-f8af-4aa3-b9ba-629db8de47cf",
+Cell[64170, 1283, 533, 10, 92, "Input",ExpressionUUID->"9e44a646-f8af-4aa3-b9ba-629db8de47cf",
  CellID->806372149],
-Cell[30457, 775, 350, 8, 206, "Text",ExpressionUUID->"6d7ffc59-d3c8-4c80-9c12-eff98881a411",
+Cell[64706, 1295, 350, 8, 206, "Text",ExpressionUUID->"6d7ffc59-d3c8-4c80-9c12-eff98881a411",
  CellID->1718558254],
-Cell[30810, 785, 349, 8, 206, "Text",ExpressionUUID->"50d2822a-36f7-41cf-a232-6a00037b025d",
+Cell[65059, 1305, 349, 8, 206, "Text",ExpressionUUID->"50d2822a-36f7-41cf-a232-6a00037b025d",
  CellID->953636075],
-Cell[31162, 795, 349, 8, 206, "Text",ExpressionUUID->"b71d1bfd-4f96-453c-aaba-49a07ea95314",
+Cell[65411, 1315, 349, 8, 206, "Text",ExpressionUUID->"b71d1bfd-4f96-453c-aaba-49a07ea95314",
  CellID->580443256],
-Cell[31514, 805, 977, 24, 114, "Input",ExpressionUUID->"9a5e50ca-fe5e-4dc7-95b2-efcba6720c49",
+Cell[65763, 1325, 977, 24, 114, "Input",ExpressionUUID->"9a5e50ca-fe5e-4dc7-95b2-efcba6720c49",
  CellID->888413691],
-Cell[32494, 831, 292, 7, 206, "Text",ExpressionUUID->"9fa5b5aa-c25a-4a28-8d1e-98d3d5470f8e",
+Cell[66743, 1351, 292, 7, 206, "Text",ExpressionUUID->"9fa5b5aa-c25a-4a28-8d1e-98d3d5470f8e",
  CellID->339310535],
-Cell[32789, 840, 1014, 25, 114, "Input",ExpressionUUID->"bbe10d1b-ac3c-49af-b773-672a985eec59",
+Cell[67038, 1360, 1014, 25, 114, "Input",ExpressionUUID->"bbe10d1b-ac3c-49af-b773-672a985eec59",
  CellID->538863701],
-Cell[33806, 867, 375, 8, 206, "Text",ExpressionUUID->"76065355-34d4-469d-8330-2e673d4dd413",
+Cell[68055, 1387, 375, 8, 206, "Text",ExpressionUUID->"76065355-34d4-469d-8330-2e673d4dd413",
  CellID->1083199935],
-Cell[34184, 877, 519, 11, 92, "Input",ExpressionUUID->"b94c7eaa-88d9-497b-b3ad-2a16c3cfd856",
+Cell[CellGroupData[{
+Cell[68455, 1399, 519, 11, 92, "Input",ExpressionUUID->"b94c7eaa-88d9-497b-b3ad-2a16c3cfd856",
  CellID->931290243],
-Cell[34706, 890, 310, 5, 124, "Text",ExpressionUUID->"b3c433c6-ac93-40ea-891d-55e4437e0e2e",
+Cell[68977, 1412, 812, 18, 39, "Print",ExpressionUUID->"f96052a6-3286-450f-80ec-f910240ba69a",
+ CellID->676562982]
+}, Closed]],
+Cell[69804, 1433, 310, 5, 124, "Text",ExpressionUUID->"b3c433c6-ac93-40ea-891d-55e4437e0e2e",
  CellID->328357698],
-Cell[35019, 897, 1154, 25, 98, "Input",ExpressionUUID->"f67d9668-cdfa-42f1-9ca5-2541a707a224",
+Cell[70117, 1440, 1154, 25, 98, "Input",ExpressionUUID->"f67d9668-cdfa-42f1-9ca5-2541a707a224",
  CellID->1907181474],
-Cell[36176, 924, 896, 15, 613, "Text",ExpressionUUID->"437b0980-0177-4db6-b3d6-41191a820424",
+Cell[71274, 1467, 896, 15, 613, "Text",ExpressionUUID->"437b0980-0177-4db6-b3d6-41191a820424",
  CellID->881299102],
-Cell[37075, 941, 571, 12, 92, "Input",ExpressionUUID->"42947bef-5527-41ff-a7a3-e27d81697b0c",
+Cell[CellGroupData[{
+Cell[72195, 1486, 571, 12, 92, "Input",ExpressionUUID->"42947bef-5527-41ff-a7a3-e27d81697b0c",
  CellID->1161726595],
-Cell[37649, 955, 1039, 18, 613, "Text",ExpressionUUID->"5c9704a0-1557-4319-aaa5-690801d0cfdd",
+Cell[72769, 1500, 813, 18, 39, "Print",ExpressionUUID->"cbf4c3b4-cfb3-4746-8a20-943e1c1d9bf7",
+ CellID->2146071603]
+}, Closed]],
+Cell[73597, 1521, 1039, 18, 613, "Text",ExpressionUUID->"5c9704a0-1557-4319-aaa5-690801d0cfdd",
  CellID->874687661],
-Cell[38691, 975, 582, 11, 92, "Input",ExpressionUUID->"103e42ff-faa5-4208-b8ee-5a80e879a25c",
+Cell[74639, 1541, 582, 11, 92, "Input",ExpressionUUID->"103e42ff-faa5-4208-b8ee-5a80e879a25c",
  CellID->1067136390],
-Cell[39276, 988, 1221, 19, 1102, "Text",ExpressionUUID->"fbd78a8c-51ac-4ee1-bbf0-5ca58c3a41b8",
+Cell[75224, 1554, 1221, 19, 1102, "Text",ExpressionUUID->"fbd78a8c-51ac-4ee1-bbf0-5ca58c3a41b8",
  CellID->845221964],
-Cell[40500, 1009, 624, 13, 92, "Input",ExpressionUUID->"48b17bbb-d449-4646-9fbf-3ebd12f82a24",
+Cell[CellGroupData[{
+Cell[76470, 1577, 624, 13, 92, "Input",ExpressionUUID->"48b17bbb-d449-4646-9fbf-3ebd12f82a24",
  CellID->1121487375],
-Cell[41127, 1024, 618, 13, 92, "Input",ExpressionUUID->"01e4e3c0-897b-49db-b763-a3620ae20532",
+Cell[77097, 1592, 811, 18, 39, "Print",ExpressionUUID->"8aff367a-e56b-4686-a718-0b5ea6acc893",
+ CellID->82520144]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[77945, 1615, 618, 13, 92, "Input",ExpressionUUID->"01e4e3c0-897b-49db-b763-a3620ae20532",
  CellID->374341906],
-Cell[41748, 1039, 632, 13, 92, "Input",ExpressionUUID->"8d992cd0-5472-4065-8edd-dde1441a9bc6",
+Cell[78566, 1630, 812, 18, 39, "Print",ExpressionUUID->"445d98fe-787d-4458-88ad-535cbc2d2c38",
+ CellID->470332357]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[79415, 1653, 632, 13, 92, "Input",ExpressionUUID->"8d992cd0-5472-4065-8edd-dde1441a9bc6",
  CellID->742927339],
-Cell[42383, 1054, 896, 15, 450, "Text",ExpressionUUID->"f2378972-a900-4a87-8654-54cb3acb4685",
+Cell[80050, 1668, 847, 19, 39, "Print",ExpressionUUID->"ba401d25-58d1-4cae-8938-fe807e1b20a2",
+ CellID->2001330274]
+}, Closed]],
+Cell[80912, 1690, 896, 15, 450, "Text",ExpressionUUID->"f2378972-a900-4a87-8654-54cb3acb4685",
  CellID->131049171],
-Cell[43282, 1071, 474, 10, 92, "Input",ExpressionUUID->"fbc325ef-4e4c-42f6-ad12-466668c534f1",
+Cell[81811, 1707, 474, 10, 92, "Input",ExpressionUUID->"fbc325ef-4e4c-42f6-ad12-466668c534f1",
  CellID->1086101261],
-Cell[43759, 1083, 378, 8, 287, "Text",ExpressionUUID->"6ea5aa4c-7fc9-4377-9151-22a5d0ad3d75",
+Cell[82288, 1719, 378, 8, 287, "Text",ExpressionUUID->"6ea5aa4c-7fc9-4377-9151-22a5d0ad3d75",
  CellID->1488968896],
-Cell[44140, 1093, 779, 15, 92, "Input",ExpressionUUID->"222eac78-32db-45d4-8deb-e26bad9314f6",
+Cell[CellGroupData[{
+Cell[82691, 1731, 779, 15, 92, "Input",ExpressionUUID->"222eac78-32db-45d4-8deb-e26bad9314f6",
  CellID->1695360792],
-Cell[44922, 1110, 775, 15, 92, "Input",ExpressionUUID->"af62213c-79cd-41f2-a388-e7232c8777fc",
+Cell[83473, 1748, 827, 18, 39, "Print",ExpressionUUID->"de65db3d-b8dd-490b-96a5-9b5a2d513589",
+ CellID->1083285520]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[84337, 1771, 775, 15, 92, "Input",ExpressionUUID->"af62213c-79cd-41f2-a388-e7232c8777fc",
  CellID->896412065],
-Cell[45700, 1127, 227, 5, 130, "Input",ExpressionUUID->"359cadfb-3b38-4551-924e-02cbb067b21c",
+Cell[85115, 1788, 826, 18, 39, "Print",ExpressionUUID->"45635fe0-3f70-4e7c-836f-12ca143cf6ea",
+ CellID->490312773]
+}, Closed]],
+Cell[85956, 1809, 227, 5, 130, "Input",ExpressionUUID->"359cadfb-3b38-4551-924e-02cbb067b21c",
  CellID->704496735]
 }, Closed]]
 }
