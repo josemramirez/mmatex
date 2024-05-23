@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     43094,       1087]
-NotebookOptionsPosition[     32980,        864]
-NotebookOutlinePosition[     40154,       1021]
-CellTagsIndexPosition[     39991,       1013]
+NotebookDataLength[     43119,       1086]
+NotebookOptionsPosition[     33006,        863]
+NotebookOutlinePosition[     40179,       1020]
+CellTagsIndexPosition[     40017,       1012]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -727,7 +727,7 @@ Cell[BoxData[{
   3.9250790840027733`*^9}, {3.925079677754228*^9, 3.925079719315914*^9}},
  Background->RGBColor[0.88, 1, 0.88],
  CellTags->"mmaitexRunCollapse",
- CellLabel->"In[1]:=",
+ CellLabel->"In[4]:=",
  CellID->1465937309,ExpressionUUID->"2a76068e-c695-40a4-8f4a-5c4a9a81d235"]
 }, Closed]]
 }, Closed]],
@@ -805,7 +805,7 @@ In this paper we want to introduce.\
  CellID->181563867,ExpressionUUID->"f96eaf98-ec28-4b7b-ba96-a2dbab09f599"],
 
 Cell[BoxData[
- RowBox[{"myEq", "[", 
+ RowBox[{"mmtxEq", "[", 
   RowBox[{
    RowBox[{"(", 
     RowBox[{
@@ -814,10 +814,9 @@ Cell[BoxData[
    "\"\<Mi primera formula\>\""}], "]"}]], "Input",
  CellChangeTimes->{{3.92539867198589*^9, 3.925398710702474*^9}, {
   3.925398749272142*^9, 3.925398755910355*^9}, {3.9253987933579397`*^9, 
-  3.9253988095742073`*^9}},
+  3.9253988095742073`*^9}, {3.9254280432419157`*^9, 3.925428044391199*^9}},
  FontSize->24,
  Background->RGBColor[0.87, 0.94, 1],
- CellLabel->"In[74]:=",
  CellID->918137761,ExpressionUUID->"4bfb3afd-8162-440d-941c-eddda2f55a3a"],
 
 Cell["\<\
@@ -993,29 +992,29 @@ CellTagsIndex->{
    CellOpen->False,
    CellTags->"initCell",
    CellID->2107135677]},
- "mmaitexRunCollapse"->{
-  Cell[24884, 662, 2643, 68, 23, "Input",ExpressionUUID->"2a76068e-c695-40a4-8f4a-5c4a9a81d235",
+ "runNote2"->{
+  Cell[23336, 620, 1287, 31, 23, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
    CellOpen->False,
-   CellTags->"mmaitexRunCollapse",
-   CellID->1465937309]},
+   CellTags->"runNote2",
+   CellID->433914365]},
  "runNote"->{
   Cell[24626, 653, 255, 7, 23, "Input",ExpressionUUID->"215f33d3-f5c0-426b-a718-4b50c9dddac4",
    CellOpen->False,
    CellTags->"runNote",
    CellID->1093691010]},
- "runNote2"->{
-  Cell[23336, 620, 1287, 31, 23, "Input",ExpressionUUID->"b7bdaceb-914e-446f-a00a-87a4818c9c78",
+ "mmaitexRunCollapse"->{
+  Cell[24884, 662, 2643, 68, 23, "Input",ExpressionUUID->"2a76068e-c695-40a4-8f4a-5c4a9a81d235",
    CellOpen->False,
-   CellTags->"runNote2",
-   CellID->433914365]}
+   CellTags->"mmaitexRunCollapse",
+   CellID->1465937309]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"initCell", 39241, 990},
- {"mmaitexRunCollapse", 39432, 995},
- {"runNote", 39623, 1000},
- {"runNote2", 39802, 1005}
+ {"initCell", 39267, 989},
+ {"runNote2", 39448, 994},
+ {"runNote", 39628, 999},
+ {"mmaitexRunCollapse", 39817, 1004}
  }
 *)
 (*NotebookFileOutline
@@ -1080,13 +1079,13 @@ Cell[29240, 774, 420, 13, 374, "Text",ExpressionUUID->"e835ec92-be3f-42f2-9c0a-5
  CellID->1530876818],
 Cell[29663, 789, 872, 15, 171, "Text",ExpressionUUID->"f96eaf98-ec28-4b7b-ba96-a2dbab09f599",
  CellID->181563867],
-Cell[30538, 806, 533, 14, 74, "Input",ExpressionUUID->"4bfb3afd-8162-440d-941c-eddda2f55a3a",
+Cell[30538, 806, 559, 13, 74, "Input",ExpressionUUID->"4bfb3afd-8162-440d-941c-eddda2f55a3a",
  CellID->918137761],
-Cell[31074, 822, 1153, 19, 171, "Text",ExpressionUUID->"27dc280d-61d3-4a06-a233-382665868fb4",
+Cell[31100, 821, 1153, 19, 171, "Text",ExpressionUUID->"27dc280d-61d3-4a06-a233-382665868fb4",
  CellID->437649723],
-Cell[32230, 843, 476, 9, 74, "Input",ExpressionUUID->"1b9e8ad1-8f50-4437-be82-21962b08e219",
+Cell[32256, 842, 476, 9, 74, "Input",ExpressionUUID->"1b9e8ad1-8f50-4437-be82-21962b08e219",
  CellID->468962162],
-Cell[32709, 854, 255, 7, 66, "Input",ExpressionUUID->"3de56c5d-5b28-42b7-a471-57dbfd541a8b",
+Cell[32735, 853, 255, 7, 66, "Input",ExpressionUUID->"3de56c5d-5b28-42b7-a471-57dbfd541a8b",
  CellID->704496735]
 }, Closed]]
 }
