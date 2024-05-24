@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     63589,       1612]
-NotebookOptionsPosition[     60668,       1550]
-NotebookOutlinePosition[     61061,       1566]
-CellTagsIndexPosition[     61018,       1563]
+NotebookDataLength[     64463,       1627]
+NotebookOptionsPosition[     61542,       1565]
+NotebookOutlinePosition[     61935,       1581]
+CellTagsIndexPosition[     61892,       1578]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -329,14 +329,14 @@ Cell[BoxData[
        "\n", 
       RowBox[{"deploySubsequentCell", "[", 
        RowBox[{"\"\<exportBook\>\"", ",", "\"\<cleanBook\>\""}], "]"}], ";"}],
-      "\n", ")"}]}], "\n", 
+      "\n", ")"}]}], "\[IndentingNewLine]", 
    StyleBox[
     RowBox[{"(*", 
      RowBox[{"==", " ", 
       RowBox[{"Documentos", " ", "sencillos", " ", "sin", " ", 
        RowBox[{"OVERLEAF", " ", "[", "NOL", "]"}], " ", "No", " ", 
        "OverLeaf"}], " ", "=="}], "*)"}],
-    FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+    FontWeight->"SemiBold"], "\n", 
    RowBox[{"updateBookNOL", ":=", 
     RowBox[{"(", " ", "\n", 
      RowBox[{
@@ -356,9 +356,9 @@ Cell[BoxData[
       ";", "\n", 
       RowBox[{"deploySubsequentCell", "[", 
        RowBox[{"\"\<exportBookNOL\>\"", ",", "\"\<cleanBookNOL\>\""}], "]"}], 
-      ";"}], "\n", ")"}]}], 
+      ";"}], "\n", ")"}]}], "\n", 
    StyleBox["\[IndentingNewLine]",
-    FontWeight->"SemiBold"], "\n", 
+    FontWeight->"SemiBold"], 
    StyleBox["\[IndentingNewLine]",
     FontWeight->"SemiBold"], 
    RowBox[{
@@ -543,14 +543,14 @@ Cell[BoxData[
       RowBox[{"applyFunctionToCellList", "[", 
        RowBox[{
        "getBodyOutputCells", ",", "\"\<tagged output\>\"", ",", 
-        "NotebookDelete"}], "]"}], ";"}], "\n", ")"}]}], "\n", 
-   "\[IndentingNewLine]", 
+        "NotebookDelete"}], "]"}], ";"}], "\n", ")"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    StyleBox[
     RowBox[{"(*", 
      RowBox[{"==", " ", 
       RowBox[{"Documentos", " ", "complejos", " ", "con", " ", "OVERLEAF"}], 
       " ", "=="}], "*)"}],
-    FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+    FontWeight->"SemiBold"], "\n", 
    RowBox[{"cleanBook", ":=", 
     RowBox[{"(", " ", "\n", 
      RowBox[{
@@ -571,16 +571,16 @@ Cell[BoxData[
       RowBox[{"NotebookDelete", "[", 
        RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], ";", "\n", 
       RowBox[{"goToSpecificInput", "[", "\"\<updateBook\>\"", "]"}], ";"}], 
-     "\n", ")"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     "\n", ")"}]}], "\[IndentingNewLine]", 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"SemiBold"], 
    StyleBox[
     RowBox[{"(*", 
      RowBox[{"==", " ", 
       RowBox[{"Documentos", " ", "sencillos", " ", "sin", " ", 
        RowBox[{"OVERLEAF", " ", "[", "NOL", "]"}], " ", "No", " ", 
        "OverLeaf"}], " ", "=="}], "*)"}],
-    FontWeight->"SemiBold"], 
-   StyleBox["\[IndentingNewLine]",
-    FontWeight->"SemiBold"], 
+    FontWeight->"SemiBold"], "\[IndentingNewLine]", 
    RowBox[{"cleanBookNOL", ":=", 
     RowBox[{"(", " ", "\n", 
      RowBox[{
@@ -752,6 +752,7 @@ Cell[BoxData[
    3.9245541500855913`*^9, {3.925428206819344*^9, 3.9254282212892933`*^9}, {
    3.925428378745764*^9, 3.9254283822404327`*^9}},
  Background->RGBColor[1, 0.85, 0.85],
+ CellLabel->"In[29]:=",
  CellID->180244738,ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9"],
 
 Cell[CellGroupData[{
@@ -1198,8 +1199,8 @@ Cell[BoxData[
     ")"}]}]}]], "Input",
  CellChangeTimes->{{3.9254261263291273`*^9, 3.925426127987151*^9}, {
   3.925426167528721*^9, 3.925426207232757*^9}},
- Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"fce277ea-5a66-4ef3-986b-abf2cf07a844"]
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[31]:=",ExpressionUUID->"fce277ea-5a66-4ef3-986b-abf2cf07a844"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1240,12 +1241,19 @@ Cell[BoxData[
   RowBox[{
    StyleBox[
     RowBox[{
-    "docClassArticle", ":=", 
-     "\"\<\\\\documentclass[a4paper,fleqn,\nusenatbib]{LatexLib/mnras}\>\""}],
-    
-    FontSize->18], "\[IndentingNewLine]", 
-   StyleBox[
-    RowBox[{"docClassArticleNOL", ":=", "\"\<\\\\documentclass{article}\>\""}],
+     RowBox[{"docClass", "[", 
+      RowBox[{
+       RowBox[{"mmtxClass_", ":", "\"\<article\>\""}], ",", " ", 
+       "mmtxCopt_"}], "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"mmtxCopt", "==", "\"\<no\>\""}], ",", 
+       RowBox[{
+       "\"\<\\\\documentclass{\>\"", "<>", "mmtxClass", "<>", "\"\<}\>\""}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<\\\\documentclass\>\"", "<>", "mmtxCopt", "<>", "\"\<{\>\"", "<>",
+         "mmtxClass", "<>", "\"\<}\>\""}]}], "]"}]}],
     FontSize->18], 
    StyleBox["\[IndentingNewLine]",
     FontSize->18], 
@@ -1272,11 +1280,18 @@ Cell[BoxData[
     RowBox[{"closeDoc", ":=", "\"\<\\\\end{document}\>\""}],
     FontSize->18]}]}]], "Input",
  CellChangeTimes->{{3.9232615280839233`*^9, 3.9232615471883163`*^9}, {
-  3.9232616512835407`*^9, 3.9232616526426983`*^9}, {3.923261868095974*^9, 
-  3.9232619154062157`*^9}, {3.924555571549348*^9, 3.9245556164757338`*^9}, {
-  3.925419748401857*^9, 3.925419749206142*^9}},
+   3.9232616512835407`*^9, 3.9232616526426983`*^9}, {3.923261868095974*^9, 
+   3.9232619154062157`*^9}, {3.924555571549348*^9, 3.9245556164757338`*^9}, {
+   3.925419748401857*^9, 3.925419749206142*^9}, {3.9255612872968063`*^9, 
+   3.925561338843597*^9}, {3.925561379349679*^9, 3.9255613940909986`*^9}, 
+   3.9255617443633327`*^9, {3.925561860610338*^9, 3.925562022218193*^9}, {
+   3.9255620927637672`*^9, 3.9255621073411903`*^9}, {3.9255628935243187`*^9, 
+   3.925562911700131*^9}, {3.925562966610293*^9, 3.9255629730653553`*^9}, {
+   3.925563097741324*^9, 3.925563100179134*^9}, {3.925563265104787*^9, 
+   3.925563334834065*^9}, {3.9255633854302177`*^9, 3.925563504318413*^9}, {
+   3.925563570989756*^9, 3.9255635728077583`*^9}, {3.925564037890225*^9, 
+   3.925564039208158*^9}},
  Background->RGBColor[1, 0.9, 0.8],
- CellLabel->"In[31]:=",
  CellID->504000207,ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013"],
 
 Cell[BoxData[
@@ -1384,17 +1399,17 @@ cuenta]\\\">\[IndentingNewLine]</form>\>\""}], "]"}]}], ";",
           RowBox[{"titles", ",", "plainTexts"}], "}"}], "]"}]}], ";"}], 
       ")"}]}], 
     StyleBox["\[IndentingNewLine]",
-     FontFamily->"Source Code Pro",
-     FontWeight->"SemiBold"], 
-    StyleBox["\[IndentingNewLine]",
-     FontWeight->"SemiBold"], 
+     FontWeight->"SemiBold"], "\[IndentingNewLine]", 
     StyleBox[
      RowBox[{"(*", 
       RowBox[{"==", " ", 
        RowBox[{"Documentos", " ", "sencillos", " ", "sin", " ", 
         RowBox[{"OVERLEAF", " ", "[", "NOL", "]"}], " ", "No", " ", 
         "OverLeaf"}], " ", "=="}], "*)"}],
-     FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+     FontWeight->"SemiBold"], 
+    StyleBox["\[IndentingNewLine]",
+     FontFamily->"Source Code Pro",
+     FontWeight->"SemiBold"], 
     RowBox[{"exportBookNOL", ":=", 
      RowBox[{"(", "\[IndentingNewLine]", 
       RowBox[{
@@ -1595,23 +1610,23 @@ Cell[22788, 620, 1406, 48, 154, "Input",ExpressionUUID->"f37a9c95-8e8d-4359-a521
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[24231, 673, 219, 5, 67, "Section",ExpressionUUID->"b68c1074-61e8-4298-904a-ffa1e68bb4a3"],
-Cell[24453, 680, 3557, 74, 634, "Input",ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9",
+Cell[24453, 680, 3581, 75, 634, "Input",ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9",
  CellID->180244738],
 Cell[CellGroupData[{
-Cell[28035, 758, 232, 5, 54, "Subsection",ExpressionUUID->"68357ab1-f25e-41e1-b5ae-09aea58e9c06"],
-Cell[28270, 765, 18250, 436, 1748, "Input",ExpressionUUID->"fce277ea-5a66-4ef3-986b-abf2cf07a844"]
+Cell[28059, 759, 232, 5, 54, "Subsection",ExpressionUUID->"68357ab1-f25e-41e1-b5ae-09aea58e9c06"],
+Cell[28294, 766, 18271, 436, 1748, "Input",ExpressionUUID->"fce277ea-5a66-4ef3-986b-abf2cf07a844"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46569, 1207, 809, 21, 68, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410",
+Cell[46614, 1208, 809, 21, 68, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410",
  CellID->261372301],
-Cell[47381, 1230, 1833, 49, 304, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
+Cell[47426, 1231, 2662, 63, 283, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
  CellID->504000207],
-Cell[49217, 1281, 8621, 193, 1214, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+Cell[50091, 1296, 8621, 193, 1214, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[57875, 1479, 167, 3, 67, "Section",ExpressionUUID->"597cae6c-5ca9-46f7-b7d2-a9241653a41f"],
-Cell[58045, 1484, 2607, 63, 157, "Input",ExpressionUUID->"a9c1af37-47cd-44f0-ae5f-b1eba701ba33",
+Cell[58749, 1494, 167, 3, 67, "Section",ExpressionUUID->"597cae6c-5ca9-46f7-b7d2-a9241653a41f"],
+Cell[58919, 1499, 2607, 63, 157, "Input",ExpressionUUID->"a9c1af37-47cd-44f0-ae5f-b1eba701ba33",
  CellID->803764153]
 }, Open  ]]
 }

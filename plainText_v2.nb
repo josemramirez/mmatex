@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     52121,       1366]
-NotebookOptionsPosition[     49204,       1304]
-NotebookOutlinePosition[     49597,       1320]
-CellTagsIndexPosition[     49554,       1317]
+NotebookDataLength[     53946,       1412]
+NotebookOptionsPosition[     50991,       1349]
+NotebookOutlinePosition[     51414,       1366]
+CellTagsIndexPosition[     51371,       1363]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -681,122 +681,122 @@ Cell[BoxData[
    RowBox[{"(", 
     RowBox[{
      RowBox[{
-      RowBox[{"processStyle", "[", "s_", "]"}], ":=", 
-      RowBox[{"(", 
-       RowBox[{"Module", "[", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-          "n", ",", "m", ",", "colorToken", ",", "token", ",", "colorName"}], 
-          "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"processStyle", "[", "s_", "]"}], ":=", 
+       RowBox[{"(", 
+        RowBox[{"Module", "[", 
          RowBox[{
-          RowBox[{"If", "[", 
+          RowBox[{"{", 
            RowBox[{
-            RowBox[{
-             RowBox[{"Length", "[", "s", "]"}], "==", "0"}], ",", 
-            RowBox[{"Return", "[", "s", "]"}]}], "]"}], ";", 
-          "\[IndentingNewLine]", 
-          RowBox[{"token", "=", 
-           RowBox[{"s", "[", 
-            RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"n", "=", "2"}], ";", "\[IndentingNewLine]", 
-          RowBox[{"While", "[", 
-           RowBox[{
-            RowBox[{"n", "<=", 
-             RowBox[{"Length", "[", "s", "]"}]}], ",", 
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{
-                 RowBox[{"Head", "[", 
-                  RowBox[{"s", "[", 
-                   RowBox[{"[", "n", "]"}], "]"}], "]"}], "==", "RGBColor"}], 
-                "||", 
-                RowBox[{
-                 RowBox[{"Head", "[", 
-                  RowBox[{"s", "[", 
-                   RowBox[{"[", "n", "]"}], "]"}], "]"}], "==", 
-                 "GrayLevel"}]}], ",", 
-               RowBox[{"colorToken", "=", 
-                RowBox[{"s", "[", 
-                 RowBox[{"[", "n", "]"}], "]"}]}]}], "]"}], ";", 
-             "\[IndentingNewLine]", 
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"s", "[", 
-                 RowBox[{"[", "n", "]"}], "]"}], "==", "Italic"}], ",", 
-               RowBox[{"token", "=", 
-                RowBox[{"StringJoin", "[", 
-                 RowBox[{
-                 "\"\<\\\\textit{\>\"", ",", "token", ",", "\"\<}\>\""}], 
-                 "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"s", "[", 
-                 RowBox[{"[", "n", "]"}], "]"}], "==", "Bold"}], ",", 
-               RowBox[{"token", "=", 
-                RowBox[{"StringJoin", "[", 
-                 RowBox[{
-                 "\"\<\\\\textbf{\>\"", ",", "token", ",", "\"\<}\>\""}], 
-                 "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"s", "[", 
-                 RowBox[{"[", "n", "]"}], "]"}], "==", "Underlined"}], ",", 
-               RowBox[{"token", "=", 
-                RowBox[{"StringJoin", "[", 
-                 RowBox[{
-                 "\"\<\\\\underline{\>\"", ",", "token", ",", "\"\<}\>\""}], 
-                 "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
-             RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
-          
-          RowBox[{"If", "[", 
-           RowBox[{
+           "n", ",", "m", ",", "colorToken", ",", "token", ",", "colorName"}],
+            "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
             RowBox[{
              RowBox[{
-              RowBox[{"Head", "[", "colorToken", "]"}], "==", "RGBColor"}], "||", 
-             RowBox[{
-              RowBox[{"Head", "[", "colorToken", "]"}], "==", "GrayLevel"}]}],
-             ",", 
+              RowBox[{"Length", "[", "s", "]"}], "==", "0"}], ",", 
+             RowBox[{"Return", "[", "s", "]"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"token", "=", 
+            RowBox[{"s", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"n", "=", "2"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"While", "[", 
             RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"!", 
-                RowBox[{"MemberQ", "[", 
-                 RowBox[{"colorsDefined", ",", 
-                  RowBox[{"ToString", "[", "colorToken", "]"}]}], "]"}]}], 
-               ",", 
+             RowBox[{"n", "<=", 
+              RowBox[{"Length", "[", "s", "]"}]}], ",", 
+             RowBox[{
+              RowBox[{"If", "[", 
                RowBox[{
-                RowBox[{"colorName", "=", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"Head", "[", 
+                   RowBox[{"s", "[", 
+                    RowBox[{"[", "n", "]"}], "]"}], "]"}], "==", "RGBColor"}],
+                  "||", 
+                 RowBox[{
+                  RowBox[{"Head", "[", 
+                   RowBox[{"s", "[", 
+                    RowBox[{"[", "n", "]"}], "]"}], "]"}], "==", 
+                  "GrayLevel"}]}], ",", 
+                RowBox[{"colorToken", "=", 
+                 RowBox[{"s", "[", 
+                  RowBox[{"[", "n", "]"}], "]"}]}]}], "]"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"s", "[", 
+                  RowBox[{"[", "n", "]"}], "]"}], "==", "Italic"}], ",", 
+                RowBox[{"token", "=", 
                  RowBox[{"StringJoin", "[", 
-                  RowBox[{"\"\<color\>\"", ",", 
-                   RowBox[{"ToString", "[", 
+                  RowBox[{
+                  "\"\<\\\\textit{\>\"", ",", "token", ",", "\"\<}\>\""}], 
+                  "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"s", "[", 
+                  RowBox[{"[", "n", "]"}], "]"}], "==", "Bold"}], ",", 
+                RowBox[{"token", "=", 
+                 RowBox[{"StringJoin", "[", 
+                  RowBox[{
+                  "\"\<\\\\textbf{\>\"", ",", "token", ",", "\"\<}\>\""}], 
+                  "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"s", "[", 
+                  RowBox[{"[", "n", "]"}], "]"}], "==", "Underlined"}], ",", 
+                RowBox[{"token", "=", 
+                 RowBox[{"StringJoin", "[", 
+                  RowBox[{
+                  "\"\<\\\\underline{\>\"", ",", "token", ",", "\"\<}\>\""}], 
+                  "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+              RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Head", "[", "colorToken", "]"}], "==", "RGBColor"}], "||", 
+              RowBox[{
+               RowBox[{"Head", "[", "colorToken", "]"}], "==", 
+               "GrayLevel"}]}], ",", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"!", 
+                 RowBox[{"MemberQ", "[", 
+                  RowBox[{"colorsDefined", ",", 
+                   RowBox[{"ToString", "[", "colorToken", "]"}]}], "]"}]}], 
+                ",", 
+                RowBox[{
+                 RowBox[{"colorName", "=", 
+                  RowBox[{"StringJoin", "[", 
+                   RowBox[{"\"\<color\>\"", ",", 
+                    RowBox[{"ToString", "[", 
                     RowBox[{
                     RowBox[{"Length", "[", "colorsDefined", "]"}], "+", "1"}],
                      "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-                RowBox[{"AppendTo", "[", 
-                 RowBox[{"colorsDefined", ",", 
-                  RowBox[{"ToString", "[", "colorToken", "]"}]}], "]"}], ";", 
-                "\[IndentingNewLine]", 
-                RowBox[{"l", "=", 
-                 RowBox[{"Apply", "[", 
-                  RowBox[{"List", ",", "colorToken"}], "]"}]}], ";", 
-                "\[IndentingNewLine]", 
-                RowBox[{"If", "[", 
-                 RowBox[{
+                 RowBox[{"AppendTo", "[", 
+                  RowBox[{"colorsDefined", ",", 
+                   RowBox[{"ToString", "[", "colorToken", "]"}]}], "]"}], ";",
+                  "\[IndentingNewLine]", 
+                 RowBox[{"l", "=", 
+                  RowBox[{"Apply", "[", 
+                   RowBox[{"List", ",", "colorToken"}], "]"}]}], ";", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"If", "[", 
                   RowBox[{
-                   RowBox[{"Length", "[", "l", "]"}], "==", "3"}], ",", 
-                  RowBox[{"colorModel", "=", "\"\<}{rgb}\>\""}], ",", 
-                  RowBox[{"colorModel", "=", "\"\<}{gray}\>\""}]}], "]"}], 
-                ";", "\[IndentingNewLine]", 
-                RowBox[{"ltex", "=", 
-                 RowBox[{"Insert", "[", 
-                  RowBox[{"ltex", ",", 
-                   RowBox[{"StringJoin", "[", 
+                   RowBox[{
+                    RowBox[{"Length", "[", "l", "]"}], "==", "3"}], ",", 
+                   RowBox[{"colorModel", "=", "\"\<}{rgb}\>\""}], ",", 
+                   RowBox[{"colorModel", "=", "\"\<}{gray}\>\""}]}], "]"}], 
+                 ";", "\[IndentingNewLine]", 
+                 RowBox[{"ltex", "=", 
+                  RowBox[{"Insert", "[", 
+                   RowBox[{"ltex", ",", 
+                    RowBox[{"StringJoin", "[", 
                     RowBox[{
                     "\"\<\\\\definecolor{\>\"", ",", "colorName", ",", 
                     "colorModel", ",", 
@@ -804,215 +804,211 @@ Cell[BoxData[
                     RowBox[{"Apply", "[", 
                     RowBox[{"List", ",", "colorToken"}], "]"}], "]"}], ",", 
                     "\"\<\\r\>\""}], "]"}], ",", "1"}], "]"}]}]}], ",", 
-               RowBox[{
-                RowBox[{"p", "=", 
-                 RowBox[{"Flatten", "[", 
-                  RowBox[{"Position", "[", 
-                   RowBox[{"colorsDefined", ",", 
+                RowBox[{
+                 RowBox[{"p", "=", 
+                  RowBox[{"Flatten", "[", 
+                   RowBox[{"Position", "[", 
+                    RowBox[{"colorsDefined", ",", 
                     RowBox[{"ToString", "[", "colorToken", "]"}]}], "]"}], 
-                  "]"}]}], ";", "\[IndentingNewLine]", 
-                RowBox[{"colorName", "=", 
-                 RowBox[{"StringJoin", "[", 
-                  RowBox[{"\"\<color\>\"", ",", 
-                   RowBox[{"ToString", "[", 
+                   "]"}]}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"colorName", "=", 
+                  RowBox[{"StringJoin", "[", 
+                   RowBox[{"\"\<color\>\"", ",", 
+                    RowBox[{"ToString", "[", 
                     RowBox[{"p", "[", 
                     RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}]}], ";"}]}],
-               "]"}], ";", "\[IndentingNewLine]", 
-             RowBox[{"token", "=", 
-              RowBox[{"StringJoin", "[", 
-               RowBox[{
-               "\"\<\\\\textcolor{\>\"", ",", "colorName", ",", "\"\<}{\>\"", 
-                ",", "token", ",", "\"\<}\>\""}], "]"}]}], ";"}]}], "]"}], 
-          ";", "\[IndentingNewLine]", 
-          RowBox[{"Return", "[", "token", "]"}], ";"}]}], "]"}], ")"}]}], ";",
-      "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"cName", "[", "col_", "]"}], ":=", 
-      RowBox[{"(", 
-       RowBox[{
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{"!", 
-           RowBox[{"MemberQ", "[", 
-            RowBox[{"colorsDefined", ",", 
-             RowBox[{"ToString", "[", "col", "]"}]}], "]"}]}], ",", 
+                "]"}], ";", "\[IndentingNewLine]", 
+              RowBox[{"token", "=", 
+               RowBox[{"StringJoin", "[", 
+                RowBox[{
+                "\"\<\\\\textcolor{\>\"", ",", "colorName", ",", "\"\<}{\>\"",
+                  ",", "token", ",", "\"\<}\>\""}], "]"}]}], ";"}]}], "]"}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"Return", "[", "token", "]"}], ";"}]}], "]"}], ")"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"cName", "[", "col_", "]"}], ":=", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"If", "[", 
           RowBox[{
-           RowBox[{"colorName", "=", 
-            RowBox[{"StringJoin", "[", 
-             RowBox[{"\"\<color\>\"", ",", 
-              RowBox[{"ToString", "[", 
-               RowBox[{
-                RowBox[{"Length", "[", "colorsDefined", "]"}], "+", "1"}], 
-               "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"colorsDefined", ",", 
-             RowBox[{"ToString", "[", "col", "]"}]}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"l", "=", 
-            RowBox[{"Apply", "[", 
-             RowBox[{"List", ",", "col"}], "]"}]}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"If", "[", 
-            RowBox[{
+           RowBox[{"!", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"colorsDefined", ",", 
+              RowBox[{"ToString", "[", "col", "]"}]}], "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"colorName", "=", 
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"\"\<color\>\"", ",", 
+               RowBox[{"ToString", "[", 
+                RowBox[{
+                 RowBox[{"Length", "[", "colorsDefined", "]"}], "+", "1"}], 
+                "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"colorsDefined", ",", 
+              RowBox[{"ToString", "[", "col", "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"l", "=", 
+             RowBox[{"Apply", "[", 
+              RowBox[{"List", ",", "col"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
              RowBox[{
-              RowBox[{"Length", "[", "l", "]"}], "==", "3"}], ",", 
-             RowBox[{"colorModel", "=", "\"\<}{rgb}\>\""}], ",", 
-             RowBox[{"colorModel", "=", "\"\<}{gray}\>\""}]}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"ltex", "=", 
-            RowBox[{"Insert", "[", 
-             RowBox[{"ltex", ",", 
-              RowBox[{"StringJoin", "[", 
-               RowBox[{
-               "\"\<\\\\definecolor{\>\"", ",", "colorName", ",", 
-                "colorModel", ",", 
-                RowBox[{"ToString", "[", "l", "]"}], ",", "\"\<\\r\>\""}], 
-               "]"}], ",", "1"}], "]"}]}]}], ",", 
-          RowBox[{
-           RowBox[{"p", "=", 
-            RowBox[{"Flatten", "[", 
-             RowBox[{"Position", "[", 
-              RowBox[{"colorsDefined", ",", 
-               RowBox[{"ToString", "[", "col", "]"}]}], "]"}], "]"}]}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"colorName", "=", 
-            RowBox[{"StringJoin", "[", 
-             RowBox[{"\"\<color\>\"", ",", 
-              RowBox[{"ToString", "[", 
-               RowBox[{"p", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}]}], ";"}]}], 
-         "]"}], ";", "\[IndentingNewLine]", "colorName"}], ")"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"colorsDefined", "=", 
-      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"tgList", "=", 
-      RowBox[{"Apply", "[", 
-       RowBox[{"List", ",", "tg"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"rows", "=", 
-      RowBox[{"Length", "[", 
-       RowBox[{"tgList", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"cols", "=", 
-      RowBox[{"Length", "[", 
-       RowBox[{
+              RowBox[{
+               RowBox[{"Length", "[", "l", "]"}], "==", "3"}], ",", 
+              RowBox[{"colorModel", "=", "\"\<}{rgb}\>\""}], ",", 
+              RowBox[{"colorModel", "=", "\"\<}{gray}\>\""}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"ltex", "=", 
+             RowBox[{"Insert", "[", 
+              RowBox[{"ltex", ",", 
+               RowBox[{"StringJoin", "[", 
+                RowBox[{
+                "\"\<\\\\definecolor{\>\"", ",", "colorName", ",", 
+                 "colorModel", ",", 
+                 RowBox[{"ToString", "[", "l", "]"}], ",", "\"\<\\r\>\""}], 
+                "]"}], ",", "1"}], "]"}]}]}], ",", 
+           RowBox[{
+            RowBox[{"p", "=", 
+             RowBox[{"Flatten", "[", 
+              RowBox[{"Position", "[", 
+               RowBox[{"colorsDefined", ",", 
+                RowBox[{"ToString", "[", "col", "]"}]}], "]"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"colorName", "=", 
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"\"\<color\>\"", ",", 
+               RowBox[{"ToString", "[", 
+                RowBox[{"p", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}]}], ";"}]}], 
+          "]"}], ";", "\[IndentingNewLine]", "colorName"}], ")"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"colorsDefined", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"tgList", "=", 
+       RowBox[{"Apply", "[", 
+        RowBox[{"List", ",", "tg"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"rows", "=", 
+       RowBox[{"Length", "[", 
         RowBox[{"tgList", "[", 
-         RowBox[{"[", "1", "]"}], "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"ltex", "=", 
-      RowBox[{"{", "\"\<\>\"", "}"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"(*", "spacing", "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"spacing", "=", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"FilterRules", "[", 
-         RowBox[{
-          RowBox[{"tgList", "[", 
-           RowBox[{"[", 
-            RowBox[{"2", ";;", 
-             RowBox[{"Length", "[", "tgList", "]"}]}], "]"}], "]"}], ",", 
-          "Spacings"}], "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "[", 
-       RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"v", "=", 
-      RowBox[{"spacing", "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", 
-       RowBox[{"StringJoin", "[", 
-        RowBox[{"\"\<\\\\setlength{\\\\tabcolsep}{\>\"", ",", 
-         RowBox[{"ToString", "[", 
-          RowBox[{"v", "*", "6"}], "]"}], ",", "\"\<pt}\\r\>\""}], "]"}]}], 
-      "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"v", "=", 
-      RowBox[{"spacing", "[", 
-       RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", 
-       RowBox[{"StringJoin", "[", 
-        RowBox[{"\"\<\\\\renewcommand{\\\\arraystretch}{\>\"", ",", 
-         RowBox[{"ToString", "[", "v", "]"}], ",", "\"\<}\\r\>\""}], "]"}]}], 
-      "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"(*", 
-      RowBox[{"new", " ", "command"}], "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"bck", "=", 
-      RowBox[{"FilterRules", "[", 
-       RowBox[{
-        RowBox[{"tgList", "[", 
-         RowBox[{"[", 
-          RowBox[{"2", ";;", 
-           RowBox[{"Length", "[", "tgList", "]"}]}], "]"}], "]"}], ",", 
-        "Background"}], "]"}]}], ";", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{
-      "ltex", ",", 
-       "\"\<\\\\newcommand{\\\\mc}[2]{\\\\multicolumn{#1}{c}{#2}}\\r\>\""}], 
-      "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"(*", 
-      RowBox[{"the", " ", "table"}], "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", "\"\<\\\\begin{table}\\r\>\""}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", "tabular", "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", "\"\<\\\\begin{tabular}\>\""}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", 
-      RowBox[{"columns", " ", "description"}], "*)"}], "\[IndentingNewLine]", 
-     
-     RowBox[{"aCols", "=", 
-      RowBox[{"Table", "[", 
-       RowBox[{"\"\<a\>\"", ",", "cols"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"bCols", "=", 
-      RowBox[{"Table", "[", 
-       RowBox[{"\"\<b\>\"", ",", "cols"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"rCols", "=", 
-      RowBox[{"Riffle", "[", 
-       RowBox[{"aCols", ",", "bCols"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"rfCols", "=", 
-      RowBox[{"Take", "[", 
-       RowBox[{"rCols", ",", 
-        RowBox[{"cols", "-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"colTypes", "=", 
-      RowBox[{"{", "\"\<{d\>\"", "}"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"n", "=", "1"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"While", "[", 
-      RowBox[{
-       RowBox[{"n", "<=", 
-        RowBox[{"cols", "-", "1"}]}], ",", 
-       RowBox[{
-        RowBox[{"AppendTo", "[", 
-         RowBox[{"colTypes", ",", 
-          RowBox[{"StringJoin", "[", 
-           RowBox[{"\"\< | \>\"", ",", 
-            RowBox[{"rfCols", "[", 
-             RowBox[{"[", "n", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", 
-       RowBox[{"StringJoin", "[", 
-        RowBox[{"colTypes", ",", "\"\<}\\r\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", 
-      RowBox[{"Header", " ", "row"}], "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", "\"\<\\\\hline\\r\>\""}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"rowNumber", "=", 
-      RowBox[{
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"cols", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{
+         RowBox[{"tgList", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"ltex", "=", 
+       RowBox[{"{", "\"\<\>\"", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", "spacing", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"spacing", "=", 
        RowBox[{
         RowBox[{
+         RowBox[{"FilterRules", "[", 
+          RowBox[{
+           RowBox[{"tgList", "[", 
+            RowBox[{"[", 
+             RowBox[{"2", ";;", 
+              RowBox[{"Length", "[", "tgList", "]"}]}], "]"}], "]"}], ",", 
+           "Spacings"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"v", "=", 
+       RowBox[{"spacing", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{"\"\<\\\\setlength{\\\\tabcolsep}{\>\"", ",", 
+          RowBox[{"ToString", "[", 
+           RowBox[{"v", "*", "6"}], "]"}], ",", "\"\<pt}\\r\>\""}], "]"}]}], 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"v", "=", 
+       RowBox[{"spacing", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{"\"\<\\\\renewcommand{\\\\arraystretch}{\>\"", ",", 
+          RowBox[{"ToString", "[", "v", "]"}], ",", "\"\<}\\r\>\""}], "]"}]}],
+        "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"new", " ", "command"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"bck", "=", 
+       RowBox[{"FilterRules", "[", 
+        RowBox[{
+         RowBox[{"tgList", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ";;", 
+            RowBox[{"Length", "[", "tgList", "]"}]}], "]"}], "]"}], ",", 
+         "Background"}], "]"}]}], ";", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{
+       "ltex", ",", 
+        "\"\<\\\\newcommand{\\\\mc}[2]{\\\\multicolumn{#1}{c}{#2}}\\r\>\""}], 
+       "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"the", " ", "table"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", "\"\<\\\\begin{table}\\r\>\""}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", "tabular", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", "\"\<\\\\begin{tabular}\>\""}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"columns", " ", "description"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"aCols", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"\"\<a\>\"", ",", "cols"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"bCols", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"\"\<b\>\"", ",", "cols"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rCols", "=", 
+       RowBox[{"Riffle", "[", 
+        RowBox[{"aCols", ",", "bCols"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"rfCols", "=", 
+       RowBox[{"Take", "[", 
+        RowBox[{"rCols", ",", 
+         RowBox[{"cols", "-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"colTypes", "=", 
+       RowBox[{"{", "\"\<{d\>\"", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"n", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"n", "<=", 
+         RowBox[{"cols", "-", "1"}]}], ",", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"colTypes", ",", 
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"\"\< | \>\"", ",", 
+             RowBox[{"rfCols", "[", 
+              RowBox[{"[", "n", "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{"colTypes", ",", "\"\<}\\r\>\""}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"--", " ", "Header"}], " ", 
+        RowBox[{
          RowBox[{
-          RowBox[{"bck", "[", 
-           RowBox[{"[", "1", "]"}], "]"}], "[", 
-          RowBox[{"[", "2", "]"}], "]"}], "[", 
-         RowBox[{"[", "2", "]"}], "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"rowVal", "=", 
-      RowBox[{"cName", "[", 
+          RowBox[{
+           RowBox[{"row", " ", "--"}], "--"}], "--"}], "--"}]}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", "\"\<\\\\hline\\r\>\""}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rowNumber", "=", 
        RowBox[{
         RowBox[{
          RowBox[{
@@ -1022,74 +1018,111 @@ Cell[BoxData[
            RowBox[{"[", "2", "]"}], "]"}], "[", 
           RowBox[{"[", "2", "]"}], "]"}], "[", 
          RowBox[{"[", "1", "]"}], "]"}], "[", 
-        RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", 
-       RowBox[{"StringJoin", "[", 
-        RowBox[{"\"\<\\\\rowcolor{\>\"", ",", "rowVal", ",", "\"\<}\\r\>\""}],
-         "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"cList", "=", 
-      RowBox[{
-       RowBox[{"tgList", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"n", "=", "1"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"While", "[", 
-      RowBox[{
-       RowBox[{"n", "<=", "cols"}], ",", 
-       RowBox[{
-        RowBox[{"AppendTo", "[", 
-         RowBox[{"ltex", ",", 
-          RowBox[{"StringJoin", "[", 
-           RowBox[{"\"\<\\\\mc{1}{\>\"", ",", 
-            RowBox[{"processStyle", "[", 
-             RowBox[{"cList", "[", 
-              RowBox[{"[", "n", "]"}], "]"}], "]"}], ",", "\"\<}\>\""}], 
-           "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"If", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"rowVal", "=", 
+       RowBox[{"cName", "[", 
+        RowBox[{
          RowBox[{
-          RowBox[{"n", "==", "cols"}], ",", 
-          RowBox[{"AppendTo", "[", 
-           RowBox[{"ltex", ",", "\"\< \\\\\\\\\\r\>\""}], "]"}], ",", 
-          RowBox[{"AppendTo", "[", 
-           RowBox[{"ltex", ",", "\"\< & \\r\>\""}], "]"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"ltex", ",", "\"\<\\\\hline\\r\>\""}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"(*", "Rows", "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"m", "=", "2"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"While", "[", 
-      RowBox[{
-       RowBox[{"m", "<=", "rows"}], ",", 
-       RowBox[{
-        RowBox[{"cList", "=", 
-         RowBox[{
-          RowBox[{"tgList", "[", 
-           RowBox[{"[", "1", "]"}], "]"}], "[", 
-          RowBox[{"[", "m", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"n", "=", "1"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"While", "[", 
-         RowBox[{
-          RowBox[{"n", "<=", "cols"}], ",", 
           RowBox[{
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"ltex", ",", 
+           RowBox[{
+            RowBox[{"bck", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", 
+        RowBox[{"StringJoin", "[", 
+         RowBox[{
+         "\"\<\\\\rowcolor{\>\"", ",", "rowVal", ",", "\"\<}\\r\>\""}], 
+         "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"cList", "=", 
+       RowBox[{
+        RowBox[{"tgList", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"n", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"n", "<=", "cols"}], ",", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"ltex", ",", 
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"\"\<\\\\mc{1}{\>\"", ",", 
              RowBox[{"processStyle", "[", 
               RowBox[{"cList", "[", 
-               RowBox[{"[", "n", "]"}], "]"}], "]"}]}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"If", "[", 
+               RowBox[{"[", "n", "]"}], "]"}], "]"}], ",", "\"\<}\>\""}], 
+            "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"n", "==", "cols"}], ",", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"ltex", ",", "\"\< \\\\\\\\\\r\>\""}], "]"}], ",", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"ltex", ",", "\"\< & \\r\>\""}], "]"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"ltex", ",", "\"\<\\\\hline\\r\>\""}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"-", " ", 
             RowBox[{
-             RowBox[{"n", "==", "cols"}], ",", 
-             RowBox[{"AppendTo", "[", 
-              RowBox[{"ltex", ",", "\"\< \\\\\\\\\\r\>\""}], "]"}], ",", 
-             RowBox[{"AppendTo", "[", 
-              RowBox[{"ltex", ",", "\"\< & \>\""}], "]"}]}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"m", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Rows", " ", "--"}], "--"}], "--"}], "--"}]}]}]}]}], 
+        "-"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"m", "=", "2"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"m", "<=", "rows"}], ",", 
+        RowBox[{
+         RowBox[{"cList", "=", 
+          RowBox[{
+           RowBox[{"tgList", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "m", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"n", "=", "1"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"While", "[", 
+          RowBox[{
+           RowBox[{"n", "<=", "cols"}], ",", 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"ltex", ",", 
+              RowBox[{"processStyle", "[", 
+               RowBox[{"cList", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"n", "==", "cols"}], ",", 
+              RowBox[{"AppendTo", "[", 
+               RowBox[{"ltex", ",", "\"\< \\\\\\\\\\r\>\""}], "]"}], ",", 
+              RowBox[{"AppendTo", "[", 
+               RowBox[{"ltex", ",", "\"\< & \>\""}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"n", "++"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"m", "++"}], ";"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}], " ", "*)"}], ";", 
+     "\[IndentingNewLine]", 
      RowBox[{"AppendTo", "[", 
       RowBox[{"ltex", ",", "\"\<\\\\hline\\r\>\""}], "]"}], ";", 
      "\[IndentingNewLine]", 
@@ -1106,7 +1139,8 @@ Cell[BoxData[
      RowBox[{"StringJoin", "[", "ltex", "]"}]}], "\[IndentingNewLine]", 
     ")"}]}]}]], "Input",
  CellChangeTimes->{{3.9254261263291273`*^9, 3.925426127987151*^9}, {
-  3.925426167528721*^9, 3.925426207232757*^9}},
+  3.925426167528721*^9, 3.925426207232757*^9}, {3.9254589392063007`*^9, 
+  3.9254589949122047`*^9}, {3.9254594357530746`*^9, 3.925459444665769*^9}},
  Background->RGBColor[
   1, 0.9, 0.8],ExpressionUUID->"020e79f8-8758-4d6e-b3e3-bb12807dd58f"]
 }, Open  ]]
@@ -1149,9 +1183,19 @@ Cell[BoxData[
   RowBox[{
    StyleBox[
     RowBox[{
-    "docClassArticle", ":=", 
-     "\"\<\\\\documentclass[a4paper,fleqn,\nusenatbib]{LatexLib/mnras}\>\""}],
-    
+     RowBox[{"docClass", "[", 
+      RowBox[{
+       RowBox[{"mmtxClass_", ":", "\"\<article\>\""}], ",", " ", 
+       "mmtxCopt_"}], "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"mmtxCopt", "==", "\"\<no\>\""}], ",", 
+       RowBox[{
+       "\"\<\\\\documentclass{\>\"", "<>", "mmtxClass", "<>", "\"\<}\>\""}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<\\\\documentclass\>\"", "<>", "mmtxCopt", "<>", "\"\<{\>\"", "<>",
+         "mmtxClass", "<>", "\"\<}\>\""}]}], "]"}]}],
     FontSize->18], "\[IndentingNewLine]", 
    StyleBox[
     RowBox[{
@@ -1176,8 +1220,9 @@ Cell[BoxData[
     RowBox[{"closeDoc", ":=", "\"\<\\\\end{document}\>\""}],
     FontSize->18]}]}]], "Input",
  CellChangeTimes->{{3.9232615280839233`*^9, 3.9232615471883163`*^9}, {
-  3.9232616512835407`*^9, 3.9232616526426983`*^9}, {3.923261868095974*^9, 
-  3.9232619154062157`*^9}, {3.9254262613862047`*^9, 3.925426262026738*^9}},
+   3.9232616512835407`*^9, 3.9232616526426983`*^9}, {3.923261868095974*^9, 
+   3.9232619154062157`*^9}, {3.9254262613862047`*^9, 3.925426262026738*^9}, 
+   3.92556705851155*^9},
  Background->RGBColor[1, 0.9, 0.8],
  CellID->504000207,ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013"],
 
@@ -1304,6 +1349,7 @@ Cell[BoxData[
 },
 WindowSize->{1255, 971},
 WindowMargins->{{12, Automatic}, {2, Automatic}},
+Magnification:>1.5 Inherited,
 FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"08cd00e7-b917-4537-b861-0d30feb105b6"
@@ -1320,52 +1366,52 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 122, 0, 67, "Section",ExpressionUUID->"e2a8139a-6252-4d5a-b12c-4df9360e45e6"],
+Cell[580, 22, 122, 0, 101, "Section",ExpressionUUID->"e2a8139a-6252-4d5a-b12c-4df9360e45e6"],
 Cell[CellGroupData[{
-Cell[727, 26, 116, 0, 54, "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
-Cell[846, 28, 300, 6, 52, "Input",ExpressionUUID->"00a52a6d-2ea9-44cf-b3b5-ed2f1a39038f"]
+Cell[727, 26, 116, 0, 81, "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
+Cell[846, 28, 300, 6, 78, "Input",ExpressionUUID->"00a52a6d-2ea9-44cf-b3b5-ed2f1a39038f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1183, 39, 138, 1, 54, "Subsection",ExpressionUUID->"5aabebe9-2b7c-4be7-b3cc-dbdd101e4dc4"],
-Cell[1324, 42, 181, 3, 30, "Input",ExpressionUUID->"66db2ab5-fc0e-407d-ac48-01b349fba1c6"]
+Cell[1183, 39, 138, 1, 81, "Subsection",ExpressionUUID->"5aabebe9-2b7c-4be7-b3cc-dbdd101e4dc4"],
+Cell[1324, 42, 181, 3, 46, "Input",ExpressionUUID->"66db2ab5-fc0e-407d-ac48-01b349fba1c6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1542, 50, 163, 2, 54, "Subsection",ExpressionUUID->"e2f1ec12-0846-461f-9880-c9d7d1df472c"],
-Cell[1708, 54, 1641, 49, 73, "Input",ExpressionUUID->"a5b41fcc-db34-410f-87f8-e2c2bfc008f8"]
+Cell[1542, 50, 163, 2, 81, "Subsection",ExpressionUUID->"e2f1ec12-0846-461f-9880-c9d7d1df472c"],
+Cell[1708, 54, 1641, 49, 140, "Input",ExpressionUUID->"a5b41fcc-db34-410f-87f8-e2c2bfc008f8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3386, 108, 105, 0, 54, "Subsection",ExpressionUUID->"174ad9d0-35f1-4eec-9203-0b7b659c4c2e"],
-Cell[3494, 110, 1037, 29, 90, "Input",ExpressionUUID->"dec3a9d5-a743-421f-94b9-a0bfb00d1127"],
-Cell[4534, 141, 5643, 155, 509, "Input",ExpressionUUID->"87eebf48-61ad-4375-a10c-f614df495ba7"]
+Cell[3386, 108, 105, 0, 81, "Subsection",ExpressionUUID->"174ad9d0-35f1-4eec-9203-0b7b659c4c2e"],
+Cell[3494, 110, 1037, 29, 135, "Input",ExpressionUUID->"dec3a9d5-a743-421f-94b9-a0bfb00d1127"],
+Cell[4534, 141, 5643, 155, 1001, "Input",ExpressionUUID->"87eebf48-61ad-4375-a10c-f614df495ba7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10214, 301, 107, 0, 54, "Subsection",ExpressionUUID->"e1bf1328-e41b-419a-8723-a76e30539619"],
-Cell[10324, 303, 8481, 227, 803, "Input",ExpressionUUID->"bbcc2265-c949-414c-aaa4-d2241194dece"]
+Cell[10214, 301, 107, 0, 81, "Subsection",ExpressionUUID->"e1bf1328-e41b-419a-8723-a76e30539619"],
+Cell[10324, 303, 8481, 227, 1343, "Input",ExpressionUUID->"bbcc2265-c949-414c-aaa4-d2241194dece"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18854, 536, 278, 6, 105, "Section",ExpressionUUID->"3359194d-f57c-494d-9ea3-9fe517a04957"],
-Cell[19135, 544, 1385, 48, 154, "Input",ExpressionUUID->"f37a9c95-8e8d-4359-a521-86e49da45877"]
+Cell[18854, 536, 278, 6, 158, "Section",ExpressionUUID->"3359194d-f57c-494d-9ea3-9fe517a04957"],
+Cell[19135, 544, 1385, 48, 263, "Input",ExpressionUUID->"f37a9c95-8e8d-4359-a521-86e49da45877"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20557, 597, 219, 5, 67, "Section",ExpressionUUID->"b68c1074-61e8-4298-904a-ffa1e68bb4a3"],
-Cell[20779, 604, 2863, 59, 406, "Input",ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9",
+Cell[20557, 597, 219, 5, 101, "Section",ExpressionUUID->"b68c1074-61e8-4298-904a-ffa1e68bb4a3"],
+Cell[20779, 604, 2863, 59, 636, "Input",ExpressionUUID->"b4f72f91-13f6-4174-a1d9-c3a8eb0969d9",
  CellID->180244738],
 Cell[CellGroupData[{
-Cell[23667, 667, 232, 5, 54, "Subsection",ExpressionUUID->"77da0a1f-d8db-4d5c-b0c6-98420c24a71f"],
-Cell[23902, 674, 18250, 436, 1748, "Input",ExpressionUUID->"020e79f8-8758-4d6e-b3e3-bb12807dd58f"]
+Cell[23667, 667, 232, 5, 81, "Subsection",ExpressionUUID->"77da0a1f-d8db-4d5c-b0c6-98420c24a71f"],
+Cell[23902, 674, 19602, 470, 2768, "Input",ExpressionUUID->"020e79f8-8758-4d6e-b3e3-bb12807dd58f"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42201, 1116, 809, 21, 68, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410",
+Cell[43553, 1150, 809, 21, 102, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410",
  CellID->261372301],
-Cell[43013, 1139, 1592, 42, 283, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
+Cell[44365, 1173, 2027, 53, 455, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
  CellID->504000207],
-Cell[44608, 1183, 1790, 46, 257, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+Cell[46395, 1228, 1790, 46, 380, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46435, 1234, 167, 3, 67, "Section",ExpressionUUID->"ad76da08-8603-4d30-a64a-bd99879af70d"],
-Cell[46605, 1239, 2583, 62, 157, "Input",ExpressionUUID->"0f83f111-beea-46dc-a8f4-34c58b8cab45",
+Cell[48222, 1279, 167, 3, 101, "Section",ExpressionUUID->"ad76da08-8603-4d30-a64a-bd99879af70d"],
+Cell[48392, 1284, 2583, 62, 295, "Input",ExpressionUUID->"0f83f111-beea-46dc-a8f4-34c58b8cab45",
  CellID->803764153]
 }, Open  ]]
 }
