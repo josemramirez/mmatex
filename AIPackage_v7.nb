@@ -1,0 +1,2884 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    123541,       2876]
+NotebookOptionsPosition[    120311,       2814]
+NotebookOutlinePosition[    121063,       2839]
+CellTagsIndexPosition[    121020,       2836]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AI for MMaiTeX v0.1", "Title",
+ CellChangeTimes->{{3.91720856991497*^9, 3.9172085784934883`*^9}, {
+  3.917262944066132*^9, 3.917262944185978*^9}, {3.9182274549657583`*^9, 
+  3.918227455195348*^9}, {3.923310876289667*^9, 3.923310887391446*^9}, {
+  3.924800521954158*^9, 
+  3.924800524447562*^9}},ExpressionUUID->"f3d4e1ba-6395-4a84-afec-\
+abd624208c45"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<claude-3-opus-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<claude-3-sonnet-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<claude-3-haiku-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"myAPIKeyC", "=", 
+     RowBox[{"SystemCredential", "[", "\"\<CLAUDE_API_KEY\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"myAPIKeyG", "=", 
+     RowBox[{"SystemCredential", "[", "\"\<OPENAI_API_KEY\>\"", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"callClaude", "[", 
+     RowBox[{"myPrompt_", ",", "myAPIKey_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"myRequest", ",", "jsonResponse", ",", "jsonBody"}], "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the",
+         " ", "request"}], "*)"}], 
+      RowBox[{
+       RowBox[{"jsonBody", "=", 
+        RowBox[{"ExportString", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+            "\"\<model\>\"", "->", "\"\<claude-3-sonnet-20240229\>\""}], ",", 
+            
+            RowBox[{"\"\<max_tokens\>\"", "->", "4096"}], ",", 
+            RowBox[{"\"\<messages\>\"", "->", 
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<role\>\"", "->", "\"\<user\>\""}], ",", 
+                RowBox[{"\"\<content\>\"", "->", "myPrompt"}]}], "}"}], 
+              "}"}]}]}], "}"}], ",", "\"\<JSON\>\""}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+       RowBox[{"myRequest", "=", 
+        RowBox[{"HTTPRequest", "[", 
+         RowBox[{"\"\<https://api.anthropic.com/v1/messages\>\"", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+            RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+            RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}],
+             ",", 
+            RowBox[{"\"\<Headers\>\"", "->", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<x-api-key\>\"", "->", "myAPIKey"}], ",", 
+               RowBox[{
+               "\"\<anthropic-version\>\"", "->", "\"\<2023-06-01\>\""}]}], 
+              "}"}]}]}], "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+         "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "=", 
+        RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Convert", " ", "the", " ", "list", " ", "of", " ", "rules", " ", 
+         "to", " ", "an", " ", "association", " ", "for", " ", "easier", " ", 
+         "access", " ", "by", " ", "key"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "=", 
+        RowBox[{"Replace", "[", 
+         RowBox[{"jsonResponse", ",", 
+          RowBox[{"l_List", ":>", 
+           RowBox[{"Association", "[", "l", "]"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "Infinity"}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Check", " ", "if", " ", "the", " ", "response", " ", "contains", " ",
+          "the", " ", "expected", " ", "content", " ", "key"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"KeyExistsQ", "[", 
+           RowBox[{"jsonResponse", ",", "\"\<content\>\""}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"If", " ", 
+            RowBox[{"the", "'"}], 
+            RowBox[{"content", "'"}], " ", "key", " ", "is", " ", "missing"}],
+            ",", 
+           RowBox[{"return", " ", "$Failed"}]}], "*)"}], 
+         "\[IndentingNewLine]", 
+         RowBox[{"Return", "[", "$Failed", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Extract", " ", 
+         RowBox[{"the", "'"}], 
+         RowBox[{"content", "'"}], " ", "and", " ", "then", " ", 
+         RowBox[{"the", "'"}], 
+         RowBox[{"text", "'"}], " ", "content"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "[", 
+        RowBox[{"\"\<content\>\"", ",", "\"\<text\>\""}], "]"}]}]}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{
+  3.913557561226906*^9, {3.9135576186913157`*^9, 3.913557619149557*^9}, {
+   3.913557668507381*^9, 3.9135576688674717`*^9}, {3.9172116758313303`*^9, 
+   3.9172116798789186`*^9}, {3.9172121380917377`*^9, 
+   3.9172122203981047`*^9}, {3.917423863532159*^9, 3.917423874101075*^9}, {
+   3.917423950174137*^9, 3.917423957543557*^9}, {3.917424044117779*^9, 
+   3.917424094796606*^9}, 3.917424125100642*^9, 3.9174242652994347`*^9, 
+   3.917425338989756*^9, {3.9174254235193377`*^9, 3.9174254587071342`*^9}, {
+   3.917425530458708*^9, 3.917425556779738*^9}, 3.917426063012212*^9, {
+   3.9178752334534082`*^9, 3.9178752602334013`*^9}, {3.917883345539803*^9, 
+   3.9178833506087837`*^9}, {3.917885024897575*^9, 3.9178850285604773`*^9}, 
+   3.918209068097602*^9, {3.918311199260399*^9, 3.9183112064538193`*^9}, {
+   3.923050332272315*^9, 3.923050338104375*^9}, 3.923050369920474*^9, {
+   3.923050400294203*^9, 3.923050410530322*^9}, {3.9230507437965603`*^9, 
+   3.9230507818879223`*^9}, 3.923051212722418*^9, {3.923051317101368*^9, 
+   3.923051317466337*^9}, {3.92305140860951*^9, 3.923051473858494*^9}, {
+   3.923466709731523*^9, 3.923466778111931*^9}, {3.924876353812866*^9, 
+   3.924876354132833*^9}, {3.924876500057911*^9, 3.9248765265796022`*^9}},
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Function", " ", "to", " ", "add", " ", "a", " ", "new", " ", "message", 
+    " ", "to", " ", "the", " ", "conversation", " ", "history", " ", "and", 
+    " ", "call", " ", 
+    RowBox[{"Claude", "."}]}], "*)"}], 
+  RowBox[{
+   RowBox[{"continueDiscussion", "[", 
+    RowBox[{"myPrompt_", ",", "myAPIKey_", ",", 
+     RowBox[{"newThread_", ":", "False"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", "newMessage", 
+       ",", "latestResponse"}], "}"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Add", " ", "the", " ", "new", " ", "user", " ", "message", " ", "to", 
+       " ", "the", " ", "global", " ", "conversation", " ", 
+       RowBox[{"history", "."}]}], "*)"}], 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"newThread", "==", "True"}], "||", 
+         RowBox[{
+          RowBox[{"Head", "[", "$conversationHistory", "]"}], "=!=", 
+          "List"}]}], ",", 
+        RowBox[{
+         RowBox[{"$conversationHistory", "=", 
+          RowBox[{"{", "}"}]}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"newMessage", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<role\>\"", "->", "\"\<user\>\""}], ",", 
+         RowBox[{"\"\<content\>\"", "->", "myPrompt"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"$conversationHistory", ",", "newMessage"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the",
+         " ", "request", " ", "with", " ", "the", " ", "updated", " ", 
+        "conversation", " ", 
+        RowBox[{"history", "."}]}], "*)"}], 
+      RowBox[{"jsonBody", "=", 
+       RowBox[{"ExportString", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<model\>\"", "->", "\"\<claude-3-opus-20240229\>\""}], 
+           ",", 
+           RowBox[{"\"\<max_tokens\>\"", "->", "4096"}], ",", 
+           RowBox[{"\"\<temperature\>\"", "->", "0.3"}], ",", 
+           RowBox[{"\"\<messages\>\"", "->", "$conversationHistory"}]}], 
+          "}"}], ",", "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Create", " ", "the", " ", "HTTP", " ", 
+        RowBox[{"request", "."}]}], "*)"}], 
+      RowBox[{"myRequest", "=", 
+       RowBox[{"HTTPRequest", "[", 
+        RowBox[{"\"\<https://api.anthropic.com/v1/messages\>\"", ",", 
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+           RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+           RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}], 
+           ",", 
+           RowBox[{"\"\<Headers\>\"", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<x-api-key\>\"", "->", "myAPIKey"}], ",", 
+              RowBox[{
+              "\"\<anthropic-version\>\"", "->", "\"\<2023-06-01\>\""}]}], 
+             "}"}]}]}], "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+        "the", " ", "JSON", " ", 
+        RowBox[{"response", "."}]}], "*)"}], 
+      RowBox[{"jsonResponse", "=", 
+       RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Convert", " ", "the", " ", "list", " ", "of", " ", "rules", " ", "to",
+         " ", "an", " ", "association", " ", "for", " ", "easier", " ", 
+        "access", " ", "by", " ", 
+        RowBox[{"key", "."}]}], "*)"}], 
+      RowBox[{"jsonResponse", "=", 
+       RowBox[{"Replace", "[", 
+        RowBox[{"jsonResponse", ",", 
+         RowBox[{"l_List", ":>", 
+          RowBox[{"Association", "[", "l", "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "Infinity"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Update", " ", "the", " ", "global", " ", "conversation", " ", 
+        "history", " ", "with", " ", "the", " ", "full", " ", "conversation", 
+        " ", "including", " ", "the", " ", "latest", " ", 
+        RowBox[{"response", "."}]}], "*)"}], 
+      RowBox[{"$conversationHistory", "=", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"$conversationHistory", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<role\>\"", "->", "\"\<assistant\>\""}], ",", 
+           RowBox[{"\"\<content\>\"", "->", 
+            RowBox[{"jsonResponse", "[", 
+             RowBox[{"\"\<content\>\"", ",", "\"\<text\>\""}], "]"}]}]}], 
+          "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Extract", " ", "the", " ", "latest", " ", "response", " ", "from", 
+        " ", "the", " ", 
+        RowBox[{"assistant", "."}]}], "*)"}], 
+      RowBox[{"latestResponse", "=", 
+       RowBox[{"$conversationHistory", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "2", ",", "2"}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"MissingQ", "[", "latestResponse", "]"}], ",", 
+        RowBox[{"Return", "[", "$Failed", "]"}], ",", "latestResponse"}], 
+       "]"}]}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{3.923052110880583*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"018d5997-70a7-409a-a4fc-eb3de7f12d91"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "encodeImageObjectToBase64directclean", "[", "imageObject_", "]"}], ":=", 
+    
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "encoded", "}"}], ",", 
+      RowBox[{
+       RowBox[{"encoded", "=", 
+        RowBox[{"ExportString", "[", 
+         RowBox[{"imageObject", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Base64\>\"", ",", "\"\<JPEG\>\""}], "}"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{"encoded", ",", 
+         RowBox[{"Whitespace", "->", "\"\<\>\""}]}], "]"}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"callClaudeWithSingleImage", "[", 
+   RowBox[{
+   "apiKey_String", ",", "imageObject_", ",", "textPrompt_String", ",", 
+    RowBox[{"systemMessage_", ":", "\"\<\>\""}], ",", 
+    RowBox[{"maxTokens_", ":", "2048"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "base64Image", ",", "messageContent", ",", "jsonBody", ",", "request", 
+      ",", "response"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{"Encode", " ", "the", " ", "image", " ", "to", " ", "Base64"}], 
+     "*)"}], 
+    RowBox[{
+     RowBox[{"base64Image", "=", 
+      RowBox[{
+      "encodeImageObjectToBase64directclean", "[", "imageObject", "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Construct", " ", "the", " ", "message", " ", "content"}], 
+      "*)"}], 
+     RowBox[{"messageContent", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<role\>\"", "->", "\"\<user\>\""}], ",", 
+        RowBox[{"\"\<content\>\"", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<type\>\"", "->", "\"\<image\>\""}], ",", 
+             RowBox[{"\"\<source\>\"", "->", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<type\>\"", "->", "\"\<base64\>\""}], ",", 
+                RowBox[{"\"\<media_type\>\"", "->", "\"\<image/jpeg\>\""}], 
+                ",", 
+                RowBox[{"\"\<data\>\"", "->", "base64Image"}]}], "}"}]}]}], 
+            "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<type\>\"", "->", "\"\<text\>\""}], ",", 
+             RowBox[{"\"\<text\>\"", "->", "textPrompt"}]}], "}"}]}], 
+          "}"}]}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+       " ", "request"}], "*)"}], 
+     RowBox[{"jsonBody", "=", 
+      RowBox[{"ExportString", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<model\>\"", "->", "\"\<claude-3-opus-20240229\>\""}], 
+           ",", 
+           RowBox[{"\"\<max_tokens\>\"", "->", "maxTokens"}], ",", 
+           RowBox[{"\"\<messages\>\"", "->", 
+            RowBox[{"{", "messageContent", "}"}]}]}], "}"}], "~", "Join", "~", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"systemMessage", "===", "\"\<\>\""}], ",", 
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"\"\<system\>\"", "->", "systemMessage"}], "}"}]}], 
+          "]"}]}], ",", "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+     RowBox[{"request", "=", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{"\"\<https://api.anthropic.com/v1/messages\>\"", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+          RowBox[{"\"\<Headers\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<x-api-key\>\"", "->", "apiKey"}], ",", 
+             RowBox[{
+             "\"\<anthropic-version\>\"", "->", "\"\<2023-06-01\>\""}], ",", 
+             RowBox[{
+             "\"\<Content-Type\>\"", "->", "\"\<application/json\>\""}]}], 
+            "}"}]}], ",", 
+          RowBox[{"\"\<Body\>\"", "->", "jsonBody"}]}], "|>"}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+       "the", " ", "JSON", " ", "response"}], "*)"}], 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"response", "=", 
+        RowBox[{"Check", "[", 
+         RowBox[{
+          RowBox[{"ImportString", "[", 
+           RowBox[{
+            RowBox[{"URLExecute", "[", 
+             RowBox[{"request", ",", "\"\<RawJSON\>\""}], "]"}], ",", 
+            "\"\<RawJSON\>\""}], "]"}], ",", "$Failed"}], "]"}]}], ";"}], 
+      "*)"}], 
+     RowBox[{"response", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"URLExecute", "[", 
+          RowBox[{"request", ",", "\"\<RawJSON\>\""}], "]"}], "[", 
+         "\"\<content\>\"", "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "[", "\"\<text\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Return", " ", "the", " ", "response"}], "*)"}], 
+     "\[IndentingNewLine]", "response"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.923052986759781*^9, 3.923053067373452*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"callDALLE", "[", 
+   RowBox[{"myPrompt_", ",", "myAPIKey_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"myRequest", ",", "myResponse"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"myRequest", "=", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{"\"\<https://api.openai.com/v1/images/generations\>\"", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"Method", "->", "\"\<POST\>\""}], ",", 
+          RowBox[{"\"\<Body\>\"", "->", 
+           RowBox[{"ExportString", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<model\>\"", "->", "\"\<dall-e-3\>\""}], ",", 
+               RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}], ",", 
+               RowBox[{"\"\<size\>\"", "->", "\"\<1024x1024\>\""}], ",", 
+               RowBox[{"\"\<n\>\"", "->", "1"}]}], "}"}], ",", 
+             "\"\<JSON\>\""}], "]"}]}], ",", 
+          RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}], 
+          ",", 
+          RowBox[{"\"\<Headers\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Authorization\>\"", "->", 
+             RowBox[{"\"\<Bearer \>\"", "<>", "myAPIKey"}]}], "}"}]}]}], 
+         "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"myResponse", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{
+        RowBox[{"URLExecute", "[", "myRequest", "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", "2", ",", "1", ",", "2", ",", "2"}], "]"}], "]"}], 
+       "]"}]}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{3.9135578985072193`*^9},
+ Background->RGBColor[1, 0.85, 0.85],
+ CellLabel->"In[7]:=",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"callDALLE", "[", 
+    RowBox[{"\"\<A cute baby sea otter\>\"", ",", "myAPIKeyG"}], "]"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"ClearAll", "[", 
+      RowBox[{
+      "gencode", ",", "myCell1In", ",", " ", "myCell1Com", ",", " ", 
+       "myCell1InOut", ",", "myCell1InOut8"}], "]"}], ";"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], "\n", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"SetAttributes", "[", 
+      RowBox[{"gencode", ",", "HoldAll"}], "]"}], ";"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], "\n", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"gencode", "[", 
+       RowBox[{"code_", ",", 
+        RowBox[{"opts", ":", 
+         RowBox[{"OptionsPattern", "[", "Cell", "]"}]}]}], "]"}], ":=", 
+      RowBox[{"CellPrint", "@", 
+       RowBox[{"ExpressionCell", "[", 
+        RowBox[{
+         RowBox[{"Defer", "@", 
+          RowBox[{"StandardForm", "[", "code", "]"}]}], ",", "\"\<Text\>\"", 
+         ",", "opts"}], "]"}]}]}], ";"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Solo"}], " ", "tiene", " ", "una", " ", "entrada"}], 
+     " ", "-"}], "*)"}], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCell1In", "[", 
+      RowBox[{"qnun_", ",", "mytext_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "26"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"gencode", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{"qnun", ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "24"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Panel", "[", 
+           RowBox[{
+            RowBox[{"Grid", "[", 
+             RowBox[{
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{"{", 
+                RowBox[{"\"\<1\>\"", ",", " ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext"}], ",", " ", 
+                   "Black", ",", 
+                   RowBox[{
+                   "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                   "tsize"}], "]"}]}], "}"}], "\n", "  ", "}"}], ",", "\n", 
+              "  ", 
+              RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+              RowBox[{"ItemSize", "->", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"3", ",", " ", "128"}], "}"}], "}"}]}], ",", "\n", 
+              "  ", 
+              RowBox[{"Dividers", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+                "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+            RowBox[{"Background", "->", 
+             RowBox[{"RGBColor", "[", 
+              RowBox[{"0.87", ",", " ", "0.94", ",", " ", "1"}], "]"}]}]}], 
+           "\n", "]"}]}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Tiene"}], " ", "una", " ", "entrada", " ", "y", " ", 
+      "una", " ", "salida"}], " ", "-"}], "*)"}], "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCell1InOut", "[", 
+      RowBox[{"qnun_", ",", "mytext_", ",", " ", "mytextO_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "26"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"gencode", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{"qnun", ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "24"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Panel", "[", 
+           RowBox[{
+            RowBox[{"Grid", "[", 
+             RowBox[{
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<1\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext"}], ",", " ",
+                     "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<2\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}]}], "\n", "  ", "}"}], ",", "\n",
+               "  ", 
+              RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+              RowBox[{"ItemSize", "->", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"3", ",", " ", "128"}], "}"}], "}"}]}], ",", "\n", 
+              "  ", 
+              RowBox[{"Dividers", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+                "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+            RowBox[{"Background", "->", 
+             RowBox[{"RGBColor", "[", 
+              RowBox[{"0.87", ",", " ", "0.94", ",", " ", "1"}], "]"}]}]}], 
+           "\n", "]"}]}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Tiene"}], " ", "una", " ", "entrada", " ", "y", " ", 
+      "un", " ", "Comentario", " ", "de", " ", "salida", " ", "con", " ", 
+      "dos", " ", "lineas", " ", "v1"}], " ", "-"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCell1Com", "[", 
+      RowBox[{
+      "qnun_", ",", "mytext_", ",", " ", "mytextO_", ",", " ", "mytextO2_"}], 
+      "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "26"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"gencode", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{"qnun", ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "24"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Panel", "[", 
+           RowBox[{
+            RowBox[{"Grid", "[", 
+             RowBox[{
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<1\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext"}], ",", " ",
+                     "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<2\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<             \>\"", "<>", "mytextO"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<3\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<              \>\"", "<>", "mytextO2"}], ",",
+                     " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}]}], "\n", "  ", "}"}], ",", "\n",
+               "  ", 
+              RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+              RowBox[{"ItemSize", "->", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"3", ",", " ", "128"}], "}"}], "}"}]}], ",", "\n", 
+              "  ", 
+              RowBox[{"Dividers", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+                "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+            RowBox[{"Background", "->", 
+             RowBox[{"RGBColor", "[", 
+              RowBox[{"0.87", ",", " ", "0.94", ",", " ", "1"}], "]"}]}]}], 
+           "\n", "]"}]}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Tiene"}], " ", "una", " ", "entrada", " ", "y", " ", 
+      "una", " ", "salida", " ", "x", " ", "4"}], "-"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCell1InOut8", "[", 
+      RowBox[{
+      "qnun_", ",", "mytext_", ",", " ", "mytextO_", ",", "mytext1_", ",", 
+       " ", "mytextO1_", ",", "mytext2_", ",", " ", "mytextO2_", ",", 
+       "mytext3_", ",", " ", "mytextO3_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "26"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"gencode", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{"qnun", ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "24"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Panel", "[", 
+           RowBox[{
+            RowBox[{"Grid", "[", 
+             RowBox[{
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<1\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext"}], ",", " ",
+                     "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<2\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<3\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext1"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<4\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO1"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<5\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext2"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<6\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO2"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<7\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext3"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<8\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO3"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}]}], "\n", "  ", "}"}], ",", "\n",
+               "  ", 
+              RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+              RowBox[{"ItemSize", "->", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"3", ",", " ", "128"}], "}"}], "}"}]}], ",", "\n", 
+              "  ", 
+              RowBox[{"Dividers", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+                "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+            RowBox[{"Background", "->", 
+             RowBox[{"RGBColor", "[", 
+              RowBox[{"0.87", ",", " ", "0.94", ",", " ", "1"}], "]"}]}]}], 
+           "\n", "]"}]}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Tiene"}], " ", "una", " ", "entrada", " ", "y", " ", 
+      "una", " ", "salida", " ", "x", " ", "4"}], ",", " ", 
+     RowBox[{"LaTeX", " ", "-"}]}], "*)"}], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCellTeX", "[", 
+      RowBox[{
+      "qnun_", ",", "mytext_", ",", " ", "mytextO_", ",", "mytext1_", ",", 
+       " ", "mytextO1_", ",", "mytext2_", ",", " ", "mytextO2_", ",", 
+       "mytext3_", ",", " ", "mytextO3_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "26"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"gencode", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{"qnun", ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "24"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Panel", "[", 
+           RowBox[{
+            RowBox[{"Grid", "[", 
+             RowBox[{
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<1\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytext"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<2\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytextO"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<3\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytext1"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<4\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytextO1"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<5\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytext2"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<6\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytextO2"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<7\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytext3"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<8\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<    \>\"", "<>", "mytextO3"}], ",", " ", 
+                    "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}]}], "\n", "  ", "}"}], ",", "\n",
+               "  ", 
+              RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+              RowBox[{"ItemSize", "->", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"3", ",", " ", "108"}], "}"}], "}"}]}], ",", "\n", 
+              "  ", 
+              RowBox[{"Dividers", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+                "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+            RowBox[{"Background", "->", 
+             RowBox[{"RGBColor", "[", 
+              RowBox[{"0.87", ",", " ", "0.94", ",", " ", "0.8"}], "]"}]}]}], 
+           "\n", "]"}]}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Tiene"}], " ", "una", " ", "entrada", " ", "y", " ", 
+      "una", " ", "salida", " ", "x", " ", "4"}], "-", " ", "MMaLatex"}], 
+    "*)"}], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCellMMaLatex", "[", 
+      RowBox[{
+      "qnun_", ",", "mytext_", ",", " ", "mytextO_", ",", "mytext1_", ",", 
+       " ", "mytextO1_", ",", "mytext2_", ",", " ", "mytextO2_", ",", 
+       "mytext3_", ",", " ", "mytextO3_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "26"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"gencode", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{"qnun", ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "24"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Panel", "[", 
+           RowBox[{
+            RowBox[{"Grid", "[", 
+             RowBox[{
+              RowBox[{"{", "\n", "   ", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<1\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext"}], ",", " ",
+                     "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<2\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<3\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext1"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<4\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO1"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<5\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext2"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<6\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO2"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<7\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   In[1]:= \>\"", "<>", "mytext3"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<8\>\"", ",", " ", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<   Out[1]:= \>\"", "<>", "mytextO3"}], ",", 
+                    " ", "Black", ",", 
+                    RowBox[{
+                    "FontFamily", "->", "\"\<American Typewriter\>\""}], ",", 
+                    "tsize"}], "]"}]}], "}"}]}], "\n", "  ", "}"}], ",", "\n",
+               "  ", 
+              RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+              RowBox[{"ItemSize", "->", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"3", ",", " ", "128"}], "}"}], "}"}]}], ",", "\n", 
+              "  ", 
+              RowBox[{"Dividers", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+                "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+            RowBox[{"Background", "->", 
+             RowBox[{"RGBColor", "[", 
+              RowBox[{"0.53", ",", " ", "0.64", ",", " ", "0.9"}], "]"}]}]}], 
+           "\n", "]"}]}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", " ", "Para"}], " ", "las", " ", "referencias"}], " ", 
+     "-"}], "*)"}], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"gencodeRef", "[", 
+       RowBox[{"code_", ",", 
+        RowBox[{"opts", ":", 
+         RowBox[{"OptionsPattern", "[", "Cell", "]"}]}]}], "]"}], ":=", 
+      RowBox[{"CellPrint", "@", 
+       RowBox[{"ExpressionCell", "[", 
+        RowBox[{
+         RowBox[{"Defer", "@", 
+          RowBox[{"StandardForm", "[", "code", "]"}]}], ",", 
+         "\"\<Subsubsection\>\"", ",", "opts"}], "]"}]}]}], ";"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCellRef1", "[", 
+      RowBox[{"mytext_", ",", " ", "inx_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"tsize", "=", "16"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{"Panel", "[", 
+          RowBox[{
+           RowBox[{"Grid", "[", 
+            RowBox[{
+             RowBox[{"{", "\n", "   ", 
+              RowBox[{"{", 
+               RowBox[{"\"\<\>\"", ",", " ", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{
+                  "\"\<   [\>\"", "<>", "inx", "<>", "\"\<] \>\"", "<>", 
+                   "mytext"}], ",", " ", "Black", ",", 
+                  RowBox[{"FontFamily", "->", "\"\<American Typewriter\>\""}],
+                   ",", "tsize"}], "]"}]}], "}"}], "\n", "  ", "}"}], ",", 
+             "\n", "  ", 
+             RowBox[{"Alignment", "->", "Left"}], ",", "\n", "  ", 
+             RowBox[{"ItemSize", "->", 
+              RowBox[{"{", 
+               RowBox[{"{", 
+                RowBox[{"3", ",", " ", "128"}], "}"}], "}"}]}], ",", "\n", 
+             "  ", 
+             RowBox[{"Dividers", "->", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"False", ",", "True", ",", "False"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"False", ",", "False", ",", "False"}], "}"}]}], 
+               "}"}]}]}], "\n", " ", "]"}], ",", "\n", " ", 
+           RowBox[{"Background", "->", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"0.87", ",", " ", "0.94", ",", " ", "1"}], "]"}]}]}], 
+          "\n", "]"}], "}"}], "]"}]}], "\n", "]"}]}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{"(*", " ", "Formato", " ", "*)"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myCell1", "=", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+          "lmtS0", "=", "\"\<Integrate[Sin[x]*Exp[-x],{x,0,Infinity}]\>\""}], 
+          ",", 
+          RowBox[{"lmt0", "=", 
+           RowBox[{
+            RowBox[{"HoldForm", "[", 
+             RowBox[{"Integrate", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Sin", "[", "x", "]"}], "*", 
+                RowBox[{"Exp", "[", 
+                 RowBox[{"-", "x"}], "]"}]}], ",", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", "0", ",", "Infinity"}], "}"}]}], "]"}], 
+             "]"}], "//", "TraditionalForm"}]}], ",", 
+          "\"\<Q1.3 Calculate the integral lmt0\>\"", ",", "lmtS0"}], "}"}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"lmtS1", "=", " ", "\"\<\[Pi]\>\""}], ",", 
+          RowBox[{"lmt1", "=", 
+           RowBox[{
+            RowBox[{"HoldForm", "[", "\[Pi]", "]"}], "//", 
+            "TraditionalForm"}]}], ",", 
+          "\"\<Q1.4 Calculate the first 1000 digits of lmt1 with\>\"", ",", 
+          "\"\<N[Pi,1000]\>\"", ",", " ", "lmtS1"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+          "lmtS2", "=", 
+           "\"\<ClebschGordan[{100,10},{200,-12},{110,-2}]\>\""}], ",", 
+          RowBox[{"lmt2", "=", 
+           RowBox[{
+            RowBox[{"HoldForm", "[", 
+             RowBox[{"\[LeftAngleBracket]", 
+              RowBox[{"100", ",", 
+               RowBox[{"10", ";", "200"}], ",", 
+               RowBox[{
+                RowBox[{"-", "\.0012"}], "|", "110"}], ",", 
+               RowBox[{"\.00", "-", "2"}]}], "\[RightAngleBracket]"}], "]"}], 
+            "//", "TraditionalForm"}]}], ",", 
+          "\"\<Q1.5 Calculate the analytic and numeric values of the Clebsch\
+\[Dash]Gordan coefficienth: lmt2\>\"", ",", " ", "lmtS2"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"lmtS3", "=", "\"\<Limit[Sin[x]/x,x->0]\>\""}], ",", 
+          RowBox[{"lmt3", "=", 
+           RowBox[{
+            RowBox[{"HoldForm", "[", 
+             RowBox[{"Limit", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Sin", "[", "x", "]"}], "/", "x"}], ",", 
+               RowBox[{"x", "->", "0"}]}], "]"}], "]"}], "//", 
+            "TraditionalForm"}]}], ",", 
+          "\"\<Q1.6 Calculate the limit lmt3 with\>\"", ",", " ", "lmtS3"}], 
+         "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+          "lmtS4", "=", 
+           "\"\<Plot[Sin[x]/x, {x, -20, 20}, PlotRange -> All]\>\""}], ",", 
+          RowBox[{"lmt4", "=", 
+           RowBox[{
+            RowBox[{"HoldForm", "[", 
+             RowBox[{
+              RowBox[{"Sin", "[", "x", "]"}], "/", "x"}], "]"}], "//", 
+            "TraditionalForm"}]}], ",", 
+          "\"\<Q1.7 Make a plot of the above function lmt4 with\>\"", ",", 
+          " ", "lmtS4"}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox[
+    RowBox[{"(*", " ", 
+     RowBox[{"Formato", " ", "Para", " ", "las", " ", "referencias"}], " ", 
+     "*)"}],
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   RowBox[{
+    StyleBox["(*",
+     FontFamily->"Source Code Pro",
+     FontSize->12,
+     FontWeight->"SemiBold"], 
+    StyleBox[" ",
+     FontFamily->"Source Code Pro",
+     FontSize->12,
+     FontWeight->"SemiBold"], 
+    RowBox[{
+     StyleBox["Generado",
+      FontFamily->"Source Code Pro",
+      FontSize->12,
+      FontWeight->"SemiBold"], 
+     StyleBox[" ",
+      FontFamily->"Source Code Pro",
+      FontSize->12,
+      FontWeight->"SemiBold"], 
+     RowBox[{
+      StyleBox["con",
+       FontFamily->"Source Code Pro",
+       FontSize->12,
+       FontWeight->"SemiBold"], 
+      StyleBox[":",
+       FontFamily->"Source Code Pro",
+       FontSize->12,
+       FontWeight->"SemiBold"], 
+      StyleBox["\[IndentingNewLine]",
+       FontFamily->"Source Code Pro",
+       FontSize->12,
+       FontWeight->"SemiBold"], 
+      RowBox[{
+       RowBox[{
+        StyleBox["Do",
+         FontFamily->"Source Code Pro",
+         FontSize->12,
+         FontWeight->"SemiBold"], 
+        StyleBox["[",
+         FontFamily->"Source Code Pro",
+         FontSize->12,
+         FontWeight->"SemiBold"], 
+        StyleBox["\[IndentingNewLine]",
+         FontFamily->"Source Code Pro",
+         FontSize->12,
+         FontWeight->"SemiBold"], 
+        RowBox[{
+         RowBox[{
+          RowBox[{"gencodeRef", "@", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"myCellRefTopic", "[", 
+              RowBox[{"[", "k", "]"}], "]"}], ",", 
+             RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}], ",", 
+             "20"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Do", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Print", "[", 
+             RowBox[{"myCellRef1", "[", 
+              RowBox[{
+               StyleBox[
+                RowBox[{
+                 RowBox[{"myCellRefs", "[", 
+                  RowBox[{"[", "k", "]"}], "]"}], "[", 
+                 RowBox[{"[", "i", "]"}], "]"}],
+                FontWeight->"SemiBold"], ",", " ", 
+               RowBox[{"ToString", "[", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"k", "-", "1"}], ")"}], "+", "i"}], "]"}]}], "]"}], 
+             "]"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", 
+              RowBox[{"Length", "[", 
+               RowBox[{"myCellRefs", "[", 
+                RowBox[{"[", "k", "]"}], "]"}], "]"}]}], "}"}]}], "]"}]}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", 
+           RowBox[{"Length", "[", "myCellRefTopic", "]"}]}], "}"}]}], "]"}], 
+       " ", "--"}]}]}], "*)"}], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   StyleBox["\[IndentingNewLine]",
+    FontFamily->"Source Code Pro",
+    FontSize->12,
+    FontWeight->"SemiBold"], 
+   RowBox[{
+    RowBox[{"myCellRefTopic", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Introduction to Latex\>\"", ",", " ", 
+       "\"\<Mathematical Typesetting with Latex\>\"", ",", " ", 
+       "\"\<Creating Documents with Latex\>\"", ",", " ", 
+       "\"\<Introduction to Mathematica\>\"", ",", " ", 
+       "\"\<Symbolic Computation with Mathematica\>\"", ",", " ", 
+       "\"\<Integrating Latex and Mathematica\>\""}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"myCellRefs", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+       "{", "\"\<A Guide to Latex, 4th Edition by Helmut Kopka and Patrick W. \
+Daly, Addison-Wesley (2003)\>\"", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Mathematical Typesetting with TEX by S. G. Lehtonen, Rapport \
+Technique (2006)\>\"", ",", " ", 
+         "\"\<More Math into Latex by George Gr\[ADoubleDot]tzer, Springer \
+(2007)\>\""}], "}"}], ",", " ", 
+       RowBox[{
+       "{", "\"\<Latex: a Document Preparation System by Leslie Lamport, \
+Addison-Wesley (1994)\>\"", "}"}], ",", " ", 
+       RowBox[{
+       "{", "\"\<Mathematica: a System for Doing Mathematics by Computer by \
+Stephen Wolfram, Addison-Wesley (1991)\>\"", "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Computer Algebra and Symbolic Computation: Mathematical Methods \
+by Joel S. Cohen, A K Peters/CRC Press (2002)\>\"", ",", " ", 
+         "\"\<Mathematical Computation with Mathematica by Soa Gra Soderlind, \
+Academic Press (2001)\>\""}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Mathematica Navigator: Mathematics, Statistics, and Graphics by \
+Heikki Ruskeepaa, Academic Press (2004)\>\"", ",", " ", 
+         "\"\<Integrating Latex and Mathematica by William Scheld, The \
+Mathematica Journal Volume 7 Issue 4 (2000)\>\""}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"==", " ", 
+     RowBox[{
+     "Para", " ", "uso", " ", "de", " ", "ejemplo", " ", "MMaLatex", " ", 
+      "en", " ", "la", " ", "presentaci\[OAcute]n"}], " ", "=="}], "*)"}], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{"myEq", "[", 
+      RowBox[{"generation_", ",", "name_"}], "]"}], ":=", 
+     RowBox[{"(", "\[IndentingNewLine]", 
+      RowBox[{"\"\<\n\\\\begin{equation}\\n\>\"", "\n", "<>", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{
+         RowBox[{"ToString", "[", 
+          RowBox[{
+           RowBox[{"TeXForm", "[", "generation", "]"}], ",", "InputForm"}], 
+          "]"}], ",", 
+         RowBox[{"\"\<\\\\text\>\"", "->", "\"\<\>\""}]}], "]"}], "<>", 
+       "\"\<\n\\\\label{\>\"", "<>", "name", "<>", 
+       "\"\<}\n\\\\end{equation}\>\""}], "\[IndentingNewLine]", ")"}]}],
+    FontSize->18]}]}]], "Input",
+ CellChangeTimes->{
+  3.9135579354390593`*^9, {3.923466737271483*^9, 3.9234667401615334`*^9}, 
+   3.9234671354841223`*^9, {3.92351308848223*^9, 3.923513100124929*^9}, {
+   3.9235185037862463`*^9, 3.923518519519555*^9}, {3.923518576368205*^9, 
+   3.923518580211214*^9}, 3.9235193722270308`*^9, {3.923521288014649*^9, 
+   3.9235213534114723`*^9}, {3.923521430861064*^9, 3.9235214533711853`*^9}, {
+   3.923655163357808*^9, 3.923655176426153*^9}, {3.9236554584382153`*^9, 
+   3.923655467780855*^9}, {3.9236592468304863`*^9, 3.92365935798114*^9}, {
+   3.923739687974771*^9, 3.923739719963573*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[8]:=",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Un Llama/Mistral Local! - Ollama \
+(https://github.com/ollama/ollama/tree/main/examples/flyio)\
+\>", "Section",
+ CellChangeTimes->{{3.924357836356414*^9, 3.924357861558825*^9}, {
+  3.9243847433594093`*^9, 
+  3.924384744908073*^9}},ExpressionUUID->"87a00f3c-3139-4c6b-add0-\
+debdafbaa8a0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<ollama/mistral\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<llama3\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"callLlama3", "[", "myPrompt_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+       "\[IndentingNewLine]", "jsonResponse2", ",", " ", "jsonResponse2A", 
+       ",", " ", "nLen", ",", " ", "nLen1", ",", " ", 
+       RowBox[{
+        RowBox[{"myLocalmodel", "=", "\"\<llama3\>\""}], ";"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+       " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"jsonBody", "=", 
+        RowBox[{"ExportString", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
+            RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+          "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+       RowBox[{"myRequest", "=", 
+        RowBox[{"HTTPRequest", "[", 
+         RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+            RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+            RowBox[{
+            "\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+         "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "=", 
+        RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "==="}], "=", " ", 
+         RowBox[{
+          RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
+           "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2A", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+          RowBox[{"nLen", "=", 
+           RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"DeleteCases", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"StringContainsQ", "[", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"jsonResponse", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    "\"\<{\\\"model\\\":\\\"llama3\>\"", "->", "\"\<\>\""}], 
+                    ",", " ", 
+                    RowBox[{
+                    "\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
+                    "}"}]}], "]"}], ",", 
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "1", ",", 
+                 RowBox[{"Length", "[", 
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+             ",", " ", "Null"}], "]"}]}], ";", 
+          RowBox[{"nLen", "=", 
+           RowBox[{
+            RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Print", "[", 
+           RowBox[{"jsonResponse1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"nLen", "=", 
+              RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"ToString", "[", 
+               RowBox[{"StringReplace", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"StringSplit", "[", 
+                    RowBox[{
+                    RowBox[{"jsonResponse", "[", 
+                    RowBox[{"[", "k", "]"}], "]"}], ",", "\"\<,\>\""}], "]"}],
+                    "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "3", "]"}], "]"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"\"\<\\\"response\\\":\>\"", "->", "\"\<\>\""}], 
+                   ",", 
+                   RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+                "]"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"StringReplace", "[", 
+               RowBox[{
+                RowBox[{"nLen1", "[", 
+                 RowBox[{"[", "k", "]"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+                  RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+         "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"==", " ", 
+        RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+       "*)"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.913557561226906*^9, {3.9135576186913157`*^9, 3.913557619149557*^9}, {
+   3.913557668507381*^9, 3.9135576688674717`*^9}, {3.9172116758313303`*^9, 
+   3.9172116798789186`*^9}, {3.9172121380917377`*^9, 
+   3.9172122203981047`*^9}, {3.917423863532159*^9, 3.917423874101075*^9}, {
+   3.917423950174137*^9, 3.917423957543557*^9}, {3.917424044117779*^9, 
+   3.917424094796606*^9}, 3.917424125100642*^9, 3.9174242652994347`*^9, 
+   3.917425338989756*^9, {3.9174254235193377`*^9, 3.9174254587071342`*^9}, {
+   3.917425530458708*^9, 3.917425556779738*^9}, 3.917426063012212*^9, {
+   3.9178752334534082`*^9, 3.9178752602334013`*^9}, {3.917883345539803*^9, 
+   3.9178833506087837`*^9}, {3.917885024897575*^9, 3.9178850285604773`*^9}, 
+   3.918209068097602*^9, {3.918311199260399*^9, 3.9183112064538193`*^9}, {
+   3.923050332272315*^9, 3.923050338104375*^9}, 3.923050369920474*^9, {
+   3.923050400294203*^9, 3.923050410530322*^9}, {3.9230507437965603`*^9, 
+   3.9230507818879223`*^9}, 3.923051212722418*^9, {3.923051317101368*^9, 
+   3.923051317466337*^9}, {3.92305140860951*^9, 3.923051473858494*^9}, {
+   3.923466709731523*^9, 3.923466778111931*^9}, {3.924357872662684*^9, 
+   3.924357874542809*^9}, {3.924357920428946*^9, 3.924357986671783*^9}, {
+   3.924358129225752*^9, 3.924358227776874*^9}, {3.9243583903008842`*^9, 
+   3.9243584466436462`*^9}, {3.924358517222932*^9, 3.92435853839028*^9}, {
+   3.9243585750709248`*^9, 3.924358575232979*^9}, {3.924358642510112*^9, 
+   3.924358648165722*^9}, {3.9243587131026983`*^9, 3.9243587728467093`*^9}, {
+   3.9243588316161013`*^9, 3.924358832383546*^9}, {3.924358892543932*^9, 
+   3.92435895237656*^9}, {3.9243590096736813`*^9, 3.9243590115766983`*^9}, {
+   3.9243590559137583`*^9, 3.9243590615294247`*^9}, {3.92435912640224*^9, 
+   3.924359242131139*^9}, {3.924359291300397*^9, 3.924359301004128*^9}, 
+   3.924364765463314*^9, {3.924381646037513*^9, 3.924381771605525*^9}, {
+   3.924381802878236*^9, 3.9243818167435293`*^9}, {3.9243818699042053`*^9, 
+   3.924381885353067*^9}, {3.92438193602668*^9, 3.9243819417047443`*^9}, {
+   3.924381993830101*^9, 3.924381996609202*^9}, {3.924382026905628*^9, 
+   3.924382048811598*^9}, 3.924382106903575*^9, {3.9243821609103107`*^9, 
+   3.924382214739304*^9}, {3.924382246461948*^9, 3.9243822619076366`*^9}, {
+   3.924382302273143*^9, 3.924382310847212*^9}, {3.92438235197029*^9, 
+   3.924382377088901*^9}, {3.924382414643005*^9, 3.9243824193127813`*^9}, {
+   3.9243824516498404`*^9, 3.924382480072796*^9}, {3.924382526352792*^9, 
+   3.924382527156456*^9}, {3.9243825631414824`*^9, 3.924382564637998*^9}, {
+   3.924382612093627*^9, 3.9243826249157953`*^9}, {3.924382861001642*^9, 
+   3.924382862333898*^9}, {3.924384268139688*^9, 3.9243843699885798`*^9}, {
+   3.924384447419752*^9, 3.924384458423978*^9}, {3.924384557022406*^9, 
+   3.9243845599055758`*^9}, {3.9243846977594*^9, 3.924384791157251*^9}, {
+   3.924425030568302*^9, 3.9244250388315363`*^9}, {3.924800556097877*^9, 
+   3.924800565854558*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[23]:=",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"callSimpleLlama3", "[", "myPrompt_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+      "\[IndentingNewLine]", "jsonResponse2", ",", " ", "jsonResponse2A", ",",
+       " ", "nLen", ",", " ", "nLen1", ",", 
+      RowBox[{"myLocalmodel1", "=", "\"\<llama3\>\""}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+      " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"jsonBody", "=", 
+      RowBox[{"ExportString", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<model\>\"", "->", "myLocalmodel1"}], ",", 
+          RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+        "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+     RowBox[{"myRequest", "=", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+          RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+          RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}],
+          "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+       "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse", "=", 
+      RowBox[{"URLExecute", "[", "myRequest", "]"}]}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "==="}], "=", " ", 
+     RowBox[{
+      RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===", 
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse2A", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+        RowBox[{"nLen", "=", 
+         RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"StringContainsQ", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<response\>\""}], 
+                "]"}], ",", 
+               RowBox[{
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "[", 
+                RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", 
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",",
+            " ", "Null"}], "]"}]}], ";", 
+        RowBox[{"nLen", "=", 
+         RowBox[{
+          RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"jsonResponse2", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{
+           RowBox[{"nLen1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"\"\<{model:llama3\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<model:llama3\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<model:llama3\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false}\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"==", " ", 
+       RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924791198817696*^9, 3.9247912619695263`*^9}, {
+  3.924795162784837*^9, 3.924795210321412*^9}, {3.924801770072153*^9, 
+  3.924801843552862*^9}, {3.924801885041771*^9, 3.924801926759531*^9}, {
+  3.924809610102633*^9, 3.9248096233423653`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"9deb3cc6-3ef7-4041-9488-e88200290a2e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Mistral", "Section",
+ CellChangeTimes->{{3.924391111765353*^9, 
+  3.9243911128858547`*^9}},ExpressionUUID->"693d99ae-2832-423b-bbcb-\
+49fa360d903a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<ollama/mistral\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"--", " ", 
+    RowBox[{"\"\<llama3\>\"", " ", "--"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"callmistral", "[", "myPrompt_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+       "jsonResponse2", ",", "\[IndentingNewLine]", " ", "jsonResponse2A", 
+       ",", " ", "nLen", ",", " ", "nLen1", ",", " ", 
+       RowBox[{
+        RowBox[{"myLocalmodel", "=", "\"\<mistral\>\""}], ";"}]}], "}"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+       " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"jsonBody", "=", 
+        RowBox[{"ExportString", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<model\>\"", "->", "myLocalmodel"}], ",", 
+            RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+          "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+       RowBox[{"myRequest", "=", 
+        RowBox[{"HTTPRequest", "[", 
+         RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+            RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+            RowBox[{
+            "\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}], 
+           "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+         "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse", "=", 
+        RowBox[{"URLExecute", "[", "myRequest", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+         "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "==="}], "=", " ", 
+         RowBox[{
+          RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===",
+           "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+           "===", "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{"jsonResponse2A", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+          RowBox[{"nLen", "=", 
+           RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nLen1", "=", 
+           RowBox[{"DeleteCases", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"StringContainsQ", "[", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"jsonResponse", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    "\"\<{\\\"model\\\":\\\"mistral\>\"", "->", "\"\<\>\""}], 
+                    ",", " ", 
+                    RowBox[{
+                    "\"\<,\\\"done\\\":false}\>\"", "->", "\"\<\>\""}]}], 
+                    "}"}]}], "]"}], ",", 
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "1", ",", 
+                 RowBox[{"Length", "[", 
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+             ",", " ", "Null"}], "]"}]}], ";", 
+          RowBox[{"nLen", "=", 
+           RowBox[{
+            RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Print", "[", 
+           RowBox[{"jsonResponse1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}], ";"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"nLen", "=", 
+              RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"ToString", "[", 
+               RowBox[{"StringReplace", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"StringSplit", "[", 
+                    RowBox[{
+                    RowBox[{"jsonResponse", "[", 
+                    RowBox[{"[", "k", "]"}], "]"}], ",", "\"\<,\>\""}], "]"}],
+                    "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "3", "]"}], "]"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"\"\<\\\"response\\\":\>\"", "->", "\"\<\>\""}], 
+                   ",", 
+                   RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+                "]"}], "]"}]}], ";"}], ",", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"jsonResponse2", "=", 
+              RowBox[{"StringReplace", "[", 
+               RowBox[{
+                RowBox[{"nLen1", "[", 
+                 RowBox[{"[", "k", "]"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+                  RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+               "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+         "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"==", " ", 
+        RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+       "*)"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}]}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.913557561226906*^9, {3.9135576186913157`*^9, 3.913557619149557*^9}, {
+   3.913557668507381*^9, 3.9135576688674717`*^9}, {3.9172116758313303`*^9, 
+   3.9172116798789186`*^9}, {3.9172121380917377`*^9, 
+   3.9172122203981047`*^9}, {3.917423863532159*^9, 3.917423874101075*^9}, {
+   3.917423950174137*^9, 3.917423957543557*^9}, {3.917424044117779*^9, 
+   3.917424094796606*^9}, 3.917424125100642*^9, 3.9174242652994347`*^9, 
+   3.917425338989756*^9, {3.9174254235193377`*^9, 3.9174254587071342`*^9}, {
+   3.917425530458708*^9, 3.917425556779738*^9}, 3.917426063012212*^9, {
+   3.9178752334534082`*^9, 3.9178752602334013`*^9}, {3.917883345539803*^9, 
+   3.9178833506087837`*^9}, {3.917885024897575*^9, 3.9178850285604773`*^9}, 
+   3.918209068097602*^9, {3.918311199260399*^9, 3.9183112064538193`*^9}, {
+   3.923050332272315*^9, 3.923050338104375*^9}, 3.923050369920474*^9, {
+   3.923050400294203*^9, 3.923050410530322*^9}, {3.9230507437965603`*^9, 
+   3.9230507818879223`*^9}, 3.923051212722418*^9, {3.923051317101368*^9, 
+   3.923051317466337*^9}, {3.92305140860951*^9, 3.923051473858494*^9}, {
+   3.923466709731523*^9, 3.923466778111931*^9}, {3.924357872662684*^9, 
+   3.924357874542809*^9}, {3.924357920428946*^9, 3.924357986671783*^9}, {
+   3.924358129225752*^9, 3.924358227776874*^9}, {3.9243583903008842`*^9, 
+   3.9243584466436462`*^9}, {3.924358517222932*^9, 3.92435853839028*^9}, {
+   3.9243585750709248`*^9, 3.924358575232979*^9}, {3.924358642510112*^9, 
+   3.924358648165722*^9}, {3.9243587131026983`*^9, 3.9243587728467093`*^9}, {
+   3.9243588316161013`*^9, 3.924358832383546*^9}, {3.924358892543932*^9, 
+   3.92435895237656*^9}, {3.9243590096736813`*^9, 3.9243590115766983`*^9}, {
+   3.9243590559137583`*^9, 3.9243590615294247`*^9}, {3.92435912640224*^9, 
+   3.924359242131139*^9}, {3.924359291300397*^9, 3.924359301004128*^9}, 
+   3.924364765463314*^9, {3.924381646037513*^9, 3.924381771605525*^9}, {
+   3.924381802878236*^9, 3.9243818167435293`*^9}, {3.9243818699042053`*^9, 
+   3.924381885353067*^9}, {3.92438193602668*^9, 3.9243819417047443`*^9}, {
+   3.924381993830101*^9, 3.924381996609202*^9}, {3.924382026905628*^9, 
+   3.924382048811598*^9}, 3.924382106903575*^9, {3.9243821609103107`*^9, 
+   3.924382214739304*^9}, {3.924382246461948*^9, 3.9243822619076366`*^9}, {
+   3.924382302273143*^9, 3.924382310847212*^9}, {3.92438235197029*^9, 
+   3.924382377088901*^9}, {3.924382414643005*^9, 3.9243824193127813`*^9}, {
+   3.9243824516498404`*^9, 3.924382480072796*^9}, {3.924382526352792*^9, 
+   3.924382527156456*^9}, {3.9243825631414824`*^9, 3.924382564637998*^9}, {
+   3.924382612093627*^9, 3.9243826249157953`*^9}, {3.924382861001642*^9, 
+   3.924382862333898*^9}, {3.924384268139688*^9, 3.9243843699885798`*^9}, {
+   3.924384447419752*^9, 3.924384458423978*^9}, {3.924384557022406*^9, 
+   3.9243845599055758`*^9}, {3.9243846977594*^9, 3.924384791157251*^9}, {
+   3.924391118544448*^9, 3.924391125114265*^9}, 3.924425014429448*^9, {
+   3.9248005390768423`*^9, 3.924800546918941*^9}},
+ Background->RGBColor[1, 0.9, 0.8],
+ CellLabel->"In[25]:=",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"callSimplemistral", "[", "myPrompt_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "myRequest", ",", "jsonResponse", ",", "jsonBody", ",", " ", 
+      "\[IndentingNewLine]", "jsonResponse2", ",", " ", "jsonResponse2A", ",",
+       " ", "nLen", ",", " ", "nLen1", ",", 
+      RowBox[{"myLocalmodel1", "=", "\"\<mistral\>\""}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the", 
+      " ", "request"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"jsonBody", "=", 
+      RowBox[{"ExportString", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<model\>\"", "->", "myLocalmodel1"}], ",", 
+          RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}]}], "}"}], ",", 
+        "\"\<JSON\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+     RowBox[{"myRequest", "=", 
+      RowBox[{"HTTPRequest", "[", 
+       RowBox[{"\"\<http://localhost:11434/api/generate\>\"", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+          RowBox[{"\"\<Body\>\"", "->", "jsonBody"}], ",", 
+          RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}]}],
+          "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+       "the", " ", "JSON", " ", "response"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse", "=", 
+      RowBox[{"URLExecute", "[", "myRequest", "]"}]}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "==="}], "=", " ", 
+     RowBox[{
+      RowBox[{"Para", " ", "entregar", " ", "el", " ", "envio"}], " ", "===", 
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+       "===", "=="}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"jsonResponse2", "=", "\"\<\>\""}], ";", "\[IndentingNewLine]", 
+     RowBox[{"jsonResponse2A", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"myPrompt", "==", "\"\<Hola\>\""}], ",", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"Length", "[", "jsonResponse", "]"}]}], ";", " ", 
+        RowBox[{"nLen", "=", 
+         RowBox[{"nLen1", "-", "1"}]}], ";"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"nLen1", "=", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"StringContainsQ", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"jsonResponse", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<response\>\""}], 
+                "]"}], ",", 
+               RowBox[{
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "[", 
+                RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", 
+               RowBox[{"Length", "[", 
+                RowBox[{"jsonResponse", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",",
+            " ", "Null"}], "]"}]}], ";", 
+        RowBox[{"nLen", "=", 
+         RowBox[{
+          RowBox[{"Length", "[", "nLen1", "]"}], "-", "1"}]}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"jsonResponse2", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{
+           RowBox[{"nLen1", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\"\<response\\\":\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"\"\<{model\\\":mistral\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<model\\\":mistral\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false}\>\"", "->", "\"\<\>\""}], ",", 
+             RowBox[{"\"\<done:false\>\"", "->", "\"\<\>\""}]}], "}"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"jsonResponse2A", ",", "jsonResponse2"}], "]"}], ";"}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "nLen"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"==", " ", 
+       RowBox[{"Finalmente", " ", "imprimo", " ", "salida"}], " ", "=="}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"StringJoin", "[", "jsonResponse2A", "]"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+      "=="}], "*)"}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924791198817696*^9, 3.9247912619695263`*^9}, {
+  3.924795162784837*^9, 3.924795210321412*^9}, {3.924801258492787*^9, 
+  3.9248012675747147`*^9}, {3.9248019607764387`*^9, 3.9248019843721657`*^9}, {
+  3.924802094476634*^9, 3.92480211477796*^9}, {3.924802588258322*^9, 
+  3.924802591569573*^9}, {3.924814126423853*^9, 3.924814132892582*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"da656e44-a103-4880-b40c-ca3daccc7317"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cell PDF", "Section",
+ CellChangeTimes->{{3.924803767893077*^9, 
+  3.9248037698018*^9}},ExpressionUUID->"31449be0-cfd4-4892-8530-dc855751ce80"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{"SelfDestruct", ",", "HoldAllComplete"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SelfDestruct", "[", "e_", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"$FrontEnd", "=!=", "$Failed"}], ",", 
+      RowBox[{
+       RowBox[{"SelectionMove", "[", 
+        RowBox[{
+         RowBox[{"EvaluationNotebook", "[", "]"}], ",", "All", ",", 
+         "EvaluationCell"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"NotebookDelete", "[", "]"}]}]}], "]"}], ";", "e"}], 
+   ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AutoCollapse", "[", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"$FrontEnd", "=!=", "$Failed"}], ",", 
+     RowBox[{
+      RowBox[{"SelectionMove", "[", 
+       RowBox[{
+        RowBox[{"EvaluationNotebook", "[", "]"}], ",", "All", ",", 
+        "GeneratedCell"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+      "FrontEndTokenExecute", "[", "\"\<SelectionCloseUnselectedCells\>\"", 
+       "]"}]}]}], "]"}], ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"HideCurrentInputCode", ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"SelectionMove", "[", 
+     RowBox[{
+      RowBox[{"EvaluationNotebook", "[", "]"}], ",", "Previous", ",", 
+      "Cell"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"FrontEndExecute", "[", 
+     RowBox[{"FrontEndToken", "[", 
+      RowBox[{
+       RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+       "\"\<OpenCloseGroup\>\""}], "]"}], "]"}], ";"}], ")"}]}]}], "Input",
+ CellChangeTimes->{{3.92487519691999*^9, 3.924875196924327*^9}, {
+  3.925066204337734*^9, 3.925066204999836*^9}, {3.9250705076049147`*^9, 
+  3.925070511851108*^9}},
+ CellLabel->"In[98]:=",ExpressionUUID->"ffc92a30-ed0b-4a45-a87d-eb46386e466b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RunCellsBellow", "[", 
+   RowBox[{"nbBellow_", ",", "nroCells_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "nbmmaitex", "}"}], ",", "\[IndentingNewLine]", 
+    StyleBox[
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", " ", "Corre"}], " ", "las", " ", "celdas", " ", "hacia", 
+        " ", "abajo"}], " ", "-"}], "*)"}],
+     FontSize->16], "\[IndentingNewLine]", 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       RowBox[{
+        RowBox[{"nbmmaitex", "=", "nbBellow"}], ";"}],
+       FontWeight->"SemiBold"], "\[IndentingNewLine]", 
+      StyleBox[
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"SelectionMove", "[", 
+           RowBox[{"nbmmaitex", ",", "Next", ",", "Cell", ",", "1"}], "]"}], 
+          ";", 
+          RowBox[{"SelectionEvaluate", "[", "nbmmaitex", "]"}], ";"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "nroCells"}], "}"}]}], "]"}],
+       FontWeight->"SemiBold"]}],
+     FontSize->14]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924872172279262*^9, 3.924872256198571*^9}, {
+  3.924872663146133*^9, 3.924872722887165*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"d7bb3201-83f7-490e-b3f8-b96d44f2503f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CleanNotebook", "[", 
+   RowBox[{
+    RowBox[{"nb_", ":", 
+     RowBox[{"SelectedNotebook", "[", "]"}]}], ",", 
+    RowBox[{"styles_", ":", 
+     RowBox[{"{", "\"\<Output\>\"", "}"}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"NotebookFind", "[", 
+       RowBox[{"nb", ",", "#", ",", "All", ",", "CellStyle"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookDelete", "[", "nb", "]"}], ";"}], ")"}], "&"}], "/@", 
+   "styles"}]}]], "Input",
+ CellChangeTimes->{{3.925583932040662*^9, 3.925583933554634*^9}},
+ CellLabel->
+  "In[340]:=",ExpressionUUID->"1413e355-d071-406d-9b30-c0a52f212c7b"],
+
+Cell[CellGroupData[{
+
+Cell["Para introducir como string en el medio de codigo", "Subsection",
+ CellChangeTimes->{{3.9253739335828047`*^9, 
+  3.925373947291152*^9}},ExpressionUUID->"17c4c4e7-4ba7-4b8d-8985-\
+7ac3cc02438e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cellPDF", "[", 
+   RowBox[{"nb2PDF_", ",", " ", "slidePDF_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{
+    "nb2PDF", "<>", 
+     "\"\<=EvaluationNotebook[]; \
+SetOptions[EvaluationNotebook[],StyleDefinitions->Notebook[{Cell[StyleData[\
+StyleDefinitions->\\\"Default.nb\\\"]],Cell[StyleData[All,\\\"Printout\\\"],\
+ShowCellLabel->False],Cell[StyleData[\\\"Text\\\",\\\"Printout\\\",\
+StyleDefinitions->None],CellMargins->{{0,0},{0,0}},Background->GrayLevel[1]], \
+Cell[StyleData[\\\"Input\\\",\\\"Printout\\\",StyleDefinitions->None],\
+CellMargins->{{0,0},{0,0}},LinebreakAdjustments->{0.85,2,10,1,1}],Cell[\
+StyleData[\\\"Code\\\",\\\"Printout\\\",StyleDefinitions->None],CellMargins->{\
+{0,0},{0,0}},Background->GrayLevel[1]],Cell[StyleData[\\\"Input\\\",\\\"\
+Printout\\\",StyleDefinitions->None],CellMargins->{{0,0},{0,0}},\
+LinebreakAdjustments->{0.85,2,10,1,1}],Cell[StyleData[\\\"Output\\\",\\\"\
+Printout\\\",StyleDefinitions->None],CellMargins->{{0,0},{0,0}}]},\
+StyleDefinitions->\\\"PrivateStylesheetFormatting.nb\\\"]];\[IndentingNewLine]\
+SetOptions[\>\"", "<>", "nb2PDF", "<>", 
+     "\"\<,PrintingOptions->{\\\"FirstPageHeader\\\"->True}];\n\
+SetOptions[\>\"", "<>", "nb2PDF", "<>", 
+     "\"\<,PrintingOptions->{\\\"PrintingMargins\\\"->{{5,5},{2,5}},\
+\[IndentingNewLine]\\\"PaperOrientation\\\"->\\\"Landscape\\\", \
+\\\"PrintCellBrackets\\\"->False, \
+\\\"PrintMultipleHorizontalPages\\\"->False,\[IndentingNewLine]\\\"PageSize\\\
+\"->{820, 660},\[IndentingNewLine]\\\"Magnification\\\"->{0.8, 0.8}},\
+\[IndentingNewLine]PrintingStartingPageNumber->1,\[IndentingNewLine]\
+PageHeaders->{{Cell[TextData[{CounterBox[\\\"Page\\\"]}],\\\"PageNumber\\\"],\
+None,None},{Cell[TextData[{CounterBox[\\\"Page\\\"]}],\\\"PageNumber\\\"],\
+None,None}},PageFooters->{{None,None,None},{None,None,None}}];\
+\[IndentingNewLine]sideBySide[x_,y_,size_]:=Replace[ToBoxes@Grid[{{Pane[Grid[{\
+{1}},Spacings->0,Alignment->{Left,Top}],ImageSize->size],Pane[Grid[{{2}},\
+Spacings->0,Alignment->{Left,Top}],ImageSize->size]}},Spacings->0,Alignment->{\
+Left,Top}],{{{\\\"1\\\"}}->Map[({#})&,x],{{\\\"2\\\"}}->Map[({#})&,y]},\
+Infinity];\nPrintingStyleEnvironment/. \
+Options[EvaluationNotebook[],PrintingStyleEnvironment];\[IndentingNewLine]\
+NotebookPrint[\>\"", "<>", "nb2PDF", "<>", 
+     "\"\<,NotebookDirectory[]<>\\\"\>\"", "<>", "slidePDF", "<>", 
+     "\"\<.pdf\\\"]\>\""}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.924803574409164*^9, 3.924803687655254*^9}, 
+   3.924895269458261*^9, {3.92490571688824*^9, 3.9249057931807137`*^9}, {
+   3.925066244249628*^9, 
+   3.9250662457044067`*^9}},ExpressionUUID->"80d2d44a-d60f-43c0-b9a1-\
+abe8e3b3332f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Para crear la funcion como tal:", "Subsection",
+ CellChangeTimes->{{3.925373963264242*^9, 
+  3.925373970327919*^9}},ExpressionUUID->"0b877f2b-0954-4fcc-bb4c-\
+692486135df6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cellPDF2code", "[", 
+   RowBox[{"nb2PDF_", ",", "slidePDF_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"SetOptions", "[", 
+      RowBox[{"nb2PDF", ",", 
+       RowBox[{"StyleDefinitions", "->", 
+        RowBox[{"Notebook", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cell", "[", 
+             RowBox[{"StyleData", "[", 
+              RowBox[{"StyleDefinitions", "->", "\"\<Default.nb\>\""}], "]"}],
+              "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", 
+               RowBox[{"All", ",", "\"\<Printout\>\""}], "]"}], ",", 
+              RowBox[{"ShowCellLabel", "->", "False"}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", 
+               RowBox[{"\"\<Text\>\"", ",", "\"\<Printout\>\"", ",", 
+                RowBox[{"StyleDefinitions", "->", "None"}]}], "]"}], ",", 
+              RowBox[{"CellMargins", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", 
+              RowBox[{"Background", "->", 
+               RowBox[{"GrayLevel", "[", "1", "]"}]}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", 
+               RowBox[{"\"\<Input\>\"", ",", "\"\<Printout\>\"", ",", 
+                RowBox[{"StyleDefinitions", "->", "None"}]}], "]"}], ",", 
+              RowBox[{"CellMargins", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", 
+              RowBox[{"LinebreakAdjustments", "->", 
+               RowBox[{"{", 
+                RowBox[{"0.85", ",", "2", ",", "10", ",", "1", ",", "1"}], 
+                "}"}]}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", 
+               RowBox[{"\"\<Code\>\"", ",", "\"\<Printout\>\"", ",", 
+                RowBox[{"StyleDefinitions", "->", "None"}]}], "]"}], ",", 
+              RowBox[{"CellMargins", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", 
+              RowBox[{"Background", "->", 
+               RowBox[{"GrayLevel", "[", "1", "]"}]}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", 
+               RowBox[{"\"\<Input\>\"", ",", "\"\<Printout\>\"", ",", 
+                RowBox[{"StyleDefinitions", "->", "None"}]}], "]"}], ",", 
+              RowBox[{"CellMargins", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", 
+              RowBox[{"LinebreakAdjustments", "->", 
+               RowBox[{"{", 
+                RowBox[{"0.85", ",", "2", ",", "10", ",", "1", ",", "1"}], 
+                "}"}]}]}], "]"}], ",", 
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"StyleData", "[", 
+               RowBox[{"\"\<Output\>\"", ",", "\"\<Printout\>\"", ",", 
+                RowBox[{"StyleDefinitions", "->", "None"}]}], "]"}], ",", 
+              RowBox[{"CellMargins", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}]}], "]"}]}], "}"}],
+           ",", 
+          RowBox[{
+          "StyleDefinitions", "->", 
+           "\"\<PrivateStylesheetFormatting.nb\>\""}]}], "]"}]}]}], "]"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"SetOptions", "[", 
+      RowBox[{"nb2PDF", ",", 
+       RowBox[{"PrintingOptions", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<FirstPageHeader\>\"", "->", "True"}], "}"}]}]}], "]"}], 
+     ";", "\n", 
+     RowBox[{"SetOptions", "[", 
+      RowBox[{"nb2PDF", ",", 
+       RowBox[{"PrintingOptions", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<PrintingMargins\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"5", ",", "5"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"2", ",", "5"}], "}"}]}], "}"}]}], ",", 
+          RowBox[{"\"\<PaperOrientation\>\"", "->", "\"\<Landscape\>\""}], 
+          ",", 
+          RowBox[{"\"\<PrintCellBrackets\>\"", "->", "False"}], ",", 
+          RowBox[{"\"\<PrintMultipleHorizontalPages\>\"", "->", "False"}], 
+          ",", 
+          RowBox[{"\"\<PageSize\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"820", ",", "660"}], "}"}]}], ",", 
+          RowBox[{"\"\<Magnification\>\"", "->", 
+           RowBox[{"{", 
+            RowBox[{"0.8", ",", "0.8"}], "}"}]}]}], "}"}]}], ",", 
+       RowBox[{"PrintingStartingPageNumber", "->", "1"}], ",", 
+       RowBox[{"PageHeaders", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"TextData", "[", 
+               RowBox[{"{", 
+                RowBox[{"CounterBox", "[", "\"\<Page\>\"", "]"}], "}"}], 
+               "]"}], ",", "\"\<PageNumber\>\""}], "]"}], ",", "None", ",", 
+            "None"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cell", "[", 
+             RowBox[{
+              RowBox[{"TextData", "[", 
+               RowBox[{"{", 
+                RowBox[{"CounterBox", "[", "\"\<Page\>\"", "]"}], "}"}], 
+               "]"}], ",", "\"\<PageNumber\>\""}], "]"}], ",", "None", ",", 
+            "None"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"PageFooters", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"None", ",", "None", ",", "None"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"None", ",", "None", ",", "None"}], "}"}]}], "}"}]}]}], 
+      "]"}], ";", "\n", 
+     RowBox[{
+      RowBox[{"sideBySide", "[", 
+       RowBox[{"x_", ",", "y_", ",", "size_"}], "]"}], ":=", 
+      RowBox[{"Replace", "[", 
+       RowBox[{
+        RowBox[{"ToBoxes", "@", 
+         RowBox[{"Grid", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Pane", "[", 
+               RowBox[{
+                RowBox[{"Grid", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"{", "1", "}"}], "}"}], ",", 
+                  RowBox[{"Spacings", "->", "0"}], ",", 
+                  RowBox[{"Alignment", "->", 
+                   RowBox[{"{", 
+                    RowBox[{"Left", ",", "Top"}], "}"}]}]}], "]"}], ",", 
+                RowBox[{"ImageSize", "->", "size"}]}], "]"}], ",", 
+              RowBox[{"Pane", "[", 
+               RowBox[{
+                RowBox[{"Grid", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"{", "2", "}"}], "}"}], ",", 
+                  RowBox[{"Spacings", "->", "0"}], ",", 
+                  RowBox[{"Alignment", "->", 
+                   RowBox[{"{", 
+                    RowBox[{"Left", ",", "Top"}], "}"}]}]}], "]"}], ",", 
+                RowBox[{"ImageSize", "->", "size"}]}], "]"}]}], "}"}], "}"}], 
+           ",", 
+           RowBox[{"Spacings", "->", "0"}], ",", 
+           RowBox[{"Alignment", "->", 
+            RowBox[{"{", 
+             RowBox[{"Left", ",", "Top"}], "}"}]}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"{", "\"\<1\>\"", "}"}], "}"}], "->", 
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"{", "#", "}"}], ")"}], "&"}], ",", "x"}], "]"}]}], 
+          ",", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"{", "\"\<2\>\"", "}"}], "}"}], "->", 
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"{", "#", "}"}], ")"}], "&"}], ",", "y"}], "]"}]}]}], 
+         "}"}], ",", "Infinity"}], "]"}]}], ";", "\n", 
+     RowBox[{"PrintingStyleEnvironment", "/.", " ", 
+      RowBox[{"Options", "[", 
+       RowBox[{"nb2PDF", ",", "PrintingStyleEnvironment"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"NotebookPrint", "[", 
+      RowBox[{"nb2PDF", ",", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], "<>", "slidePDF"}]}], 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9253739742018137`*^9, 3.9253740242941227`*^9}, {
+  3.925374074783228*^9, 3.925374179725294*^9}, {3.92537518747367*^9, 
+  3.925375197224001*^9}, {3.925375250081675*^9, 3.925375258723604*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"0370861b-afb6-40ae-9a74-1e0d17585c80"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Parametros y arreglos", "Section",
+ CellChangeTimes->{{3.924861252428123*^9, 
+  3.924861258684898*^9}},ExpressionUUID->"dd4e372a-3cdd-4930-bf8c-\
+0ecc277fbd7a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"actividadesMMaTeXinput", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<You are an expert in Advanced Physics\>\"", ",", 
+      "\"\<You are an expert in Quantum Mechanics\>\"", ",", 
+      "\"\<You are a skilled programmer in Mathematica\>\"", ",", 
+      "\"\<You are a master of Differential Equations\>\"", ",", 
+      "\"\<You are an authority on Relativity Theory\>\"", ",", 
+      "\"\<You are knowledgeable in Particle Physics\>\"", ",", 
+      "\"\<You are proficient in Numerical Analysis\>\"", ",", 
+      "\"\<You are an expert in Astrophysics\>\"", ",", 
+      "\"\<You are skilled in Computational Fluid Dynamics\>\"", ",", 
+      "\"\<You are a pro at Thermodynamics and Statistical Mechanics\>\"", 
+      ",", "\"\<You are an expert in Advanced Physics\>\"", ",", 
+      "\"\<You are an expert in Quantum Mechanics\>\"", ",", 
+      "\"\<You are a skilled programmer in Mathematica\>\"", ",", 
+      "\"\<You are a master of Differential Equations\>\"", ",", 
+      "\"\<You are an authority on Relativity Theory\>\"", ",", 
+      "\"\<You are knowledgeable in Particle Physics\>\"", ",", 
+      "\"\<You are proficient in Numerical Analysis\>\"", ",", 
+      "\"\<You are an expert in Astrophysics\>\"", ",", 
+      "\"\<You are skilled in Computational Fluid Dynamics\>\"", ",", 
+      "\"\<You are a pro at Thermodynamics and Statistical Mechanics\>\"", 
+      ",", "\"\<You are well-versed in Quantum Field Theory\>\"", ",", 
+      "\"\<You are an authority on General Relativity\>\"", ",", 
+      "\"\<You are skilled in Parallel Computing\>\"", ",", 
+      "\"\<You are a master of Partial Differential Equations\>\"", ",", 
+      "\"\<You are knowledgeable in Cosmology and the Big Bang\>\"", ",", 
+      "\"\<You are an expert in Particle Accelerators and Detectors\>\"", 
+      ",", "\"\<You are proficient in the Finite Element Method\>\"", ",", 
+      "\"\<You are skilled in Stellar Evolution and Black Holes\>\"", ",", 
+      "\"\<You are a pro at Computational Fluid Dynamics Simulations\>\"", 
+      ",", "\"\<You are an expert in Non-Equilibrium Statistical \
+Mechanics\>\""}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temasMMaTeXinput", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Quantum Field Theory\>\"", ",", "\"\<General Relativity\>\"", ",", 
+     "\"\<Parallel Computing\>\"", ",", 
+     "\"\<Partial Differential Equations\>\"", ",", 
+     "\"\<Cosmology and the Big Bang\>\"", ",", 
+     "\"\<Particle Accelerators and Detectors\>\"", ",", 
+     "\"\<Finite Element Method\>\"", ",", 
+     "\"\<Stellar Evolution and Black Holes\>\"", ",", 
+     "\"\<Computational Fluid Dynamics Simulations\>\"", ",", 
+     "\"\<Non-Equilibrium Statistical Mechanics\>\"", ",", " ", 
+     "\"\<Quantum Field Theory\>\"", ",", "\"\<General Relativity\>\"", ",", 
+     "\"\<Parallel Computing\>\"", ",", 
+     "\"\<Partial Differential Equations\>\"", ",", 
+     "\"\<Cosmology and the Big Bang\>\"", ",", 
+     "\"\<Particle Accelerators and Detectors\>\"", ",", 
+     "\"\<Finite Element Method\>\"", ",", 
+     "\"\<Stellar Evolution and Black Holes\>\"", ",", 
+     "\"\<Computational Fluid Dynamics Simulations\>\"", ",", 
+     "\"\<Non-Equilibrium Statistical Mechanics\>\"", ",", 
+     "\"\<Quantum Chromodynamics\>\"", ",", "\"\<Gravitational Waves\>\"", 
+     ",", "\"\<High-Performance Computing\>\"", ",", 
+     "\"\<Fourier Analysis\>\"", ",", "\"\<Dark Matter and Dark Energy\>\"", 
+     ",", "\"\<Neutrino Physics\>\"", ",", "\"\<Boundary Element Method\>\"", 
+     ",", "\"\<Exoplanets and Astrobiology\>\"", ",", 
+     "\"\<Multiphase Flow Simulations\>\"", ",", 
+     "\"\<Renormalization Group Theory\>\""}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9248612641923923`*^9, 3.924861290340394*^9}, {
+  3.924861407059802*^9, 3.924861438316992*^9}, {3.9248908433087177`*^9, 
+  3.924890853020595*^9}, {3.9248908968583927`*^9, 
+  3.924890897652061*^9}},ExpressionUUID->"1666583d-2f24-4e60-9fbb-\
+457e3fbe787b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["AI in MMaiTeX", "Section",
+ CellChangeTimes->{{3.924903930213545*^9, 
+  3.924903939949027*^9}},ExpressionUUID->"ae665ec3-c060-496e-8209-\
+9cce6e587c04"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"botMMaiTeX", "[", 
+   RowBox[{
+    RowBox[{"thebotx_", "?", "StringQ"}], ",", 
+    RowBox[{"myTopicx_", "?", "StringQ"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"myExpertx_", "?", "StringQ"}], ",", " ", 
+    RowBox[{"nroSlidesx_", "?", "NumberQ"}], ",", " ", "\[IndentingNewLine]", 
+    
+    RowBox[{"PageSlidex_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "ClaudecellString1ax", "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Switch", "[", 
+      RowBox[{"thebotx", ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", " ", "Claude"}], " ", 
+          RowBox[{"3", " ", "[", 
+           RowBox[{"NO", " ", "vision"}], "]"}]}], " ", "-"}], "*)"}], 
+       "\[IndentingNewLine]", "\"\<claude3\>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ClaudecellString1ax", "=", 
+         RowBox[{"callClaude", "[", 
+          RowBox[{
+           RowBox[{
+           "myExpertx", "<>", 
+            "\"\< Do not give intro nor conlcusions on what you were sent to \
+answer. Just plain and straight answers.\nI always want \>\"", "<>", 
+            RowBox[{"ToString", "[", "nroSlidesx", "]"}], "<>", 
+            "\"\< Slides for scientific presentations. I want the answer in \
+this format, which is Wolfram Mathematica dictionary. You end up writing a \
+dictionary formatted in Wolfram Mathematica like this example:\n\n(*- Slide \
+\>\"", " ", "<>", "\"\< - \>\"", "<>", 
+            RowBox[{"ToString", "[", "PageSlidex", "]"}], "<>", "\"\< - \>\"",
+             "<>", "myTopicx", "<>", 
+            "\"\<-*)\n\\n<|\\\"title\\\"-> \\\"the section you find\\\", \n\\\
+\"link\\\"->\\\"the link you find\\\", \n\\\"text\\\"->\\\"the text you \
+find\\\", \n\\\"text\\\"->\\\"the text you find\\\", \n\\\"fig\\\"->\\\"the \
+figure or image you find\\\", \n\\\"fig\\\"->\\\"the figure or image you find\
+\\\", \n\\\"code\\\"->\\\"the code you find\\\", \n\\\"input\\\"->\\\"the \
+input you invent related to the subject\\\",\n\\\"code\\\"->\\\"the code you \
+find\\\", \\\"style\\\"->\\\"Create a name for this style of Slide.\\\"|>\\n \
+\n\nDo not forget the \\\"style\\\" key. And please do not forget open and \
+close every quote in the construction of the association. Please comment \
+nothing like \\\"Here is the requested... blah blah \\\" or anything like or \
+regarding anything, just give me the plain dictionary. If you are inside the \
+value of a key and you need to write a quote, escape it like \\\", otherwise \
+not.\n\n1. title only in slide 1 with the Title of the Topic or Subject.\n2. \
+Distribute at your discretion Sections and subsections. The Keys are \
+\\\"section\\\" and \\\"subsection\\\".\n3. Distribute at your discretion the \
+number of \\\"text\\\", \\\"code\\\", \\\"fig\\\". \n4. But, remember that \
+these slides should not contain more than 4-5 elements. Please optimize this \
+number for better understanding.\n\nOk. Give me \>\"", "<>", 
+            RowBox[{"ToString", "[", "nroSlidesx", "]"}], "<>", 
+            "\"\< slides of a presentation about: \>\"", "<>", "myTopicx", 
+            "<>", "\"\<. Give me everything in Spanish.\>\""}], ",", " ", 
+           "myAPIKeyC"}], "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";",
+      "\[IndentingNewLine]", "ClaudecellString1ax"}]}], "\[IndentingNewLine]",
+    "]"}]}]], "Input",
+ CellChangeTimes->{{3.9249029715281878`*^9, 3.9249029933711863`*^9}, {
+  3.924903030923353*^9, 3.924903082261106*^9}, {3.924903156556409*^9, 
+  3.924903267488963*^9}, {3.924903320451552*^9, 3.924903342705686*^9}, {
+  3.924903390593595*^9, 3.924903456992715*^9}, {3.9249039580502357`*^9, 
+  3.9249039794059277`*^9}},ExpressionUUID->"5fe0580e-a98a-48ba-b084-\
+256c7a8d44a0"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1676, 997},
+WindowMargins->{{2, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{594.9599999999999, 841.92}},
+TaggingRules-><|
+ "TryRealOnly" -> False, "SlideshowSettings" -> <|"Toolbar" -> True|>|>,
+Magnification:>1.25 Inherited,
+FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"a03907fe-d3a7-4b86-9821-680792cc7467"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 358, 6, 121, "Title",ExpressionUUID->"f3d4e1ba-6395-4a84-afec-abd624208c45"],
+Cell[941, 30, 6321, 141, 624, "Input",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
+Cell[7265, 173, 5626, 134, 468, "Input",ExpressionUUID->"018d5997-70a7-409a-a4fc-eb3de7f12d91"],
+Cell[12894, 309, 5394, 136, 546, "Input",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
+Cell[18291, 447, 1746, 41, 182, "Input",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
+Cell[20040, 490, 41461, 1014, 4296, "Input",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
+Cell[CellGroupData[{
+Cell[61526, 1508, 298, 7, 87, "Section",ExpressionUUID->"87a00f3c-3139-4c6b-add0-debdafbaa8a0"],
+Cell[61827, 1517, 10660, 220, 832, "Input",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"],
+Cell[72490, 1739, 5945, 135, 624, "Input",ExpressionUUID->"9deb3cc6-3ef7-4041-9488-e88200290a2e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78472, 1879, 154, 3, 87, "Section",ExpressionUUID->"693d99ae-2832-423b-bbcb-49fa360d903a"],
+Cell[78629, 1884, 10685, 220, 832, "Input",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
+Cell[89317, 2106, 5984, 135, 624, "Input",ExpressionUUID->"da656e44-a103-4880-b40c-ca3daccc7317"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[95338, 2246, 149, 2, 87, "Section",ExpressionUUID->"31449be0-cfd4-4892-8530-dc855751ce80"],
+Cell[95490, 2250, 1830, 47, 208, "Input",ExpressionUUID->"ffc92a30-ed0b-4a45-a87d-eb46386e466b"],
+Cell[97323, 2299, 1295, 34, 161, "Input",ExpressionUUID->"d7bb3201-83f7-490e-b3f8-b96d44f2503f"],
+Cell[98621, 2335, 687, 19, 113, "Input",ExpressionUUID->"1413e355-d071-406d-9b30-c0a52f212c7b"],
+Cell[CellGroupData[{
+Cell[99333, 2358, 199, 3, 42, "Subsection",ExpressionUUID->"17c4c4e7-4ba7-4b8d-8985-7ac3cc02438e"],
+Cell[99535, 2363, 2759, 47, 624, "Input",ExpressionUUID->"80d2d44a-d60f-43c0-b9a1-abe8e3b3332f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102331, 2415, 179, 3, 42, "Subsection",ExpressionUUID->"0b877f2b-0954-4fcc-bb4c-692486135df6"],
+Cell[102513, 2420, 9469, 230, 598, "Input",ExpressionUUID->"0370861b-afb6-40ae-9a74-1e0d17585c80"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112031, 2656, 166, 3, 87, "Section",ExpressionUUID->"dd4e372a-3cdd-4930-bf8c-0ecc277fbd7a"],
+Cell[112200, 2661, 4052, 71, 546, "Input",ExpressionUUID->"1666583d-2f24-4e60-9fbb-457e3fbe787b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116289, 2737, 158, 3, 87, "Section",ExpressionUUID->"ae665ec3-c060-496e-8209-9cce6e587c04"],
+Cell[116450, 2742, 3833, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
