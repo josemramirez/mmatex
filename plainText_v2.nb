@@ -966,7 +966,7 @@ Cell[BoxData[
       "\[IndentingNewLine]", 
       RowBox[{"bCols", "=", 
        RowBox[{"Table", "[", 
-        RowBox[{"\"\<b\>\"", ",", "cols"}], "]"}]}], ";", 
+        RowBox[{"\"\<c\>\"", ",", "cols"}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"rCols", "=", 
        RowBox[{"Riffle", "[", 
