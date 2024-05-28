@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     79006,       1511]
-NotebookOptionsPosition[     67505,       1267]
-NotebookOutlinePosition[     76096,       1452]
-CellTagsIndexPosition[     75817,       1441]
+NotebookDataLength[     98957,       1998]
+NotebookOptionsPosition[     86325,       1734]
+NotebookOutlinePosition[     94925,       1919]
+CellTagsIndexPosition[     94646,       1908]
 WindowTitle->[MMaTeX]
 WindowFrame->Normal*)
 
@@ -1003,7 +1003,7 @@ MAzDMAzDMAyL3v4P8CgMzA==
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
   Column]], "Text",
  Editable->False,
- Deletable->False,ExpressionUUID->"d08fa816-8a63-4a19-958e-879b792a43bc"],
+ Deletable->False,ExpressionUUID->"5ed7fb68-441b-4a2d-b0d0-9a15d4327a79"],
 
 Cell[BoxData[
  SubsuperscriptBox[
@@ -1026,25 +1026,25 @@ Cell[BoxData[
  Editable->False,
  Deletable->False,
  Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"5b2ffb5b-2774-43c4-8e57-b7bf6a2bab83"],
+  1, 0.9, 0.8],ExpressionUUID->"4484495f-9a40-4448-af49-264ffd97f998"],
 
 Cell[CellGroupData[{
 
 Cell["software", "Chapter",
  Editable->False,
- Deletable->False,ExpressionUUID->"67add2d8-c719-4209-b8d2-dd60e82d0c89"],
+ Deletable->False,ExpressionUUID->"bc21686c-dad7-4932-bada-4e0533cded69"],
 
 Cell[CellGroupData[{
 
 Cell["Ajustes", "Section",
  Editable->False,
- Deletable->False,ExpressionUUID->"88423b42-4303-474a-9b3b-8a5c71000a8f"],
+ Deletable->False,ExpressionUUID->"abbbb188-99ac-45be-949d-3982d822e215"],
 
 Cell["\<\
 Clear @@ DeleteElements[Names@\"`*\", {\"check1a\", \"mmtxClass\",
 \"nbmmatex\", \"mmtxWhere\"}];
 (*- DBv1 -*)
-mmtxWhere=\"overleaf\";
+mmtxWhere=\"local\";
 apiMMaTeX1 = \\
 CloudObject[\"https://www.wolframcloud.com/obj/dbc639cc-93d6-4c26-876f-\
 e5320654\\
@@ -1081,16 +1081,16 @@ Print[mmtxDB]]\
  Editable->False,
  Deletable->False,
  CellOpen->False,
- Background->RGBColor[0.87, 0.94, 1],
+ Background->RGBColor[1, 0.9, 0.8],
  CellTags->
-  "mmatexinitCell",ExpressionUUID->"d3742bdf-d535-4293-9623-237dcc782659"]
+  "mmatexinitCell",ExpressionUUID->"54b5cb2f-9bd2-499d-982a-0f54ca15db01"]
 }, {1}]],
 
 Cell[CellGroupData[{
 
 Cell["MMaTeX", "Section",
  Editable->False,
- Deletable->False,ExpressionUUID->"c3c0b766-75c9-419d-b977-0c85b002d774"],
+ Deletable->False,ExpressionUUID->"5a1cdce5-f545-4c26-b89b-f8893ddf0ed3"],
 
 Cell["\<\
 $WorkDir = NotebookDirectory[];
@@ -1102,25 +1102,31 @@ Print[\"Evaluando <plainTeX> ...\"];\
  Editable->False,
  Deletable->False,
  CellOpen->False,
- Background->RGBColor[0.87, 0.94, 1],
+ Background->RGBColor[1, 0.9, 0.8],
  CellTags->
-  "mmatexRun2",ExpressionUUID->"2c0c843a-a2aa-43c6-bce9-4a4b210801ca"],
+  "mmatexRun2",ExpressionUUID->"dbeba2fd-56e5-403f-b597-31e6ec7fa79d"],
 
 Cell["\<\
-$PdfLAdd = \"https://latexonline.cc/compile?text=\";
-Print[\"Exportando con <latexonline> ...\"];\
+(*== Donde se encuentra el pdfLatex? ==*)
+If[MemberQ[SystemCredentialKeys[ All], \"MMATEX_PDFLATEX\"], 
+  Print[\"La sesion continua...\"], 
+  SystemCredential[\"MMATEX_PDFLATEX\"] = 
+   InputString[\"Donde esta el pdfLatex?: \", 
+    \"/opt/local/bin/pdflatex\"]];
+$PdfLAdd = SystemCredential[\"MMATEX_PDFLATEX\"];
+\
 \>", "Input",
  Editable->False,
  Deletable->False,
  CellOpen->False,
  Background->RGBColor[1, 0.9, 0.8],
  CellTags->
-  "mmatexRun21",ExpressionUUID->"96a74d76-7c1c-4328-884b-ad64177c4e1d"]
+  "mmatexRun21",ExpressionUUID->"8beb17b5-0e7f-42f3-9927-448924aec721"]
 }, {1}]],
 
 Cell[CellGroupData[{
 
-Cell["Una Tabla de pruebas (v0.1)", "Section",ExpressionUUID->"3e1eacd3-46e5-494a-ab2d-e5a5b9e1e219"],
+Cell["Una Tabla de pruebas (v0.1)", "Section",ExpressionUUID->"a18b8f8d-9f8d-4144-942f-2274de4fbfea"],
 
 Cell["\<\
 datosTable = {
@@ -1151,14 +1157,14 @@ Spacings -> {3, 1.5}, Dividers -> {{Opacity[0], {True}, Opacity[0]},
 Center}]\
 \>", "Input",
  Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"f6665989-1854-47ba-bac2-365275255911"]
+  1, 0.9, 0.8],ExpressionUUID->"3c93c771-697d-4c2a-8542-f07bff2ab428"]
 }, {1}]],
 
 Cell[CellGroupData[{
 
 Cell["Texto plano", "Section",
  Editable->False,
- Deletable->False,ExpressionUUID->"6a05c3b3-6889-4cf9-b99d-7a5e690a068f"],
+ Deletable->False,ExpressionUUID->"7bd8db27-5765-45c5-9191-c6d8aa5b0d81"],
 
 Cell["\<\
 If[ValueQ[titles], 
@@ -1169,9 +1175,9 @@ If[ValueQ[titles],
  Editable->False,
  Deletable->False,
  CellOpen->False,
- Background->RGBColor[1, 0.85, 0.85],
+ Background->RGBColor[1, 0.9, 0.8],
  CellTags->
-  "mmatexRunNote2",ExpressionUUID->"6a587676-c2d0-4b33-a0b6-5fb7cf91ea0b"],
+  "mmatexRunNote2",ExpressionUUID->"5466cc66-69cf-44b3-b7a1-fcfa3b4decd1"],
 
 Cell[BoxData["updateBook"], "Input",
  Editable->False,
@@ -1179,7 +1185,7 @@ Cell[BoxData["updateBook"], "Input",
  CellOpen->False,
  Background->RGBColor[1, 0.85, 0.85],
  CellTags->"mmatexRunNote",
- CellID->28,ExpressionUUID->"ee7af705-7611-4e01-92cc-a52ecdf34437"],
+ CellID->76,ExpressionUUID->"29bc9e4f-15cf-4694-9db0-47877ef7df83"],
 
 Cell["\<\
 Clear[\"Global`*\"];
@@ -1191,70 +1197,531 @@ FrontEndTokenExecute[SelectionCloseAllGroups]\
  Background->RGBColor[1, 0.9, 0.8],
  CellTags->"mmatexRunCollapse",
  CellLabel->
-  "In[590]:=",ExpressionUUID->"bd6b26f3-5055-4d57-836f-a07f26989864"]
+  "In[575]:=",ExpressionUUID->"66231041-38e7-4b15-8a0e-450c20e33580"]
 }, Closed]]
 }, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["HelloWorld_OverLeaf", "Title",ExpressionUUID->"a4aa31a5-e4be-43f3-819f-9cd110632735"],
+Cell["Book_OFFLINE", "Title",ExpressionUUID->"c0d60b41-5876-472d-ad90-03d89d2ad1ee"],
 
 Cell["\<\
 docClass[
- If[! ValueQ[mmtxClass], mmtxClass = \"article\", mmtxClass], \"no\"]\
+ If[! ValueQ[mmtxClass], 
+  mmtxClass = 
+   \"mmatex/LatexLib/legrand-orange-book_v3.1/LegrandOrangeBook\", 
+  mmtxClass], \"[11pt,fleqn,a4paper]\"]\
 \>", "Input",
- Background->GrayLevel[0.85],
- CellID->38,ExpressionUUID->"90d8be44-1d49-46c8-9a66-a086d26f3981"],
+ Background->RGBColor[0.87, 0.94, 1],
+ CellID->115,ExpressionUUID->"229c23d4-53cd-4746-8cb7-a2b77586cf2f"],
 
-Cell["graphicx", "Input",
- Background->RGBColor[1, 0.85, 0.85],
- CellID->39,ExpressionUUID->"6187bab2-0e33-4441-982a-920063e56caa"],
+Cell["graphicxBookLeg", "Input",
+ Background->RGBColor[1, 0.9, 0.8],
+ CellID->47,ExpressionUUID->"da7ba3b8-72cd-4544-8996-0a74bffc2fa8"],
 
 Cell["\<\
-mmtxAuthors[mmtxClass, \"paper 1\",
- {\"J. M. Ram{\\\\'i}rez,$^{1}$\",
-  \"Co-Author1,$^{4}$\",
-  \"Co-Author2,$^{5}$\"}
+openBookLeg[
+ \"Mi primer libro\", \"Un estudio logico\", \"yo soy el autor\",
+ \"2024\", \"Noviembre\",
+ \"Licensed under the Creative Commons Attribution-NonCommercial 4.0 \\
+License (the ``License''). You may not use this file except in \\
+compliance with the License.\"
  ]\
 \>", "Input",
- Background->RGBColor[0.87, 0.94, 1],
- CellID->70,ExpressionUUID->"8a555307-3f2e-4d98-889b-d25e8ae76a1d"],
-
-Cell["openDoc[mmtxClass]", "Input",
- Background->RGBColor[1, 0.9, 0.8],
- CellID->119,ExpressionUUID->"4e07230d-f3d9-435f-893a-d5a6a4be0c08"],
+ Background->GrayLevel[0.85],
+ CellID->80,ExpressionUUID->"2f6de47e-e8cf-4dd5-87bb-bf01ecfcc4ca"],
 
 Cell["\<\
-\\begin{abstract}
+\\part{Capitulo 1 de mi Libro}
 
-my simple abstract
+La b\[UAcute]squeda de la misteriosa materia oscura ha sido uno de los \
+mayores desaf\[IAcute]os para \\
+los cient\[IAcute]ficos en las \[UAcute]ltimas d\[EAcute]cadas. Aunque solo \
+podemos detectar sus efectos gravitacionales, \\
+sabemos que esta sustancia invisible representa m\[AAcute]s del 80% de toda \
+la materia del universo.
+En \\
+los confines m\[AAcute]s remotos de las galaxias, las estrellas se mueven a \
+velocidades que desaf\[IAcute]an las \\
+leyes conocidas de la gravedad. Esta anomal\[IAcute]a s\[OAcute]lo puede \
+explicarse por la presencia de una masa \\
+oculta y colosal que mantiene unidas a las galaxias.
 
-\\end{abstract}\
+Algunos te\[OAcute]ricos postulan que la materia \\
+oscura podr\[IAcute]a estar compuesta por part\[IAcute]culas ex\[OAcute]ticas \
+a\[UAcute]n no descubiertas, mientras que otros \\
+sugieren que nuestro entendimiento fundamental de la gravedad es incompleto. \
+Sea cual sea la \\
+respuesta, el descubrimiento de su verdadera naturaleza podr\[IAcute]a \
+revolucionar nuestra comprensi\[OAcute]n \\
+del cosmos y abrir puertas hacia nuevos reinos de la f\[IAcute]sica.\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->72,ExpressionUUID->"8f9ff952-3c27-464d-8fe8-d147d383e98e"],
+ CellID->89,ExpressionUUID->"5bad2938-3c12-4cb6-be5d-2ca5db931005"],
 
 Cell["\<\
-\\section{Introduction}
-In this paper we want to introduce.,.mhdf.h,.mg,.mh\
+\\chapter{Sectioning Examples}\\index{Sectioning}
+
+\\section{Section Title}\\index{Sectioning!Sections}
+
+La materia oscura sigue siendo uno de los mayores misterios del universo. A \
+pesar de los avances en f\[IAcute]sica de part\[IAcute]culas y cosmolog\
+\[IAcute]a, su naturaleza esencial permanece oculta. Algunos \
+cient\[IAcute]ficos teorizan que podr\[IAcute]a estar compuesta de part\
+\[IAcute]culas ex\[OAcute]ticas a\[UAcute]n no detectadas, mientras que otros \
+proponen explicaciones m\[AAcute]s radicales que desaf\[IAcute]an nuestra \
+comprensi\[OAcute]n fundamental del cosmos.
+
+Lo que s\[IAcute] sabemos es que esta sustancia misteriosa e invisible permea \
+el universo, actuando como un andamiaje gravitacional que mantiene unidas las \
+galaxias y dicta el destino de la estructura c\[OAcute]smica a gran escala. \
+Su presencia abrumadora sugiere que hay mucho m\[AAcute]s en el universo de \
+lo que revelan nuestros sentidos limitados.
+
+Descubrir los secretos de la materia oscura podr\[IAcute]a abrir las puertas \
+a una nueva revoluci\[OAcute]n cient\[IAcute]fica, reescribiendo los libros \
+de texto y desafiando paradigmas fundamentales. La b\[UAcute]squeda por \
+comprender esta fuerza impulsora del cosmos es una odisea que promete \
+redefinir nuestra comprensi\[OAcute]n del universo mismo.\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->27,ExpressionUUID->"e541b6e7-2790-4a53-8054-2d385c051e28"],
-
-Cell["mmtxEq[(x^2 + 7 == 100), \"Mi primera formula\"]", "Input",
- Background->GrayLevel[0.85],
- CellID->82,ExpressionUUID->"0f19b9fa-1538-40fc-aa30-642c377d9122"],
+ CellID->52,ExpressionUUID->"b9644bc2-6039-4f1e-8621-dcde8c52482e"],
 
 Cell["\<\
-\\section{Data analysis}
-The data analysis is a constant in ...\
+\\subsection{Subsection Title}\\index{Sectioning!Subsections}
+
+La formaci\[OAcute]n de las galaxias es un proceso complejo y \\
+fascinante. Las primeras galaxias se formaron a partir de peque\[NTilde]as \
+fluctuaciones en la \\
+distribuci\[OAcute]n de materia en el universo temprano. Estas fluctuaciones \
+iniciales se amplificaron por \\
+la gravedad, atrayendo m\[AAcute]s materia y gas.
+
+A medida que m\[AAcute]s masa se acumulaba, la fuerza \\
+gravitatoria aumentaba, desencadenando el colapso gravitacional. Este colapso \
+provoc\[OAcute] que la nube \\
+de gas se calentara y comenzara a girar, formando eventualmente un disco \
+rotatorio de gas y \\
+polvo.
+
+En el centro de este disco, la materia se condens\[OAcute] a\[UAcute]n m\
+\[AAcute]s, formando el n\[UAcute]cleo \\
+gal\[AAcute]ctico. La materia continu\[OAcute] acumul\[AAcute]ndose, \
+alimentando el crecimiento de la galaxia. \\
+Simult\[AAcute]neamente, se formaron las primeras estrellas a partir del gas \
+y el polvo presente en el \\
+disco.
+
+A medida que las galaxias evolucionaban, interactuaban entre s\[IAcute], \
+chocando y fusion\[AAcute]ndose \\
+en ocasiones, dando lugar a estructuras a\[UAcute]n m\[AAcute]s grandes y \
+complejas. Este proceso contin\[UAcute]a hoy en \\
+d\[IAcute]a, moldeando el universo observable.\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->118,ExpressionUUID->"e8e8f288-01aa-4706-a9fe-981e572ccecf"],
+ CellID->101,ExpressionUUID->"f7bccdfe-bd62-43ad-96b4-6d5c5560669a"],
 
-Cell["mmtxTable[tg]", "Input",
- Background->RGBColor[0.87, 0.94, 1],
- CellID->116,ExpressionUUID->"aabef2f6-8a1f-44e3-a402-681efb1355a5"],
+Cell["\<\
+\\subsubsection{Subsubsection Title} \\index{Sectioning!Subsubsections}
+
+El Universo es \\
+verdaderamente inconmensurable, m\[AAcute]s vasto de lo que nuestra mente \
+puede imaginar. Billones de \\
+galaxias componen esta inmensidad, cada una con billones de estrellas \
+ardientes. Nuestra propia \\
+V\[IAcute]a L\[AAcute]ctea es una peque\[NTilde]a espiral de luz entre el oc\
+\[EAcute]ano de galaxias.
+
+M\[AAcute]s all\[AAcute] de las galaxias \\
+visibles, se extiende el misterioso universo oscuro, compuesto de materia y \
+energ\[IAcute]a que no podemos \\
+detectar directamente.
+
+\\paragraph{Paragraph Title}\\index{Sectioning!Paragraphs} Esta sustancia \
+invisible moldea el cosmos en grandes escalas, determinando \\
+el destino final del Universo.
+
+Las galaxias m\[AAcute]s lejanas que podemos observar brillaron cuando \\
+el Universo era muy joven, permiti\[EAcute]ndonos vislumbrar su infancia \
+distante. Las ondas de expansi\[OAcute]n \\
+del Big Bang a\[UAcute]n resuenan a trav\[EAcute]s del espacio, llevando las \
+huellas de los primeros instantes del \\
+cosmos.
+
+La gravedad, esa fuerza sutil pero implacable, entreteje la trama \
+c\[OAcute]smica, curvando el \\
+espacio-tiempo y uniendo toda la materia en un tapiz de dimensiones \
+retorcidas. Los agujeros \\
+negros, esas cicatrices en el tejido del Universo, devoran incluso la luz.
+
+Tanto misterio por \\
+descubrir, tanto por explorar y comprender sobre este vasto escenario c\
+\[OAcute]smico en el que nuestra \\
+peque\[NTilde]a Tierra gira humildemente. El Universo a gran escala es \
+verdaderamente un lienzo de \\
+maravillas.\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->110,ExpressionUUID->"82eff639-cc13-48aa-bf27-1a0124dca941"],
+
+Cell["\<\
+%------------------------------------------------
+
+\\section{Link Examples}\\index{Links}
+
+This is a URL link: \\href{https://www.mmatex.com}{MMaTeX}. This is an email \
+link: \\href{mailto:example@example.com}{example@example.com}. This is a \
+monospaced URL link: \\url{https://www.mmatex.com}.
+
+%------------------------------------------------
+
+\\section{Lists}\\index{Lists}
+
+Lists are useful to present information in a concise and/or ordered way.
+
+\\subsection{Numbered List}\\index{Lists!Numbered List}
+
+\\begin{enumerate}
+\t\\item First numbered item
+\t\\begin{enumerate}
+\t\t\\item First indented numbered item
+\t\t\\item Second indented numbered item
+\t\t\\begin{enumerate}
+\t\t\t\\item First second-level indented numbered item
+\t\t\\end{enumerate}
+\t\\end{enumerate}
+\t\\item Second numbered item
+\t\\item Third numbered item
+\\end{enumerate}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->79,ExpressionUUID->"efd27415-5efd-4d5d-9db3-5ba6374c34e4"],
+
+Cell["\<\
+\\subsection{Bullet Point List}\\index{Lists!Bullet Points}
+
+\\begin{itemize}
+\t\\item First bullet point item
+\t\\begin{itemize}
+\t\t\\item First indented bullet point item
+\t\t\\item Second indented bullet point item
+\t\t\\begin{itemize}
+\t\t\t\\item First second-level indented bullet point item
+\t\t\\end{itemize}
+\t\\end{itemize}
+\t\\item Second bullet point item
+\t\\item Third bullet point item
+\\end{itemize}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->44,ExpressionUUID->"078dbb8b-ddde-41f0-b164-d1f479d9777e"],
+
+Cell["\<\
+\\subsection{Descriptions and Definitions}\\index{Lists!Descriptions and \
+Definitions}
+
+\\begin{description}
+\t\\item[Name] Description
+\t\\item[Word] Definition
+\t\\item[Comment] Elaboration
+\\end{description}
+
+%------------------------------------------------\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->116,ExpressionUUID->"1111b911-360f-4880-9053-958b46efdb18"],
+
+Cell["\<\
+\\section{International Support}
+
+\[AGrave]\[AAcute]\[AHat]\[ADoubleDot]\[ATilde]\[ARing]\[EGrave]\[EAcute]\
+\[EHat]\[EDoubleDot]\[IGrave]\[IAcute]\[IHat]\[IDoubleDot]\[OGrave]\[OAcute]\
+\[OHat]\[ODoubleDot]\[OTilde]\[OSlash]\[UGrave]\[UAcute]\[UHat]\[UDoubleDot]\
+\[YDoubleDot]\[YAcute]\[NTilde]\[CCedilla]\[CHacek]\[SHacek]\[ZHacek]
+
+\\noindent \[CapitalAGrave]\[CapitalAAcute]\[CapitalAHat]\[CapitalADoubleDot]\
+\[CapitalATilde]\[CapitalARing]\[CapitalEGrave]\[CapitalEAcute]\[CapitalEHat]\
+\[CapitalEDoubleDot]\[CapitalIGrave]\[CapitalIAcute]\[CapitalIHat]\
+\[CapitalIDoubleDot]\[CapitalOGrave]\[CapitalOAcute]\[CapitalOHat]\
+\[CapitalODoubleDot]\[CapitalOTilde]\[CapitalOSlash]\[CapitalUGrave]\
+\[CapitalUAcute]\[CapitalUHat]\[CapitalUDoubleDot]\:0178\[CapitalYAcute]\
+\[CapitalNTilde]
+
+\\noindent \[SZ]\[CapitalCCedilla]\[CapitalOE]\[CapitalAE]\[CapitalCHacek]\
+\[CapitalSHacek]\[CapitalZHacek]
+
+%------------------------------------------------
+
+\\section{Ligatures}
+
+fi fj fl ffl ffi Ty\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->71,ExpressionUUID->"86863885-591f-40e8-8368-7236d731d1f6"],
+
+Cell["\<\
+\\chapter{Mathematics}
+
+\\section{Theorems}\\index{Theorems}
+
+\\subsection{Several equations}\\index{Theorems!Several Equations}
+
+This is a theorem consisting of several equations.\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->21,ExpressionUUID->"37171ece-ec0f-47eb-9772-b3e1e0ca6477"],
+
+Cell["\<\
+Los teoremas son afirmaciones fundamentales en \\
+matem\[AAcute]ticas que establecen verdades importantes y generales. Su \
+estructura sigue un patr\[OAcute]n l\[OAcute]gico \\
+y riguroso. Primero, se enuncia la hip\[OAcute]tesis, que son las condiciones \
+o premisas que se asumen \\
+como ciertas. Luego, se presenta la tesis, que es la conclusi\[OAcute]n o \
+afirmaci\[OAcute]n que se deriva de la \\
+hip\[OAcute]tesis.   Para demostrar un teorema, se utilizan diversos m\
+\[EAcute]todos de prueba, como la deducci\[OAcute]n \\
+directa, la prueba por contradicci\[OAcute]n o el m\[EAcute]todo de inducci\
+\[OAcute]n. Estos m\[EAcute]todos implican una cadena \\
+l\[OAcute]gica de razonamientos y argumentos que parten de la \
+hip\[OAcute]tesis y, a trav\[EAcute]s de pasos v\[AAcute]lidos, \\
+conducen a la tesis.  La importancia de los teoremas radica en su capacidad \
+para establecer \\
+verdades generales y universales, lo que permite construir sobre ellos nuevos \
+conceptos y avanzar \\
+en el conocimiento matem\[AAcute]tico.
+
+Las Matem\[AAcute]ticas son el lenguaje universal del universo, describen \
+patrones, \\
+estructuras y relaciones que rigen el comportamiento de todo lo que nos \
+rodea. A medida que \\
+avancemos en este fascinante viaje, descubriremos conceptos abstractos que \
+nos permitir\[AAcute]n \\
+comprender de manera m\[AAcute]s profunda los fen\[OAcute]menos naturales y \
+artificiales. Sin embargo, no se trata \\
+\[UAcute]nicamente de adquirir conocimientos, sino tambi\[EAcute]n de \
+desarrollar habilidades de pensamiento l\[OAcute]gico \\
+y resoluci\[OAcute]n de problemas, herramientas invaluables para enfrentar \
+desaf\[IAcute]os en cualquier \[AAcute]mbito de \\
+la vida. Prepar\[EAcute]monos para explorar los misterios del universo matem\
+\[AAcute]tico, donde los n\[UAcute]meros, las \\
+formas y los patrones cobran vida.
+
+\\begin{theorem}[Name of the theorem] % Specify a name/title in square \
+brackets, or leave them out for no title
+\tIn $E=\\mathbb{R}^n$ all norms are equivalent. It has the properties:
+\t\\begin{align}
+\t\t& \\big| ||\\mathbf{x}|| - ||\\mathbf{y}|| \\big|\\leq || \\mathbf{x}- \
+\\mathbf{y}||\\\\
+\t\t&  ||\\sum_{i=1}^n\\mathbf{x}_i||\\leq \
+\\sum_{i=1}^n||\\mathbf{x}_i||\\quad\\text{where $n$ is a finite integer}
+\t\\end{align}
+\\end{theorem}
+
+\\subsection{Single Line}\\index{Theorems!Single Line}
+
+This is a theorem consisting of just one line.
+
+\\begin{theorem} % Specify a name/title in square brackets, or leave them out \
+for no title
+\tA set $\\mathcal{D}(G)$ in dense in $L^2(G)$, $|\\cdot|_0$. 
+\\end{theorem}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->109,ExpressionUUID->"f9fa1408-52c7-47f5-b490-9ebc10a5d69f"],
+
+Cell["\<\
+\\section{Definitions}\\index{Definitions}
+
+A definition can be mathematical or it could define a concept.
+
+\\begin{definition}[Definition name] % Specify a name/title in square \
+brackets, or leave them out for no title
+\tGiven a vector space $E$, a norm on $E$ is an application, denoted \
+$||\\cdot||$, $E$ in $\\mathbb{R}^+=[0,+\\infty[$ such that:
+\t\\begin{align}
+\t\t& ||\\mathbf{x}||=0\\ \\Rightarrow\\ \\mathbf{x}=\\mathbf{0}\\\\
+\t\t& ||\\lambda \\mathbf{x}||=|\\lambda|\\cdot ||\\mathbf{x}||\\\\
+\t\t& ||\\mathbf{x}+\\mathbf{y}||\\leq ||\\mathbf{x}||+||\\mathbf{y}||
+\t\\end{align}
+\\end{definition}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->1065180249,ExpressionUUID->"1f00fa2c-817d-4da1-9729-8f96050b20e7"],
+
+Cell["\<\
+\\section{Notations}\\index{Notations}
+
+\\begin{notation} % Specify a name/title in square brackets, or leave them \
+out for no title
+\tGiven an open subset $G$ of $\\mathbb{R}^n$, the set of functions \
+$\\varphi$ are:
+\t\\begin{enumerate}
+\t\t\\item Bounded support $G$;
+\t\t\\item Infinitely differentiable;
+\t\\end{enumerate}
+\ta vector space is denoted by $\\mathcal{D}(G)$. 
+\\end{notation}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->59,ExpressionUUID->"e45d843e-9c04-4e5a-b901-145446da95f4"],
+
+Cell["\<\
+\\section{Remarks}\\index{Remarks}
+
+This is an example of a remark.
+
+\\begin{remark}
+\tThe concepts presented here are now in conventional employment in \
+mathematics. Vector spaces are taken over the field \
+$\\mathbb{K}=\\mathbb{R}$, however, established properties are easily \
+extended to $\\mathbb{K}=\\mathbb{C}$.
+\\end{remark}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->83,ExpressionUUID->"f1860e12-d0a2-42ab-825d-c1f58d4ee6c3"],
+
+Cell["\<\
+\\chapter{Presenting Information and Results with a Long Chapter Title}
+
+\\section{Table}\\index{Table}
+
+Aqu\[IAcute] tienes un p\[AAcute]rrafo original de 20 l\[IAcute]neas sobre el \
+Universo a gran escala:
+
+El Universo es \\
+verdaderamente inconmensurable, m\[AAcute]s vasto de lo que nuestra mente \
+puede imaginar. Billones de \\
+galaxias componen esta inmensidad, cada una con billones de estrellas \
+ardientes. Nuestra propia \\
+V\[IAcute]a L\[AAcute]ctea es una peque\[NTilde]a espiral de luz entre el oc\
+\[EAcute]ano de galaxias.
+
+M\[AAcute]s all\[AAcute] de las galaxias \\
+visibles, se extiende el misterioso universo oscuro, compuesto de materia y \
+energ\[IAcute]a que no podemos \\
+detectar directamente. Esta sustancia invisible moldea el cosmos en grandes \
+escalas, determinando \\
+el destino final del Universo.
+
+Las galaxias m\[AAcute]s lejanas que podemos observar brillaron cuando \\
+el Universo era muy joven, permiti\[EAcute]ndonos vislumbrar su infancia \
+distante. Las ondas de expansi\[OAcute]n \\
+del Big Bang a\[UAcute]n resuenan a trav\[EAcute]s del espacio, llevando las \
+huellas de los primeros instantes del \\
+cosmos.
+
+La gravedad, esa fuerza sutil pero implacable, entreteje la trama \
+c\[OAcute]smica, curvando el \\
+espacio-tiempo y uniendo toda la materia en un tapiz de dimensiones \
+retorcidas. Los agujeros \\
+negros, esas cicatrices en el tejido del Universo, devoran incluso la luz.
+
+Tanto misterio por \\
+descubrir, tanto por explorar y comprender sobre este vasto escenario c\
+\[OAcute]smico en el que nuestra \\
+peque\[NTilde]a Tierra gira humildemente. El Universo a gran escala es \
+verdaderamente un lienzo de \\
+maravillas.
+
+\\begin{table}[H] % Use [H] to suppress floating and place the figure/table \
+exactly where it is specified in the text
+\t\\centering % Horizontally center the table on the page
+\t\\begin{tabular}{L{0.15\\textwidth} R{0.15\\textwidth} R{0.15\\textwidth}} \
+% Specify column alignment with L{width}, C{width} and R{width} for \
+fixed-width columns, or the default latex l, c and r for flexible-width columns
+\t\t\\toprule
+\t\t\\textbf{Treatments} & \\textbf{Response 1} & \\textbf{Response 2}\\\\
+\t\t\\midrule
+\t\tTreatment 1 & 0.0003262 & 0.562 \\\\
+\t\tTreatment 2 & 0.0015681 & 0.910 \\\\
+\t\tTreatment 3 & 0.0009271 & 0.296 \\\\
+\t\t\\bottomrule
+\t\\end{tabular}
+\t\\caption{Table caption.}
+\t\\label{tab:example} % Unique label used for referencing the table in-text
+\\end{table}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->81,ExpressionUUID->"13a4369a-e013-419e-81c0-1657a58f1956"],
+
+Cell["\<\
+Referencing \\autoref{tab:example} in-text using its label.
+
+\\begin{table}[t] % Floating table, [t] tells LaTeX to place it at the top of \
+the next available page
+\t\\centering % Horizontally center the table on the page
+\t\\begin{tabular}{L{0.15\\textwidth} R{0.15\\textwidth} R{0.15\\textwidth}} \
+% Specify column alignment with L{width}, C{width} and R{width} for \
+fixed-width columns, or the default latex l, c and r for flexible-width columns
+\t\t\\toprule
+\t\t\\textbf{Treatments} & \\textbf{Response 1} & \\textbf{Response 2}\\\\
+\t\t\\midrule
+\t\tTreatment 1 & 0.0003262 & 0.562 \\\\
+\t\tTreatment 2 & 0.0015681 & 0.910 \\\\
+\t\tTreatment 3 & 0.0009271 & 0.296 \\\\
+\t\t\\bottomrule
+\t\\end{tabular}
+\t\\caption{Floating table.}
+\t\\label{tab:floating} % Unique label used for referencing the table in-text
+\\end{table}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->1060763551,ExpressionUUID->"85d9465e-e974-42c9-ba20-3f2bd45040c5"],
+
+Cell["\<\
+\\section{Figure}\\index{Figure}
+
+En el vasto lienzo del universo, existen entidades enigm\[AAcute]ticas que \
+desaf\[IAcute]an nuestra \\
+comprensi\[OAcute]n. Figuras oscuras que parecen danzar en los confines del \
+espacio-tiempo, retorci\[EAcute]ndose \\
+y contray\[EAcute]ndose como si fueran criaturas vivas. Estas presencias \
+misteriosas, compuestas de una \\
+sustancia desconocida, parecen desafiar las leyes de la f\[IAcute]sica tal \
+como las conocemos. Se mueven a \\
+trav\[EAcute]s del cosmos como sombras et\[EAcute]reas, atrayendo y \
+deformando la luz a su alrededor, creando \\
+ilusiones \[OAcute]pticas que desaf\[IAcute]an la l\[OAcute]gica.
+
+Algunos te\[OAcute]ricos sugieren que estas figuras son el \\
+resultado de enormes concentraciones de materia oscura, ese componente \
+invisible que constituye la \\
+mayor parte del universo.Otros especulan que son manifestaciones de una \
+realidad alternativa, \\
+intersecciones dimensionales donde las leyes de la naturaleza se tuercen y se \
+\\
+reescriben.
+
+Cualquiera que sea su origen, estas figuras oscuras han captado la atenci\
+\[OAcute]n de los \\
+cient\[IAcute]ficos m\[AAcute]s brillantes, quienes luchan por desentra\
+\[NTilde]ar sus misterios y comprender su papel en \\
+el vasto tapiz c\[OAcute]smico.
+
+\\begin{figure}[H] % Use [H] to suppress floating and place the figure/table \
+exactly where it is specified in the text
+\t\\centering % Horizontally center the figure on the page
+\t\\includegraphics[width=0.5\\textwidth]{mathPic3.pdf} % Include the figure \
+image
+\t\\caption{Figure caption.}
+\t\\label{fig:placeholder} % Unique label used for referencing the figure \
+in-text
+\\end{figure}
+
+Referencing \\autoref{fig:placeholder} in-text using its label.
+
+\\begin{figure}[b] % Floating figure, [b] tells LaTeX to place it at the \
+bottom of the next available page
+\t\\centering % Horizontally center the figure on the page
+\t\\includegraphics[width=\\textwidth]{mathPic3.pdf} % Include the figure image
+\t\\caption{Floating figure.}
+\t\\label{fig:floating} % Unique label used for referencing the figure \
+in-text
+\\end{figure}\
+\>", "Text",
+ Background->GrayLevel[0.85],
+ CellID->106,ExpressionUUID->"af8312b3-a9ee-47ad-9023-a03416ee67cb"],
 
 Cell[BoxData["closeDoc"], "Input",
  Editable->False,
@@ -1262,7 +1729,7 @@ Cell[BoxData["closeDoc"], "Input",
  CellOpen->False,
  Background->RGBColor[0.87, 0.94, 1],
  CellTags->"mmatexTitleFinal",
- CellID->66,ExpressionUUID->"27c0ed7d-3c22-461c-9ff3-002c8fd1c3ef"]
+ CellID->1991247910,ExpressionUUID->"03398cca-e14a-41c4-90ea-44c6b543af63"]
 }, Closed]]
 },
 WindowToolbars->{},
@@ -1399,7 +1866,7 @@ ScrollingOptions->{"VerticalScrollRange"->Fit},
 Magnification->1.15,
 FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"355cf59d-5565-46bc-8ec4-1c8fc19ca4d0"
+ExpressionUUID->"567f67c8-5b5b-4335-badd-62b04e3053ff"
 ]
 (* End of Notebook Content *)
 
@@ -1407,111 +1874,131 @@ ExpressionUUID->"355cf59d-5565-46bc-8ec4-1c8fc19ca4d0"
 (*CellTagsOutline
 CellTagsIndex->{
  "mmatexinitCell"->{
-  Cell[60930, 1042, 1447, 43, 80, "Input",ExpressionUUID->"d3742bdf-d535-4293-9623-237dcc782659",
+  Cell[60930, 1042, 1442, 43, 80, "Input",ExpressionUUID->"54b5cb2f-9bd2-499d-982a-0f54ca15db01",
    CellOpen->False,
    CellTags->"mmatexinitCell"]},
  "mmatexRun2"->{
-  Cell[62531, 1094, 391, 12, 80, "Input",ExpressionUUID->"2c0c843a-a2aa-43c6-bce9-4a4b210801ca",
+  Cell[62526, 1094, 389, 12, 80, "Input",ExpressionUUID->"dbeba2fd-56e5-403f-b597-31e6ec7fa79d",
    CellOpen->False,
    CellTags->"mmatexRun2"]},
  "mmatexRun21"->{
-  Cell[62925, 1108, 297, 9, 80, "Input",ExpressionUUID->"96a74d76-7c1c-4328-884b-ad64177c4e1d",
+  Cell[62918, 1108, 516, 15, 80, "Input",ExpressionUUID->"8beb17b5-0e7f-42f3-9927-448924aec721",
    CellOpen->False,
    CellTags->"mmatexRun21"]},
  "mmatexRunNote2"->{
-  Cell[64539, 1162, 394, 11, 21, "Input",ExpressionUUID->"6a587676-c2d0-4b33-a0b6-5fb7cf91ea0b",
+  Cell[64751, 1168, 392, 11, 21, "Input",ExpressionUUID->"5466cc66-69cf-44b3-b7a1-fcfa3b4decd1",
    CellOpen->False,
    CellTags->"mmatexRunNote2"]},
  "mmatexRunNote"->{
-  Cell[64936, 1175, 225, 6, 21, "Input",ExpressionUUID->"ee7af705-7611-4e01-92cc-a52ecdf34437",
+  Cell[65146, 1181, 225, 6, 21, "Input",ExpressionUUID->"29bc9e4f-15cf-4694-9db0-47877ef7df83",
    CellOpen->False,
    CellTags->"mmatexRunNote",
-   CellID->28]},
+   CellID->76]},
  "mmatexRunCollapse"->{
-  Cell[65164, 1183, 343, 10, 21, "Input",ExpressionUUID->"bd6b26f3-5055-4d57-836f-a07f26989864",
+  Cell[65374, 1189, 343, 10, 21, "Input",ExpressionUUID->"66231041-38e7-4b15-8a0e-450c20e33580",
    CellOpen->False,
    CellTags->"mmatexRunCollapse"]},
  "mmatexTitleFinal"->{
-  Cell[67263, 1258, 226, 6, 21, "Input",ExpressionUUID->"27c0ed7d-3c22-461c-9ff3-002c8fd1c3ef",
+  Cell[86075, 1725, 234, 6, 21, "Input",ExpressionUUID->"03398cca-e14a-41c4-90ea-44c6b543af63",
    CellOpen->False,
    CellTags->"mmatexTitleFinal",
-   CellID->66]}
+   CellID->1991247910]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"mmatexinitCell", 74596, 1408},
- {"mmatexRun2", 74764, 1412},
- {"mmatexRun21", 74928, 1416},
- {"mmatexRunNote2", 75095, 1420},
- {"mmatexRunNote", 75265, 1424},
- {"mmatexRunCollapse", 75452, 1429},
- {"mmatexTitleFinal", 75628, 1433}
+ {"mmatexinitCell", 93416, 1875},
+ {"mmatexRun2", 93584, 1879},
+ {"mmatexRun21", 93748, 1883},
+ {"mmatexRunNote2", 93916, 1887},
+ {"mmatexRunNote", 94086, 1891},
+ {"mmatexRunCollapse", 94273, 1896},
+ {"mmatexTitleFinal", 94449, 1900}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[580, 21, 59466, 984, 110, "Text",ExpressionUUID->"d08fa816-8a63-4a19-958e-879b792a43bc"],
-Cell[60049, 1007, 591, 21, 87, "Text",ExpressionUUID->"5b2ffb5b-2774-43c4-8e57-b7bf6a2bab83"],
+Cell[580, 21, 59466, 984, 110, "Text",ExpressionUUID->"5ed7fb68-441b-4a2d-b0d0-9a15d4327a79"],
+Cell[60049, 1007, 591, 21, 87, "Text",ExpressionUUID->"4484495f-9a40-4448-af49-264ffd97f998"],
 Cell[CellGroupData[{
-Cell[60665, 1032, 119, 2, 79, "Chapter",ExpressionUUID->"67add2d8-c719-4209-b8d2-dd60e82d0c89"],
+Cell[60665, 1032, 119, 2, 79, "Chapter",ExpressionUUID->"bc21686c-dad7-4932-bada-4e0533cded69"],
 Cell[CellGroupData[{
-Cell[60809, 1038, 118, 2, 77, "Section",ExpressionUUID->"88423b42-4303-474a-9b3b-8a5c71000a8f"],
-Cell[60930, 1042, 1447, 43, 80, "Input",ExpressionUUID->"d3742bdf-d535-4293-9623-237dcc782659",
+Cell[60809, 1038, 118, 2, 77, "Section",ExpressionUUID->"abbbb188-99ac-45be-949d-3982d822e215"],
+Cell[60930, 1042, 1442, 43, 80, "Input",ExpressionUUID->"54b5cb2f-9bd2-499d-982a-0f54ca15db01",
  CellOpen->False,
  CellTags->"mmatexinitCell"]
 }, {1}]],
 Cell[CellGroupData[{
-Cell[62411, 1090, 117, 2, 77, "Section",ExpressionUUID->"c3c0b766-75c9-419d-b977-0c85b002d774"],
-Cell[62531, 1094, 391, 12, 80, "Input",ExpressionUUID->"2c0c843a-a2aa-43c6-bce9-4a4b210801ca",
+Cell[62406, 1090, 117, 2, 77, "Section",ExpressionUUID->"5a1cdce5-f545-4c26-b89b-f8893ddf0ed3"],
+Cell[62526, 1094, 389, 12, 80, "Input",ExpressionUUID->"dbeba2fd-56e5-403f-b597-31e6ec7fa79d",
  CellOpen->False,
  CellTags->"mmatexRun2"],
-Cell[62925, 1108, 297, 9, 80, "Input",ExpressionUUID->"96a74d76-7c1c-4328-884b-ad64177c4e1d",
+Cell[62918, 1108, 516, 15, 80, "Input",ExpressionUUID->"8beb17b5-0e7f-42f3-9927-448924aec721",
  CellOpen->False,
  CellTags->"mmatexRun21"]
 }, {1}]],
 Cell[CellGroupData[{
-Cell[63256, 1122, 101, 0, 77, "Section",ExpressionUUID->"3e1eacd3-46e5-494a-ab2d-e5a5b9e1e219"],
-Cell[63360, 1124, 1020, 29, 80, "Input",ExpressionUUID->"f6665989-1854-47ba-bac2-365275255911"]
+Cell[63468, 1128, 101, 0, 77, "Section",ExpressionUUID->"a18b8f8d-9f8d-4144-942f-2274de4fbfea"],
+Cell[63572, 1130, 1020, 29, 80, "Input",ExpressionUUID->"3c93c771-697d-4c2a-8542-f07bff2ab428"]
 }, {1}]],
 Cell[CellGroupData[{
-Cell[64414, 1158, 122, 2, 77, "Section",ExpressionUUID->"6a05c3b3-6889-4cf9-b99d-7a5e690a068f"],
-Cell[64539, 1162, 394, 11, 21, "Input",ExpressionUUID->"6a587676-c2d0-4b33-a0b6-5fb7cf91ea0b",
+Cell[64626, 1164, 122, 2, 77, "Section",ExpressionUUID->"7bd8db27-5765-45c5-9191-c6d8aa5b0d81"],
+Cell[64751, 1168, 392, 11, 21, "Input",ExpressionUUID->"5466cc66-69cf-44b3-b7a1-fcfa3b4decd1",
  CellOpen->False,
  CellTags->"mmatexRunNote2"],
-Cell[64936, 1175, 225, 6, 21, "Input",ExpressionUUID->"ee7af705-7611-4e01-92cc-a52ecdf34437",
+Cell[65146, 1181, 225, 6, 21, "Input",ExpressionUUID->"29bc9e4f-15cf-4694-9db0-47877ef7df83",
  CellOpen->False,
  CellTags->"mmatexRunNote",
- CellID->28],
-Cell[65164, 1183, 343, 10, 21, "Input",ExpressionUUID->"bd6b26f3-5055-4d57-836f-a07f26989864",
+ CellID->76],
+Cell[65374, 1189, 343, 10, 21, "Input",ExpressionUUID->"66231041-38e7-4b15-8a0e-450c20e33580",
  CellOpen->False,
  CellTags->"mmatexRunCollapse"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[65556, 1199, 91, 0, 82, "Title",ExpressionUUID->"a4aa31a5-e4be-43f3-819f-9cd110632735"],
-Cell[65650, 1201, 202, 5, 75, "Input",ExpressionUUID->"90d8be44-1d49-46c8-9a66-a086d26f3981",
- CellID->38],
-Cell[65855, 1208, 131, 2, 53, "Input",ExpressionUUID->"6187bab2-0e33-4441-982a-920063e56caa",
- CellID->39],
-Cell[65989, 1212, 254, 8, 138, "Input",ExpressionUUID->"8a555307-3f2e-4d98-889b-d25e8ae76a1d",
- CellID->70],
-Cell[66246, 1222, 140, 2, 53, "Input",ExpressionUUID->"4e07230d-f3d9-435f-893a-d5a6a4be0c08",
- CellID->119],
-Cell[66389, 1226, 176, 8, 159, "Text",ExpressionUUID->"8f9ff952-3c27-464d-8fe8-d147d383e98e",
- CellID->72],
-Cell[66568, 1236, 197, 5, 83, "Text",ExpressionUUID->"e541b6e7-2790-4a53-8054-2d385c051e28",
- CellID->27],
-Cell[66768, 1243, 163, 2, 53, "Input",ExpressionUUID->"0f19b9fa-1538-40fc-aa30-642c377d9122",
- CellID->82],
-Cell[66934, 1247, 186, 5, 83, "Text",ExpressionUUID->"e8e8f288-01aa-4706-a9fe-981e572ccecf",
- CellID->118],
-Cell[67123, 1254, 137, 2, 53, "Input",ExpressionUUID->"aabef2f6-8a1f-44e3-a402-681efb1355a5",
+Cell[65766, 1205, 84, 0, 82, "Title",ExpressionUUID->"c0d60b41-5876-472d-ad90-03d89d2ad1ee"],
+Cell[65853, 1207, 290, 8, 138, "Input",ExpressionUUID->"229c23d4-53cd-4746-8cb7-a2b77586cf2f",
+ CellID->115],
+Cell[66146, 1217, 136, 2, 53, "Input",ExpressionUUID->"da7ba3b8-72cd-4544-8996-0a74bffc2fa8",
+ CellID->47],
+Cell[66285, 1221, 399, 10, 180, "Input",ExpressionUUID->"2f6de47e-e8cf-4dd5-87bb-bf01ecfcc4ca",
+ CellID->80],
+Cell[66687, 1233, 1252, 26, 414, "Text",ExpressionUUID->"5bad2938-3c12-4cb6-be5d-2ca5db931005",
+ CellID->89],
+Cell[67942, 1261, 1436, 26, 80, "Text",ExpressionUUID->"b9644bc2-6039-4f1e-8621-dcde8c52482e",
+ CellID->52],
+Cell[69381, 1289, 1418, 32, 80, "Text",ExpressionUUID->"f7bccdfe-bd62-43ad-96b4-6d5c5560669a",
+ CellID->101],
+Cell[70802, 1323, 1720, 41, 80, "Text",ExpressionUUID->"82eff639-cc13-48aa-bf27-1a0124dca941",
+ CellID->110],
+Cell[72525, 1366, 977, 31, 80, "Text",ExpressionUUID->"efd27415-5efd-4d5d-9db3-5ba6374c34e4",
+ CellID->79],
+Cell[73505, 1399, 538, 17, 80, "Text",ExpressionUUID->"078dbb8b-ddde-41f0-b164-d1f479d9777e",
+ CellID->44],
+Cell[74046, 1418, 385, 13, 80, "Text",ExpressionUUID->"1111b911-360f-4880-9053-958b46efdb18",
  CellID->116],
-Cell[67263, 1258, 226, 6, 21, "Input",ExpressionUUID->"27c0ed7d-3c22-461c-9ff3-002c8fd1c3ef",
+Cell[74434, 1433, 1116, 26, 80, "Text",ExpressionUUID->"86863885-591f-40e8-8368-7236d731d1f6",
+ CellID->71],
+Cell[75553, 1461, 302, 10, 80, "Text",ExpressionUUID->"37171ece-ec0f-47eb-9772-b3e1e0ca6477",
+ CellID->21],
+Cell[75858, 1473, 2709, 57, 80, "Text",ExpressionUUID->"f9fa1408-52c7-47f5-b490-9ebc10a5d69f",
+ CellID->109],
+Cell[78570, 1532, 740, 17, 80, "Text",ExpressionUUID->"1f00fa2c-817d-4da1-9729-8f96050b20e7",
+ CellID->1065180249],
+Cell[79313, 1551, 518, 15, 80, "Text",ExpressionUUID->"e45d843e-9c04-4e5a-b901-145446da95f4",
+ CellID->59],
+Cell[79834, 1568, 455, 13, 80, "Text",ExpressionUUID->"f1860e12-d0a2-42ab-825d-c1f58d4ee6c3",
+ CellID->83],
+Cell[80292, 1583, 2582, 62, 80, "Text",ExpressionUUID->"13a4369a-e013-419e-81c0-1657a58f1956",
+ CellID->81],
+Cell[82877, 1647, 961, 22, 80, "Text",ExpressionUUID->"85d9465e-e974-42c9-ba20-3f2bd45040c5",
+ CellID->1060763551],
+Cell[83841, 1671, 2231, 52, 974, "Text",ExpressionUUID->"af8312b3-a9ee-47ad-9023-a03416ee67cb",
+ CellID->106],
+Cell[86075, 1725, 234, 6, 21, "Input",ExpressionUUID->"03398cca-e14a-41c4-90ea-44c6b543af63",
  CellOpen->False,
  CellTags->"mmatexTitleFinal",
- CellID->66]
+ CellID->1991247910]
 }, Closed]]
 }
 ]
