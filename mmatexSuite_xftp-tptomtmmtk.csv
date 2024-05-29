@@ -1,0 +1,11 @@
+"timestamp","id_transaction","name","email","age","cedula","software","licencia","whatsapp","region","bot","hizo_curso","Expertise","Topic","nro_slides","consumo_hoy","total_credito","saldo_actual"
+"2023-05-18T10:34:56.789Z","ABC123DEF456","John Doe","john.doe@example.com",35,1234567890,"SoftwareName","LIC-ABC123",9876543210,"Norte","ChatGPT","si","Física Avanzada","Mecánica Cuántica",25,0.75,100.,75.5
+"2023-05-17T15:22:11.456Z","XYZ789DEF012","Jane Smith","jane.smith@example.com",28,9876543210,"SoftwareName2","LIC-XYZ789",1234567890,"Sur","Claude","no","Desarrollo Web","React",15,0.25,50.,40.
+"2023-05-16T08:09:43.210Z","PQR456GHI789","Michael Johnson","michael.johnson@example.com",42,5678901234,"SoftwareName3","LIC-PQR456",5678901234,"Este","GPT-3","si","Inteligencia Artificial","Aprendizaje Profundo",30,0.9,150.,100.
+"2023-05-15T13:47:28.065Z","JKL012MNO345","Emily Davis","emily.davis@example.com",31,2345678901,"SoftwareName4","LIC-JKL012",9012345678,"Oeste","Alexa","no","Marketing Digital","SEO",20,0.6,75.,60.
+"2023-05-14T19:23:57.890Z","EFG678HIJ901","Robert Wilson","robert.wilson@example.com",47,7890123456,"SoftwareName5","LIC-EFG678",2345678901,"Centro","Siri","si","Ciencias de la Computación","Algoritmos",35,0.8,125.,90.
+"2023-05-13T06:11:32.567Z","STU234VWX567","Olivia Thompson","olivia.thompson@example.com",25,4567890123,"SoftwareName6","LIC-STU234",6789012345,"Norte","Bard","no","Diseño Gráfico","Photoshop",12,0.3,60.,45.
+"2023-05-12T22:39:08.234Z","YZA890BCD123","William Anderson","william.anderson@example.com",39,9012345678,"SoftwareName7","LIC-YZA890",3456789012,"Sur","Meena","si","Finanzas","Análisis de Inversiones",18,0.7,90.,70.
+"2023-05-11T16:05:41.987Z","EFG456HIJ789","Sophia Martinez","sophia.martinez@example.com",33,6789012345,"SoftwareName8","LIC-EFG456",7890123456,"Este","GPT-4","no","Recursos Humanos","Gestión de Talento",22,0.4,80.,65.
+"2023-05-10T09:28:17.654Z","KLM012NOP345","Daniel Hernandez","daniel.hernandez@example.com",27,3456789012,"SoftwareName9","LIC-KLM012",4567890123,"Oeste","Bing","si","Desarrollo de Videojuegos","Unity",28,0.6,110.,85.
+"2023-05-09T03:51:39.210Z","QRS678TUV901","Avery Garcia","avery.garcia@example.com",41,8901234567,"SoftwareName10","LIC-QRS678",9012345678,"Centro","Watson","no","Ingeniería Civil","Construcción Sostenible",24,0.8,120.,90.
