@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    125787,       2906]
-NotebookOptionsPosition[    122555,       2844]
-NotebookOutlinePosition[    123307,       2869]
-CellTagsIndexPosition[    123264,       2866]
+NotebookDataLength[    136560,       3147]
+NotebookOptionsPosition[    133226,       3084]
+NotebookOutlinePosition[    133978,       3109]
+CellTagsIndexPosition[    133935,       3106]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2838,7 +2838,247 @@ number for better understanding.\n\nOk. Give me \>\"", "<>",
   3.924903267488963*^9}, {3.924903320451552*^9, 3.924903342705686*^9}, {
   3.924903390593595*^9, 3.924903456992715*^9}, {3.9249039580502357`*^9, 
   3.9249039794059277`*^9}},ExpressionUUID->"5fe0580e-a98a-48ba-b084-\
-256c7a8d44a0"]
+256c7a8d44a0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mmtxActualizarGastos", "[", 
+   RowBox[{"mmtxKey_", ",", "mmtxUsersTest_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "check2GET", ",", "nroRegistrosUsuario", ",", "CobrarCada24h", ",", 
+      "\[IndentingNewLine]", "CostoCadaLlamada", ",", "LlamadasHoy", ",", 
+      "check2GETdate", ",", "check2GETactualizacion", ",", "daysDiff", ",", 
+      "\[IndentingNewLine]", "TotalGastoHoy", ",", "check2GETsaldo", ",", 
+      "nuevoSaldo", ",", "checkPost", ",", "userRandomI", ",", 
+      "mmtxcheckPost", ",", "mmtxUsersTest1"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", " ", "No"}], " ", "puedo", " ", "asignar", " ", "valores",
+        " ", "a", " ", "un", " ", "arreglo", " ", "externo"}], ",", " ", 
+      RowBox[{
+       RowBox[{"asi", " ", "que", " ", "hago", " ", "una", " ", "copia"}], 
+       " ", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"mmtxUsersTest1", "=", "mmtxUsersTest"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"userRandomI", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<El randomL: \>\"", ",", " ", "userRandomI"}], "]"}], 
+          ";"}], "*)"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"--", " ", "Ahora"}], " ", "tomo", " ", "y", " ", 
+          RowBox[{"veo", " ", "--"}]}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"check2GET", "=", 
+         RowBox[{"URLExecute", "[", 
+          RowBox[{"apiMMaTeX1", ",", 
+           RowBox[{"{", 
+            RowBox[{"\"\<myKey\>\"", "->", "mmtxKey"}], "}"}]}], "]"}]}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"nroRegistrosUsuario", "=", 
+         RowBox[{"Length", "[", 
+          RowBox[{"ToExpression", "[", "check2GET", "]"}], "]"}]}], ";"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"\"\<Largo del 1: \>\"", ",", "nroRegistrosUsuario"}], 
+          "]"}], ";"}], "*)"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"CobrarCada24h", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"CostoCadaLlamada", "=", "0.012"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"LlamadasHoy", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"check2GETdate", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"ToExpression", "[", "check2GET", "]"}], "[", 
+             RowBox[{"[", "k", "]"}], "]"}], "[", 
+            RowBox[{"[", "\"\<timestamp\>\"", "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"check2GETactualizacion", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"ToExpression", "[", "check2GET", "]"}], "[", 
+             RowBox[{"[", "k", "]"}], "]"}], "[", 
+            RowBox[{"[", "\"\<_id_transaction\>\"", "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"daysDiff", "=", 
+           RowBox[{
+            RowBox[{"DateDifference", "[", 
+             RowBox[{
+              RowBox[{"DateList", "[", "check2GETdate", "]"}], ",", " ", 
+              RowBox[{"Now", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"daysDiff", "<", "CobrarCada24h"}], " ", "&&", " ", 
+             RowBox[{
+             "check2GETactualizacion", "!=", "\"\<ActualizacionDatos\>\""}]}],
+             ",", "\[IndentingNewLine]", 
+            RowBox[{"(*", 
+             RowBox[{
+              RowBox[{"Echo", "[", 
+               RowBox[{
+               "\"\<Esta dentro de la cuenta!!\>\"", ",", "k", ",", " ", 
+                "daysDiff"}], "]"}], ";"}], "*)"}], " ", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"LlamadasHoy", ",", "k"}], "]"}]}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{",", " ", 
+             RowBox[{"Echo", "[", 
+              RowBox[{
+              "\"\<NO va dentro de la cuenta!!\>\"", ",", " ", "k", ",", 
+               "daysDiff"}], "]"}]}], "*)"}], "]"}], ";"}], 
+         "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", "nroRegistrosUsuario"}], "}"}]}], "]"}],
+        "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"-", " ", "Calculos"}], " ", "-"}], "*)"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TotalGastoHoy", "=", " ", 
+        RowBox[{
+         RowBox[{"Length", "[", "LlamadasHoy", "]"}], "*", 
+         "CostoCadaLlamada"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Echo", "[", 
+        RowBox[{
+         RowBox[{"Length", "[", "LlamadasHoy", "]"}], ",", 
+         "\"\<Total llamadas hoy [$]: \>\""}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Echo", "[", 
+        RowBox[{"TotalGastoHoy", ",", "\"\<Total gasto hoy [$]: \>\""}], 
+        "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"--", 
+           RowBox[{"-", " ", "Y"}]}], " ", "entonces", " ", "es", " ", "aqui",
+           " ", "que", " ", 
+          RowBox[{"descuento", " ", "--"}]}], "-"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"check2GETsaldo", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"ToExpression", "[", "check2GET", "]"}], "[", 
+          RowBox[{"[", "nroRegistrosUsuario", "]"}], "]"}], "[", 
+         RowBox[{"[", "\"\<_saldo_actual\>\"", "]"}], "]"}]}], ";"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{"\"\<Saldo: \>\"", ",", " ", "check2GETsaldo"}], "]"}], 
+        ";"}], "*)"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"nuevoSaldo", "=", 
+       RowBox[{"check2GETsaldo", "-", "TotalGastoHoy"}]}], ";"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", " ", "Introduzco"}], " ", "en", " ", "la", " ", "base", 
+       " ", "de", " ", 
+       RowBox[{"datos", " ", "--"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<El usuario: \>\"", ",", " ", "mmtxUsersTest1"}], "]"}], 
+       ";"}], "*)"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"mmtxUsersTest1", "[", 
+        RowBox[{"[", "userRandomI", "]"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "=", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"DateString", "[", "\"\<ISODateTime\>\"", "]"}], "<>", 
+        "\"\<Z\>\""}], ")"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"mmtxUsersTest1", "[", 
+        RowBox[{"[", "userRandomI", "]"}], "]"}], "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "=", "\"\<ActualizacionDatos\>\""}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"mmtxUsersTest1", "[", 
+        RowBox[{"[", "userRandomI", "]"}], "]"}], "[", 
+       RowBox[{"[", "16", "]"}], "]"}], "=", "TotalGastoHoy"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"mmtxUsersTest1", "[", 
+        RowBox[{"[", "userRandomI", "]"}], "]"}], "[", 
+       RowBox[{"[", "18", "]"}], "]"}], "=", "nuevoSaldo"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Actualizo", " ", "con", " ", "un", " ", "POST", " ", "los", " ", 
+       "nuevos", " ", "datos"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"mmtxcheckPost", "=", 
+      RowBox[{"callmmatexDBv2", "[", 
+       RowBox[{"mmtxUsersTest1", "[", 
+        RowBox[{"[", "userRandomI", "]"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"Echo", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"UsersTest", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"3", ";;", "18"}], "]"}], "]"}], "//", "Dataset"}], ",", 
+         " ", "\"\<Actualizado usuario: \>\""}], "]"}], ";"}], "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"TotalGastoHoy", ",", " ", "nuevoSaldo"}], "}"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.925999648950876*^9, 3.925999712277741*^9}, {
+   3.9259997520111523`*^9, 3.925999772116179*^9}, {3.925999834902031*^9, 
+   3.925999999408637*^9}, {3.92600018315867*^9, 3.92600051492493*^9}, 
+   3.926000547104228*^9, {3.926000729475271*^9, 3.926000759062997*^9}, {
+   3.926000855931445*^9, 3.926000876871229*^9}, {3.926000997559651*^9, 
+   3.926001041402766*^9}, 3.926001185113069*^9, {3.926001219869228*^9, 
+   3.926001273039791*^9}, {3.926001323941461*^9, 3.926001343012706*^9}, {
+   3.9260014157766848`*^9, 3.9260015043406677`*^9}, {3.92600156137132*^9, 
+   3.926001569438759*^9}, {3.926001669695203*^9, 3.9260016707653427`*^9}, {
+   3.92600183948415*^9, 3.926001890736287*^9}, {3.926001950017379*^9, 
+   3.926001982205864*^9}, {3.926002022558008*^9, 3.926002111596239*^9}, {
+   3.9260038982073603`*^9, 3.926003901051173*^9}, {3.926003951880637*^9, 
+   3.926003953656354*^9}, {3.9260040137184563`*^9, 3.926004031885338*^9}, {
+   3.926004170075321*^9, 3.926004191460041*^9}, {3.926004271362279*^9, 
+   3.926004313757022*^9}, {3.926004385268659*^9, 3.926004387971305*^9}, {
+   3.9260044442213287`*^9, 3.926004527240038*^9}, {3.926004671667*^9, 
+   3.926004678783865*^9}, {3.9260047239415607`*^9, 3.926004908595653*^9}, {
+   3.926004940332636*^9, 3.9260049415399837`*^9}, {3.926004979392935*^9, 
+   3.926005024029903*^9}, {3.926005731417465*^9, 3.926005733665944*^9}, {
+   3.92600579214926*^9, 3.926005799717239*^9}, {3.926005848735414*^9, 
+   3.926005860556266*^9}, {3.9260062763067923`*^9, 3.926006302287177*^9}, {
+   3.9260063355313473`*^9, 3.926006401380168*^9}, {3.9260064473432007`*^9, 
+   3.926006482158725*^9}, {3.9260065162397623`*^9, 3.926006516811905*^9}, {
+   3.9260065819016047`*^9, 3.92600672490773*^9}, {3.9260067834156313`*^9, 
+   3.92600678725947*^9}, {3.9260072943470488`*^9, 3.926007306985029*^9}, {
+   3.9260073461580687`*^9, 3.926007347701316*^9}, {3.926007383856902*^9, 
+   3.926007469983358*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-fcf31ee8c764"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -2905,7 +3145,8 @@ Cell[114444, 2691, 4052, 71, 546, "Input",ExpressionUUID->"1666583d-2f24-4e60-9f
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[118533, 2767, 158, 3, 87, "Section",ExpressionUUID->"ae665ec3-c060-496e-8209-9cce6e587c04"],
-Cell[118694, 2772, 3833, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"]
+Cell[118694, 2772, 3833, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"],
+Cell[122530, 2842, 10668, 238, 1118, "Input",ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-fcf31ee8c764"]
 }, Open  ]]
 }, Open  ]]
 }
