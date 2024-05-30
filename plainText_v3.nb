@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    101221,       2500]
-NotebookOptionsPosition[     98085,       2436]
-NotebookOutlinePosition[     98507,       2453]
-CellTagsIndexPosition[     98464,       2450]
+NotebookDataLength[    101267,       2501]
+NotebookOptionsPosition[     98131,       2437]
+NotebookOutlinePosition[     98553,       2454]
+CellTagsIndexPosition[     98510,       2451]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1425,11 +1425,12 @@ Cell[BoxData[
        RowBox[{
        "\"\<\\\\documentclass\>\"", "<>", "mmtxCopt", "<>", "\"\<{\>\"", "<>",
          "mmtxClass", "<>", "\"\<}\>\""}]}], "]"}]}],
-    FontSize->18], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{"MNRAS", ",", " ", "article", ",", " ", "report"}], " ", "*)"}], 
+    FontSize->18], "\[IndentingNewLine]", 
    StyleBox["\[IndentingNewLine]",
     FontSize->18], 
+   RowBox[{"(*", " ", 
+    RowBox[{"MNRAS", ",", " ", "article", ",", " ", "report"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    StyleBox[
     RowBox[{
     "graphicx", ":=", 
@@ -1437,9 +1438,9 @@ Cell[BoxData[
 \\\\usepackage{colortbl}\>\""}],
     FontSize->18], 
    StyleBox["\[IndentingNewLine]",
-    FontSize->18], 
-   StyleBox["\[IndentingNewLine]",
     FontSize->18], "\[IndentingNewLine]", 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->18], 
    RowBox[{"(*", 
     RowBox[{"--", 
      RowBox[{"--", 
@@ -1465,9 +1466,7 @@ Cell[BoxData[
      "\"\<\\\\newcommand{\\\\vdag}{(v)\\\\^\\\\dagger}\n\
 \\\\newcommand\\\\aastex{AAS\\\\TeX}\n\\\\newcommand\\\\latex{La\\\\TeX}\n\
 \\\\usepackage{graphicx}\n\\\\usepackage{colortbl}\>\""}],
-    FontSize->18], 
-   StyleBox["\[IndentingNewLine]",
-    FontSize->18], 
+    FontSize->18], "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{"--", 
      RowBox[{"--", 
@@ -1485,7 +1484,9 @@ Cell[BoxData[
                  RowBox[{"--", 
                   RowBox[{"--", 
                    RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}],
-    "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->18], 
    StyleBox[
     RowBox[{
     "graphicxBookLeg", ":=", 
@@ -1501,14 +1502,14 @@ heading image\n\\\\chapterspaceabove{6.5cm} % Default whitespace from the top \
 of the page to the chapter title on chapter pages\n\
 \\\\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from \
 the top margin to the start of the text on chapter pages\n\>\""}],
-    FontSize->18], 
-   StyleBox["\[IndentingNewLine]",
     FontSize->18], "\[IndentingNewLine]", 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->18], 
    StyleBox[
     RowBox[{"latex", ":=", "\"\<\\\\LaTeX{}\>\""}],
-    FontSize->18], 
-   StyleBox["\[IndentingNewLine]",
     FontSize->18], "\[IndentingNewLine]", 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->18], 
    StyleBox[
     RowBox[{
      RowBox[{"titleAuthorDate", "[", 
@@ -1567,7 +1568,8 @@ the top margin to the start of the text on chapter pages\n\>\""}],
           FontSize->18], 
          StyleBox["\[IndentingNewLine]",
           FontSize->18], 
-         StyleBox["\"\<article\>\"",
+         StyleBox[
+          RowBox[{"\"\<article\>\"", "|", "\"\<report\>\""}],
           FontSize->18], 
          StyleBox[",",
           FontSize->18], 
@@ -1872,9 +1874,9 @@ the top margin to the start of the text on chapter pages\n\>\""}],
               RowBox[{"\"\<\\\"\>\"", "->", "\"\<\>\""}]}], "]"}], "<>", 
             "\"\<}\>\""}]}], "\[IndentingNewLine]", "]"}]}]}], 
        "\[IndentingNewLine]", "]"}]}], ";"}],
-    FontSize->18], "\[IndentingNewLine]", 
-   StyleBox["\[IndentingNewLine]",
     FontSize->18], 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->18], "\[IndentingNewLine]", 
    StyleBox["\[IndentingNewLine]",
     FontSize->18], 
    StyleBox[
@@ -1998,9 +2000,8 @@ following content on a new page\n\n\>\""}]}],
    3.9258414978205853`*^9, 3.925841618692204*^9}, {3.925841701817462*^9, 
    3.925841837932692*^9}, {3.9258418809292383`*^9, 3.9258418891362333`*^9}, 
    3.925841928557382*^9, {3.925842116313079*^9, 3.9258421202198553`*^9}, {
-   3.925842173464404*^9, 3.925842197079914*^9}},
+   3.925842173464404*^9, 3.925842197079914*^9}, 3.926074151527135*^9},
  Background->RGBColor[1, 0.9, 0.8],
- CellLabel->"In[33]:=",
  CellID->504000207,ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013"],
 
 Cell[BoxData[
@@ -2498,9 +2499,9 @@ Cell[49449, 1298, 2975, 76, 381, "Input",ExpressionUUID->"46ea51de-7a6c-4b3b-984
 Cell[CellGroupData[{
 Cell[52461, 1379, 809, 21, 102, "Section",ExpressionUUID->"7abd666e-5f8c-4da4-a22c-55d7de8ab410",
  CellID->261372301],
-Cell[53273, 1402, 26822, 601, 6259, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
+Cell[53273, 1402, 26868, 602, 6327, "Input",ExpressionUUID->"3fc10ae1-0835-41de-a1a6-5b6b0d6d3013",
  CellID->504000207],
-Cell[80098, 2005, 17971, 428, 2549, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
+Cell[80144, 2006, 17971, 428, 2549, "Input",ExpressionUUID->"e4d15c2d-6799-4fe0-833b-cff19d19c502"]
 }, Open  ]]
 }
 ]
