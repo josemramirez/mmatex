@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    209014,       3531]
-NotebookOptionsPosition[    141345,       2410]
-NotebookOutlinePosition[    208321,       3524]
-CellTagsIndexPosition[    208278,       3521]
+NotebookDataLength[    209087,       3532]
+NotebookOptionsPosition[    141418,       2411]
+NotebookOutlinePosition[    208394,       3525]
+CellTagsIndexPosition[    208351,       3522]
 WindowTitle->MMaTeX
 WindowFrame->PopupMenu*)
 
@@ -2181,7 +2181,7 @@ VVVVVVVVVdXfAOZo1vM=
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
   Column]], "Text",
  Editable->False,
- Deletable->False,ExpressionUUID->"2520d1f7-5ded-491c-b882-439d0a2a702e"],
+ Deletable->False,ExpressionUUID->"2b70a23d-c42e-4cd3-8cea-b37533758940"],
 
 Cell[BoxData[
  SubsuperscriptBox["cloud", 
@@ -2193,7 +2193,7 @@ Cell[BoxData[
    FontSize->9]]], "Text",
  Editable->False,
  Deletable->False,
- Background->None,ExpressionUUID->"1f14664a-8f16-4a7e-8fe3-90bfefe5cd5d"],
+ Background->None,ExpressionUUID->"dba3c635-ce25-49e8-85f9-ad197b78c55e"],
 
 Cell[CellGroupData[{
 
@@ -2202,7 +2202,7 @@ Cell[BoxData[
   "\"www.wolframcloud.com/obj/jmramirez/Published/MMaTeXv01.nb\"", 
    "https://www.wolframcloud.com/obj/jmramirez/Published/MMaTeXv02.nb"},
   "HyperlinkURL"]], "Subtitle",
- TextAlignment->Center,ExpressionUUID->"59226814-2ffb-4f7b-993d-4a16d885408a"],
+ TextAlignment->Center,ExpressionUUID->"4e96e340-40bf-45bd-a062-f7e22bc36ff6"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2353,10 +2353,11 @@ Regular\\\"]\\) mnras - \\!\\(\\*StyleBox[\\\"4\\\",FontFamily->\\\"dt-web-04\
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[
-        "https://raw.githubusercontent.com/josemramirez/mmaitexSlide/main/\
-MMaiTeX_Softwarev0.1.nb"]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[
+         "https://raw.githubusercontent.com/josemramirez/mmaitexSlide/main/\
+new_versions/MMaiTeX_Software_GitHubv0.2_PROD.nb"], 
+         NotebookDirectory[]]; Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"]}
@@ -2365,7 +2366,7 @@ MMaiTeX_Softwarev0.1.nb"]; Null),
    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Text",
- TextAlignment->Left,ExpressionUUID->"742fd153-6e73-4755-8707-fb5e35423118"],
+ TextAlignment->Left,ExpressionUUID->"92054ffc-fcdd-419a-a55c-fb94d7e1ed32"],
 
 Cell[BoxData[
  RowBox[{
@@ -2381,7 +2382,7 @@ Cell[BoxData[
     "cuenta", " ", "gratis", " ", 
     RowBox[{"en", ":", " ", "https", ":"}]}]}], "//", 
   RowBox[{"www", ".", "overleaf", ".", "com"}]}]], "Text",ExpressionUUID->\
-"875b7274-ac15-49aa-b168-ed2d797c6136"],
+"ccfc9e94-5765-4b3c-96dd-5058681954e2"],
 
 Cell[BoxData[
  ButtonBox["\<\"Connect\"\>",
@@ -2390,8 +2391,8 @@ Cell[BoxData[
    "https://www.wolframcloud.com/obj/jmramirez/mmatex/CreatorMMaTeX_Cloud_v1.\
 mx"],
   Evaluator->Automatic,
-  Method->"Preemptive"]], "Input",ExpressionUUID->"7cad5735-62c0-45f8-9345-\
-e640ceaa8549"],
+  Method->"Preemptive"]], "Input",ExpressionUUID->"82e57b27-fb3d-4973-a377-\
+4b4b4e651795"],
 
 Cell[BoxData[
  ButtonBox["\<\"Tutorial\"\>",
@@ -2403,9 +2404,9 @@ Cell[BoxData[
   Evaluator->Automatic,
   ImageSize->{222, 50},
   Method->"Preemptive"]], "Text",
- TextAlignment->Left,ExpressionUUID->"6afb2e8b-34f6-4c4e-8101-2e437b191093"],
+ TextAlignment->Left,ExpressionUUID->"627428f7-2b35-44cc-bea6-e41b51c4bbf4"],
 
-Cell["Describe el Tutorial.", "Text",ExpressionUUID->"b68fc698-f93d-46ae-9242-92d93217beb7"]
+Cell["Describe el Tutorial.", "Text",ExpressionUUID->"5354c765-b4c7-4299-85e6-5f46ab42733a"]
 }, Open  ]]
 },
 Editable->False,
@@ -3510,7 +3511,7 @@ Background->Opacity[0.6,
   RGBColor[0.87, 0.94, 1]],
 FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"ad7b4cfe-7f89-4199-8e0f-a2227d5fe5c7"
+ExpressionUUID->"2dc0e133-1751-4fba-ae5b-43dbfdfc79b9"
 ]
 (* End of Notebook Content *)
 
@@ -3523,15 +3524,15 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[581, 21, 131407, 2162, 90, "Text",ExpressionUUID->"2520d1f7-5ded-491c-b882-439d0a2a702e"],
-Cell[131991, 2185, 276, 10, 39, "Text",ExpressionUUID->"1f14664a-8f16-4a7e-8fe3-90bfefe5cd5d"],
+Cell[581, 21, 131407, 2162, 90, "Text",ExpressionUUID->"2b70a23d-c42e-4cd3-8cea-b37533758940"],
+Cell[131991, 2185, 276, 10, 39, "Text",ExpressionUUID->"dba3c635-ce25-49e8-85f9-ad197b78c55e"],
 Cell[CellGroupData[{
-Cell[132292, 2199, 280, 5, 63, InheritFromParent,ExpressionUUID->"59226814-2ffb-4f7b-993d-4a16d885408a"],
-Cell[132575, 2206, 7387, 161, 504, InheritFromParent,ExpressionUUID->"742fd153-6e73-4755-8707-fb5e35423118"],
-Cell[139965, 2369, 585, 14, 96, "Text",ExpressionUUID->"875b7274-ac15-49aa-b168-ed2d797c6136"],
-Cell[140553, 2385, 299, 8, 47, "Input",ExpressionUUID->"7cad5735-62c0-45f8-9345-e640ceaa8549"],
-Cell[140855, 2395, 379, 10, 77, InheritFromParent,ExpressionUUID->"6afb2e8b-34f6-4c4e-8101-2e437b191093"],
-Cell[141237, 2407, 92, 0, 39, "Text",ExpressionUUID->"b68fc698-f93d-46ae-9242-92d93217beb7"]
+Cell[132292, 2199, 280, 5, 63, InheritFromParent,ExpressionUUID->"4e96e340-40bf-45bd-a062-f7e22bc36ff6"],
+Cell[132575, 2206, 7460, 162, 504, InheritFromParent,ExpressionUUID->"92054ffc-fcdd-419a-a55c-fb94d7e1ed32"],
+Cell[140038, 2370, 585, 14, 96, "Text",ExpressionUUID->"ccfc9e94-5765-4b3c-96dd-5058681954e2"],
+Cell[140626, 2386, 299, 8, 47, "Input",ExpressionUUID->"82e57b27-fb3d-4973-a377-4b4b4e651795"],
+Cell[140928, 2396, 379, 10, 77, InheritFromParent,ExpressionUUID->"627428f7-2b35-44cc-bea6-e41b51c4bbf4"],
+Cell[141310, 2408, 92, 0, 39, "Text",ExpressionUUID->"5354c765-b4c7-4299-85e6-5f46ab42733a"]
 }, Open  ]]
 }
 ]
