@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    154759,       3579]
-NotebookOptionsPosition[    151417,       3516]
-NotebookOutlinePosition[    152169,       3541]
-CellTagsIndexPosition[    152126,       3538]
+NotebookDataLength[    154844,       3580]
+NotebookOptionsPosition[    151502,       3517]
+NotebookOutlinePosition[    152254,       3542]
+CellTagsIndexPosition[    152211,       3539]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3388,9 +3388,9 @@ Cell[BoxData[
        RowBox[{"Echo", "[", 
         RowBox[{
          RowBox[{"Length", "[", "LlamadasHoy", "]"}], ",", 
-         RowBox[{
-         "\"\<Total llamadas hoy \>\"", "<>", "Today", "<>", "\"\<: \>\""}]}],
-         "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"\"\<Total llamadas hoy \>\"", "<>", 
+          RowBox[{"ToString", "[", "Today", "]"}], "<>", "\"\<: \>\""}]}], 
+        "]"}], ";", "\[IndentingNewLine]", 
        RowBox[{"Echo", "[", 
         RowBox[{"TotalGastoHoy", ",", "\"\<Total gasto hoy [$]: \>\""}], 
         "]"}], ";", "\[IndentingNewLine]", 
@@ -3508,8 +3508,9 @@ Cell[BoxData[
    3.92600678725947*^9}, {3.9260072943470488`*^9, 3.926007306985029*^9}, {
    3.9260073461580687`*^9, 3.926007347701316*^9}, {3.926007383856902*^9, 
    3.926007469983358*^9}, 3.926013681634758*^9, {3.926702621984024*^9, 
-   3.926702634564011*^9}, {3.926702714314938*^9, 
-   3.9267027192348127`*^9}},ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-\
+   3.926702634564011*^9}, {3.926702714314938*^9, 3.9267027192348127`*^9}, {
+   3.926720889160555*^9, 
+   3.9267208947883587`*^9}},ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-\
 fcf31ee8c764"]
 }, Open  ]]
 }, Open  ]]
@@ -3578,7 +3579,7 @@ Cell[124965, 2985, 11280, 198, 1482, "Input",ExpressionUUID->"1666583d-2f24-4e60
 Cell[CellGroupData[{
 Cell[136282, 3188, 158, 3, 87, "Section",ExpressionUUID->"ae665ec3-c060-496e-8209-9cce6e587c04"],
 Cell[136443, 3193, 3833, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"],
-Cell[140279, 3263, 11110, 249, 1118, "Input",ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-fcf31ee8c764"]
+Cell[140279, 3263, 11195, 250, 1118, "Input",ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-fcf31ee8c764"]
 }, Open  ]]
 }, Open  ]]
 }
