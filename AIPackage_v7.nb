@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    155018,       3578]
-NotebookOptionsPosition[    151676,       3515]
-NotebookOutlinePosition[    152428,       3540]
-CellTagsIndexPosition[    152385,       3537]
+NotebookDataLength[    162532,       3761]
+NotebookOptionsPosition[    159187,       3698]
+NotebookOutlinePosition[    159939,       3723]
+CellTagsIndexPosition[    159896,       3720]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -42,15 +42,34 @@ Cell[BoxData[
    RowBox[{"--", " ", 
     RowBox[{"\"\<claude-3-haiku-20240229\>\"", " ", "--"}]}], " ", "*)"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"myAPIKeyC", "=", 
+     RowBox[{"SystemCredential", "[", "\"\<CLAUDE_API_KEY\>\"", "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"myAPIKeyG", "=", 
+     RowBox[{"SystemCredential", "[", "\"\<OPENAI_API_KEY\>\"", "]"}]}], 
+    ";"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"myAPIKeyC", "=", 
-     RowBox[{"SystemCredential", "[", "\"\<CLAUDE_API_KEY\>\"", "]"}]}], 
+     RowBox[{"URLRead", "[", 
+      RowBox[{
+      "\"\<https://www.wolframcloud.com/obj/b822554c-d605-45ea-a63e-\
+d5affc78abfc\>\"", ",", "\"\<Content\>\"", ",", 
+       RowBox[{"Authentication", "\[Rule]", 
+        RowBox[{"PermissionsKey", "[", "check1aInput", "]"}]}]}], "]"}]}], 
     ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"myAPIKeyG", "=", 
-     RowBox[{"SystemCredential", "[", "\"\<OPENAI_API_KEY\>\"", "]"}]}], 
+     RowBox[{"URLRead", "[", 
+      RowBox[{
+      "\"\<https://www.wolframcloud.com/obj/ac17c45b-b849-4f8e-bc91-\
+a422730ff034\>\"", ",", "\"\<Content\>\"", ",", 
+       RowBox[{"Authentication", "\[Rule]", 
+        RowBox[{"PermissionsKey", "[", "check1aInputG", "]"}]}]}], "]"}]}], 
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"callClaude", "[", 
      RowBox[{"myPrompt_", ",", "myAPIKey_"}], "]"}], ":=", 
@@ -167,9 +186,12 @@ Cell[BoxData[
    3.9230507818879223`*^9}, 3.923051212722418*^9, {3.923051317101368*^9, 
    3.923051317466337*^9}, {3.92305140860951*^9, 3.923051473858494*^9}, {
    3.923466709731523*^9, 3.923466778111931*^9}, {3.924876353812866*^9, 
-   3.924876354132833*^9}, {3.924876500057911*^9, 3.9248765265796022`*^9}},
- Background->RGBColor[1, 0.9, 0.8],
- CellLabel->"In[1]:=",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
+   3.924876354132833*^9}, {3.924876500057911*^9, 3.9248765265796022`*^9}, {
+   3.926855606263788*^9, 3.926855658754464*^9}, 3.926855727199408*^9, {
+   3.926855819656446*^9, 3.926855879541297*^9}, 3.926856003598905*^9, 
+   3.926856423184135*^9, {3.926857680087236*^9, 3.926857693674858*^9}},
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
 
 Cell[BoxData[
  RowBox[{
@@ -329,9 +351,127 @@ Cell[BoxData[{
          RowBox[{"Whitespace", "->", "\"\<\>\""}]}], "]"}]}]}], "]"}]}], 
    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"callClaudeWithSingleImage", "[", 
-   RowBox[{
-   "apiKey_String", ",", "imageObject_", ",", "textPrompt_String", ",", 
+  RowBox[{
+   RowBox[{"callClaudeWithSingleImage", "[", 
+    RowBox[{
+    "apiKey_String", ",", "imageObject_", ",", "textPrompt_String", ",", 
+     RowBox[{"systemMessage_", ":", "\"\<\>\""}], ",", 
+     RowBox[{"maxTokens_", ":", "2048"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "base64Image", ",", "messageContent", ",", "jsonBody", ",", "request", 
+       ",", "response"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Encode", " ", "the", " ", "image", " ", "to", " ", "Base64"}], 
+      "*)"}], 
+     RowBox[{
+      RowBox[{"base64Image", "=", 
+       RowBox[{
+       "encodeImageObjectToBase64directclean", "[", "imageObject", "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Construct", " ", "the", " ", "message", " ", "content"}], 
+       "*)"}], 
+      RowBox[{"messageContent", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<role\>\"", "->", "\"\<user\>\""}], ",", 
+         RowBox[{"\"\<content\>\"", "->", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<type\>\"", "->", "\"\<image\>\""}], ",", 
+              RowBox[{"\"\<source\>\"", "->", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"\"\<type\>\"", "->", "\"\<base64\>\""}], ",", 
+                 RowBox[{"\"\<media_type\>\"", "->", "\"\<image/jpeg\>\""}], 
+                 ",", 
+                 RowBox[{"\"\<data\>\"", "->", "base64Image"}]}], "}"}]}]}], 
+             "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<type\>\"", "->", "\"\<text\>\""}], ",", 
+              RowBox[{"\"\<text\>\"", "->", "textPrompt"}]}], "}"}]}], 
+           "}"}]}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Prepare", " ", "the", " ", "JSON", " ", "body", " ", "of", " ", "the",
+         " ", "request"}], "*)"}], 
+      RowBox[{"jsonBody", "=", 
+       RowBox[{"ExportString", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<model\>\"", "->", "\"\<claude-3-opus-20240229\>\""}],
+             ",", 
+            RowBox[{"\"\<max_tokens\>\"", "->", "maxTokens"}], ",", 
+            RowBox[{"\"\<messages\>\"", "->", 
+             RowBox[{"{", "messageContent", "}"}]}]}], "}"}], "~", "Join", 
+          "~", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"systemMessage", "===", "\"\<\>\""}], ",", 
+            RowBox[{"{", "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<system\>\"", "->", "systemMessage"}], "}"}]}], 
+           "]"}]}], ",", "\"\<JSON\>\""}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Create", " ", "the", " ", "HTTP", " ", "request"}], "*)"}], 
+      RowBox[{"request", "=", 
+       RowBox[{"HTTPRequest", "[", 
+        RowBox[{"\"\<https://api.anthropic.com/v1/messages\>\"", ",", 
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"\"\<Method\>\"", "->", "\"\<POST\>\""}], ",", 
+           RowBox[{"\"\<Headers\>\"", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<x-api-key\>\"", "->", "apiKey"}], ",", 
+              RowBox[{
+              "\"\<anthropic-version\>\"", "->", "\"\<2023-06-01\>\""}], ",", 
+              
+              RowBox[{
+              "\"\<Content-Type\>\"", "->", "\"\<application/json\>\""}]}], 
+             "}"}]}], ",", 
+           RowBox[{"\"\<Body\>\"", "->", "jsonBody"}]}], "|>"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Execute", " ", "the", " ", "request", " ", "and", " ", "get", " ", 
+        "the", " ", "JSON", " ", "response"}], "*)"}], 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"response", "=", 
+         RowBox[{"Check", "[", 
+          RowBox[{
+           RowBox[{"ImportString", "[", 
+            RowBox[{
+             RowBox[{"URLExecute", "[", 
+              RowBox[{"request", ",", "\"\<RawJSON\>\""}], "]"}], ",", 
+             "\"\<RawJSON\>\""}], "]"}], ",", "$Failed"}], "]"}]}], ";"}], 
+       "*)"}], 
+      RowBox[{"response", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"URLExecute", "[", 
+           RowBox[{"request", ",", "\"\<RawJSON\>\""}], "]"}], "[", 
+          "\"\<content\>\"", "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", "\"\<text\>\"", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Return", " ", "the", " ", "response"}], "*)"}], 
+      "\[IndentingNewLine]", "response"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"callClaudeWithSingleImageK", "[", 
+   RowBox[{"imageObject_", ",", "textPrompt_String", ",", 
     RowBox[{"systemMessage_", ":", "\"\<\>\""}], ",", 
     RowBox[{"maxTokens_", ":", "2048"}]}], "]"}], ":=", 
   RowBox[{"Module", "[", 
@@ -407,7 +547,7 @@ Cell[BoxData[{
           RowBox[{"\"\<Headers\>\"", "->", 
            RowBox[{"{", 
             RowBox[{
-             RowBox[{"\"\<x-api-key\>\"", "->", "apiKey"}], ",", 
+             RowBox[{"\"\<x-api-key\>\"", "->", "myAPIKeyC"}], ",", 
              RowBox[{
              "\"\<anthropic-version\>\"", "->", "\"\<2023-06-01\>\""}], ",", 
              RowBox[{
@@ -442,13 +582,53 @@ Cell[BoxData[{
      RowBox[{"(*", 
       RowBox[{"Return", " ", "the", " ", "response"}], "*)"}], 
      "\[IndentingNewLine]", "response"}]}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.923052986759781*^9, 3.923053067373452*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
+ CellChangeTimes->{{3.923052986759781*^9, 3.923053067373452*^9}, {
+  3.926853933649439*^9, 
+  3.926853935303293*^9}},ExpressionUUID->"7f516d3b-1933-4e73-bf10-\
+eaf80f94b9ed"],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"callDALLE", "[", 
-   RowBox[{"myPrompt_", ",", "myAPIKey_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"callDALLE", "[", 
+    RowBox[{"myPrompt_", ",", "myAPIKey_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"myRequest", ",", "myResponse"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"myRequest", "=", 
+       RowBox[{"HTTPRequest", "[", 
+        RowBox[{"\"\<https://api.openai.com/v1/images/generations\>\"", ",", 
+         RowBox[{"<|", 
+          RowBox[{
+           RowBox[{"Method", "->", "\"\<POST\>\""}], ",", 
+           RowBox[{"\"\<Body\>\"", "->", 
+            RowBox[{"ExportString", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<model\>\"", "->", "\"\<dall-e-3\>\""}], ",", 
+                RowBox[{"\"\<prompt\>\"", "->", "myPrompt"}], ",", 
+                RowBox[{"\"\<size\>\"", "->", "\"\<1024x1024\>\""}], ",", 
+                RowBox[{"\"\<n\>\"", "->", "1"}]}], "}"}], ",", 
+              "\"\<JSON\>\""}], "]"}]}], ",", 
+           RowBox[{"\"\<ContentType\>\"", "->", "\"\<application/json\>\""}], 
+           ",", 
+           RowBox[{"\"\<Headers\>\"", "->", 
+            RowBox[{"{", 
+             RowBox[{"\"\<Authorization\>\"", "->", 
+              RowBox[{"\"\<Bearer \>\"", "<>", "myAPIKey"}]}], "}"}]}]}], 
+          "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"myResponse", "=", 
+       RowBox[{"Import", "[", 
+        RowBox[{
+         RowBox[{"URLExecute", "[", "myRequest", "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"2", ",", "2", ",", "1", ",", "2", ",", "2"}], "]"}], "]"}],
+         "]"}]}]}]}], "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"callDALLEK", "[", "myPrompt_", "]"}], ":=", 
   RowBox[{"Module", "[", 
    RowBox[{
     RowBox[{"{", 
@@ -475,7 +655,7 @@ Cell[BoxData[
           RowBox[{"\"\<Headers\>\"", "->", 
            RowBox[{"{", 
             RowBox[{"\"\<Authorization\>\"", "->", 
-             RowBox[{"\"\<Bearer \>\"", "<>", "myAPIKey"}]}], "}"}]}]}], 
+             RowBox[{"\"\<Bearer \>\"", "<>", "myAPIKeyG"}]}], "}"}]}]}], 
          "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
      RowBox[{"myResponse", "=", 
       RowBox[{"Import", "[", 
@@ -483,10 +663,11 @@ Cell[BoxData[
         RowBox[{"URLExecute", "[", "myRequest", "]"}], "[", 
         RowBox[{"[", 
          RowBox[{"2", ",", "2", ",", "1", ",", "2", ",", "2"}], "]"}], "]"}], 
-       "]"}]}]}]}], "]"}]}]], "Input",
- CellChangeTimes->{3.9135578985072193`*^9},
- Background->RGBColor[1, 0.85, 0.85],
- CellLabel->"In[7]:=",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
+       "]"}]}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{
+  3.9135578985072193`*^9, {3.9268557668732147`*^9, 3.926855767743672*^9}},
+ Background->RGBColor[
+  1, 0.85, 0.85],ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
 
 Cell[BoxData[
  RowBox[{
@@ -3508,7 +3689,9 @@ Cell[BoxData[
    3.926702634564011*^9}, {3.926702714314938*^9, 3.9267027192348127`*^9}, {
    3.926720889160555*^9, 3.9267208947883587`*^9}, {3.926721212914782*^9, 
    3.926721213206565*^9}, {3.926721369138571*^9, 3.9267213831282187`*^9}, 
-   3.926721437106078*^9},ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-\
+   3.926721437106078*^9, {3.926855912736348*^9, 3.926855913325309*^9}, {
+   3.926856936951064*^9, 
+   3.9268569381745863`*^9}},ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-\
 fcf31ee8c764"]
 }, Open  ]]
 }, Open  ]]
@@ -3541,43 +3724,43 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 358, 6, 121, "Title",ExpressionUUID->"f3d4e1ba-6395-4a84-afec-abd624208c45"],
-Cell[941, 30, 6341, 141, 624, "Input",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
-Cell[7285, 173, 5626, 134, 468, "Input",ExpressionUUID->"018d5997-70a7-409a-a4fc-eb3de7f12d91"],
-Cell[12914, 309, 5394, 136, 546, "Input",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
-Cell[18311, 447, 1746, 41, 182, "Input",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
-Cell[20060, 490, 51977, 1307, 4845, "Input",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
+Cell[941, 30, 7325, 163, 728, "Input",ExpressionUUID->"f7c6d949-8313-4767-bd4f-3b6f399947fe"],
+Cell[8269, 195, 5626, 134, 468, "Input",ExpressionUUID->"018d5997-70a7-409a-a4fc-eb3de7f12d91"],
+Cell[13898, 331, 10156, 256, 1014, "Input",ExpressionUUID->"7f516d3b-1933-4e73-bf10-eaf80f94b9ed"],
+Cell[24057, 589, 3409, 80, 364, "Input",ExpressionUUID->"868beb53-e954-40cd-b0bf-e679c58507ca"],
+Cell[27469, 671, 51977, 1307, 4845, "Input",ExpressionUUID->"e38afbd7-c187-49c6-bdd7-53df6bb8f588"],
 Cell[CellGroupData[{
-Cell[72062, 1801, 298, 7, 87, "Section",ExpressionUUID->"87a00f3c-3139-4c6b-add0-debdafbaa8a0"],
-Cell[72363, 1810, 10660, 220, 832, "Input",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"],
-Cell[83026, 2032, 5945, 135, 624, "Input",ExpressionUUID->"9deb3cc6-3ef7-4041-9488-e88200290a2e"]
+Cell[79471, 1982, 298, 7, 87, "Section",ExpressionUUID->"87a00f3c-3139-4c6b-add0-debdafbaa8a0"],
+Cell[79772, 1991, 10660, 220, 832, "Input",ExpressionUUID->"1bfc233f-52dc-441e-91be-9b0583384092"],
+Cell[90435, 2213, 5945, 135, 624, "Input",ExpressionUUID->"9deb3cc6-3ef7-4041-9488-e88200290a2e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[89008, 2172, 154, 3, 87, "Section",ExpressionUUID->"693d99ae-2832-423b-bbcb-49fa360d903a"],
-Cell[89165, 2177, 10685, 220, 832, "Input",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
-Cell[99853, 2399, 5984, 135, 624, "Input",ExpressionUUID->"da656e44-a103-4880-b40c-ca3daccc7317"]
+Cell[96417, 2353, 154, 3, 87, "Section",ExpressionUUID->"693d99ae-2832-423b-bbcb-49fa360d903a"],
+Cell[96574, 2358, 10685, 220, 832, "Input",ExpressionUUID->"c6c16d80-f372-4488-b07c-5302eb5c6366"],
+Cell[107262, 2580, 5984, 135, 624, "Input",ExpressionUUID->"da656e44-a103-4880-b40c-ca3daccc7317"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[105874, 2539, 149, 2, 87, "Section",ExpressionUUID->"31449be0-cfd4-4892-8530-dc855751ce80"],
-Cell[106026, 2543, 1830, 47, 208, "Input",ExpressionUUID->"ffc92a30-ed0b-4a45-a87d-eb46386e466b"],
-Cell[107859, 2592, 1295, 34, 161, "Input",ExpressionUUID->"d7bb3201-83f7-490e-b3f8-b96d44f2503f"],
+Cell[113283, 2720, 149, 2, 87, "Section",ExpressionUUID->"31449be0-cfd4-4892-8530-dc855751ce80"],
+Cell[113435, 2724, 1830, 47, 208, "Input",ExpressionUUID->"ffc92a30-ed0b-4a45-a87d-eb46386e466b"],
+Cell[115268, 2773, 1295, 34, 161, "Input",ExpressionUUID->"d7bb3201-83f7-490e-b3f8-b96d44f2503f"],
 Cell[CellGroupData[{
-Cell[109179, 2630, 199, 3, 42, "Subsection",ExpressionUUID->"17c4c4e7-4ba7-4b8d-8985-7ac3cc02438e"],
-Cell[109381, 2635, 2902, 48, 624, "Input",ExpressionUUID->"80d2d44a-d60f-43c0-b9a1-abe8e3b3332f"],
-Cell[112286, 2685, 2802, 46, 624, "Input",ExpressionUUID->"a787e0c5-917f-4a17-aa07-8bfec69f90ea"]
+Cell[116588, 2811, 199, 3, 42, "Subsection",ExpressionUUID->"17c4c4e7-4ba7-4b8d-8985-7ac3cc02438e"],
+Cell[116790, 2816, 2902, 48, 624, "Input",ExpressionUUID->"80d2d44a-d60f-43c0-b9a1-abe8e3b3332f"],
+Cell[119695, 2866, 2802, 46, 624, "Input",ExpressionUUID->"a787e0c5-917f-4a17-aa07-8bfec69f90ea"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[115125, 2736, 179, 3, 42, "Subsection",ExpressionUUID->"0b877f2b-0954-4fcc-bb4c-692486135df6"],
-Cell[115307, 2741, 9469, 230, 598, "Input",ExpressionUUID->"0370861b-afb6-40ae-9a74-1e0d17585c80"]
+Cell[122534, 2917, 179, 3, 42, "Subsection",ExpressionUUID->"0b877f2b-0954-4fcc-bb4c-692486135df6"],
+Cell[122716, 2922, 9469, 230, 598, "Input",ExpressionUUID->"0370861b-afb6-40ae-9a74-1e0d17585c80"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[124825, 2977, 166, 3, 87, "Section",ExpressionUUID->"dd4e372a-3cdd-4930-bf8c-0ecc277fbd7a"],
-Cell[124994, 2982, 11280, 198, 1482, "Input",ExpressionUUID->"1666583d-2f24-4e60-9fbb-457e3fbe787b"]
+Cell[132234, 3158, 166, 3, 87, "Section",ExpressionUUID->"dd4e372a-3cdd-4930-bf8c-0ecc277fbd7a"],
+Cell[132403, 3163, 11280, 198, 1482, "Input",ExpressionUUID->"1666583d-2f24-4e60-9fbb-457e3fbe787b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[136311, 3185, 158, 3, 87, "Section",ExpressionUUID->"ae665ec3-c060-496e-8209-9cce6e587c04"],
-Cell[136472, 3190, 3855, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"],
-Cell[140330, 3260, 11318, 251, 1118, "Input",ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-fcf31ee8c764"]
+Cell[143720, 3366, 158, 3, 87, "Section",ExpressionUUID->"ae665ec3-c060-496e-8209-9cce6e587c04"],
+Cell[143881, 3371, 3855, 68, 962, "Input",ExpressionUUID->"5fe0580e-a98a-48ba-b084-256c7a8d44a0"],
+Cell[147739, 3441, 11420, 253, 1118, "Input",ExpressionUUID->"6e6a1bbb-1c72-48ec-8af5-fcf31ee8c764"]
 }, Open  ]]
 }, Open  ]]
 }
