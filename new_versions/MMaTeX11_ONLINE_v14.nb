@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    157585,       2882]
-NotebookOptionsPosition[     76772,       1495]
-NotebookOutlinePosition[    151840,       2771]
-CellTagsIndexPosition[    151554,       2760]
+NotebookDataLength[    157771,       2883]
+NotebookOptionsPosition[     76924,       1496]
+NotebookOutlinePosition[    151984,       2772]
+CellTagsIndexPosition[    151698,       2761]
 WindowTitle->[MMaTeX]
 WindowFrame->PopupMenu*)
 
@@ -1003,7 +1003,7 @@ MAzDMAzDMAyL3v4P8CgMzA==
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
   Column]], "Text",
  Editable->False,
- Deletable->False,ExpressionUUID->"24e4f825-e833-464a-950a-b2330eb8d69a"],
+ Deletable->False,ExpressionUUID->"a022631a-b234-4496-bff2-11f1c537c7c6"],
 
 Cell[BoxData[
  SubsuperscriptBox[
@@ -1026,23 +1026,23 @@ Cell[BoxData[
  Editable->False,
  Deletable->False,
  Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"e5af62ca-9fc2-47fe-aba7-c4b15fd308e1"],
+  1, 0.9, 0.8],ExpressionUUID->"b5a6debf-28d6-47be-b3ea-dd98afd754fc"],
 
 Cell[CellGroupData[{
 
 Cell["software", "Chapter",
  Editable->False,
- Deletable->False,ExpressionUUID->"d0b3da73-1571-48e3-b6d0-2fd3feafb785"],
+ Deletable->False,ExpressionUUID->"d872355d-31ec-448a-9bc7-dadaaf5624de"],
 
 Cell[CellGroupData[{
 
 Cell["Ajustes", "Section",
  Editable->False,
- Deletable->False,ExpressionUUID->"a3bc2d56-b048-46cb-80de-007f93c27246"],
+ Deletable->False,ExpressionUUID->"8b7ea361-f376-4830-8888-676f45e20844"],
 
 Cell["\<\
 Clear @@ DeleteElements[Names@\"`*\", {\"check1a\", \"mmtxClass\",
-\"nbmmatex\", \"mmtxWhere\", \"check1aInput\"}];
+\"nbmmatex\", \"mmtxWhere\", \"check1aInput\", \"check1aInputG\"}];
 (*- DBv1 -*)
 mmtxWhere=\"overleaf\";
 apiMMaTeX1 = \\
@@ -1052,13 +1052,15 @@ CloudObject[\"https://www.wolframcloud.com/obj/a2e6b45a-a8f1-448f-a293-\
 (*== Introduce tu Key de MMaTeX - AI aqui !!==*)
 If [ValueQ[check1a], Print[\"La sesion continua...\"],
 check1aInput = InputString[\"Por favor introduzca una llave (key) valida: \", \
-\"UNITECH-XDE1038\"];
+\"1AmKVoO9BzznJrR2zZNEsQR3FEXVszAfDq6AQeBJZ2k=\"];
+check1aInputG = \"DzXyv8+OvzbH4FykTCJtWktlxCUWPWSMwmdbpxAZcMg=\";
 check1a = URLExecute[apiMMaTeX1, {\"myKey\" -> check1aInput}]];
 
 (*== If Pass ==*)
 If[StringContainsQ[ToString[ToExpression[check1a][[1]]], \"_licencia\"], \
 mmtxDB = \\
-ToExpression[check1a][[1]][[Length[ToExpression[check1a][[1]]]]];
+ToExpression[check1a][[1]][[Length[ToExpression[check1a][[1]]]]
+];
 
 (*== Funciones adicionales de AI ==*)
 aiTeX = \"https://raw.githubusercontent.com/josemramirez/mmatex/main/\
@@ -1087,16 +1089,16 @@ mmtxActualizarGastos[check1aInput, UsersTest];\
  Editable->False,
  Deletable->False,
  CellOpen->False,
- Background->GrayLevel[0.85],
+ Background->RGBColor[0.87, 0.94, 1],
  CellTags->
-  "mmatexinitCell",ExpressionUUID->"511e5fb2-7000-4b02-aaa1-917829dde0f4"]
+  "mmatexinitCell",ExpressionUUID->"c2c36b58-626f-45f9-b6a6-4e6389918934"]
 }, {1}]],
 
 Cell[CellGroupData[{
 
 Cell["MMaTeX", "Section",
  Editable->False,
- Deletable->False,ExpressionUUID->"84932eb3-c6ea-45a3-853b-d2585d7bb566"],
+ Deletable->False,ExpressionUUID->"f7f7360f-744a-4318-b190-b149747f1363"],
 
 Cell["\<\
 $WorkDir = NotebookDirectory[];
@@ -1108,9 +1110,9 @@ Print[\"Evaluando <plainTeX> ...\"];\
  Editable->False,
  Deletable->False,
  CellOpen->False,
- Background->RGBColor[1, 0.9, 0.8],
+ Background->GrayLevel[0.85],
  CellTags->
-  "mmatexRun2",ExpressionUUID->"488e6cae-e29a-4af0-b0c3-66fb46d62ab6"],
+  "mmatexRun2",ExpressionUUID->"ee44ca47-0c0a-41ca-aca7-d43652e9ef3f"],
 
 Cell["\<\
 $PdfLAdd = \"https://latexonline.cc/compile?text=\";
@@ -1121,12 +1123,12 @@ Print[\"Exportando con <latexonline> ...\"];\
  CellOpen->False,
  Background->RGBColor[0.87, 0.94, 1],
  CellTags->
-  "mmatexRun21",ExpressionUUID->"61dbd89c-4040-4fed-b9da-9233ee57754a"]
+  "mmatexRun21",ExpressionUUID->"fa6a10f1-3ae0-4491-b41a-6f20f012c692"]
 }, {1}]],
 
 Cell[CellGroupData[{
 
-Cell["Una Tabla de pruebas (v0.1)", "Section",ExpressionUUID->"fbce0a50-bd36-494b-9e46-837c9d952a4d"],
+Cell["Una Tabla de pruebas (v0.1)", "Section",ExpressionUUID->"a1e11aad-6bf3-4772-ac67-b3edf3e6a9e6"],
 
 Cell["\<\
 datosTable = {
@@ -1157,14 +1159,14 @@ Spacings -> {3, 1.5}, Dividers -> {{Opacity[0], {True}, Opacity[0]},
 Center}]\
 \>", "Input",
  Background->RGBColor[
-  1, 0.9, 0.8],ExpressionUUID->"ec4f6124-1ffe-4302-a4c7-61732d4e29b9"]
+  1, 0.9, 0.8],ExpressionUUID->"a1f1cd6a-dab1-4114-9bcf-06ac55e7da99"]
 }, {1}]],
 
 Cell[CellGroupData[{
 
 Cell["Texto plano", "Section",
  Editable->False,
- Deletable->False,ExpressionUUID->"52834fca-bf28-4a32-8aee-690b0ea826a3"],
+ Deletable->False,ExpressionUUID->"0614160d-8ab7-4b69-8aa2-26841b563ade"],
 
 Cell["\<\
 If[ValueQ[titles], 
@@ -1175,9 +1177,9 @@ If[ValueQ[titles],
  Editable->False,
  Deletable->False,
  CellOpen->False,
- Background->RGBColor[0.87, 0.94, 1],
+ Background->GrayLevel[0.85],
  CellTags->
-  "mmatexRunNote2",ExpressionUUID->"e0854b08-95f6-424c-9098-343df5406a3f"],
+  "mmatexRunNote2",ExpressionUUID->"30020a82-f64e-42ea-80a4-1154ae2fe987"],
 
 Cell[BoxData["updateBook"], "Input",
  Editable->False,
@@ -1185,7 +1187,7 @@ Cell[BoxData["updateBook"], "Input",
  CellOpen->False,
  Background->RGBColor[1, 0.85, 0.85],
  CellTags->"mmatexRunNote",
- CellID->67,ExpressionUUID->"9b939884-778b-45cf-b65e-8443de35b517"],
+ CellID->84,ExpressionUUID->"0971027b-dad5-45c9-825e-ad79855a1b95"],
 
 Cell["\<\
 Clear[\"Global`*\"];
@@ -1195,27 +1197,26 @@ FrontEndTokenExecute[SelectionCloseAllGroups]\
  Deletable->False,
  CellOpen->False,
  Background->RGBColor[1, 0.9, 0.8],
- CellTags->"mmatexRunCollapse",
- CellLabel->
-  "In[601]:=",ExpressionUUID->"2497e9a1-f4d3-48cb-a310-d676c033b2c8"]
-}, Closed]]
-}, Closed]],
+ CellTags->
+  "mmatexRunCollapse",ExpressionUUID->"73c89872-41b5-41c4-a2e5-0b8b79d5015f"]
+}, {1}]]
+}, {1}]],
 
 Cell[CellGroupData[{
 
-Cell["Paper_ONLINE", "Title",ExpressionUUID->"d62ecea9-956b-4026-af56-25bd6caee57e"],
+Cell["Paper_ONLINE", "Title",ExpressionUUID->"89e35857-af38-44ee-82dc-f62d617b557a"],
 
 Cell["\<\
 docClass[
  If[! ValueQ[mmtxClass], mmtxClass = \"mnras\", 
   mmtxClass], \"[a4paper,fleqn,usenatbib]\"]\
 \>", "Input",
- Background->RGBColor[1, 0.9, 0.8],
- CellID->57,ExpressionUUID->"518168e8-0ebb-4ab9-a2aa-2804b2c9ef05"],
+ Background->RGBColor[0.87, 0.94, 1],
+ CellID->118,ExpressionUUID->"fff44977-16d7-4d16-ba43-ecf3d6968d69"],
 
 Cell["graphicx", "Input",
  Background->GrayLevel[0.85],
- CellID->58,ExpressionUUID->"f3eee7f4-6ec8-4bc1-97fa-edbe2c03c51a"],
+ CellID->63,ExpressionUUID->"35dd7566-8498-42ff-bed9-64f43bad50e5"],
 
 Cell["\<\
 mmtxAuthors[mmtxClass, \"Consistent 3D rotational accretion of matter \\
@@ -1227,12 +1228,12 @@ onto a Galactic black hole\",
   \"Co-Author4$^{2,6}$\"}
  ]\
 \>", "Input",
- Background->RGBColor[0.87, 0.94, 1],
- CellID->75,ExpressionUUID->"f11f2f10-d49f-4ff5-b341-aa53eba8eaaf"],
+ Background->GrayLevel[0.85],
+ CellID->71,ExpressionUUID->"55ba5d2d-599e-4abe-973a-76cc25676eed"],
 
 Cell["openDoc[mmtxClass]", "Input",
- Background->RGBColor[0.87, 0.94, 1],
- CellID->108,ExpressionUUID->"924d7551-1d97-43fe-81a2-63224ae008bf"],
+ Background->RGBColor[1, 0.9, 0.8],
+ CellID->59,ExpressionUUID->"d04853df-363a-453f-9a99-0a9ee42d3ae7"],
 
 Cell["\<\
 \\begin{abstract}
@@ -1264,7 +1265,7 @@ y yo sigo editando sin pribelmaa....
 \\end{abstract}\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->50,ExpressionUUID->"9a2b4859-88fc-48af-9cf3-6446b2081ac5"],
+ CellID->82,ExpressionUUID->"9841b2e4-2c05-43c3-bc89-c5e35036ab3a"],
 
 Cell["\<\
 \\section{Introduction}
@@ -1278,11 +1279,11 @@ represent the true boundary conditions (i.e., at infinity) for the Bondi \
 problem.\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->100,ExpressionUUID->"66b52e10-56e6-402a-bc62-30b09981dbe0"],
+ CellID->38,ExpressionUUID->"25d4583f-987b-4c53-aa9e-92579bb3677a"],
 
 Cell["myStringToCell", "Input",
- Background->GrayLevel[0.85],
- CellID->59,ExpressionUUID->"9a5a1066-2b0f-478e-8914-ccc3bddc1da0"],
+ Background->RGBColor[1, 0.85, 0.85],
+ CellID->81,ExpressionUUID->"9d39f30a-04af-4c12-9d02-77ee3f5bdbe2"],
 
 Cell["\<\
 \\section{Introduction}
@@ -1296,7 +1297,7 @@ represent the true boundary conditions (i.e., at infinity) for the Bondi \
 problem.\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->98,ExpressionUUID->"512e3912-f18b-46ad-b62d-03dd53407038"],
+ CellID->41656101,ExpressionUUID->"e0e4beee-d660-4107-9a7a-8a8a175d5c4e"],
 
 Cell["\<\
 \\section{Mathematical Method}
@@ -1304,11 +1305,11 @@ So, we follow the notation of Ciotti \\& Silvia 2016. We start by writing the \
 continuity equation:\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->71,ExpressionUUID->"2ff7c137-bb35-4364-a2e4-2823b03bf54f"],
+ CellID->119,ExpressionUUID->"1015defe-40d9-4288-a137-fed12ee184ef"],
 
 Cell["mmtxEq[Eq8, \"conti1\"]", "Input",
- Background->GrayLevel[0.85],
- CellID->56,ExpressionUUID->"f92246f6-d562-449c-b78e-a34743967858"],
+ Background->RGBColor[1, 0.85, 0.85],
+ CellID->23,ExpressionUUID->"42c23cd5-5ead-4482-9e5b-ce949e8a9c52"],
 
 Cell["\<\
 where $\\lambda$, is called the accretion parameter, $x = r/r_B$, \
@@ -1319,76 +1320,76 @@ produced by a Newtonian potential the equation ($\\ref{conti1}$) has to be \
 solved altogether with the equation of Bernoulli:\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->104,ExpressionUUID->"dfd4af85-6870-4636-b5b5-55fed7205cee"],
+ CellID->41,ExpressionUUID->"f7407f56-a4e0-48e1-b5b3-e6b306930e31"],
 
 Cell["mmtxEq[Eq9a, \"bernou1\"]", "Input",
- Background->RGBColor[1, 0.9, 0.8],
- CellID->93,ExpressionUUID->"d4bbcaf5-8e4d-4d07-ae96-e1c4a6ee1ab8"],
+ Background->GrayLevel[0.85],
+ CellID->58,ExpressionUUID->"951f5c50-f466-451d-99dd-6556925bea9f"],
 
 Cell["\<\
 The coupled equations can be arranged, and for this case can be written in \
 terms of:\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->110,ExpressionUUID->"8605bc18-d1e5-4a97-a598-ec1dc5e0fbe0"],
+ CellID->67,ExpressionUUID->"1fc60d31-d43f-4ba7-968d-43adbaa11a40"],
 
 Cell["\<\
 The coupled equations can be arranged, and for this case can be written in \
 terms of:\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->51,ExpressionUUID->"d9b67baa-689e-4799-b47c-3f1721387b5d"],
+ CellID->64,ExpressionUUID->"7574d57c-9f45-4b79-940e-858ad128a7dc"],
 
 Cell["\<\
 The coupled equations can be arranged, and for this case can be written in \
 terms of:\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->102,ExpressionUUID->"b4a1ab5c-981d-4895-8e94-4e478b35d712"],
+ CellID->34420585,ExpressionUUID->"1877afe3-c7e5-41ba-a02b-266027197bab"],
 
 Cell["\<\
 mmtxEq[(gGeneral[\\[ScriptCapitalM]] == (\\[Lambda])^((
     2 (1 - \\[Gamma]))/(\\[Gamma] + 1)) fGeneral[x]), \"bernou2\"]\
 \>", "Input",
- Background->RGBColor[1, 0.9, 0.8],
- CellID->28,ExpressionUUID->"7e976e4a-ac02-4eaa-9a91-d600bb3b75e1"],
+ Background->RGBColor[1, 0.85, 0.85],
+ CellID->833671052,ExpressionUUID->"fbf9c323-d469-4139-9c1b-9f7d7d7e65d5"],
 
 Cell["\<\
 For the Isothermal case, $\\gamma=1$, Ciotti and Silvia have solved the \
 equation\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->52,ExpressionUUID->"a4c60283-b0bd-49b2-a6ac-ef3bc68420eb"],
+ CellID->36,ExpressionUUID->"f0879708-1aa7-4d33-bddc-39d990a438be"],
 
 Cell["\<\
 mmtxEq[(g[\\[ScriptCapitalM]] == (\\[Lambda])^((
     2 (1 - \\[Gamma]))/(\\[Gamma] + 1)) f[x]), \"bernou3\"]\
 \>", "Input",
  Background->GrayLevel[0.85],
- CellID->74,ExpressionUUID->"ca4666a6-c7a1-4309-b23d-480cd574f0d1"],
+ CellID->95,ExpressionUUID->"a6ea996c-2419-4407-825c-41d8dda7b592"],
 
 Cell["\<\
 Figure (\\ref{iso1}) shows the isothermal analytical solution given by Ciotti \
 and Silvia\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->80,ExpressionUUID->"2aafdb44-6a0b-4e37-9643-cd756b642401"],
+ CellID->1326057936,ExpressionUUID->"39c19240-f25b-4ae3-bb4c-ebec2627200a"],
 
 Cell["mmtxFig[test1, \"test1_v1\", \"This is my caption1\", \"iso1\"]", \
 "Input",
- Background->GrayLevel[0.85],
- CellID->25,ExpressionUUID->"760435bc-3c6a-45a0-99ca-4848cff59d75"],
+ Background->RGBColor[1, 0.9, 0.8],
+ CellID->93,ExpressionUUID->"c900abcc-a7b5-48d4-9d36-e3228027eb95"],
 
 Cell["Which can be written in terms of the Lambert-W functions as", "Text",
  Background->GrayLevel[0.85],
- CellID->115,ExpressionUUID->"b3e5adef-41d1-49e4-b69f-e5c733ee5af5"],
+ CellID->51,ExpressionUUID->"68b42c59-9781-4e3e-8425-72161ae2cb03"],
 
 Cell["\<\
 mmtxEq[(\\[ScriptCapitalM]^2 == -
 \\!\\(\\*SubscriptBox[\\(W\\), \\({0, \\(-1\\)}\\)]\\)[myArg1]), \"lambert1\"]\
 \>", "Input",
- Background->RGBColor[0.87, 0.94, 1],
- CellID->85,ExpressionUUID->"fdc2d8cf-f5fd-42d7-b2a0-bb553ee75f6b"],
+ Background->RGBColor[1, 0.9, 0.8],
+ CellID->470441786,ExpressionUUID->"476ae99a-a23a-4e53-b534-f654edf06a90"],
 
 Cell["\<\
 Where the subscript $\\{0,-1\\}$ means the main branch and the -1 branch for \
@@ -1398,12 +1399,12 @@ $\\lambda=0.8\\lambda_{cr}$, where the flows stays either subsonic \
 ($v<c_s(x_s)$) or supersonic ($v>c_s(x_s)$).\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->91,ExpressionUUID->"a70b787c-0031-4c98-bceb-1de8be626f4b"],
+ CellID->1827792695,ExpressionUUID->"6587d8f4-b004-40e3-8d1b-ac6f9320c614"],
 
 Cell["mmtxFig[test2, \"test2_v1\", \"This is my caption2\", \"iso2\"]", \
 "Input",
  Background->GrayLevel[0.85],
- CellID->347119445,ExpressionUUID->"bf92e98c-cfcf-4aa1-a6ea-e0db09e7f180"],
+ CellID->34,ExpressionUUID->"06193576-a636-4224-a4bf-35bc295c7b14"],
 
 Cell["\<\
 Also we can see in Figure (\\ref{iso2}), the density of the Newtonian \
@@ -1414,11 +1415,11 @@ $\\gamma=5/3$. In the Newtonian case, the sonic point disappears (i.e., \
 $x_s^{\\gamma=5/3}$ is strictly cero). With numerical techniques we solve\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->89,ExpressionUUID->"7efca977-f689-4f9b-81b7-656e64e2dee5"],
+ CellID->2105738177,ExpressionUUID->"d2a8c743-a32f-4dab-91b3-b76b990497d7"],
 
 Cell["mmtxEq[Eq18, \"newG53a\"]", "Input",
- Background->RGBColor[0.87, 0.94, 1],
- CellID->1470926863,ExpressionUUID->"ca2f14a0-94f3-4897-a6e3-da3c41f4334e"],
+ Background->GrayLevel[0.85],
+ CellID->25,ExpressionUUID->"c3efe32f-7e5a-4500-b743-46a701682c42"],
 
 Cell["\<\
 Figures (\\ref{adi1}, \\ref{adi2}) shows the full numerical $\\gamma=5/3$ \
@@ -1433,23 +1434,23 @@ to 1/2 which is the sonic point of the Newtonian isothermal solution \
 (analytical), drawn also as reference (dashed line).\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->36042177,ExpressionUUID->"f60fd055-c5c0-4159-806a-8e11ed6f640d"],
+ CellID->21,ExpressionUUID->"17dee084-326f-462d-aa21-2510cb390950"],
 
 Cell["mmtxFig[test3, \"test3_v1\", \"This is my caption3\", \"adi1\"]", \
 "Input",
  Background->RGBColor[1, 0.9, 0.8],
- CellID->31,ExpressionUUID->"bfc2cd8c-451c-427d-8a82-db33291fbc20"],
+ CellID->27,ExpressionUUID->"21825b64-3719-4b2f-a463-e14532c57617"],
 
 Cell["mmtxFig[test3, \"test3_v1\", \"This is my caption4\", \"adi2\"]", \
 "Input",
- Background->GrayLevel[0.85],
- CellID->66,ExpressionUUID->"aaf27761-2542-4180-8dbe-e95616d2a1e8"],
+ Background->RGBColor[0.87, 0.94, 1],
+ CellID->611038279,ExpressionUUID->"62d418d1-3e95-4a7a-b386-1319a1f6ef99"],
 
 Cell["\<\
 mmtxFig[test2, \"ADIMach3Newton_v1\", \"This is my caption5\", \"adi3\"]\
 \>", "Input",
- Background->RGBColor[1, 0.9, 0.8],
- CellID->35,ExpressionUUID->"e6e71409-c6e4-4b06-9233-622e882b121c"],
+ Background->RGBColor[1, 0.85, 0.85],
+ CellID->99,ExpressionUUID->"def4dfe3-88ec-4e52-b7b9-2feadb26f649"],
 
 Cell["\<\
 \\subsection{Non-Newtonian $\\gamma=5/3$ flow}
@@ -1458,11 +1459,11 @@ Also important to realize is the appearance of a sonic point in the case of $\
 potential. In the case the Bernoulli equation is: \
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->48,ExpressionUUID->"7506924f-64bb-41ce-91f3-41742a29fb34"],
+ CellID->453555199,ExpressionUUID->"71124f13-7108-4a36-9c4b-29cb081bb21b"],
 
 Cell["mmtxEq[(Eq18), \"pw1\"]", "Input",
- Background->GrayLevel[0.85],
- CellID->68,ExpressionUUID->"563b9709-013a-4fea-bb77-dc30a701e9e6"],
+ Background->RGBColor[0.87, 0.94, 1],
+ CellID->52,ExpressionUUID->"e4648295-7e2c-432c-b02c-dc19a31e52b4"],
 
 Cell["\<\
 In Figure (\\ref{adi1pw}) we see the two solutions of the Bernoulli equation \
@@ -1470,19 +1471,19 @@ with $\\gamma=5/3$, but different in describing a flow under Newtonian or PW \
 potential.\
 \>", "Text",
  Background->GrayLevel[0.85],
- CellID->22,ExpressionUUID->"f65af10f-1757-45f4-8d57-afd1785ee7fe"],
+ CellID->40,ExpressionUUID->"5ccf0f8c-e70f-4185-b6b9-3ee177e414f6"],
 
 Cell["\<\
 mmtxFig[test5, \"ADIMach1PW_v1\", \"This is my caption6\", \"adi1pw\"]\
 \>", "Input",
- Background->GrayLevel[0.85],
- CellID->95,ExpressionUUID->"baf073ac-a7e9-4fd5-b48f-ee6106fe1f16"],
+ Background->RGBColor[1, 0.85, 0.85],
+ CellID->1482766390,ExpressionUUID->"4c245979-82b2-4055-b2e9-c4e3dbf76f38"],
 
 Cell["\<\
 mmtxFig[test6, \"ADIMach2PW_v1\", \"This is my caption7\", \"adi2pw\"]\
 \>", "Input",
  Background->GrayLevel[0.85],
- CellID->97,ExpressionUUID->"bf456543-4c41-428b-9014-9faeffb3a2ff"],
+ CellID->1454476942,ExpressionUUID->"295fce1b-afbb-4925-b90c-765fe9e2eb7d"],
 
 Cell[BoxData["closeDoc"], "Input",
  Editable->False,
@@ -1490,8 +1491,8 @@ Cell[BoxData["closeDoc"], "Input",
  CellOpen->False,
  Background->RGBColor[1, 0.85, 0.85],
  CellTags->"mmatexTitleFinal",
- CellID->170480385,ExpressionUUID->"02b48c95-cefc-44d6-bf8e-0e19fc54f3ab"]
-}, Closed]]
+ CellID->48,ExpressionUUID->"31269a00-f4a3-4b29-9093-2b1550792914"]
+}, Open  ]]
 },
 WindowToolbars->{},
 WindowSize->{830, 850},
@@ -2718,7 +2719,7 @@ ScrollingOptions->{"VerticalScrollRange"->Fit},
 Magnification->1.15,
 FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"e3fec238-c838-4075-9331-e7958c2aaddc"
+ExpressionUUID->"b3ca3594-11cd-4c4e-af9b-99b895d1235d"
 ]
 (* End of Notebook Content *)
 
@@ -2726,164 +2727,164 @@ ExpressionUUID->"e3fec238-c838-4075-9331-e7958c2aaddc"
 (*CellTagsOutline
 CellTagsIndex->{
  "mmatexinitCell"->{
-  Cell[60933, 1042, 1786, 49, 80, "Input",ExpressionUUID->"511e5fb2-7000-4b02-aaa1-917829dde0f4",
+  Cell[60933, 1042, 1909, 51, 80, "Input",ExpressionUUID->"c2c36b58-626f-45f9-b6a6-4e6389918934",
    CellOpen->False,
    CellTags->"mmatexinitCell"]},
  "mmatexRun2"->{
-  Cell[62873, 1100, 389, 12, 80, "Input",ExpressionUUID->"488e6cae-e29a-4af0-b0c3-66fb46d62ab6",
+  Cell[62996, 1102, 383, 12, 80, "Input",ExpressionUUID->"ee44ca47-0c0a-41ca-aca7-d43652e9ef3f",
    CellOpen->False,
    CellTags->"mmatexRun2"]},
  "mmatexRun21"->{
-  Cell[63265, 1114, 299, 9, 80, "Input",ExpressionUUID->"61dbd89c-4040-4fed-b9da-9233ee57754a",
+  Cell[63382, 1116, 299, 9, 80, "Input",ExpressionUUID->"fa6a10f1-3ae0-4491-b41a-6f20f012c692",
    CellOpen->False,
    CellTags->"mmatexRun21"]},
  "mmatexRunNote2"->{
-  Cell[64881, 1168, 394, 11, 21, "Input",ExpressionUUID->"e0854b08-95f6-424c-9098-343df5406a3f",
+  Cell[64998, 1170, 386, 11, 80, "Input",ExpressionUUID->"30020a82-f64e-42ea-80a4-1154ae2fe987",
    CellOpen->False,
    CellTags->"mmatexRunNote2"]},
  "mmatexRunNote"->{
-  Cell[65278, 1181, 225, 6, 21, "Input",ExpressionUUID->"9b939884-778b-45cf-b65e-8443de35b517",
+  Cell[65387, 1183, 225, 6, 80, "Input",ExpressionUUID->"0971027b-dad5-45c9-825e-ad79855a1b95",
    CellOpen->False,
    CellTags->"mmatexRunNote",
-   CellID->67]},
+   CellID->84]},
  "mmatexRunCollapse"->{
-  Cell[65506, 1189, 343, 10, 21, "Input",ExpressionUUID->"2497e9a1-f4d3-48cb-a310-d676c033b2c8",
+  Cell[65615, 1191, 318, 9, 80, "Input",ExpressionUUID->"73c89872-41b5-41c4-a2e5-0b8b79d5015f",
    CellOpen->False,
    CellTags->"mmatexRunCollapse"]},
  "mmatexTitleFinal"->{
-  Cell[76523, 1486, 233, 6, 21, "Input",ExpressionUUID->"02b48c95-cefc-44d6-bf8e-0e19fc54f3ab",
+  Cell[76682, 1487, 226, 6, 21, "Input",ExpressionUUID->"31269a00-f4a3-4b29-9093-2b1550792914",
    CellOpen->False,
    CellTags->"mmatexTitleFinal",
-   CellID->170480385]}
+   CellID->48]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"mmatexinitCell", 150326, 2727},
- {"mmatexRun2", 150494, 2731},
- {"mmatexRun21", 150658, 2735},
- {"mmatexRunNote2", 150825, 2739},
- {"mmatexRunNote", 150995, 2743},
- {"mmatexRunCollapse", 151182, 2748},
- {"mmatexTitleFinal", 151358, 2752}
+ {"mmatexinitCell", 150478, 2728},
+ {"mmatexRun2", 150646, 2732},
+ {"mmatexRun21", 150810, 2736},
+ {"mmatexRunNote2", 150977, 2740},
+ {"mmatexRunNote", 151147, 2744},
+ {"mmatexRunCollapse", 151334, 2749},
+ {"mmatexTitleFinal", 151509, 2753}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[583, 21, 59466, 984, 110, "Text",ExpressionUUID->"24e4f825-e833-464a-950a-b2330eb8d69a"],
-Cell[60052, 1007, 591, 21, 87, "Text",ExpressionUUID->"e5af62ca-9fc2-47fe-aba7-c4b15fd308e1"],
+Cell[583, 21, 59466, 984, 110, "Text",ExpressionUUID->"a022631a-b234-4496-bff2-11f1c537c7c6"],
+Cell[60052, 1007, 591, 21, 87, "Text",ExpressionUUID->"b5a6debf-28d6-47be-b3ea-dd98afd754fc"],
 Cell[CellGroupData[{
-Cell[60668, 1032, 119, 2, 79, "Chapter",ExpressionUUID->"d0b3da73-1571-48e3-b6d0-2fd3feafb785"],
+Cell[60668, 1032, 119, 2, 79, "Chapter",ExpressionUUID->"d872355d-31ec-448a-9bc7-dadaaf5624de"],
 Cell[CellGroupData[{
-Cell[60812, 1038, 118, 2, 77, "Section",ExpressionUUID->"a3bc2d56-b048-46cb-80de-007f93c27246"],
-Cell[60933, 1042, 1786, 49, 80, "Input",ExpressionUUID->"511e5fb2-7000-4b02-aaa1-917829dde0f4",
+Cell[60812, 1038, 118, 2, 80, "Section",ExpressionUUID->"8b7ea361-f376-4830-8888-676f45e20844"],
+Cell[60933, 1042, 1909, 51, 80, "Input",ExpressionUUID->"c2c36b58-626f-45f9-b6a6-4e6389918934",
  CellOpen->False,
  CellTags->"mmatexinitCell"]
 }, {1}]],
 Cell[CellGroupData[{
-Cell[62753, 1096, 117, 2, 77, "Section",ExpressionUUID->"84932eb3-c6ea-45a3-853b-d2585d7bb566"],
-Cell[62873, 1100, 389, 12, 80, "Input",ExpressionUUID->"488e6cae-e29a-4af0-b0c3-66fb46d62ab6",
+Cell[62876, 1098, 117, 2, 80, "Section",ExpressionUUID->"f7f7360f-744a-4318-b190-b149747f1363"],
+Cell[62996, 1102, 383, 12, 80, "Input",ExpressionUUID->"ee44ca47-0c0a-41ca-aca7-d43652e9ef3f",
  CellOpen->False,
  CellTags->"mmatexRun2"],
-Cell[63265, 1114, 299, 9, 80, "Input",ExpressionUUID->"61dbd89c-4040-4fed-b9da-9233ee57754a",
+Cell[63382, 1116, 299, 9, 80, "Input",ExpressionUUID->"fa6a10f1-3ae0-4491-b41a-6f20f012c692",
  CellOpen->False,
  CellTags->"mmatexRun21"]
 }, {1}]],
 Cell[CellGroupData[{
-Cell[63598, 1128, 101, 0, 77, "Section",ExpressionUUID->"fbce0a50-bd36-494b-9e46-837c9d952a4d"],
-Cell[63702, 1130, 1020, 29, 80, "Input",ExpressionUUID->"ec4f6124-1ffe-4302-a4c7-61732d4e29b9"]
+Cell[63715, 1130, 101, 0, 80, "Section",ExpressionUUID->"a1e11aad-6bf3-4772-ac67-b3edf3e6a9e6"],
+Cell[63819, 1132, 1020, 29, 80, "Input",ExpressionUUID->"a1f1cd6a-dab1-4114-9bcf-06ac55e7da99"]
 }, {1}]],
 Cell[CellGroupData[{
-Cell[64756, 1164, 122, 2, 77, "Section",ExpressionUUID->"52834fca-bf28-4a32-8aee-690b0ea826a3"],
-Cell[64881, 1168, 394, 11, 21, "Input",ExpressionUUID->"e0854b08-95f6-424c-9098-343df5406a3f",
+Cell[64873, 1166, 122, 2, 80, "Section",ExpressionUUID->"0614160d-8ab7-4b69-8aa2-26841b563ade"],
+Cell[64998, 1170, 386, 11, 80, "Input",ExpressionUUID->"30020a82-f64e-42ea-80a4-1154ae2fe987",
  CellOpen->False,
  CellTags->"mmatexRunNote2"],
-Cell[65278, 1181, 225, 6, 21, "Input",ExpressionUUID->"9b939884-778b-45cf-b65e-8443de35b517",
+Cell[65387, 1183, 225, 6, 80, "Input",ExpressionUUID->"0971027b-dad5-45c9-825e-ad79855a1b95",
  CellOpen->False,
  CellTags->"mmatexRunNote",
- CellID->67],
-Cell[65506, 1189, 343, 10, 21, "Input",ExpressionUUID->"2497e9a1-f4d3-48cb-a310-d676c033b2c8",
+ CellID->84],
+Cell[65615, 1191, 318, 9, 80, "Input",ExpressionUUID->"73c89872-41b5-41c4-a2e5-0b8b79d5015f",
  CellOpen->False,
  CellTags->"mmatexRunCollapse"]
-}, Closed]]
-}, Closed]],
+}, {1}]]
+}, {1}]],
 Cell[CellGroupData[{
-Cell[65898, 1205, 84, 0, 82, "Title",ExpressionUUID->"d62ecea9-956b-4026-af56-25bd6caee57e"],
-Cell[65985, 1207, 232, 6, 96, "Input",ExpressionUUID->"518168e8-0ebb-4ab9-a2aa-2804b2c9ef05",
- CellID->57],
-Cell[66220, 1215, 123, 2, 53, "Input",ExpressionUUID->"f3eee7f4-6ec8-4bc1-97fa-edbe2c03c51a",
- CellID->58],
-Cell[66346, 1219, 372, 11, 202, "Input",ExpressionUUID->"f11f2f10-d49f-4ff5-b341-aa53eba8eaaf",
- CellID->75],
-Cell[66721, 1232, 142, 2, 53, "Input",ExpressionUUID->"924d7551-1d97-43fe-81a2-63224ae008bf",
- CellID->108],
-Cell[66866, 1236, 1001, 30, 668, "Text",ExpressionUUID->"9a2b4859-88fc-48af-9cf3-6446b2081ac5",
- CellID->50],
-Cell[67870, 1268, 688, 12, 80, "Text",ExpressionUUID->"66b52e10-56e6-402a-bc62-30b09981dbe0",
- CellID->100],
-Cell[68561, 1282, 129, 2, 80, "Input",ExpressionUUID->"9a5a1066-2b0f-478e-8914-ccc3bddc1da0",
- CellID->59],
-Cell[68693, 1286, 687, 12, 80, "Text",ExpressionUUID->"512e3912-f18b-46ad-b62d-03dd53407038",
- CellID->98],
-Cell[69383, 1300, 253, 6, 80, "Text",ExpressionUUID->"2ff7c137-bb35-4364-a2e4-2823b03bf54f",
+Cell[65976, 1206, 84, 0, 113, "Title",ExpressionUUID->"89e35857-af38-44ee-82dc-f62d617b557a"],
+Cell[66063, 1208, 235, 6, 96, "Input",ExpressionUUID->"fff44977-16d7-4d16-ba43-ecf3d6968d69",
+ CellID->118],
+Cell[66301, 1216, 123, 2, 53, "Input",ExpressionUUID->"35dd7566-8498-42ff-bed9-64f43bad50e5",
+ CellID->63],
+Cell[66427, 1220, 364, 11, 202, "Input",ExpressionUUID->"55ba5d2d-599e-4abe-973a-76cc25676eed",
  CellID->71],
-Cell[69639, 1308, 138, 2, 80, "Input",ExpressionUUID->"f92246f6-d562-449c-b78e-a34743967858",
- CellID->56],
-Cell[69780, 1312, 542, 9, 80, "Text",ExpressionUUID->"dfd4af85-6870-4636-b5b5-55fed7205cee",
- CellID->104],
-Cell[70325, 1323, 146, 2, 80, "Input",ExpressionUUID->"d4bbcaf5-8e4d-4d07-ae96-e1c4a6ee1ab8",
- CellID->93],
-Cell[70474, 1327, 209, 5, 80, "Text",ExpressionUUID->"8605bc18-d1e5-4a97-a598-ec1dc5e0fbe0",
- CellID->110],
-Cell[70686, 1334, 208, 5, 80, "Text",ExpressionUUID->"d9b67baa-689e-4799-b47c-3f1721387b5d",
- CellID->51],
-Cell[70897, 1341, 209, 5, 80, "Text",ExpressionUUID->"b4a1ab5c-981d-4895-8e94-4e478b35d712",
- CellID->102],
-Cell[71109, 1348, 251, 5, 80, "Input",ExpressionUUID->"7e976e4a-ac02-4eaa-9a91-d600bb3b75e1",
- CellID->28],
-Cell[71363, 1355, 204, 5, 80, "Text",ExpressionUUID->"a4c60283-b0bd-49b2-a6ac-ef3bc68420eb",
- CellID->52],
-Cell[71570, 1362, 231, 5, 80, "Input",ExpressionUUID->"ca4666a6-c7a1-4309-b23d-480cd574f0d1",
- CellID->74],
-Cell[71804, 1369, 212, 5, 80, "Text",ExpressionUUID->"2aafdb44-6a0b-4e37-9643-cd756b642401",
- CellID->80],
-Cell[72019, 1376, 180, 3, 80, "Input",ExpressionUUID->"760435bc-3c6a-45a0-99ca-4848cff59d75",
- CellID->25],
-Cell[72202, 1381, 174, 2, 80, "Text",ExpressionUUID->"b3e5adef-41d1-49e4-b69f-e5c733ee5af5",
- CellID->115],
-Cell[72379, 1385, 243, 5, 80, "Input",ExpressionUUID->"fdc2d8cf-f5fd-42d7-b2a0-bb553ee75f6b",
- CellID->85],
-Cell[72625, 1392, 461, 8, 80, "Text",ExpressionUUID->"a70b787c-0031-4c98-bceb-1de8be626f4b",
- CellID->91],
-Cell[73089, 1402, 187, 3, 52, "Input",ExpressionUUID->"bf92e98c-cfcf-4aa1-a6ea-e0db09e7f180",
- CellID->347119445],
-Cell[73279, 1407, 458, 9, 185, "Text",ExpressionUUID->"7efca977-f689-4f9b-81b7-656e64e2dee5",
- CellID->89],
-Cell[73740, 1418, 156, 2, 53, "Input",ExpressionUUID->"ca2f14a0-94f3-4897-a6e3-da3c41f4334e",
- CellID->1470926863],
-Cell[73899, 1422, 846, 13, 236, "Text",ExpressionUUID->"f60fd055-c5c0-4159-806a-8e11ed6f640d",
- CellID->36042177],
-Cell[74748, 1437, 186, 3, 53, "Input",ExpressionUUID->"bfc2cd8c-451c-427d-8a82-db33291fbc20",
- CellID->31],
-Cell[74937, 1442, 180, 3, 53, "Input",ExpressionUUID->"aaf27761-2542-4180-8dbe-e95616d2a1e8",
- CellID->66],
-Cell[75120, 1447, 201, 4, 53, "Input",ExpressionUUID->"e6e71409-c6e4-4b06-9233-622e882b121c",
- CellID->35],
-Cell[75324, 1453, 370, 7, 134, "Text",ExpressionUUID->"7506924f-64bb-41ce-91f3-41742a29fb34",
- CellID->48],
-Cell[75697, 1462, 138, 2, 53, "Input",ExpressionUUID->"563b9709-013a-4fea-bb77-dc30a701e9e6",
- CellID->68],
-Cell[75838, 1466, 290, 6, 83, "Text",ExpressionUUID->"f65af10f-1757-45f4-8d57-afd1785ee7fe",
- CellID->22],
-Cell[76131, 1474, 193, 4, 53, "Input",ExpressionUUID->"baf073ac-a7e9-4fd5-b48f-ee6106fe1f16",
+Cell[66794, 1233, 139, 2, 53, "Input",ExpressionUUID->"d04853df-363a-453f-9a99-0a9ee42d3ae7",
+ CellID->59],
+Cell[66936, 1237, 1001, 30, 668, "Text",ExpressionUUID->"9841b2e4-2c05-43c3-bc89-c5e35036ab3a",
+ CellID->82],
+Cell[67940, 1269, 687, 12, 80, "Text",ExpressionUUID->"25d4583f-987b-4c53-aa9e-92579bb3677a",
+ CellID->38],
+Cell[68630, 1283, 137, 2, 80, "Input",ExpressionUUID->"9d39f30a-04af-4c12-9d02-77ee3f5bdbe2",
+ CellID->81],
+Cell[68770, 1287, 693, 12, 80, "Text",ExpressionUUID->"e0e4beee-d660-4107-9a7a-8a8a175d5c4e",
+ CellID->41656101],
+Cell[69466, 1301, 254, 6, 80, "Text",ExpressionUUID->"1015defe-40d9-4288-a137-fed12ee184ef",
+ CellID->119],
+Cell[69723, 1309, 146, 2, 80, "Input",ExpressionUUID->"42c23cd5-5ead-4482-9e5b-ce949e8a9c52",
+ CellID->23],
+Cell[69872, 1313, 541, 9, 80, "Text",ExpressionUUID->"f7407f56-a4e0-48e1-b5b3-e6b306930e31",
+ CellID->41],
+Cell[70416, 1324, 140, 2, 80, "Input",ExpressionUUID->"951f5c50-f466-451d-99dd-6556925bea9f",
+ CellID->58],
+Cell[70559, 1328, 208, 5, 80, "Text",ExpressionUUID->"1fc60d31-d43f-4ba7-968d-43adbaa11a40",
+ CellID->67],
+Cell[70770, 1335, 208, 5, 80, "Text",ExpressionUUID->"7574d57c-9f45-4b79-940e-858ad128a7dc",
+ CellID->64],
+Cell[70981, 1342, 214, 5, 80, "Text",ExpressionUUID->"1877afe3-c7e5-41ba-a02b-266027197bab",
+ CellID->34420585],
+Cell[71198, 1349, 260, 5, 80, "Input",ExpressionUUID->"fbf9c323-d469-4139-9c1b-9f7d7d7e65d5",
+ CellID->833671052],
+Cell[71461, 1356, 204, 5, 80, "Text",ExpressionUUID->"f0879708-1aa7-4d33-bddc-39d990a438be",
+ CellID->36],
+Cell[71668, 1363, 231, 5, 80, "Input",ExpressionUUID->"a6ea996c-2419-4407-825c-41d8dda7b592",
  CellID->95],
-Cell[76327, 1480, 193, 4, 53, "Input",ExpressionUUID->"bf456543-4c41-428b-9014-9faeffb3a2ff",
- CellID->97],
-Cell[76523, 1486, 233, 6, 21, "Input",ExpressionUUID->"02b48c95-cefc-44d6-bf8e-0e19fc54f3ab",
+Cell[71902, 1370, 220, 5, 80, "Text",ExpressionUUID->"39c19240-f25b-4ae3-bb4c-ebec2627200a",
+ CellID->1326057936],
+Cell[72125, 1377, 186, 3, 80, "Input",ExpressionUUID->"c900abcc-a7b5-48d4-9d36-e3228027eb95",
+ CellID->93],
+Cell[72314, 1382, 173, 2, 80, "Text",ExpressionUUID->"68b42c59-9781-4e3e-8425-72161ae2cb03",
+ CellID->51],
+Cell[72490, 1386, 248, 5, 80, "Input",ExpressionUUID->"476ae99a-a23a-4e53-b534-f654edf06a90",
+ CellID->470441786],
+Cell[72741, 1393, 469, 8, 80, "Text",ExpressionUUID->"6587d8f4-b004-40e3-8d1b-ac6f9320c614",
+ CellID->1827792695],
+Cell[73213, 1403, 180, 3, 52, "Input",ExpressionUUID->"06193576-a636-4224-a4bf-35bc295c7b14",
+ CellID->34],
+Cell[73396, 1408, 466, 9, 185, "Text",ExpressionUUID->"d2a8c743-a32f-4dab-91b3-b76b990497d7",
+ CellID->2105738177],
+Cell[73865, 1419, 140, 2, 53, "Input",ExpressionUUID->"c3efe32f-7e5a-4500-b743-46a701682c42",
+ CellID->25],
+Cell[74008, 1423, 840, 13, 236, "Text",ExpressionUUID->"17dee084-326f-462d-aa21-2510cb390950",
+ CellID->21],
+Cell[74851, 1438, 186, 3, 53, "Input",ExpressionUUID->"21825b64-3719-4b2f-a463-e14532c57617",
+ CellID->27],
+Cell[75040, 1443, 195, 3, 53, "Input",ExpressionUUID->"62d418d1-3e95-4a7a-b386-1319a1f6ef99",
+ CellID->611038279],
+Cell[75238, 1448, 203, 4, 53, "Input",ExpressionUUID->"def4dfe3-88ec-4e52-b7b9-2feadb26f649",
+ CellID->99],
+Cell[75444, 1454, 377, 7, 134, "Text",ExpressionUUID->"71124f13-7108-4a36-9c4b-29cb081bb21b",
+ CellID->453555199],
+Cell[75824, 1463, 146, 2, 53, "Input",ExpressionUUID->"e4648295-7e2c-432c-b02c-dc19a31e52b4",
+ CellID->52],
+Cell[75973, 1467, 290, 6, 83, "Text",ExpressionUUID->"5ccf0f8c-e70f-4185-b6b9-3ee177e414f6",
+ CellID->40],
+Cell[76266, 1475, 209, 4, 53, "Input",ExpressionUUID->"4c245979-82b2-4055-b2e9-c4e3dbf76f38",
+ CellID->1482766390],
+Cell[76478, 1481, 201, 4, 53, "Input",ExpressionUUID->"295fce1b-afbb-4925-b90c-765fe9e2eb7d",
+ CellID->1454476942],
+Cell[76682, 1487, 226, 6, 21, "Input",ExpressionUUID->"31269a00-f4a3-4b29-9093-2b1550792914",
  CellOpen->False,
  CellTags->"mmatexTitleFinal",
- CellID->170480385]
-}, Closed]]
+ CellID->48]
+}, Open  ]]
 }
 ]
 *)
