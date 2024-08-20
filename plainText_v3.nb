@@ -22,6 +22,17 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["Funciones para volver el NoteBook => texto plano", "Section",ExpressionUUID->"e2a8139a-6252-4d5a-b12c-4df9360e45e6"],
 
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$WorkDir", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.933167464658514*^9, 3.933167479464143*^9}, {
+  3.933167607185515*^9, 
+  3.933167607994378*^9}},ExpressionUUID->"a95eb8e4-4e17-4d7e-a3ca-\
+bd5f27f8d751"],
+
+
 Cell[CellGroupData[{
 
 Cell["Functions to enforce cell ID generation", "Subsection",ExpressionUUID->"4b2ea137-805c-440f-9d84-7fec50d2b676"],
