@@ -644,7 +644,8 @@ Cell[BoxData[
           RowBox[{
            RowBox[{"TeXForm", "[", "generation", "]"}], ",", "InputForm"}], 
           "]"}], ",", 
-         RowBox[{"\"\<\\\\text\>\"", "->", "\"\<\>\""}]}], "]"}], "<>", 
+           RowBox[{"\"\<\\\\text\>\"", "->", "\"\<\>\""}], ",", " ", 
+           RowBox[{"\"\<$\>\"", "->", "\"\<\>\""}]}], "}"}]}], "]"}], "<>",
        "\"\<\n\\\\label{\>\"", "<>", "name", "<>", 
        "\"\<}\n\\\\end{equation}\>\""}], "\[IndentingNewLine]", ")"}]}],
     FontSize->18]}]}]], "Input",
