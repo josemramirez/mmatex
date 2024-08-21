@@ -1052,8 +1052,8 @@ b83f8ba161c4\"];
 (*== Introduce tu Key de MMaTeX - AI aqui !!==*)
 If [ValueQ[check1a], Print[\"La sesion continua...\"],
 check1aInput = InputString[\"Por favor introduzca una llave (key) valida: \", \
-\"1AmKVoO9BzznJrR2zZNEsQR3FEXVszAfDq6AQeBJZ2k=\"];
-check1aInputG = \"DzXyv8+OvzbH4FykTCJtWktlxCUWPWSMwmdbpxAZcMg=\";
+\"+EVu6mlyNuwdecvmZj1Ks+USa9dcbTjxaRFv7pmHBvg=\"];
+check1aInputG = \"ngLOSRK7H/FPoXKGb9WU4Bo+4+J8SlOmd/uq6Y2F7cQ=\";
 check1a = URLExecute[apiMMaTeX1, {\"myKey\" -> check1aInput}]];
 
 (*== If Pass ==*)
