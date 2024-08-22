@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    209087,       3532]
-NotebookOptionsPosition[    141418,       2411]
-NotebookOutlinePosition[    208394,       3525]
-CellTagsIndexPosition[    208351,       3522]
+NotebookDataLength[    210300,       3552]
+NotebookOptionsPosition[    142529,       2429]
+NotebookOutlinePosition[    209578,       3544]
+CellTagsIndexPosition[    209535,       3541]
 WindowTitle->MMaTeX
 WindowFrame->PopupMenu*)
 
@@ -2181,7 +2181,7 @@ VVVVVVVVVdXfAOZo1vM=
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
   Column]], "Text",
  Editable->False,
- Deletable->False,ExpressionUUID->"2b70a23d-c42e-4cd3-8cea-b37533758940"],
+ Deletable->False,ExpressionUUID->"68f9ee7f-c763-4bed-89e9-45f0affb1429"],
 
 Cell[BoxData[
  SubsuperscriptBox["cloud", 
@@ -2193,16 +2193,17 @@ Cell[BoxData[
    FontSize->9]]], "Text",
  Editable->False,
  Deletable->False,
- Background->None,ExpressionUUID->"dba3c635-ce25-49e8-85f9-ad197b78c55e"],
+ Background->None,ExpressionUUID->"27b95ff3-bd0d-4ec5-aa26-a69d85bc857b"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  TemplateBox[{
-  "\"www.wolframcloud.com/obj/jmramirez/Published/MMaTeXv01.nb\"", 
-   "https://www.wolframcloud.com/obj/jmramirez/Published/MMaTeXv02.nb"},
+  "\"www.wolframcloud.com/obj/dronesaipeiskos/Published/MMaTeXv01.nb\"", 
+   "https://www.wolframcloud.com/obj/dronesaipeiskos/Published/MMaTeXv02.nb"},
+  
   "HyperlinkURL"]], "Subtitle",
- TextAlignment->Center,ExpressionUUID->"4e96e340-40bf-45bd-a062-f7e22bc36ff6"],
+ TextAlignment->Center,ExpressionUUID->"2d2d4530-532e-4129-a800-a85051476fa6"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2221,9 +2222,11 @@ Regular\\\"]\\) report\"\>",
        StripOnInput->False,
        FontSize->17],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 1]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 1]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"], 
@@ -2240,9 +2243,11 @@ Regular\\\"]\\) mnras - \\!\\(\\*StyleBox[\\\"4\\\",FontFamily->\\\"dt-web-04\
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 5]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 5]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"]},
@@ -2261,9 +2266,11 @@ Regular\\\"]\\) report\"\>",
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 2]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 2]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"], 
@@ -2280,9 +2287,11 @@ Regular\\\"]\\) mnras - \\!\\(\\*StyleBox[\\\"4\\\",FontFamily->\\\"dt-web-04\
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 6]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 6]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"]},
@@ -2302,9 +2311,11 @@ Regular\\\"]\\) report\"\>",
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 3]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 3]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"], 
@@ -2320,9 +2331,11 @@ Regular\\\"]\\) LegrandOrangeBook\"\>",
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 7]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 7]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"]},
@@ -2340,9 +2353,11 @@ Regular\\\"]\\) mnras - \\!\\(\\*StyleBox[\\\"4\\\",FontFamily->\\\"dt-web-04\
        StripOnInput->False,
        FontSize->18],
       Appearance->"DialogBox",
-      ButtonFunction:>(
-       NotebookOpen[$CellContext`$WorkDirGit <> 
-         Part[$CellContext`TstringFileSoftware2A, 4]]; Null),
+      ButtonFunction:>(NotebookSave[
+         NotebookOpen[$CellContext`$WorkDirGit <> 
+          Part[$CellContext`TstringFileSoftware2A, 4]], NotebookDirectory[] <> 
+         Part[$CellContext`TstringFileSoftware2A, 1] <> "_From_Cloud.nb"]; 
+       Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"], 
@@ -2356,8 +2371,8 @@ Regular\\\"]\\) mnras - \\!\\(\\*StyleBox[\\\"4\\\",FontFamily->\\\"dt-web-04\
       ButtonFunction:>(NotebookSave[
          NotebookOpen[
          "https://raw.githubusercontent.com/josemramirez/mmaitexSlide/main/\
-new_versions/MMaiTeX_Software_GitHubv0.2_PROD.nb"], 
-         NotebookDirectory[]]; Null),
+new_versions/MMaiTeX_Software_GitHubv0.2_PROD.nb"], NotebookDirectory[] <> 
+         "MMaiTeX_Software_GitHubv0.2_PROD_From_Cloud.nb"]; Null),
       Evaluator->Automatic,
       ImageSize->{290, 100},
       Method->"Preemptive"]}
@@ -2366,7 +2381,7 @@ new_versions/MMaiTeX_Software_GitHubv0.2_PROD.nb"],
    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Text",
- TextAlignment->Left,ExpressionUUID->"92054ffc-fcdd-419a-a55c-fb94d7e1ed32"],
+ TextAlignment->Left,ExpressionUUID->"9f1b3b7a-d709-48d4-8482-51a0aa236fb9"],
 
 Cell[BoxData[
  RowBox[{
@@ -2382,17 +2397,20 @@ Cell[BoxData[
     "cuenta", " ", "gratis", " ", 
     RowBox[{"en", ":", " ", "https", ":"}]}]}], "//", 
   RowBox[{"www", ".", "overleaf", ".", "com"}]}]], "Text",ExpressionUUID->\
-"ccfc9e94-5765-4b3c-96dd-5058681954e2"],
+"b2f983d4-32d6-40f6-a987-a39130071d0b"],
 
 Cell[BoxData[
- ButtonBox["\<\"Connect\"\>",
+ ButtonBox["\<\"\\!\\(\\*StyleBox[\\\"7\\\",FontFamily->\\\"dt-line-\
+technology-01\\\",FontSize->12,FontWeight->\\\"Regular\\\",FontColor->\
+RGBColor[1, 0, 0]]\\) Conectar\"\>",
   Appearance->"DialogBox",
   ButtonFunction:>CloudGet[
-   "https://www.wolframcloud.com/obj/jmramirez/mmatex/CreatorMMaTeX_Cloud_v1.\
-mx"],
+   "https://www.wolframcloud.com/obj/dronesaipeiskos/mmatex/CreatorMMaTeX_\
+Cloud_v1.mx"],
   Evaluator->Automatic,
-  Method->"Preemptive"]], "Input",ExpressionUUID->"82e57b27-fb3d-4973-a377-\
-4b4b4e651795"],
+  Method->"Preemptive"]], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"ad863e07-ebe2-420d-b594-d216b5df685b"],
 
 Cell[BoxData[
  ButtonBox["\<\"Tutorial\"\>",
@@ -2404,9 +2422,9 @@ Cell[BoxData[
   Evaluator->Automatic,
   ImageSize->{222, 50},
   Method->"Preemptive"]], "Text",
- TextAlignment->Left,ExpressionUUID->"627428f7-2b35-44cc-bea6-e41b51c4bbf4"],
+ TextAlignment->Left,ExpressionUUID->"dcfd4adb-3dc8-47d1-9ffc-5ac9d1076881"],
 
-Cell["Describe el Tutorial.", "Text",ExpressionUUID->"5354c765-b4c7-4299-85e6-5f46ab42733a"]
+Cell["Describe el Tutorial.", "Text",ExpressionUUID->"d78a7cbf-239b-46ec-a0a9-b6cf7004ffa0"]
 }, Open  ]]
 },
 Editable->False,
@@ -3505,13 +3523,14 @@ qqqqqqqqqqqqqqoeA1V08tA=
   Interleaving -> True],
 WindowTitle->"MMaTeX",
 ScrollingOptions->{"VerticalScrollRange"->Fit},
+PrivateNotebookOptions->{"CloudPublishPath"->"/Published/MMaTeXv02.nb"},
 ShowCellBracket->False,
 Magnification->1.15,
 Background->Opacity[0.6, 
   RGBColor[0.87, 0.94, 1]],
 FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"2dc0e133-1751-4fba-ae5b-43dbfdfc79b9"
+ExpressionUUID->"69f37d9a-e5e7-48d4-949f-47cd6fef9fdb"
 ]
 (* End of Notebook Content *)
 
@@ -3524,15 +3543,16 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[581, 21, 131407, 2162, 90, "Text",ExpressionUUID->"2b70a23d-c42e-4cd3-8cea-b37533758940"],
-Cell[131991, 2185, 276, 10, 39, "Text",ExpressionUUID->"dba3c635-ce25-49e8-85f9-ad197b78c55e"],
+Cell[581, 21, 131407, 2162, 90, "Text",ExpressionUUID->"68f9ee7f-c763-4bed-89e9-45f0affb1429"],
+Cell[131991, 2185, 276, 10, 39, "Text",ExpressionUUID->"27b95ff3-bd0d-4ec5-aa26-a69d85bc857b"],
 Cell[CellGroupData[{
-Cell[132292, 2199, 280, 5, 63, InheritFromParent,ExpressionUUID->"4e96e340-40bf-45bd-a062-f7e22bc36ff6"],
-Cell[132575, 2206, 7460, 162, 504, InheritFromParent,ExpressionUUID->"92054ffc-fcdd-419a-a55c-fb94d7e1ed32"],
-Cell[140038, 2370, 585, 14, 96, "Text",ExpressionUUID->"ccfc9e94-5765-4b3c-96dd-5058681954e2"],
-Cell[140626, 2386, 299, 8, 47, "Input",ExpressionUUID->"82e57b27-fb3d-4973-a377-4b4b4e651795"],
-Cell[140928, 2396, 379, 10, 77, InheritFromParent,ExpressionUUID->"627428f7-2b35-44cc-bea6-e41b51c4bbf4"],
-Cell[141310, 2408, 92, 0, 39, "Text",ExpressionUUID->"5354c765-b4c7-4299-85e6-5f46ab42733a"]
+Cell[132292, 2199, 295, 6, 107, InheritFromParent,ExpressionUUID->"2d2d4530-532e-4129-a800-a85051476fa6"],
+Cell[132590, 2207, 8373, 176, 504, InheritFromParent,ExpressionUUID->"9f1b3b7a-d709-48d4-8482-51a0aa236fb9"],
+Cell[140966, 2385, 585, 14, 96, "Text",ExpressionUUID->"b2f983d4-32d6-40f6-a987-a39130071d0b"],
+Cell[141554, 2401, 482, 11, 65, "Input",ExpressionUUID->"ad863e07-ebe2-420d-b594-d216b5df685b",
+ InitializationCell->True],
+Cell[142039, 2414, 379, 10, 77, InheritFromParent,ExpressionUUID->"dcfd4adb-3dc8-47d1-9ffc-5ac9d1076881"],
+Cell[142421, 2426, 92, 0, 39, "Text",ExpressionUUID->"d78a7cbf-239b-46ec-a0a9-b6cf7004ffa0"]
 }, Open  ]]
 }
 ]
