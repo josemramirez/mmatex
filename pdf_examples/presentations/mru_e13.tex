@@ -1,0 +1,389 @@
+%% Beamer-ported version of mru.tex ==
+%% 
+%% Original created 05-10-2008; ported to Beamer July 2025
+\documentclass{beamer}
+
+\pdfminorversion=7  % Allow higher PDF versions for included images
+
+\usepackage{xcolor}
+\usetheme{Copenhagen}  % Change to Madrid, Copenhagen, etc., for fancier look
+% Define custom colors
+\definecolor{electricblue}{RGB}{0,191,255} % Electric blue
+\definecolor{creamyblue}{RGB}{173,216,230} % Creamy blue
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+%\setbeamercolor{structure}{fg=electricblue} % Apply electric blue
+\setbeamercolor{structure}{fg=creamyblue} % Apply creamy blue
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{graphicx}  % For images
+\usepackage{lmodern}  % Better font handling to reduce substitution warnings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Seguridad.. %%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+pdfpagemode={FullScreen},
+pdftitle={MRU e1: ver1},
+pdfauthor={JM~Ramirez},
+pdfcreator={JM~Ramirez},
+pdfproducer={JM~Ramirez},
+pdfkeywords={Movimiento,Rectilineo,Uniforme}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% You can insert definicions here..
+
+%% DEFINICIONES MIAS..
+%\def\psPiFour{12.566371}
+%\def\psPiTwo{6.283185}
+\def\psPi{3.14159265}
+%\def\psPiH{1.570796327}
+%\newdimen\pstRadUnit
+%\newdimen\pstRadUnitInv
+%\pstRadUnit=1.047198cm % this is pi/3
+%\pstRadUnitInv=0.95493cm % this is 3/pi
+
+%% Libreria de formulas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{lib/FORMULAS}
+%% Libreria de Notas    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{lib/NOTASUNIDADES}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Titulo y autor .. obligatorio..
+\title{MRU e1: ver1}
+\subtitle{Practica... y las puertas se abren}
+\author{ejjr}
+\email{ejjr.clases@gmail.com}
+
+%%%%%%% Para pegar el log.. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\logo{%
+    \begin{tikzpicture}
+        \node[opacity=0.2] {\includegraphics[width=1cm]{images/citlogogrey.eps}}; % Use absolute path if needed: /home/josem/WEB_JJR/libs/figs/citlogogrey.eps
+    \end{tikzpicture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Comienzo del documento.. %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Advertencia para no dejar que se copien %%%%%%%%%%%
+\begin{frame}
+\frametitle{Advertencia}
+{\color{gray} \large Esta nota tiene la intenci\'on de que \'este
+material no sea entregado como tarea.}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%________________________________________________________________(ult. col, 65)
+% ========================== slide1 ============================= 
+\begin{frame}
+\frametitle{Movimiento Rectil\'ineo Uniforme}
+% 
+% -Paragraph1 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% -Idea1 
+% ============================================================== 
+ La f\'ormula principal:
+
+                                                               
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+ 
+{\huge \vmru}
+\vNUa
+                                                               
+% ============================================================== 
+% -Idea3 
+% ============================================================== 
+                                                               
+                                                               
+                                                               
+% ============================================================== 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+\end{frame}
+
+%________________________________________________________________(ult. col, 65)
+% ========================== slide2 ============================= 
+\begin{frame}
+\frametitle{MRU}
+% 
+% -Paragraph1 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% -Idea1 
+% ============================================================== 
+
+Recu\'erdalo por sus unidades:
+
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+
+\begin{equation*}
+10\frac{\text{km}}{\text{h}} =
+\frac{\text{Se recorren 10 km ({\red distancia})}}
+{\text{en 1 hora ({\red tiempo})}}
+\end{equation*}
+                                                               
+% ============================================================== 
+% -Idea3 
+% ============================================================== 
+ 
+Las otras dos f\'ormulas que se derivan de (\ref{vmru}) son:
+
+{\large \xmru \\ \tmru}
+                                                              
+% ============================================================== 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+\end{frame}
+
+%________________________________________________________________(ult. col, 65)
+% ========================== slide3 ============================= 
+\begin{frame}
+\frametitle{MRU}
+% 
+% -Paragraph1 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% -Idea1 
+% ============================================================== 
+                                                               
+Es uniforme porque la velocidad no var\'ia en el tiempo; \\
+(v es el mismo en cada unidad de tiempo!)
+                                              
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Para centrar el grafico %%
+\begin{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Propiedades del grafico.. %%%
+%% el eje de X comienza aqui..
+\def\iX{0.} %%
+\def\iY{0.} %%
+%% el eje de y comienza aqui..
+\def\jX{8.5} %%
+\def\jY{4.5} %%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Este es the pspicture enviroment.. el mas sencillo %%%%%%%%%
+\begin{tikzpicture}[scale=0.75]
+% (x1 , y1  )(x2 , y2)
+\draw[->] (0,0) -- (8.5,0) node[below=0.5cm, midway] {t(s)};
+\draw[->] (0,0) -- (0,4.5) node[left=0.5cm, midway, rotate=90] {v(cm/s)};
+
+%% Un recta y=ctte .. %%%%%%%
+\def\iVctte{2.5}
+%% (x1 , y1  )(x2 , y2=y1)
+\draw[dashed] (0,\iVctte) -- (8.5,\iVctte);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% El do de latex-pstricks!!! %%%%%%%%%%%%%%%%%%%%%%
+%%% quiero poner unos punto rojos sobre la recta %%%%
+\foreach \iA in {1,2,3,4,5,6,7}{
+\fill[red] (\iA,\iVctte) circle (5pt); % Adjusted dotscale to circle radius
+}
+%\pscircle[fillstyle=solid](\iA,2.5){0.2}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                              
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fin centrado del grafico %%
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                                              
+                                                               
+% ============================================================== 
+% -Idea3 
+% ============================================================== 
+                                                               
+                                                               
+                                                               
+% ============================================================== 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+\end{frame}
+
+%________________________________________________________________(ult. col, 65)
+% ========================== slide1 ============================= 
+\begin{frame}
+\frametitle{MRU}
+% 
+% -Paragraph1 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% -Idea1 
+% ============================================================== 
+ 
+Un « tren » viaja 1400 centímetros cada 20 horas .
+\¿Qué distancia recorre al cabo de 300 segundos ?                                                     
+                                                              
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+ 
+\begin{itemize}                                                              
+
+\item El 1er paso en la resoluci\'on de cualquier problema, es la
+identificaci\'on de los elementos del problema.            
+              
+\end{itemize}                                                 
+% ============================================================== 
+% -Idea3 
+% ============================================================== 
+ 
+%% Dibuja una cajita!! %%%%%%%%%%%%%%%%%%%
+%% el background de gris..
+\fcolorbox{black}{lightgray}{
+\begin{tabular}{c}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Elementos del Problema}\\
+
+$x=?$	\\
+
+$v=\cancelto{70}{\frac{1400}{20}}
+\frac{centimetros}{horas}$ \\
+
+$t=300~segundos$	\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% Generated with LaTeXDraw 2.0.0
+% Fri Aug 01 20:56:48 CEST 2008
+% \usepackage[usenames,dvipsnames]{pstricks}
+% \usepackage{epsfig}
+% \usepackage{pst-grad} % For gradients
+% \usepackage{pst-plot} % For axes
+\scalebox{1} % Change this value to rescale the drawing.
+{
+\begin{tikzpicture}
+\node[draw, line width=0.04cm] at (8.4,2) {Qu\'e f\'ormula uso?};
+\end{tikzpicture}
+}
+
+% ============================================================== 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+\end{frame}
+
+%________________________________________________________________(ult. col, 65)
+% ========================== slide2 ============================= 
+\begin{frame}
+\frametitle{MRU}
+% 
+% -Paragraph1 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% -Idea1 
+% ============================================================== 
+ 
+{\huge                
+\xmru
+}                                             
+ 
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+ 
+Pero.. siempre debemos trabajar en el mismo sistema de unidades.
+Es decir, si hay un cent{\'i}metros/horas,
+debemos transformar los 
+segundos a horas :)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Cajita de Texto sencilla %%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\fcolorbox{red}{white}{
+\parbox[c]{5cm}{ % Reduced width to mitigate potential overfull hbox
+1 segundo = 1/3600 horas \\
+Entonces 300 segundos son \\
+300 / 3600 horas \\
+300 segundos =
+0.08 horas.
+}}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                           
+% ============================================================== 
+% -Idea3 
+% ============================================================== 
+ 
+Finalmente..                                                              
+                                                               
+                                                               
+% ============================================================== 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+\end{frame}
+
+%________________________________________________________________(ult. col, 65)
+% ========================== slide3 ============================= 
+\begin{frame}
+\frametitle{MRU}
+% 
+% -Paragraph1 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% -Idea1 
+% ============================================================== 
+{\large
+\begin{equation}
+x=
+\left(70\frac{\text{cm}}{\cancel{\text{h}}}\right)
+(0.08\cancel{\text{h}})=
+5.60~\text{cm}
+\end{equation}}
+
+                               
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+ 
+La distancia que recorre el tren es
+\fbox{5.60 cm}
+
+                                                             
+% ============================================================== 
+% -Idea3 
+% ============================================================== 
+                                                               
+                                                               
+                                                               
+% ============================================================== 
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%  Tail  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+%%
+%% End of file == mru_e1.tex ==
+%%
+%% Modified 05-10-2008
