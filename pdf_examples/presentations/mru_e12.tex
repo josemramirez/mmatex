@@ -3,6 +3,8 @@
 %% Original created 05-10-2008; ported to Beamer July 2025
 \documentclass{beamer}
 
+\pdfminorversion=7  % Allow higher PDF versions for included images
+
 \usepackage{xcolor}
 \usetheme{Copenhagen}  % Change to Madrid, Copenhagen, etc., for fancier look
 % Define custom colors
@@ -17,6 +19,7 @@
 \usepackage{cancel}
 \usepackage{tikz}
 \usepackage{graphicx}  % For images
+\usepackage{lmodern}  % Better font handling to reduce substitution warnings
 
 \hypersetup{
 pdfpagemode={FullScreen},
@@ -182,7 +185,7 @@ Es uniforme porque la velocidad no var\'ia en el tiempo; \\
 %%% El do de latex-pstricks!!! %%%%%%%%%%%%%%%%%%%%%%
 %%% quiero poner unos punto rojos sobre la recta %%%%
 \foreach \iA in {1,2,3,4,5,6,7}{
-\fill[red,scale=2.] (\iA,\iVctte) circle (2pt); % Adjusted dotscale to circle radius
+\fill[red] (\iA,\iVctte) circle (2pt); % Adjusted dotscale to circle radius
 }
 %\pscircle[fillstyle=solid](\iA,2.5){0.2}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -345,8 +348,8 @@ Finalmente..
 \begin{equation}
 x=
 (3\frac{km}{\cancel{min}})
-(5400~\cancel{min})=
-16200~km
+(5400 \cancel{min})=
+16200 km
 \end{equation}}
 
                                
@@ -378,5 +381,4 @@ La distancia que recorre el objeto es
 %%
 %% End of Beamer-ported file ==
 %%
-%% Modified 05-10-2008 
-```
+%% Modified 05-10-2008
