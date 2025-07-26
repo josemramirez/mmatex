@@ -24,9 +24,25 @@ pdfkeywords={Movimiento,Rectilineo,Uniforme}}
 
 \def\psPi{3.14159265}
 
-% Assuming lib/FORMULAS and lib/NOTASUNIDADES are available; if not, define needed macros here.
-% For example, if \vNUa is a note, define it as empty or remove its call.
-% \def\vNUa{} % Dummy definition if needed.
+%% Libreria de formulas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{lib/FORMULAS}
+%% Libreria de Notas    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{lib/NOTASUNIDADES}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Titulo y autor .. obligatorio..
+\title{MRU e21: ver1}
+\subtitle{Otono - 2025}
+\author{mmatex}
+
+
+%%%%%%% Para pegar el log.. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\logo{%
+    \begin{tikzpicture}
+        \node[opacity=0.2] {\includegraphics[width=1cm]{images/citlogogrey.eps}}; % Use absolute path if needed: /Users/josem/Dropbox/Yachay2024/fisica1/eJJRv1/libs/figs/citlogogrey.eps
+    \end{tikzpicture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{MRU h11: ver1}
 \subtitle{Practica... y las puertas se abren}
