@@ -1,22 +1,24 @@
 \documentclass{beamer}
 
 \usetheme{default}
-\usecolortheme{default} % Adjust for BW if needed, e.g., \usecolortheme{seahorse} for lighter colors
+\usecolortheme{default}
 
 \usepackage[latin1]{inputenc}
-\usepackage{pstricks,pstricks-add,pst-node,pst-text,pst-3d}
 \usepackage{amsmath}
 \usepackage{cancel}
 \usepackage{pst-func}
 \usepackage{pst-math}
+\usepackage{pstricks,pstricks-add,pst-node,pst-text,pst-3d}
+\usepackage{auto-pst-pdf}
+\usepackage{tikz}
 \usepackage{hyperref}
 
 \hypersetup{
 pdfpagemode={FullScreen},
 pdftitle={MRU h1: ver1},
-pdfauthor={mmatex.com},
-pdfcreator={mmatex.com},
-pdfproducer={mmatex.com},
+pdfauthor={J.M.~Ram{'i}rez},
+pdfcreator={J.M.~Ram{'i}rez},
+pdfproducer={J.M.~Ram{'i}rez},
 pdfkeywords={Movimiento,Rectilineo,Uniforme}}
 
 \def\psPi{3.14159265}
@@ -24,25 +26,25 @@ pdfkeywords={Movimiento,Rectilineo,Uniforme}}
 \input{lib/FORMULAS}
 \input{lib/NOTASUNIDADES}
 
-\title{MRU h11: ver1}
+\title{MRU h1: ver1}
 \subtitle{Practica... y las puertas se abren}
-\author{mmatex.com}
-
+\author{ejjr}
+\institute{ejjr.clases@gmail.com}
 
 \begin{document}
 
 \frame{\titlepage}
 
-% Logo and caption can be added as beamertemplate or per frame
-% For simplicity, add to specific frames if needed
-
-% Approximate slideCaption as a note or footer
 \setbeamertemplate{footline}[text line]{{\gray \large Esta nota tiene la intenci\'on de que \'este material no sea entregado como tarea.}}
 
 \begin{frame}{Movimiento Rectil\'ineo Uniforme}
 La f\'ormula principal:
 
-{\huge \vmru}
+\begin{equation}
+\label{vmru}
+v = \frac{x}{t}
+\end{equation}
+
 \vNUa
 \end{frame}
 
@@ -51,13 +53,13 @@ Recu\'erdalo por sus unidades:
 
 \begin{equation*}
 10\frac{\text{km}}{\text{h}} =
-\frac{\text{Se recorren 10 km (\red{distancia})}}
-{\text{en 1 hora (\red{tiempo})}}
+\frac{\text{Se recorren 10 km ({\color{red} distancia})}}
+{\text{en 1 hora ({\color{red} tiempo})}}
 \end{equation*}
 
 Las otras dos f\'ormulas que se derivan de (\ref{vmru}) son:
 
-{\large \xmru \\ \tmru}
+{\large x = vt \\ t = \frac{x}{v}}
 \end{frame}
 
 \begin{frame}{MRU}
@@ -75,7 +77,7 @@ Es uniforme porque la velocidad no var\'ia en el tiempo; \\
 \psline[linestyle=dashed](0,\iVctte)(8.5,\iVctte)
 
 \multido{\iA=1+1}{7}{%
-\psdot[linecolor=red,dotscale=2.](\iA,\iVctte)}%
+\psdot[linecolor=red,dotscale=2.](\iA,\iVctte)}
 \end{pspicture}
 \end{center}
 \end{frame}
@@ -97,7 +99,7 @@ identificaci\'on de los elementos del problema.
 \end{frame}
 
 \begin{frame}{MRU}
-\scalebox{0.8}{
+\scalebox{0.7}{
 \begin{pspicture}(0,-4.78)(15.405313,4.8)
 \definecolor{color661}{rgb}{0.8862745098039215,0.16470588235294117,0.16470588235294117}
 \psframe[linewidth=0.04,dimen=outer](1.08,1.06)(0.04,0.64)
@@ -197,7 +199,7 @@ Ve la figura :)
 
 \begin{frame}{MRU}
 {\huge
-\xmru
+x = vt
 }
 
 Lo 1ro que hacemos es calcular cu\'anto recorre el cuerpo (1)
@@ -222,7 +224,7 @@ Entonces:
 	\begin{center}
 	{\huge
 	$ x_0 = v_1t_{0}= $
-	$ (50~{\red [\frac{1000}{3600}]}~\frac{\text{m}}{\text{s}})
+	$ (50~{\color{red} [\frac{1000}{3600}]}~\frac{\text{m}}{\text{s}})
         (5~\text{s}) $
         $ x_0 =(13.89~\frac{\text{m}}{\cancel{\text{s}}})
         (5~\cancel{\text{s}}) $
