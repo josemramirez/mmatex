@@ -17,9 +17,9 @@
 \hypersetup{
 pdfpagemode={FullScreen},
 pdftitle={MRU h1: ver1},
-pdfauthor={J.M.~Ram{'i}rez},
-pdfcreator={J.M.~Ram{'i}rez},
-pdfproducer={J.M.~Ram{'i}rez},
+pdfauthor={mmatex.com},
+pdfcreator={mmatex.com},
+pdfproducer={mmatex.com},
 pdfkeywords={Movimiento,Rectilineo,Uniforme}}
 
 \def\psPi{3.14159265}
@@ -45,7 +45,7 @@ pdfkeywords={Movimiento,Rectilineo,Uniforme}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{MRU h11: ver1}
-\subtitle{Practica... y las puertas se abren}
+\subtitle{Otono - 2025}
 \author{mmatex.com}
 
 %\setbeamertemplate{footline}[text line]{{\gray \large Esta nota tiene la intenci\'on de que \'este material no sea entregado como tarea.}}
@@ -83,21 +83,62 @@ Las otras dos f\'ormulas que se derivan de (\ref{vmru}) son:
 Es uniforme porque la velocidad no var\'ia en el tiempo; \\
 (v es el mismo en cada unidad de tiempo!)
 
+% ============================================================== 
+% -Idea2 
+% ============================================================== 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Para centrar el grafico %%
 \begin{center}
-\psset{unit=0.75}
-\begin{pspicture}(-0.5,-3.5)(8.5,4.5)
-\psaxes{->}(0,0)(0,0)(8.5,4.5)
-\uput[-90](4.5,-1){t(s)}
-\uput[180](-1,3.5){v(cm/s)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% Propiedades del grafico.. %%%
+%% el eje de X comienza aqui..
+\def\iX{0.} %%
+\def\iY{0.} %%
+%% el eje de y comienza aqui..
+\def\jX{8.5} %%
+\def\jY{4.5} %%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Este es el pspicture enviroment.. el mas sencillo %%%%%%%%%
+\begin{tikzpicture}[scale=0.75]
+% (x1 , y1  )(x2 , y2)
+\draw[->] (0,0) -- (8.5,0) node[below=0.5cm, midway] {t(s)};
+\draw[->] (0,0) -- (0,4.5) node[left=0.5cm, midway, rotate=90] {v(cm/s)};
+
+%% Un recta y=ctte .. %%%%%%%
 \def\iVctte{2.5}
-\psline[linestyle=dashed](0,\iVctte)(8.5,\iVctte)
+%% (x1 , y1  )(x2 , y2=y1)
+\draw[dashed] (0,\iVctte) -- (8.5,\iVctte);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% El do de latex-pstricks!!! %%%%%%%%%%%%%%%%%%%%%%
+%%% quiero poner unos punto rojos sobre la recta %%%%
+\foreach \iA in {1,2,3,4,5,6,7}{
+\fill[red] (\iA,\iVctte) circle (5pt); % Adjusted dotscale to circle radius
+}
+%\pscircle[fillstyle=solid](\iA,2.5){0.2}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                              
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\multido{\iA=1+1}{7}{%
-\psdot[linecolor=red,dotscale=2.](\iA,\iVctte)}
-\end{pspicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fin centrado del grafico %%
 \end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 \end{frame}
+
+
 
 \begin{frame}{MRU}
 Por el frente de un polic{\'i}a de transito, 
