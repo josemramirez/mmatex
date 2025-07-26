@@ -9,9 +9,10 @@
 \usepackage{pst-func}
 \usepackage{pst-math}
 \usepackage{pstricks,pstricks-add,pst-node,pst-text,pst-3d}
-\usepackage{auto-pst-pdf}
+\usepackage[off]{auto-pst-pdf} % Added [off] to avoid shell-escape error; note: this may not render PSTricks properly. To fully render, use pdflatex with --shell-escape and remove [off].
 \usepackage{tikz}
 \usepackage{hyperref}
+\usepackage{epstopdf} % For handling .eps files; requires --shell-escape.
 
 \hypersetup{
 pdfpagemode={FullScreen},
@@ -23,17 +24,19 @@ pdfkeywords={Movimiento,Rectilineo,Uniforme}}
 
 \def\psPi{3.14159265}
 
-\input{lib/FORMULAS}
-\input{lib/NOTASUNIDADES}
+% Assuming lib/FORMULAS and lib/NOTASUNIDADES are available; if not, define needed macros here.
+% For example, if \vNUa is a note, define it as empty or remove its call.
+% \def\vNUa{} % Dummy definition if needed.
 
 \title{MRU h1: ver1}
 \subtitle{Practica... y las puertas se abren}
 \author{ejjr}
 
+\setbeamertemplate{footline}[text line]{{\gray \large Esta nota tiene la intenci\'on de que \'este material no sea entregado como tarea.}}
+
 \begin{document}
 
 \frame{\titlepage}
-
 
 \begin{frame}{Movimiento Rectil\'ineo Uniforme}
 La f\'ormula principal:
@@ -43,7 +46,7 @@ La f\'ormula principal:
 v = \frac{x}{t}
 \end{equation}
 
-\vNUa
+% \vNUa % Commented out to avoid undefined if file not present; restore if defined.
 \end{frame}
 
 \begin{frame}{MRU}
@@ -57,7 +60,7 @@ Recu\'erdalo por sus unidades:
 
 Las otras dos f\'ormulas que se derivan de (\ref{vmru}) son:
 
-{\large x = vt \\ t = \frac{x}{v}}
+{\large \( x = vt \) \\ \( t = \frac{x}{v} \)}
 \end{frame}
 
 \begin{frame}{MRU}
@@ -85,7 +88,7 @@ Por el frente de un polic{\'i}a de transito,
 pasa un << cuerpo >> a una velocidad de { 50 km/h }. 
 { 5 segundos } despu\'es pasa una << persona en moto >> a una 
 velocidad de { 80 km/h }. Si ambos m\'oviles viajan en la 
-misma direcci\'on y sentido, a qu\'e distancia del polic{\'i}a 
+misma direcci\'on y sentido, ?`a qu\'e distancia del polic{\'i}a 
 alcanza la << persona en moto >> al << cuerpo >> , 
 y en cu\'anto tiempo?
 
@@ -196,9 +199,7 @@ Ve la figura :)
 \end{frame}
 
 \begin{frame}{MRU}
-{\huge
-x = vt
-}
+{\huge \( x = vt \)}
 
 Lo 1ro que hacemos es calcular cu\'anto recorre el cuerpo (1)
 	en 5 s. Pero queremos expresar las distancias en {\bf m},
@@ -221,11 +222,11 @@ Entonces:
 	
 	\begin{center}
 	{\huge
-	$ x_0 = v_1t_{0}= $
-	$ (50~{\color{red} [\frac{1000}{3600}]}~\frac{\text{m}}{\text{s}})
-        (5~\text{s}) $
-        $ x_0 =(13.89~\frac{\text{m}}{\cancel{\text{s}}})
-        (5~\cancel{\text{s}}) $
+	\( x_0 = v_1t_{0}= \)
+	\( (50~{\color{red} [\frac{1000}{3600}]}~\frac{\text{m}}{\text{s}})
+        (5~\text{s}) \)
+        \( x_0 =(13.89~\frac{\text{m}}{\cancel{\text{s}}})
+        (5~\cancel{\text{s}}) \)
 
 	\fbox{$ x_0 =69.45~\text{m} $}
 	}
@@ -241,7 +242,7 @@ Recordemos que:
 
 	\begin{center}
 	{\huge
-	$ v_2t = v_1t + 69.45~\text{m}  $
+	\( v_2t = v_1t + 69.45~\text{m}  \)
 	}
         \end{center}
 
@@ -249,8 +250,8 @@ Recordemos que:
 
 	\begin{center}
         {\huge
-        $ t(v_2-v_1)=69.45~\text{m}$
-	$ t=\frac{69.45~\text{m}}{(v_2-v_1)} $
+        \( t(v_2-v_1)=69.45~\text{m} \)
+	\( t=\frac{69.45~\text{m}}{(v_2-v_1)} \)
 	}
 	\end{center}
 \end{frame}
@@ -260,8 +261,8 @@ Substituyendo los valores correspondientes:
 
 	\begin{center}
 	{\huge
-	$ t=\frac{69.45~\cancel{\text{m}}}{[(80-50) [\frac{1000}{3600}] 
-	~\frac{\cancel{\text{m}}}{\text{s}}]}  $
+	\( t=\frac{69.45~\cancel{\text{m}}}{[(80-50) [\frac{1000}{3600}] 
+	~\frac{\cancel{\text{m}}}{\text{s}}]}  \)
 	}
         \end{center}
 
@@ -278,9 +279,9 @@ Substituyendo los valores correspondientes:
 
         \begin{center}
         {\huge
-        $ x_2 = v_2 t = 22.22
+        \( x_2 = v_2 t = 22.22
 	~\frac{\text{m}}{\cancel{\text{s}}}
-	~8.34~\cancel{s} $}
+	~8.34~\cancel{s} \)}
         \end{center}
 
         \begin{center}
