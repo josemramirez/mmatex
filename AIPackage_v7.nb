@@ -89,7 +89,7 @@ f982074c048d\>\"", ",", "\"\<Content\>\"", ",",
           RowBox[{"{", 
            RowBox[{
             RowBox[{
-            "\"\<model\>\"", "->", "\"\<claude-3-sonnet-20240229\>\""}], ",", 
+            "\"\<model\>\"", "->", "\"\<claude-sonnet-4-20250514\>\""}], ",", 
             
             RowBox[{"\"\<max_tokens\>\"", "->", "4096"}], ",", 
             RowBox[{"\"\<messages\>\"", "->", 
